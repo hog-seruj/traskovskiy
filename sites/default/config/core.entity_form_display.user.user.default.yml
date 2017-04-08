@@ -1,5 +1,5 @@
 uuid: eb0974c5-4b40-437d-94e7-7ecdfebfe7ee
-langcode: en
+langcode: uk
 status: true
 dependencies:
   config:
@@ -30,4 +30,5 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     weight: -1
-hidden: {  }
+hidden:
+  langcode: true

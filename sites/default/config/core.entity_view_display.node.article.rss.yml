@@ -1,5 +1,5 @@
 uuid: 6af035fe-e376-41f8-9914-11bc02ddacac
-langcode: en
+langcode: uk
 status: true
 dependencies:
   config:
@@ -25,3 +25,4 @@ hidden:
   comment: true
   field_image: true
   field_tags: true
+  langcode: true

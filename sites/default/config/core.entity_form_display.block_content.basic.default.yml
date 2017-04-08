@@ -1,5 +1,5 @@
 uuid: d5749dc4-a49d-4c12-910b-62ee010b888d
-langcode: en
+langcode: uk
 status: true
 dependencies:
   config:
@@ -28,5 +28,10 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

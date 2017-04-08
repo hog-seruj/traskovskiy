@@ -1,5 +1,5 @@
 uuid: 1bdeb4ee-52a0-48a4-a58e-4239f770adcc
-langcode: en
+langcode: uk
 status: true
 dependencies:
   config:
@@ -25,4 +25,5 @@ content:
       image_link: content
     third_party_settings: {  }
     label: hidden
-hidden: {  }
+hidden:
+  langcode: true
