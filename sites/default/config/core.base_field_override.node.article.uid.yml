@@ -1,0 +1,20 @@
+uuid: 5872cd73-01fc-48a0-9793-889fd55a5c1c
+langcode: uk
+status: true
+dependencies:
+  config:
+    - node.type.article
+id: node.article.uid
+field_name: uid
+entity_type: node
+bundle: article
+label: Автор
+description: 'Ім''я користувача автора матеріалу.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getCurrentUserId'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

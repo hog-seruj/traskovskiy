@@ -1,0 +1,24 @@
+uuid: 41e85a0a-2c68-47d8-be59-2c0d052cfa62
+langcode: uk
+status: true
+dependencies:
+  config:
+    - views.view.content_view
+  module:
+    - views
+  theme:
+    - bartik
+id: views_block__content_view_block_1
+theme: bartik
+region: footer_fourth
+weight: -7
+provider: null
+plugin: 'views_block:content_view-block_1'
+settings:
+  id: 'views_block:content_view-block_1'
+  label: 'Останні новини'
+  provider: views
+  label_display: visible
+  views_label: 'Останні новини'
+  items_per_page: none
+visibility: {  }

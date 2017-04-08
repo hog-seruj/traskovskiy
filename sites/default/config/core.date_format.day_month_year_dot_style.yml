@@ -1,0 +1,8 @@
+uuid: b8233f10-74cc-460c-8da4-c7e42c5222f8
+langcode: zxx
+status: true
+dependencies: {  }
+id: day_month_year_dot_style
+label: 'Day month Year, dot style'
+locked: false
+pattern: d.m.Y

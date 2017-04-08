@@ -1,0 +1,257 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/block\/4?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/block_with_links"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_links\/revision_user": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_links\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            },
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "ru"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "4"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "66a8f3ae-f8d9-4bb4-8b7b-f611223df822"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "4"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        },
+        {
+            "value": "ru",
+            "lang": "ru"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "block_with_links"
+        }
+    ],
+    "info": [
+        {
+            "value": "\u041c\u0438 \u0432 \u0441\u043e\u0446\u043c\u0435\u0440\u0435\u0436\u0430\u0445",
+            "lang": "uk"
+        },
+        {
+            "value": "\u041c\u044b \u0432 \u0441\u043e\u0446\u0441\u0435\u0442\u044f\u0445",
+            "lang": "ru"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491655053",
+            "lang": "uk"
+        },
+        {
+            "value": "1491655217",
+            "lang": "ru"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1491655053"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_links\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_links\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
+                    }
+                ],
+                "lang": "uk"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
+                    }
+                ],
+                "lang": "ru"
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        },
+        {
+            "value": "1",
+            "lang": "ru"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        },
+        {
+            "value": "0",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        },
+        {
+            "value": "uk",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        },
+        {
+            "value": "0",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        },
+        {
+            "value": "1",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491655005",
+            "lang": "uk"
+        },
+        {
+            "value": "1491655076",
+            "lang": "ru"
+        }
+    ],
+    "body": [
+        {
+            "value": "Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "uk"
+        },
+        {
+            "value": "Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "ru"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "https:\/\/plus.google.com",
+            "title": "G+",
+            "options": [
+
+            ],
+            "lang": "uk"
+        },
+        {
+            "uri": "https:\/\/twitter.com",
+            "title": "twitter",
+            "options": [
+
+            ],
+            "lang": "uk"
+        },
+        {
+            "uri": "https:\/\/www.facebook.com\/",
+            "title": "facebook",
+            "options": [
+
+            ],
+            "lang": "uk"
+        },
+        {
+            "uri": "https:\/\/plus.google.com",
+            "title": "G+",
+            "options": [
+
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "https:\/\/twitter.com",
+            "title": "twitter",
+            "options": [
+
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "https:\/\/www.facebook.com\/",
+            "title": "facebook",
+            "options": [
+
+            ],
+            "lang": "ru"
+        }
+    ]
+}

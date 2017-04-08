@@ -1,0 +1,23 @@
+uuid: 331a9610-047d-42b6-a079-e2daf20d3581
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bartik
+id: brenduvannasaitu
+theme: bartik
+region: footer_fourth
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Брендування сайту'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

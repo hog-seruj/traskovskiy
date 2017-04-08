@@ -1,0 +1,141 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/taxonomy\/term\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/our_partners"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
+            {
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner2.png",
+                "lang": "uk"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": "1"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ca73007d-5bd4-4618-ba8c-546d67a19f59"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "our_partners"
+        }
+    ],
+    "name": [
+        {
+            "value": "\u043f\u0430\u0440\u0442\u043d\u0435\u0440 1",
+            "lang": "uk"
+        }
+    ],
+    "weight": [
+        {
+            "value": "0"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491652620",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner2.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "85a43f30-fdbb-44fd-a478-a73032b30ba1"
+                    }
+                ],
+                "lang": "uk",
+                "alt": "",
+                "title": "",
+                "width": "274",
+                "height": "133"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491652612",
+            "lang": "uk"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "internal:\/",
+            "title": "",
+            "options": [
+
+            ]
+        }
+    ]
+}

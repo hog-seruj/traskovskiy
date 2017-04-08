@@ -1,0 +1,25 @@
+uuid: 1957e31f-cdc2-4f5a-be11-7633c22d0644
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: nasipartneri
+theme: bartik
+region: footer_third
+weight: -8
+provider: null
+plugin: 'block_content:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+settings:
+  id: 'block_content:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+  label: 'Наши партнеры'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,60 @@
+uuid: ddcea913-2edc-4cef-aff1-c5347f2d2bd2
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.our_partners.field_image
+    - field.field.taxonomy_term.our_partners.field_link
+    - image.style.thumbnail
+    - taxonomy.vocabulary.our_partners
+  module:
+    - image
+    - link
+    - path
+    - text
+id: taxonomy_term.our_partners.default
+targetEntityType: taxonomy_term
+bundle: our_partners
+mode: default
+content:
+  description:
+    type: text_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    weight: 31
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_link:
+    weight: 32
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+hidden: {  }

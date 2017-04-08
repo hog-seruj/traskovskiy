@@ -1,0 +1,9 @@
+uuid: 1e281ace-00ad-454f-9c57-9b59d4a6702d
+langcode: uk
+status: true
+dependencies: {  }
+name: 'Наші партнери'
+vid: our_partners
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,25 @@
+uuid: 24b1467d-bfa9-4b8d-9313-94d46a14dbec
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:block_with_links:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: mivsocmerezah
+theme: bartik
+region: footer_fourth
+weight: 0
+provider: null
+plugin: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+settings:
+  id: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+  label: 'Мы в соцсетях'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

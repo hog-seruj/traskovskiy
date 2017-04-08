@@ -20,13 +20,11 @@ interface DefaultContentManagerInterface {
    *
    * @param string $module
    *   The module to create the default content for.
-   * @param bool $update_existing
-   *   (optional) Force updating existing entities. Defaults to FALSE.
    *
    * @return array[\Drupal\Core\Entity\EntityInterface]
    *   The created entities.
    */
-  public function importContent($module, $update_existing = FALSE);
+  public function importContent($module);
 
   /**
    * Exports a single entity as importContent expects it.

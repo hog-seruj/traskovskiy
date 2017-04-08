@@ -4,9 +4,9 @@ status: true
 dependencies: {  }
 _core:
   default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
-name: Article
+name: Стаття
 type: article
-description: 'Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'
+description: '<em>Статті</em> використовуються для чутливих до дати публікації матеріалів на зразок новин, прес-релізів чи дописів до блоґу.'
 help: ''
 new_revision: true
 preview_mode: 1

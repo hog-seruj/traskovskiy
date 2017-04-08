@@ -1,0 +1,23 @@
+uuid: 2d1b5ef0-2ab3-4073-9ba4-0b6f9fd4def9
+langcode: uk
+status: true
+dependencies:
+  config:
+    - block_content.type.block_with_links
+    - field.storage.block_content.field_link
+  module:
+    - link
+id: block_content.block_with_links.field_link
+field_name: field_link
+entity_type: block_content
+bundle: block_with_links
+label: Посилання
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

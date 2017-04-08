@@ -15,11 +15,11 @@ install:
 	make -s si; \
 
 si:
-	drush si custom_standard --db-url="mysql://$(DB_USER):$(DB_PASS)@localhost/$(DB_NAME)" --account-pass=admin -y --site-name="$(SITE_NAME)" --config-dir=sites/default/config; \
-	drush en $(MODULES) -y; \
+	chmod 777 sites/default -R; \
 	mkdir -p sites/default/files; \
 	mkdir -p sites/default/files/tmp; \
-	sudo chmod 777 sites/default -R; \
+	drush si custom_standard --db-url="mysql://$(DB_USER):$(DB_PASS)@localhost/$(DB_NAME)" --account-pass=admin -y --site-name="$(SITE_NAME)" --config-dir=sites/default/config; \
+	drush en $(MODULES) -y; \
 	drush en custom_default_content  -y; \
 	drush php-eval "\Drupal::service('default_content.manager')->importContent('custom_default_content');" \
 

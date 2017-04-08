@@ -1,6 +1,6 @@
 uuid: 291dc700-0a76-4c9f-90d3-39467c8a42e7
 langcode: uk
-status: true
+status: false
 dependencies:
   module:
     - comment
@@ -9,9 +9,9 @@ dependencies:
 _core:
   default_config_hash: HDMjKTBWeuHvsV6i6VvULmfhiSjNzIH1hCoy5GuZD0E
 id: comments_recent
-label: 'Recent comments'
+label: 'Останні коментарі'
 module: views
-description: 'Recent comments.'
+description: 'Останні коментарі.'
 tag: default
 base_table: comment_field_data
 base_field: cid
@@ -20,7 +20,7 @@ display:
   default:
     display_plugin: default
     id: default
-    display_title: Master
+    display_title: Головне
     position: 0
     display_options:
       access:
@@ -225,7 +225,7 @@ display:
           plugin_id: field
           entity_type: comment
           entity_field: cid
-      title: 'Recent comments'
+      title: 'Останні коментарі'
       empty:
         area_text_custom:
           id: area_text_custom
@@ -236,7 +236,7 @@ display:
           admin_label: ''
           label: ''
           empty: true
-          content: 'No comments available.'
+          content: 'Коментарі відсутні.'
           tokenize: false
           plugin_id: text_custom
       display_extenders: {  }
@@ -250,11 +250,11 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: Блок
     position: 1
     display_options:
-      block_description: 'Recent comments'
-      block_category: 'Lists (Views)'
+      block_description: 'Останні коментарі'
+      block_category: 'Списки (Види)'
       allow:
         items_per_page: true
       display_extenders: {  }

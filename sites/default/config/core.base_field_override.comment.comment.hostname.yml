@@ -1,0 +1,18 @@
+uuid: 87e3ac7e-5c82-4914-8a42-ec75493a5b16
+langcode: uk
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+id: comment.comment.hostname
+field_name: hostname
+entity_type: comment
+bundle: comment
+label: 'Назва хоста'
+description: 'Назва хоста автора коментаря.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

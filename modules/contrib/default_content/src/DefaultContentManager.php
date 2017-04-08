@@ -7,8 +7,6 @@ use Drupal\Component\Render\FormattableMarkup;
 use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Entity\EntityRepositoryInterface;
-use Drupal\Core\Entity\RevisionableInterface;
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Extension\InfoParserInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -120,7 +118,7 @@ class DefaultContentManager implements DefaultContentManagerInterface {
    *   The serializer service.
    * @param \Drupal\rest\Plugin\Type\ResourcePluginManager $resource_plugin_manager
    *   The rest resource plugin manager.
-   * @param \Drupal\Core\Session\AccountInterface $current_user
+   * @param \Drupal\Core\Session|AccountInterface $current_user
    *   The current user.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_manager
    *   The entity type manager service.
@@ -149,7 +147,7 @@ class DefaultContentManager implements DefaultContentManagerInterface {
   /**
    * {@inheritdoc}
    */
-  public function importContent($module, $update_existing = FALSE) {
+  public function importContent($module) {
     $created = array();
     $folder = drupal_get_path('module', $module) . "/content";
 
@@ -221,28 +219,9 @@ class DefaultContentManager implements DefaultContentManagerInterface {
           $contents = $this->parseFile($file);
           $class = $definition['serialization_class'];
           $entity = $this->serializer->deserialize($contents, $class, 'hal_json', array('request_method' => 'POST'));
-          $is_new = TRUE;
-
-          // Allow existing entities overwrite.
-          if ($old_entity = $this->entityRepository->loadEntityByUuid($entity_type_id, $entity->uuid())) {
-            $is_new = FALSE;
-            $original_id = $old_entity->id();
-            $entity->{$entity->getEntityType()->getKey('id')} = $original_id;
-            if ($this->isRevisionableEntity($entity)) {
-              $original_revision = $old_entity->getRevisionId();
-              $entity->{$entity->getEntityType()->getKey('revision')} = $original_revision;
-            }
-          }
-
-          !$is_new ? $entity->setOriginalId($original_id) : $entity->enforceIsNew($is_new);
-          if ($this->isRevisionableEntity($entity)) {
-            $entity->setNewRevision($is_new);
-          }
-
-          if (!$old_entity || $update_existing) {
-            $entity->save();
-            $created[$entity->uuid()] = $entity;
-          }
+          $entity->enforceIsNew(TRUE);
+          $entity->save();
+          $created[$entity->uuid()] = $entity;
         }
       }
       $this->eventDispatcher->dispatch(DefaultContentEvents::IMPORT, new ImportEvent($created, $module));
@@ -252,19 +231,6 @@ class DefaultContentManager implements DefaultContentManagerInterface {
     // Reset link domain.
     $this->linkManager->setLinkDomain(FALSE);
     return $created;
-  }
-
-  /**
-   * Checks a given entity for revision support.
-   *
-   * @param EntityInterface $entity
-   *   A typical drupal entity object.
-   *
-   * @return bool
-   *   Whether this entity supports revisions.
-   */
-  public function isRevisionableEntity(EntityInterface $entity) {
-    return $entity instanceof RevisionableInterface && $entity->getEntityType()->isRevisionable();
   }
 
   /**

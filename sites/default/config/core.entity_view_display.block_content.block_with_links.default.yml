@@ -1,0 +1,57 @@
+uuid: 4694ac9a-86e1-42a0-837e-add267ea4d2e
+langcode: uk
+status: true
+dependencies:
+  config:
+    - block_content.type.block_with_links
+    - field.field.block_content.block_with_links.body
+    - field.field.block_content.block_with_links.field_link
+  module:
+    - ds
+    - link
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      path: modules/contrib/ds
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - body
+        - field_link
+id: block_content.block_with_links.default
+targetEntityType: block_content
+bundle: block_with_links
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+hidden:
+  langcode: true

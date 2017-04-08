@@ -1,0 +1,8 @@
+uuid: d93001ff-4e36-43ac-bdef-18934cd46341
+langcode: uk
+status: true
+dependencies: {  }
+id: block_with_links
+label: 'Блок з посиланнями'
+revision: 0
+description: ''

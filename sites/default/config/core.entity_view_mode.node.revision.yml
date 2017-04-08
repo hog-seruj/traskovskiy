@@ -10,6 +10,6 @@ dependencies:
 _core:
   default_config_hash: mQNldYy9_9RVBHnUiGnc7U9RvWJ9MjVwc6HaDDis3kk
 id: node.revision
-label: Revision
+label: Редакція
 targetEntityType: node
 cache: true

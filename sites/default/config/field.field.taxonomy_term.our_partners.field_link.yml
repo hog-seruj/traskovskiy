@@ -1,0 +1,23 @@
+uuid: 65be95f0-76ad-4fca-8368-d91d4b54610f
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_link
+    - taxonomy.vocabulary.our_partners
+  module:
+    - link
+id: taxonomy_term.our_partners.field_link
+field_name: field_link
+entity_type: taxonomy_term
+bundle: our_partners
+label: Посилання
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

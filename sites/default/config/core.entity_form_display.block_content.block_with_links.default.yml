@@ -1,0 +1,46 @@
+uuid: 1f228652-03b4-4d12-8ec4-6bc16184f193
+langcode: uk
+status: true
+dependencies:
+  config:
+    - block_content.type.block_with_links
+    - field.field.block_content.block_with_links.body
+    - field.field.block_content.block_with_links.field_link
+  module:
+    - link
+    - text
+id: block_content.block_with_links.default
+targetEntityType: block_content
+bundle: block_with_links
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 3
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    weight: 11
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  info:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  translation:
+    weight: 10
+hidden: {  }

@@ -1,0 +1,25 @@
+uuid: 9c2cb663-d880-4e41-9557-31180c11978d
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: pronas
+theme: bartik
+region: footer_fourth
+weight: -8
+provider: null
+plugin: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+settings:
+  id: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+  label: 'О нас'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 80ffc7c3-e7df-4bb1-bc49-09946e7a932f
+langcode: uk
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.status
+field_name: status
+entity_type: node
+bundle: page
+label: 'Стан публікації'
+description: 'Булева індикація того, чи опублікований матеріал.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
