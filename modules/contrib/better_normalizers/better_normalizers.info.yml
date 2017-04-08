@@ -1,0 +1,14 @@
+name: Better Normalizers
+type: module
+description: 'Improve the normalizers in core.'
+# core: '8.x'
+
+dependencies:
+  - hal
+  - rest
+
+# Information added by Drupal.org packaging script on 2017-02-11
+version: '8.x-1.0-beta2+1-dev'
+core: '8.x'
+project: 'better_normalizers'
+datestamp: 1486811885

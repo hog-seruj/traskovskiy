@@ -1,0 +1,114 @@
+<?php
+
+/**
+ * @file
+ * Adds PrintFriendly button to chosen node types and provides a block.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\printfriendly\Form\PrintfriendlyConfigForm;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+use Drupal\Core\Render\Markup;
+
+/**
+ * Implements hook_help().
+ */
+function printfriendly_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the block module.
+    case 'help.page.printfriendly':
+      return '<p>' . t('PrintFriendly module lets you include a link to let your site users to quickly print, email or download the page as a PDF file using printfriendly service. <a href="http://www.printfriendly.com">PrintFriendly.com</a>'). '</p>';
+  }
+}
+
+
+/**
+ * Attach PrintFriendly Script.
+ *
+ */
+
+function printfriendly_page_attachments(array &$page) { 
+
+  $config =  \Drupal::config('printfriendly.settings');
+  
+  $custom_js = "var pfHeaderImgUrl = '". $config->get('printfriendly_page_custom_header') ."';";
+  $custom_js .= "var pfHeaderTagline = '". $config->get('printfriendly_tagline') ."';";
+  $custom_js .= "var pfdisableClickToDel  = ". $config->get('printfriendly_click_delete') .";";
+  $custom_js .= "var pfHideImages = ". $config->get('printfriendly_images') .";";
+  $custom_js .= "var pfImageDisplayStyle = '". $config->get('printfriendly_image_style') ."';";
+  $custom_js .= "var pfDisablePDF = ". $config->get('printfriendly_pdf') .";";
+  $custom_js .= "var pfDisableEmail = ". $config->get('printfriendly_email') .";";
+  $custom_js .= "var pfDisablePrint = ". $config->get('printfriendly_print') .";";
+  $custom_js .= "var pfCustomCSS = '". $config->get('printfriendly_custom_css') ."';";
+
+  $js = 'http://cdn.printfriendly.com/printfriendly.js';
+  if ($config->get('printfriendly_website_protocol') == 'https') {
+    $js = 'https://pf-cdn.printfriendly.com/ssl/main.js';
+  }
+
+  $custom_js .= "(function(){var js, pf;pf = document.createElement('script');pf.type = 'text/javascript';";
+  $custom_js .= "pf.src='".$js."';document.getElementsByTagName('head')[0].appendChild(pf)})();";
+  
+  $page['#attached']['html_head'][] = [
+    [
+      '#tag' => 'script',
+      '#value' => $custom_js,
+    ],
+    'declare_printfriendly_inline',
+  ];
+
+}
+
+function printfriendly_node_view(array &$build, NodeInterface $node, EntityViewDisplayInterface $display, $view_mode) {
+  $config =  \Drupal::config('printfriendly.settings');
+
+  if (in_array($view_mode, array_filter($config->get('printfriendly_display', array('full'))))) {
+    if (in_array($node->getType(), $config->get('printfriendly_types', array()), TRUE) && \Drupal::currentUser()->hasPermission('access printfriendly')) {
+
+      if ($view_mode == 'teaser') {
+        $block = printfriendly_create_button('/node/' . $node->id(), FALSE);
+      }else {
+        $block = printfriendly_create_button();
+      }
+
+      $build['printfriendly'] = array(
+	'#markup' => $block['#markup'],
+        '#attributes' => array('class' => array('links', 'inline', 'printfriendly-node', $node->getType())),
+      );
+
+    }
+  }
+}
+  
+
+ function printfriendly_create_button($url = NULL, $popup = TRUE) {
+   global $base_url;
+   $config =  \Drupal::config('printfriendly.settings');
+   $current_path = \Drupal::service('path.current')->getPath();
+   $query_string = \Drupal::request()->query->all();
+
+   if (!$url) {
+     $url = Url::fromURI($base_url . $current_path ,array('query' => $query_string));
+     $full_path = $url->toString();
+   }else{
+     $url = Url::fromURI($base_url . $url ,array('query' => $query_string));
+     $full_path = $url->toString();
+   }
+
+   $image = drupal_get_path('module', 'printfriendly') . '/images/' . $config->get('printfriendly_image', 'button-print-grnw20.png');
+   if ($popup) {
+     return array(
+       '#type' => 'link',
+       '#markup' => Markup::create('<a href="http://www.printfriendly.com/print?url='.$full_path.'" class="printfriendly" onclick="window.print(); return false;" title="Printer Friendly and PDF"><img src="' . file_create_url($image) . '" alt="Printer Friendly and PDF" /></a>'),
+     );
+   }else{
+     return array(
+       '#markup' => Markup::create('<a href="http://www.printfriendly.com/print?url='.$full_path.'" class="printfriendly" title="Printer Friendly and PDF"><img src="' . file_create_url($image) . '" alt="Printer Friendly and PDF" /></a>'),
+     );
+   }
+
+ }

@@ -1,0 +1,37 @@
+/**
+ * @file
+ * Seven theme styles.
+ */
+
+/* Align all tables cells top */
+table td {
+  vertical-align: top;
+}
+
+/* Add background to nested details */
+details details {
+  background-color: #f8f8f8;
+}
+
+details details details {
+  background-color: #fff;
+}
+
+/* Add white background to tooltips */
+.ui-tooltip.ui-widget {
+  background: #fff;
+}
+
+/* Hide tabs and elements from printing. */
+@media print {
+  .shortcut-action,
+  .dropbutton-wrapper,
+  .block-system-breadcrumb-block,
+  .block-local-tasks-block,
+  .pager,
+  .button-action,
+  .webform-submission-navigation,
+  .webform-filter-form {
+    display: none !important; /* Using !important to ensure with these elements are hidden with getting into a specificity war */
+  }
+}

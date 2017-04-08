@@ -1,0 +1,19 @@
+api: 2
+
+core: "8.x"
+
+defaults:
+  projects:
+    overwrite: TRUE
+
+includes:
+  - "core.make.yml"
+  - "modules.make.yml"
+  - "libraries.make.yml"
+
+projects:
+  zen:
+    type: "theme"
+    version: "7.0-alpha14"
+    patch:
+      - https://www.drupal.org/files/issues/fatal_sass_lint_error-2827085-5.patch

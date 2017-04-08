@@ -1,0 +1,196 @@
+api: 2
+
+core: "8.x"
+
+defaults:
+  projects:
+    overwrite: TRUE
+
+projects:
+  admin_toolbar:
+    type: "module"
+    version: "1.18"
+
+  advagg:
+    type: "module"
+    version: "2.0"
+
+  better_exposed_filters:
+    type: "module"
+    version: "3.0-alpha2"
+
+  better_normalizers:
+    type: "module"
+    version: "1.x-dev"
+
+  block_class:
+    type: "module"
+    version: "1.0-alpha1"
+
+  captcha :
+    type: "module"
+    version: "1.0-alpha1"
+
+  chosen:
+    type: "module"
+    version: "2.1"
+
+  ckeditor_media_embed :
+    type: "module"
+    version: "1.0"
+
+  color_field :
+    type: "module"
+    version: "2.0-rc1"
+    patch:
+    - https://www.drupal.org/files/issues/color_field_2848247_3.patch
+    - https://www.drupal.org/files/issues/color_field-fatal_error_in_all_field_formatters-2660864-24.patch
+
+  components:
+    type: "module"
+    version: "1.0"
+
+  config_update:
+    type: "module"
+    version: "1.3"
+
+  ctools:
+    type: "module"
+    version: "3.0-alpha27"
+    patch:
+      - "https://www.drupal.org/files/issues/2475595-ctools-autocomplete-fix-24.patch"
+      - "https://www.drupal.org/files/issues/ctools-unserialize-plugin-collection-2831521-1.patch"
+
+  default_content:
+    type: "module"
+    version: "1.x-dev"
+    patch:
+      - https://www.drupal.org/files/issues/reimport_existing-2698425-30.patch # reimport exists entity https://www.drupal.org/node/2698425
+
+  devel:
+    type: "module"
+    version: "1.0-rc1"
+
+  ds:
+    type: "module"
+    version: "2.6"
+
+  eck :
+    type: "module"
+    version: "1.0-alpha3"
+
+  editor_advanced_link :
+    type: "module"
+    version: "1.3"
+
+  embed :
+    type: "module"
+    version: "1.0-rc3"
+
+  entity_reference_revisions:
+    type: "module"
+    version: "1.2"
+
+  entity_embed :
+    type: "module"
+    version: "1.0-beta2"
+
+  eu_cookie_compliance:
+    type: "module"
+    version: "1.0-beta7"
+
+  extlink:
+    type: "module"
+    version: "1.0-alpha3"
+
+  facets:
+    type: "module"
+    version: "1.0-alpha6"
+    patch:
+    - https://www.drupal.org/files/issues/dropdown-chosen-2815271-2.patch
+
+  file_entity:
+    type: "module"
+    version: "2.0-beta3"
+
+  flag :
+      type: "module"
+      version: "4.0-alpha1"
+
+  layout_plugin:
+    type: "module"
+    version: "1.0-alpha23"
+
+  menu_link_attributes:
+      type: "module"
+      version: "1.0-beta3"
+
+  metatag:
+    type: "module"
+    version: "1.0"
+
+  page_manager:
+    type: "module"
+    version: "1.0-alpha24"
+
+  panels:
+    type: "module"
+    version: "3.0-beta5"
+
+  paragraphs:
+    type: "module"
+    version: "1.0"
+
+  pathauto:
+    type: "module"
+    version: "1.0-rc1"
+
+  printfriendly:
+    type: "module"
+    version: "1.0"
+
+  recaptcha:
+    type: "module"
+    version: "2.2"
+
+  redirect:
+    type: "module"
+    version: "1.0-alpha2"
+
+  search_api:
+    type: "module"
+    version: "1.0-beta4"
+
+  search_api_solr:
+    type: "module"
+    version: "1.0-beta1"
+
+  sharethis:
+    type: "module"
+    version: "2.0-beta3"
+
+  simple_sitemap:
+    type: "module"
+    version: "2.8"
+
+  social_media_links:
+    type: "module"
+    version: "2.2"
+
+  styleguide:
+    type: "module"
+    version: "1.x-dev"
+
+  token:
+    type: "module"
+    version: "1.0-rc1"
+
+  views_infinite_scroll:
+    type: "module"
+    version: "1.3"
+    patch:
+      - "https://www.drupal.org/files/issues/different_item_count-2852080-9.patch" # Different count of items.
+
+  webform:
+    type: "module"
+    version: "5.0-beta5"

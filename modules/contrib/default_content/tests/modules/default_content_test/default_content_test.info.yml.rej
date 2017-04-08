@@ -1,0 +1,10 @@
+--- tests/modules/default_content_test/default_content_test.info.yml
++++ tests/modules/default_content_test/default_content_test.info.yml
+@@ -6,3 +6,7 @@
+ core: 8.x
+ dependencies:
+   - default_content
++
++default_content:
++  node:
++    - 0e45d92f-1919-47cd-8b60-964a8a761292

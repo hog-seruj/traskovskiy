@@ -1,0 +1,52 @@
+core: 8.x
+api: 2
+libraries:
+
+#  ckeditor_embed:
+#    directory_name: "ckeditor/plugins/embed"
+#    destination: libraries
+#    download:
+#      type: get
+#      url: 'http://download.ckeditor.com/embed/releases/embed_4.6.1.zip'
+#
+#  ckeditor_embedsemantic:
+#    directory_name: "ckeditor/plugins/embedsemantic"
+#    destination: libraries
+#    download:
+#      type: get
+#      url: 'http://download.ckeditor.com/embedsemantic/releases/embedsemantic_4.6.1.zip'
+#
+#  ckeditor_embedbase:
+#      directory_name: "ckeditor/plugins/embedbase"
+#      destination: libraries
+#      download:
+#        type: get
+#        url: 'http://download.ckeditor.com/embedbase/releases/embedbase_4.6.1.zip'
+#
+#  ckeditor_autoembed:
+#      directory_name: "ckeditor/plugins/autoembed"
+#      destination: libraries
+#      download:
+#        type: get
+#        url: 'http://download.ckeditor.com/autoembed/releases/autoembed_4.6.1.zip'
+#
+#  ckeditor_autolink:
+#      directory_name: "ckeditor/plugins/autolink"
+#      destination: libraries
+#      download:
+#        type: get
+#        url: 'http://download.ckeditor.com/autolink/releases/autolink_4.6.1.zip'
+#
+#  ckeditor_notification:
+#      directory_name: "ckeditor/plugins/notification"
+#      destination: libraries
+#      download:
+#        type: get
+#        url: 'http://download.ckeditor.com/notification/releases/notification_4.6.1.zip'
+#
+#  ckeditor_notificationaggregator:
+#      directory_name: "ckeditor/plugins/notificationaggregator"
+#      destination: libraries
+#      download:
+#        type: get
+#        url: 'http://download.ckeditor.com/notificationaggregator/releases/notificationaggregator_4.6.1.zip'

@@ -1,0 +1,14 @@
+uuid: f3ce2fd4-1f32-40ef-84b9-b1d563ff9c14
+name: traskovski
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: uk
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
