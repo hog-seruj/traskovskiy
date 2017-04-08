@@ -17,7 +17,6 @@ install:
 si:
 	drush si custom_standard --db-url="mysql://$(DB_USER):$(DB_PASS)@localhost/$(DB_NAME)" --account-pass=admin -y --site-name="$(SITE_NAME)" --config-dir=sites/default/config; \
 	drush en $(MODULES) -y; \
-	drush config-set system.site default_langcode uk -y; \
 	mkdir -p sites/default/files; \
 	mkdir -p sites/default/files/tmp; \
 	sudo chmod 777 sites/default -R; \
