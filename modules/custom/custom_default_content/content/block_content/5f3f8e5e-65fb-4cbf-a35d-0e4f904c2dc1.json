@@ -1,23 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/uk\/block\/3?_format=hal_json"
+            "href": "http:\/\/default\/uk\/block\/3?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
-            {
-                "href": "http:\/\/www\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
             {
-                "href": "http:\/\/www\/user\/1?_format=hal_json",
-                "lang": "uk"
-            },
-            {
-                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
                 "lang": "ru"
             }
         ]
@@ -68,7 +59,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491653691",
+            "value": "1491834570",
             "lang": "ru"
         }
     ],
@@ -77,59 +68,6 @@
             "value": "1491653673"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
-                    }
-                ],
-                "lang": "uk"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c311671d-8386-4273-854d-b6ed86058d86"
-                    }
-                ],
-                "lang": "ru"
-            }
-        ]
-    },
     "revision_translation_affected": [
         {
             "value": "1",
@@ -156,7 +94,7 @@
             "lang": "uk"
         },
         {
-            "value": "uk",
+            "value": "und",
             "lang": "ru"
         }
     ],
@@ -170,6 +108,26 @@
             "lang": "ru"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "05556f25-aed5-444b-9abd-69c76af5cc5f"
+                    }
+                ],
+                "lang": "ru"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",
@@ -186,7 +144,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491653691",
+            "value": "1491834570",
             "lang": "ru"
         }
     ],

@@ -1,0 +1,9 @@
+uuid: 036d5295-f198-4be7-95ca-f6374ce2fd88
+langcode: uk
+status: true
+dependencies: {  }
+name: Фрукти
+vid: frukti
+description: ''
+hierarchy: 0
+weight: 0
