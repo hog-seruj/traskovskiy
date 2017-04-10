@@ -1,0 +1,25 @@
+uuid: bdfdfff5-ecb1-4740-b0ef-09c1b039f04e
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:block_with_links:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+  module:
+    - block_content
+  theme:
+    - zen
+id: zen_mivsocmerezah
+theme: zen
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+settings:
+  id: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+  label: 'Мы в соцсетях'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

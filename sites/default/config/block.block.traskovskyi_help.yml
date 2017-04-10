@@ -1,0 +1,22 @@
+uuid: 44c0cd8f-513b-4f02-a518-c800fb2c0b44
+langcode: uk
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: ssVgtaKFxq56aQ6IUOzgdnVshV4E1SMG_LUM13HJx1w
+id: traskovskyi_help
+theme: traskovskyi
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Довідка
+  provider: help
+  label_display: '0'
+visibility: {  }

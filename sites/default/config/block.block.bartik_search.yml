@@ -16,7 +16,7 @@ provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
-  label: Поиск
+  label: Пошук
   provider: search
   label_display: '0'
 visibility: {  }

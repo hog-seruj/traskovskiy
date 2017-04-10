@@ -1,0 +1,24 @@
+uuid: df1c0850-dd2d-469e-aef7-7f859e788052
+langcode: uk
+status: true
+dependencies:
+  config:
+    - views.view.content_view
+  module:
+    - views
+  theme:
+    - zen
+id: zen_views_block__content_view_block_1
+theme: zen
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:content_view-block_1'
+settings:
+  id: 'views_block:content_view-block_1'
+  label: 'Останні новини'
+  provider: views
+  label_display: visible
+  views_label: 'Останні новини'
+  items_per_page: none
+visibility: {  }

@@ -1,0 +1,26 @@
+uuid: 27f8852e-3115-44ca-96bd-e2eb042fdbb1
+langcode: uk
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: tr5INLXnLKgE8axOErh-tJjI-DVebBrOnRm_DpXlsRE
+id: traskovskyi_tools
+theme: traskovskyi
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Инструменты
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

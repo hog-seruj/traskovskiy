@@ -1,0 +1,23 @@
+uuid: c34c8b09-6ae5-4161-979c-fff74eac0dc1
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zen
+id: zen_brenduvannasaitu
+theme: zen
+region: sidebar_first
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Брендування сайту'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

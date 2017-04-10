@@ -1,0 +1,20 @@
+uuid: 6be266fd-e3f9-49bd-8131-8bc45bb2a3aa
+langcode: uk
+status: true
+dependencies:
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: s_PjOLfo2rJ9lJDUSs3YJ7AgoOX7fkMN3Ge2F_Prfx8
+id: traskovskyi_page_title
+theme: traskovskyi
+region: title
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Заголовок сторінки'
+  provider: core
+  label_display: '0'
+visibility: {  }

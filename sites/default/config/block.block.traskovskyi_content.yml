@@ -1,0 +1,22 @@
+uuid: 64e0ec24-6258-413c-9d25-1ba86baa1476
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: ogfONS2JtKxoKYXzeTdyTdC9xFyTOfD1zkM9Z18LkNQ
+id: traskovskyi_content
+theme: traskovskyi
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Содержимое страницы'
+  provider: system
+  label_display: '0'
+visibility: {  }

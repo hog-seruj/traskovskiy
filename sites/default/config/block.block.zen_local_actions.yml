@@ -1,0 +1,20 @@
+uuid: 067f2991-ae39-4373-9838-d5bb7c4af145
+langcode: uk
+status: true
+dependencies:
+  theme:
+    - zen
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: zen_local_actions
+theme: zen
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Основные действия администратора'
+  provider: core
+  label_display: '0'
+visibility: {  }

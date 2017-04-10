@@ -1,0 +1,25 @@
+uuid: 3ffe0989-f102-4d47-b906-b5a51cc86a8b
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: dCjlzCl91MBru9p3g5C1kivV6EPbuFQt4PJVxHCHtQg
+id: traskovskyi_branding
+theme: traskovskyi
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Брендинг сайта'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

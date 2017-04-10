@@ -1,0 +1,20 @@
+uuid: 6c3b07ab-95fa-4722-b14a-a66406127780
+langcode: uk
+status: true
+dependencies:
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: ycVwEJaNRlXAPhqCNMiRa67fejvclckn5ScMMdsl-uw
+id: traskovskyi_local_actions
+theme: traskovskyi
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Основні адміністративні дії'
+  provider: core
+  label_display: '0'
+visibility: {  }

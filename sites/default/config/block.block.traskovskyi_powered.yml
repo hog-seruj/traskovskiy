@@ -1,0 +1,22 @@
+uuid: 45765175-a031-4fc3-abc4-ea8537ee44be
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: xxcJ814gtpQn7UtxjM_UDF5FGY3OYQiHYrvBIc7ZYzg
+id: traskovskyi_powered
+theme: traskovskyi
+region: footer
+weight: 10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Сделано на Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

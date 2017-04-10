@@ -1,0 +1,22 @@
+uuid: bf4e51fe-503f-4285-90ab-31a18b861a7c
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - zen
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: zen_content
+theme: zen
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Содержимое страницы'
+  provider: system
+  label_display: '0'
+visibility: {  }

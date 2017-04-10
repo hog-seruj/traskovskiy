@@ -1,0 +1,22 @@
+uuid: 0c8763da-1603-4857-9b5a-598d1470dcbb
+langcode: uk
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - zen
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: zen_help
+theme: zen
+region: content
+weight: -8
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Справка
+  provider: help
+  label_display: '0'
+visibility: {  }
