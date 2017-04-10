@@ -1,0 +1,25 @@
+uuid: 0005e79c-e169-4a77-aafa-9ea75a6b87ac
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+  module:
+    - block_content
+  theme:
+    - zen
+id: zen_nasipartneri
+theme: zen
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'block_content:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+settings:
+  id: 'block_content:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+  label: 'Наши партнеры'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

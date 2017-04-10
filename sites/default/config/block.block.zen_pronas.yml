@@ -1,0 +1,25 @@
+uuid: 4cc198c3-36db-4f19-bdd1-bf262bc04fd2
+langcode: ru
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+  module:
+    - block_content
+  theme:
+    - zen
+id: zen_pronas
+theme: zen
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+settings:
+  id: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+  label: 'О нас'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

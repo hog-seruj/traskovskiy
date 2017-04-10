@@ -13,7 +13,7 @@ id: node.page.body
 field_name: body
 entity_type: node
 bundle: page
-label: Тіло
+label: Содержимое
 description: ''
 required: false
 translatable: false

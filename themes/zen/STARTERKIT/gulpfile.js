@@ -4,8 +4,13 @@
 
 'use strict';
 
+
 var importOnce = require('node-sass-import-once'),
-  path = require('path');
+  path = require('path'),
+  glob = require('glob'),
+  env = process.env.NODE_ENV || 'development',
+  isProduction = (env === 'production'),
+  isTesting = (env === 'testing');
 
 var options = {};
 
@@ -38,18 +43,24 @@ options.theme = {
 options.drupalURL = '';
 // options.drupalURL = 'http://localhost';
 
+// Converts module names to absolute paths for easy imports
+function sassModuleImporter(url, file, done) {
+  try {
+    let pathResolution = require.resolve(url);
+    return done({
+      file: pathResolution
+    });
+  }
+  catch (e) {
+    return null;
+  }
+}
+
 // Define the node-sass configuration. The includePaths is critical!
 options.sass = {
-  importer: importOnce,
-  includePaths: [
-    options.theme.components,
-    options.rootPath.project + 'node_modules/breakpoint-sass/stylesheets',
-    options.rootPath.project + 'node_modules/chroma-sass/sass',
-    options.rootPath.project + 'node_modules/support-for/sass',
-    options.rootPath.project + 'node_modules/typey/stylesheets',
-    options.rootPath.project + 'node_modules/zen-grids/sass'
-  ],
-  outputStyle: 'expanded'
+  importer: [sassModuleImporter, importOnce],
+  includePaths: options.theme.components,
+  outputStyle: (isProduction ? 'compresssed' : 'expanded')
 };
 
 // Define which browsers to add vendor prefixes for.
@@ -59,6 +70,15 @@ options.autoprefixer = {
     'ie 9'
   ]
 };
+
+// Help KSS to automatically find new component CSS files
+var cssFiles = glob.sync('*.css', {cwd: options.theme.css}),
+  cssStyleguide = [];
+
+cssFiles.forEach(function (file) {
+  file = path.relative(options.rootPath.styleGuide, options.theme.css) + '/' + file;
+  cssStyleguide.push(file);
+});
 
 // Define the style guide paths and options.
 options.styleGuide = {
@@ -74,46 +94,7 @@ options.styleGuide = {
 
   // The css and js paths are URLs, like '/misc/jquery.js'.
   // The following paths are relative to the generated style guide.
-  css: [
-    // base/special stylesheets
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'base.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'layouts.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'chroma-kss-styles.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'kss-only.css'),
-    // component stylesheets
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'box.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'clearfix.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'comment.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'footer.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'header.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'hidden.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'highlight-mark.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'inline-links.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'inline-sibling.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'messages.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'print-none.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'responsive-video.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'visually-hidden.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'watermark.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'wireframe.css'),
-    // form stylesheets
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'autocomplete.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'collapsible-fieldset.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'form-item.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'form-table.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'progress-bar.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'progress-throbber.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'resizable-textarea.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'table-drag.css'),
-    // navigation stylesheets
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'breadcrumb.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'more-link.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'nav-menu.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'navbar.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'pager.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'skip-link.css'),
-    path.relative(options.rootPath.styleGuide, options.theme.css + 'tabs.css')
-  ],
+  css: cssStyleguide,
   js: [
   ],
 
@@ -147,7 +128,8 @@ var gulp      = require('gulp'),
   del         = require('del'),
   // gulp-load-plugins will report "undefined" error unless you load gulp-sass manually.
   sass        = require('gulp-sass'),
-  kss         = require('kss');
+  kss         = require('kss'),
+  cache       = require('gulp-cached');
 
 // The default task.
 gulp.task('default', ['build']);
@@ -155,7 +137,7 @@ gulp.task('default', ['build']);
 // #################
 // Build everything.
 // #################
-gulp.task('build', ['styles:production', 'styleguide', 'lint']);
+gulp.task('build', ['styles', 'styleguide', 'lint']);
 
 // ##########
 // Build CSS.
@@ -170,23 +152,15 @@ var sassFiles = [
 
 gulp.task('styles', ['clean:css'], function () {
   return gulp.src(sassFiles)
-    .pipe($.sourcemaps.init())
+    .pipe($.if(!isProduction, $.sourcemaps.init()))
+    .pipe($.if(!isProduction, cache()))
     .pipe(sass(options.sass).on('error', sass.logError))
     .pipe($.autoprefixer(options.autoprefixer))
     .pipe($.rename({dirname: ''}))
     .pipe($.size({showFiles: true}))
-    .pipe($.sourcemaps.write('./'))
+    .pipe($.if(!isProduction,  $.sourcemaps.write('./')))
     .pipe(gulp.dest(options.theme.css))
     .pipe($.if(browserSync.active, browserSync.stream({match: '**/*.css'})));
-});
-
-gulp.task('styles:production', ['clean:css'], function () {
-  return gulp.src(sassFiles)
-    .pipe(sass(options.sass).on('error', sass.logError))
-    .pipe($.autoprefixer(options.autoprefixer))
-    .pipe($.rename({dirname: ''}))
-    .pipe($.size({showFiles: true}))
-    .pipe(gulp.dest(options.theme.css));
 });
 
 // ##################
@@ -220,30 +194,16 @@ gulp.task('lint', ['lint:sass', 'lint:js']);
 gulp.task('lint:js', function () {
   return gulp.src(options.eslint.files)
     .pipe($.eslint())
-    .pipe($.eslint.format());
-});
-
-// Lint JavaScript and throw an error for a CI to catch.
-gulp.task('lint:js-with-fail', function () {
-  return gulp.src(options.eslint.files)
-    .pipe($.eslint())
     .pipe($.eslint.format())
-    .pipe($.eslint.failOnError());
+    .pipe($.if(isTesting, $.eslint.failOnError()));
 });
 
 // Lint Sass.
 gulp.task('lint:sass', function () {
   return gulp.src(options.theme.components + '**/*.scss')
     .pipe($.sassLint())
-    .pipe($.sassLint.format());
-});
-
-// Lint Sass and throw an error for a CI to catch.
-gulp.task('lint:sass-with-fail', function () {
-  return gulp.src(options.theme.components + '**/*.scss')
-    .pipe($.sassLint())
     .pipe($.sassLint.format())
-    .pipe($.sassLint.failOnError());
+    .pipe($.if(isTesting, $.sassLint.failOnError()));
 });
 
 // ##############################
@@ -261,7 +221,7 @@ gulp.task('browser-sync', ['watch:css'], function () {
   });
 });
 
-gulp.task('watch:css', ['styles'], function () {
+gulp.task('watch:css', ['clean:css', 'styles'], function () {
   return gulp.watch(options.theme.components + '**/*.scss', options.gulpWatchOptions, ['styles']);
 });
 

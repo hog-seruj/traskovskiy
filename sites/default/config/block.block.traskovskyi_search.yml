@@ -1,0 +1,22 @@
+uuid: 566f88bc-703e-42fe-aa6f-6cdeb320e7bf
+langcode: uk
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: Na1mB-0xqJstEHajXWCs5hu8VXIRgBxLSD6L03v4_i4
+id: traskovskyi_search
+theme: traskovskyi
+region: sidebar_first
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Пошук
+  provider: search
+  label_display: visible
+visibility: {  }

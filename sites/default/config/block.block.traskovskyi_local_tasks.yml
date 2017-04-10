@@ -1,0 +1,22 @@
+uuid: e471c1b8-5a6f-4b53-855f-241f9854ab1e
+langcode: uk
+status: true
+dependencies:
+  theme:
+    - traskovskyi
+_core:
+  default_config_hash: XzcumM365UIH15vdSxOhNPUH3lYks_YINIs4DZFemEk
+id: traskovskyi_local_tasks
+theme: traskovskyi
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Вкладки
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

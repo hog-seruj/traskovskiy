@@ -1,0 +1,22 @@
+uuid: 06e5054b-a8ef-46a6-8d68-51bd10b47b15
+langcode: uk
+status: true
+dependencies:
+  theme:
+    - zen
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: zen_local_tasks
+theme: zen
+region: content
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Вкладки
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

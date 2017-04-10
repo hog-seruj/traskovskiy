@@ -1,0 +1,24 @@
+uuid: 17a51e1e-eb18-4616-9e86-fa5dfd7f6489
+langcode: uk
+status: true
+dependencies:
+  config:
+    - views.view.taxonomy
+  module:
+    - views
+  theme:
+    - zen
+id: zen_views_block__taxonomy_block_1
+theme: zen
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:taxonomy-block_1'
+settings:
+  id: 'views_block:taxonomy-block_1'
+  label: 'Наши партнеры'
+  provider: views
+  label_display: '0'
+  views_label: 'Наши партнеры'
+  items_per_page: none
+visibility: {  }

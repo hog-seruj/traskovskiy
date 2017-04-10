@@ -1,0 +1,20 @@
+uuid: 4e402e16-0e14-4b1a-b964-f64e13c6be36
+langcode: uk
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - zen
+id: zen_peremikacmovi
+theme: zen
+region: primary_menu
+weight: -5
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Перемикач мови'
+  provider: language
+  label_display: '0'
+visibility: {  }
