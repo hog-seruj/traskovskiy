@@ -57,3 +57,48 @@
 .pager-current {
   @extend %pager__current-item;
 }
+
+
+.pager {
+
+  &__item {
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: color(pager-item);
+    }
+
+    &--last,
+    &--first {
+      display: none;
+    }
+
+    &--next ,
+    &--previous {
+      padding: 0 8px;
+    }
+
+    &--next a ,
+    &--previous a {
+      @include spacing(height, 17px);
+      @include spacing(width, 9px);
+      vertical-align: text-top;
+      font-size: 0;
+      display: inline-block;
+    }
+
+    &--next a {
+      background: url(../../../images-source/next.png) no-repeat center;
+    }
+
+    &--previous a {
+      background: url(../../../images-source/back.png) no-repeat center;
+    }
+
+    &.is-active a {
+      font-size: font-size(lx);
+      font-weight: weight(semi-bold);
+    }
+  }
+}

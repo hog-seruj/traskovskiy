@@ -118,8 +118,8 @@ input {
 // Style guide: forms.base.input
 
 [type='text'],
-[type='search'],
 [type='tel'],
+[type='search'],
 [type='url'],
 [type='email'],
 [type='password'],
@@ -127,6 +127,37 @@ input {
 [type='time'],
 [type='number'] {
   @extend %text-form-element !optional;
+  @include spacing(padding, 0 9px);
+  border: 1px solid color(input-border);
+  font-size: font-size(x);
+  font-style: italic;
+  max-width: 100%;
+  outline: none;
+  width: 100%;
+
+  ::-webkit-input-placeholder {
+    color: rgba(color(text), .6);
+  }
+
+  ::-moz-placeholder {
+    color: rgba(color(text), .6);
+  }
+
+  :-ms-input-placeholder {
+    color: rgba(color(text), .6);
+  }
+
+  :-moz-placeholder {
+    color: rgba(color(text), .6);
+  }
+}
+
+[type='search'] {
+  @include spacing(padding, 8px 9px);
+  background: url(../../../images-source/lens.png) no-repeat center right 12px;
+  border: 1px solid rgba(color(input-border-search), .6);
+  font-size: font-size(s);
+  font-style: normal;
 }
 
 [type='range'] {
@@ -171,6 +202,49 @@ input {
   box-sizing: border-box;
   // Remove the padding in IE <11.
   padding: 0;
+  vertical-align: middle;
+}
+
+[type="checkbox"] {
+  display: none;
+  + label.option {
+    @include spacing(min-height, 15px);
+    @include spacing(padding-left, 35px);
+    background: url('../../../images-source/checkbox.png') no-repeat;
+    background-position: left 2px;
+    background-size: 15px 15px;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  &:checked + label.option {
+    background: url('../../../images-source/checked.png') no-repeat;
+    background-position: left 2px;
+    background-size: 15px 15px;
+    font-weight: weight(bold);
+  }
+}
+
+[type="radio"] {
+  display: none;
+  + label.option {
+    @include spacing(min-height, 20px);
+    @include spacing(padding-left, 35px);
+    background: url('../../../images-source/radio.png') no-repeat ;
+    background-position: left top;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  &:checked + label.option {
+    background: url('../../../images-source/radio-check.png') no-repeat ;
+    background-position: left top;
+    font-weight: weight(bold);
+  }
+}
+
+.form-checkboxes .form-item.form-type-checkbox,
+.form-radios .form-item.form-item-radios {
+  @include spacing(margin-bottom, 12px);
+  @include spacing(margin-top, 12px);
 }
 
 // Fieldsets
@@ -215,8 +289,8 @@ legend {
 
 label {
   // Drupal-style form labels.
-  display: block;
   font-weight: bold;
+  vertical-align: middle;
 }
 
 // Select list

@@ -59,12 +59,6 @@
     @extend %form-item--tight;
   }
 
-  &--radio &__label,
-  &--radio__label {
-    display: inline;
-    font-weight: normal;
-  }
-
   &--radio &__description,
   &--radio__description {
     margin-left: 1.4em;
@@ -126,10 +120,6 @@ table {
   }
 }
 
-label.option {
-  @extend %form-item--radio__label;
-}
-
 .container-inline {
   .form-item {
     @extend %form-item--inline;
@@ -140,3 +130,5 @@ label.option {
     @extend %form-item--inline__exception;
   }
 }
+
+

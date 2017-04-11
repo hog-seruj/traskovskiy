@@ -37,16 +37,21 @@ button,
 [type='submit'] {
   @extend %button--disabled;
   // Some styles don't apply to <a> links since they are inline elements by default.
+  @include spacing(padding, 17px 75px 13px 75px);
   display: inline-block;
-  padding: 2px 6px;
   // Address Firefox 4+ setting `line-height` on `input` using `!important` in
   // the UA stylesheet. And prevent its "line-height: normal" rule below from
   // breaking the "appearance: button" styling on the input elements.
   line-height: inherit;
   text-decoration: none;
   // Improve usability and consistency of cursor style between image-type `input` and others.
+  background: color(white);
+  border-color: color(button-border);
+  border-style: solid;
   cursor: pointer;
   color: color(button);
+  font-size: font-size(bt);
+  outline: none;
 
   // Remove the inner border and padding in Firefox.
   &::-moz-focus-inner {
@@ -64,7 +69,8 @@ button,
   &:active {
     // Override any link underlines and color changes.
     text-decoration: none;
-    color: color(button);
+    color: color(button-hover-text);
+    background: color(button-border);
   }
 }
 
@@ -87,6 +93,6 @@ button,
   &:focus,
   &:active {
     // Override any link underlines and color changes.
-    color: color(button-disabled);
+    color: color(button-hover-text);
   }
 }

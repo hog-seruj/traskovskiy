@@ -18,6 +18,7 @@
 a,
 %link {
   color: color(link);
+  text-decoration: none;
   // Remove gaps in links underline in iOS 8+ and Safari 8+.
   -webkit-text-decoration-skip: objects;
 }
@@ -26,16 +27,17 @@ a,
 // safely lower this selector's specificity. This also ensures visited links
 // with additional styles won't have their styles overridden.
 :visited {
-  color: color(link-visited);
+  color: color(link);
 }
 
 a:hover,
 a:focus {
   // Add your styles.
+  text-decoration: underline;
 }
 
 a:active {
-  color: color(link-active);
+  color: color(link);
 
   &:not(.button) {
     // Remove the gray background on active links in IE 10.
@@ -58,7 +60,7 @@ a:hover {
   }
 
   // Add visible URL after links.
-  a[href]:after {
+  a[href]::after {
     content: ' (' attr(href) ')';
     font-weight: normal;
     font-size: $base-font-size;
@@ -66,8 +68,8 @@ a:hover {
   }
 
   // Only display useful links.
-  a[href^='javascript:']:after,
-  a[href^='#']:after {
+  a[href^='javascript:']::after,
+  a[href^='#']::after {
     content: '';
   }
 }

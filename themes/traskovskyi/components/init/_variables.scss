@@ -41,17 +41,25 @@ $base-line-height:  24px;
 
 // The font sizes in our type hierarchy as tee shirt sizes.
 $font-size: (
-  xxl:              32px,
+  xxxxxl:           65px,
+  xxxxl:            36px,
+  xxxl:             32px,
+  xxl:              28px,
   xl:               24px,
+  bt:               22px,
   l:                20px,
+  lx:               19px,
   m:                $base-font-size,
   s:                14px,
-  xs:               10px
+  ss:               12px,
+  xs:               10px,
+  x:                9px
 );
 
 // Typey allows you to alter font weights site-wide with this map.
 $font-weight: (
   bold:             bold,
+  semi-bold:        600,
   medium:           500,
   normal:           normal,
   light:            300,
