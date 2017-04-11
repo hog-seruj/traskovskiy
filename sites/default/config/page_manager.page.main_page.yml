@@ -1,0 +1,12 @@
+uuid: 476998ef-b7a7-4e8b-807d-56ffb610de21
+langcode: uk
+status: true
+dependencies: {  }
+id: main_page
+label: 'Main page'
+description: ''
+use_admin_theme: false
+path: /main
+access_logic: and
+access_conditions: {  }
+parameters: {  }

@@ -1,0 +1,8 @@
+uuid: c6abfcc4-2478-4a74-be48-ee9d06e1ab8e
+langcode: uk
+status: true
+dependencies: {  }
+id: block_with_menu
+label: 'Блок з меню'
+revision: 0
+description: ''

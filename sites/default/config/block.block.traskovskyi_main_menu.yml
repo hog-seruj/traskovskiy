@@ -1,6 +1,6 @@
 uuid: 117eaa6a-85b3-4c3d-aca3-126a471dcea0
 langcode: uk
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,7 +12,7 @@ _core:
   default_config_hash: mN0Topka62lq58rZTsbPdQ0TZt_erYcuUlqvOltQqz0
 id: traskovskyi_main_menu
 theme: traskovskyi
-region: primary_menu
+region: '-1'
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'

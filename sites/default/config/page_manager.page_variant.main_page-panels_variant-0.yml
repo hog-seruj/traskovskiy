@@ -1,0 +1,188 @@
+uuid: 67ac585f-ca90-4e1f-a5b9-d16e3c67795d
+langcode: uk
+status: true
+dependencies:
+  config:
+    - page_manager.page.main_page
+    - system.menu.main
+    - views.view.content_view
+    - views.view.taxonomy
+  content:
+    - 'block_content:basic:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
+    - 'block_content:basic:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+    - 'block_content:basic:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+    - 'block_content:block_with_links:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+    - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+  module:
+    - block_content
+    - language
+    - panels
+    - search
+    - system
+    - views
+id: main_page-panels_variant-0
+label: 'Головна сторінка'
+variant: panels_variant
+variant_settings:
+  blocks:
+    0b01b466-e523-4c7c-86d0-3adb7b135cac:
+      id: 'system_menu_block:main'
+      label: 'Основная навигация'
+      provider: system
+      label_display: '0'
+      level: 1
+      depth: 0
+      region: header
+      weight: -9
+      uuid: 0b01b466-e523-4c7c-86d0-3adb7b135cac
+      context_mapping: {  }
+    39d7c1e7-a038-4143-85d4-43ba73b22e9f:
+      id: 'language_block:language_interface'
+      label: 'Перемикач мови'
+      provider: language
+      label_display: '0'
+      region: header
+      weight: -7
+      uuid: 39d7c1e7-a038-4143-85d4-43ba73b22e9f
+      context_mapping: {  }
+    c75bf850-b3f8-4d53-ab5d-4161fe7d7f01:
+      id: 'views_block:taxonomy-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: footer
+      weight: -4
+      uuid: c75bf850-b3f8-4d53-ab5d-4161fe7d7f01
+      context_mapping: {  }
+    383c9ef6-e6f4-44ac-92fd-a01a36996019:
+      id: 'block_content:f68b3888-7a88-404e-8fa6-52857ca95cd2'
+      label: 'Наші партнери'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: footer
+      weight: -5
+      uuid: 383c9ef6-e6f4-44ac-92fd-a01a36996019
+      context_mapping: {  }
+    14212855-88e5-4609-9927-e792c7e00bd0:
+      id: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+      label: 'Про нас'
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: footer
+      weight: -2
+      uuid: 14212855-88e5-4609-9927-e792c7e00bd0
+      context_mapping: {  }
+    c4b1fe48-86ea-4e5b-9071-31ed5b059c50:
+      id: 'views_block:content_view-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: footer
+      weight: -1
+      uuid: c4b1fe48-86ea-4e5b-9071-31ed5b059c50
+      context_mapping: {  }
+    a40090df-be4a-48e3-a5c9-2687643287fe:
+      id: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+      label: 'Ми в соцмережах'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: footer
+      weight: 0
+      uuid: a40090df-be4a-48e3-a5c9-2687643287fe
+      context_mapping: {  }
+    b0f8075c-28a7-4adb-bd82-a50e927c8fa7:
+      id: search_form_block
+      label: 'Пошукова форма'
+      provider: search
+      label_display: '0'
+      region: header
+      weight: -8
+      uuid: b0f8075c-28a7-4adb-bd82-a50e927c8fa7
+      context_mapping: {  }
+    7966f68e-6b74-4e09-899b-338adbe2a326:
+      id: system_branding_block
+      label: 'Брендинг сайта'
+      provider: system
+      label_display: '0'
+      use_site_logo: true
+      use_site_name: false
+      use_site_slogan: false
+      region: footer
+      weight: -3
+      uuid: 7966f68e-6b74-4e09-899b-338adbe2a326
+      context_mapping: {  }
+    de1559a2-78ba-492e-86cf-ebe3907ee8ff:
+      id: system_branding_block
+      label: 'Брендинг сайта'
+      provider: system
+      label_display: '0'
+      use_site_logo: true
+      use_site_name: false
+      use_site_slogan: false
+      region: header
+      weight: -10
+      uuid: de1559a2-78ba-492e-86cf-ebe3907ee8ff
+      context_mapping: {  }
+    9a647869-6d52-4a37-b424-8ac33ccd9ecf:
+      id: 'block_content:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
+      label: 'Power by Dev-company'
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: footer
+      weight: 1
+      uuid: 9a647869-6d52-4a37-b424-8ac33ccd9ecf
+      context_mapping: {  }
+    952fe86a-23d5-44ef-a122-29c8f0de2ca8:
+      id: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+      label: 'Садова техніка'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: left
+      weight: -5
+      uuid: 952fe86a-23d5-44ef-a122-29c8f0de2ca8
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 6b89399d-dcb2-4b0c-87f3-f69434172e41
+  label: null
+  weight: 0
+  layout: ds_2col_stacked_fluid
+  layout_settings:
+    wrappers:
+      header: div
+      left: div
+      right: div
+      footer: div
+    outer_wrapper: div
+    attributes: ''
+    link_attribute: ''
+    link_custom: ''
+    classes:
+      layout_class: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: main_page-panels_variant-0
+  builder: ipe
+page: main_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
