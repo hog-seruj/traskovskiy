@@ -1,6 +1,6 @@
 uuid: 1b00cf4c-ddef-4f7d-aa2b-845a2ebfead7
 langcode: uk
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -12,7 +12,7 @@ _core:
   default_config_hash: OftqWfxdOxSvKmsUhT3EtspGbfIWGS0nqUZ_I3CyMho
 id: traskovskyi_footer
 theme: traskovskyi
-region: footer
+region: '-1'
 weight: 0
 provider: null
 plugin: 'system_menu_block:footer'

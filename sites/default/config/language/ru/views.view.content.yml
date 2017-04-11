@@ -1,0 +1,67 @@
+label: Содержимое
+description: 'Поиск материалов и управление ими'
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Фильтр
+          reset_button_label: Сбросить
+          exposed_sorts_label: 'Сортировать по:'
+          sort_asc_label: 'По возрастанию'
+          sort_desc_label: Убыв
+      pager:
+        options:
+          tags:
+            previous: '‹ Предыдущий'
+            next: 'Следующий ›'
+            first: '« Первая'
+            last: 'Последняя »'
+      fields:
+        title:
+          label: Заголовок
+        type:
+          label: 'Тип материала'
+          separator: ', '
+        name:
+          label: Автор
+        status:
+          label: Статус
+        changed:
+          label: Обновлено
+        operations:
+          label: Операции
+      filters:
+        status:
+          expose:
+            label: Статус
+          group_info:
+            label: 'Статус публикации'
+            group_items:
+              1:
+                title: Опубликовано
+                value: '1'
+              2:
+                title: 'Снято с публикации'
+        type:
+          expose:
+            label: 'Тип материала'
+        title:
+          expose:
+            label: Заголовок
+        langcode:
+          expose:
+            label: Язык
+      title: Содержимое
+      empty:
+        area_text_custom:
+          content: 'Нет доступных материалов.'
+    display_title: Основной
+  page_1:
+    display_options:
+      menu:
+        title: Содержимое
+      tab_options:
+        title: Содержимое
+        description: 'Поиск материалов и управление ими'
+    display_title: Страница

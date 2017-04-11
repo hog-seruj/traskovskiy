@@ -1,6 +1,6 @@
 uuid: 5af8cbfe-1847-4060-8e02-863b12459f14
 langcode: uk
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
@@ -12,7 +12,7 @@ _core:
   default_config_hash: zS2y6oJ5tscfTGuOZ1vUOR_HVtv7lqAvNM-GZp-QU7g
 id: traskovskyi_account_menu
 theme: traskovskyi
-region: secondary_menu
+region: '-1'
 weight: 0
 provider: null
 plugin: 'system_menu_block:account'

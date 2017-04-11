@@ -1,0 +1,207 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/block\/6?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/block_with_menu"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/revision_user": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            },
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "ru"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "6"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fb6833cb-ed36-4963-ba67-fdcbb1ce5f64"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        },
+        {
+            "value": "ru",
+            "lang": "ru"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "block_with_menu"
+        }
+    ],
+    "info": [
+        {
+            "value": "\u0421\u0430\u0434\u043e\u0432\u0430 \u0442\u0435\u0445\u043d\u0456\u043a\u0430",
+            "lang": "uk"
+        },
+        {
+            "value": "\u0421\u0430\u0434\u043e\u0432\u0430 \u0442\u0435\u0445\u043d\u0456\u043a\u0430",
+            "lang": "ru"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491899587",
+            "lang": "uk"
+        },
+        {
+            "value": "1491900708",
+            "lang": "ru"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1491899587"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ],
+                "lang": "uk"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ],
+                "lang": "ru"
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        },
+        {
+            "value": "1",
+            "lang": "ru"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        },
+        {
+            "value": "0",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        },
+        {
+            "value": "uk",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        },
+        {
+            "value": "0",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        },
+        {
+            "value": "1",
+            "lang": "ru"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491899587",
+            "lang": "uk"
+        },
+        {
+            "value": "1491900708",
+            "lang": "ru"
+        }
+    ],
+    "body": [
+        {
+            "value": "Proin eget tortor risus. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. ",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "uk"
+        },
+        {
+            "value": "Proin eget tortor risus.",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "ru"
+        }
+    ]
+}

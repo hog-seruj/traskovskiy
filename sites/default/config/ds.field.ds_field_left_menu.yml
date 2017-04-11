@@ -1,0 +1,17 @@
+id: ds_field_left_menu
+label: 'Меню зліва'
+ui_limit: ''
+properties:
+  block: 'system_menu_block:left-menu'
+  use_block_title: true
+  config:
+    id: 'system_menu_block:left-menu'
+    label: ''
+    provider: system
+    label_display: visible
+    level: 1
+    depth: 0
+type: block
+type_label: 'Block field'
+entities:
+  block_content: block_content

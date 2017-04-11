@@ -1,0 +1,25 @@
+uuid: 0a71318f-97ae-455c-a63a-d403c7bfabe8
+langcode: uk
+status: false
+dependencies:
+  content:
+    - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: sadovatehnika
+theme: traskovskyi
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+settings:
+  id: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+  label: 'Садова техніка'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

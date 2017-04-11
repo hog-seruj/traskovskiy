@@ -52,8 +52,7 @@ display:
       pager:
         type: none
         options:
-          items_per_page: null
-          offset: 0
+          offset: 10
       style:
         type: default
       row:

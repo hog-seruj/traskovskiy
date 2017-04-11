@@ -1,0 +1,51 @@
+uuid: ca9c8f25-586f-451e-b939-ddb580cf25b2
+langcode: uk
+status: true
+dependencies:
+  config:
+    - block_content.type.block_with_menu
+    - field.field.block_content.block_with_menu.body
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      path: modules/contrib/ds
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - body
+        - field_menu
+        - 'dynamic_block_field:block_content-ds_field_left_menu'
+    fields:
+      'dynamic_block_field:block_content-ds_field_left_menu':
+        plugin_id: 'dynamic_block_field:block_content-ds_field_left_menu'
+        weight: 2
+        label: hidden
+        formatter: default
+id: block_content.block_with_menu.default
+targetEntityType: block_content
+bundle: block_with_menu
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/block\/4?_format=hal_json"
+            "href": "http:\/\/www\/uk\/block\/4?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/block_with_links"
         },
         "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_links\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
                 "lang": "ru"
             }
         ]
@@ -59,7 +59,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491834570",
+            "value": "1491899034",
             "lang": "ru"
         }
     ],
@@ -113,7 +113,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -121,7 +121,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "05556f25-aed5-444b-9abd-69c76af5cc5f"
+                        "value": "339a2934-b20d-4027-a5d3-36431851ab9e"
                     }
                 ],
                 "lang": "ru"
@@ -144,7 +144,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491834570",
+            "value": "1491894585",
             "lang": "ru"
         }
     ],
