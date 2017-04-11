@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/block\/2?_format=hal_json"
+            "href": "http:\/\/www\/uk\/block\/2?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
         },
         "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
             {
-                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
                 "lang": "ru"
             }
         ]
@@ -59,7 +59,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491834570",
+            "value": "1491900989",
             "lang": "ru"
         }
     ],
@@ -113,7 +113,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -121,7 +121,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "05556f25-aed5-444b-9abd-69c76af5cc5f"
+                        "value": "339a2934-b20d-4027-a5d3-36431851ab9e"
                     }
                 ],
                 "lang": "ru"
@@ -144,7 +144,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491834570",
+            "value": "1491894585",
             "lang": "ru"
         }
     ],
@@ -156,7 +156,7 @@
             "lang": "uk"
         },
         {
-            "value": "<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.<\/p>\r\n",
+            "value": "<p>Quisque velit nisi, pretium ut lacinia in, elementum id enim.<\/p>\r\n",
             "format": "full_html",
             "summary": "",
             "lang": "ru"

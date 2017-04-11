@@ -136,6 +136,8 @@ projects:
   panels:
     type: "module"
     version: "3.0-beta5"
+    patch:
+    - https://www.drupal.org/files/issues/panels-branding-block-2709521-9.patch # https://www.drupal.org/node/2709521
 
   paragraphs:
     type: "module"

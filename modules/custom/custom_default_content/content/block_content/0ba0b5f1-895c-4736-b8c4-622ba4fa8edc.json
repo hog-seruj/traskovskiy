@@ -1,0 +1,145 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/block\/5?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "5"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0ba0b5f1-895c-4736-b8c4-622ba4fa8edc"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "5"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "Power by Dev-company",
+            "lang": "uk"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491898946",
+            "lang": "uk"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1491898946"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491898946",
+            "lang": "uk"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Dev-company<\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "uk"
+        }
+    ]
+}

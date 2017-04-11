@@ -1,0 +1,25 @@
+uuid: bf21bd13-7fcd-47c7-8a3c-86abc9f03f3a
+langcode: uk
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: powerbydevcompany
+theme: traskovskyi
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
+settings:
+  id: 'block_content:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
+  label: 'Power by Dev-company'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

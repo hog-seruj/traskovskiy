@@ -1,0 +1,8 @@
+uuid: 09ed3803-ae34-4c4c-b0f8-7d49f8982204
+langcode: uk
+status: true
+dependencies: {  }
+id: left-menu
+label: 'Меню зліва'
+description: 'Меню зліва'
+locked: false

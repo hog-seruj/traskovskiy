@@ -1,6 +1,6 @@
 uuid: f0a463de-48c0-40c2-ad88-244d9db4bdde
 langcode: uk
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,7 +10,7 @@ _core:
   default_config_hash: pmjbzv_RAoXO91iKRI-Bb57mos9kM1exNBQVwu2Nj00
 id: traskovskyi_breadcrumbs
 theme: traskovskyi
-region: breadcrumb
+region: '-1'
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
