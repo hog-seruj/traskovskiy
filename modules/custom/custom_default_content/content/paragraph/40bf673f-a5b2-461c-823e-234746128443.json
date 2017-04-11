@@ -1,0 +1,162 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/contacts"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/revision_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "3"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "40bf673f-a5b2-461c-823e-234746128443"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "3"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "contacts"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "created": [
+        {
+            "value": "1491912306",
+            "lang": "uk"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "7"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_paragraph"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_changed": [
+        {
+            "value": "1491912751",
+            "lang": "uk"
+        }
+    ],
+    "field_contact_address": [
+        {
+            "value": "45522, \u0423\u043a\u0440\u0430\u0457\u043d\u0430 \u0412\u043e\u043b. \u043e\u0431\u043b. \u041b\u043e\u043a\u0430\u0447\u0438\u043d\u0441\u044c\u0438\u0439 \u0440\u0430\u0439\u043e\u043d, \u0441. \u041c\u0430\u043d\u044c\u043a\u0456\u0432, \u0432\u0443\u043b. \u041f\u0435\u0440\u0448\u043e\u0442\u0440\u0430\u0432\u043d\u0435\u0432\u0430 21",
+            "format": "restricted_html",
+            "lang": "uk"
+        }
+    ],
+    "field_contact_phone": [
+        {
+            "value": "033 22 238-34-94\r\n098 22 238-34-94",
+            "format": "restricted_html",
+            "lang": "uk"
+        }
+    ],
+    "field_contact_schedule": [
+        {
+            "value": "\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n",
+            "format": "restricted_html",
+            "lang": "uk"
+        }
+    ],
+    "field_contact_title": [
+        {
+            "value": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438",
+            "lang": "uk"
+        }
+    ]
+}

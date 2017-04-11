@@ -1,0 +1,33 @@
+uuid: cb1e05b0-f73b-42d0-972e-82453948f06a
+langcode: uk
+status: true
+dependencies:
+  config:
+    - block_content.type.contact
+    - field.storage.block_content.field_paragraph
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - entity_reference_revisions
+id: block_content.contact.field_paragraph
+field_name: field_paragraph
+entity_type: block_content
+bundle: contact
+label: Параграф
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contacts: contacts
+    target_bundles_drag_drop:
+      contacts:
+        enabled: true
+        weight: 3
+      text_button:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

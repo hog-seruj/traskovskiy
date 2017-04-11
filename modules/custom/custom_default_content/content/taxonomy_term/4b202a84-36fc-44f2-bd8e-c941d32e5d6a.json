@@ -30,8 +30,7 @@
     ],
     "name": [
         {
-            "value": "\u0421\u043c\u043e\u0440\u043e\u0434\u0438\u043d\u0430",
-            "lang": "uk"
+            "value": "\u0421\u043c\u043e\u0440\u043e\u0434\u0438\u043d\u0430"
         }
     ],
     "weight": [
@@ -41,8 +40,7 @@
     ],
     "changed": [
         {
-            "value": "1491837720",
-            "lang": "uk"
+            "value": "1491837720"
         }
     ],
     "default_langcode": [

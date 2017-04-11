@@ -13,6 +13,7 @@ dependencies:
     - 'block_content:basic:f68b3888-7a88-404e-8fa6-52857ca95cd2'
     - 'block_content:block_with_links:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
     - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+    - 'block_content:contact:9ff3223e-24e3-4d54-b57b-0f88acf9e131'
   module:
     - block_content
     - language
@@ -159,6 +160,29 @@ variant_settings:
       region: left
       weight: -5
       uuid: 952fe86a-23d5-44ef-a122-29c8f0de2ca8
+      context_mapping: {  }
+    fa99deca-9422-485f-9761-c983877acf54:
+      id: 'views_block:content_view-block_2'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: header
+      weight: -6
+      uuid: fa99deca-9422-485f-9761-c983877acf54
+      context_mapping: {  }
+    a8affbe9-709d-41c0-933b-c03e541a31f1:
+      id: 'block_content:9ff3223e-24e3-4d54-b57b-0f88acf9e131'
+      label: Контакти
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: right
+      weight: -6
+      uuid: a8affbe9-709d-41c0-933b-c03e541a31f1
       context_mapping: {  }
   id: panels_variant
   uuid: 6b89399d-dcb2-4b0c-87f3-f69434172e41

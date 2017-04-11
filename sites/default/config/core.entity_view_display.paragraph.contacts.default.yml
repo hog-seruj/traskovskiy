@@ -1,0 +1,76 @@
+uuid: d818da57-0ba9-410d-bfb7-8d98e56e2709
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contacts.field_contact_address
+    - field.field.paragraph.contacts.field_contact_email
+    - field.field.paragraph.contacts.field_contact_phone
+    - field.field.paragraph.contacts.field_contact_schedule
+    - field.field.paragraph.contacts.field_contact_title
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_2col_stacked
+      path: modules/contrib/ds
+      library: layout_plugin/ds_2col_stacked
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          header: div
+          left: div
+          right: div
+          footer: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      header:
+        - field_contact_title
+        - field_contact_address
+      left:
+        - field_contact_phone
+      right:
+        - field_contact_schedule
+id: paragraph.contacts.default
+targetEntityType: paragraph
+bundle: contacts
+mode: default
+content:
+  field_contact_address:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_contact_phone:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_contact_schedule:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_contact_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  field_contact_email: true
+  uid: true

@@ -1,0 +1,23 @@
+uuid: 8e3c212e-72b8-4dca-8ae8-ddbb72053de7
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.text_button
+  module:
+    - link
+id: paragraph.text_button.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: text_button
+label: Посилання
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

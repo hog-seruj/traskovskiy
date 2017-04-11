@@ -1,0 +1,35 @@
+uuid: 66381134-3302-4e6b-916a-e61a63c544f9
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.slider
+    - paragraphs.paragraphs_type.contacts
+    - paragraphs.paragraphs_type.text_button
+  module:
+    - entity_reference_revisions
+id: node.slider.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: slider
+label: Параграфи
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      text_button: text_button
+      contacts: contacts
+    target_bundles_drag_drop:
+      text_button:
+        enabled: true
+        weight: 2
+      contacts:
+        enabled: true
+        weight: 3
+field_type: entity_reference_revisions

@@ -1,0 +1,19 @@
+uuid: 3db41377-27ea-4c95-a9e3-2b6b02c3b2c4
+langcode: uk
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_contact_address
+field_name: field_contact_address
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
