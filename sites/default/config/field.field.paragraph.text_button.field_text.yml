@@ -1,0 +1,21 @@
+uuid: 166c1463-81a2-41e4-85b5-d4b5fde177c6
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.text_button
+  module:
+    - text
+id: paragraph.text_button.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: text_button
+label: Текст
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: a8fa5392-c5b9-4215-b06b-e52f02a62c42
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_address
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - text
+id: paragraph.contacts.field_contact_address
+field_name: field_contact_address
+entity_type: paragraph
+bundle: contacts
+label: Адреса
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

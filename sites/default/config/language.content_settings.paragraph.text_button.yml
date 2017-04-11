@@ -1,0 +1,16 @@
+uuid: fab59a5b-595f-48f1-94a4-30144cf15839
+langcode: uk
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.text_button
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.text_button
+target_entity_type_id: paragraph
+target_bundle: text_button
+default_langcode: site_default
+language_alterable: true

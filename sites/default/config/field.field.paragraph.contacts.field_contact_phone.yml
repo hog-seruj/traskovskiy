@@ -1,0 +1,21 @@
+uuid: dcc578f1-bca1-421d-9467-1b4c6561db20
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_phone
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - text
+id: paragraph.contacts.field_contact_phone
+field_name: field_contact_phone
+entity_type: paragraph
+bundle: contacts
+label: Телефон
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,59 @@
+На ветке f3648
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (используйте «git checkout -- <файл>…», чтобы отменить изменения
+   в рабочем каталоге)
+
+	изменено:                   modules/custom/custom_default_content/content/taxonomy_term/4b202a84-36fc-44f2-bd8e-c941d32e5d6a.json
+	изменено:                   modules/custom/custom_default_content/content/taxonomy_term/98cadeb8-c166-4752-a315-9bb84771bd0d.json
+	изменено:                   modules/custom/custom_default_content/content/taxonomy_term/c28d0752-8cef-49da-ac5c-7f4c4029f239.json
+	изменено:                   modules/custom/custom_default_content/content/taxonomy_term/f6d2a5bc-1949-4dd8-92f9-b6bf7ceb9981.json
+	изменено:                   sites/default/config/page_manager.page_variant.main_page-panels_variant-0.yml
+	изменено:                   sites/default/config/views.view.content_view.yml
+
+Неотслеживаемые файлы:
+  (используйте «git add <файл>…», чтобы добавить в то, что будет включено в коммит)
+
+	log.txt
+	modules/custom/custom_default_content/content/file/b6cde65e-cf3c-4dca-826e-7fb9aa10f9c8.json
+	modules/custom/custom_default_content/content/file/f135f265-b861-43dc-a508-2903ee3af941.json
+	modules/custom/custom_default_content/content/file/f1e6bc2b-4133-4aff-b5b3-0ca5c3422a02.json
+	modules/custom/custom_default_content/content/node/
+	modules/custom/custom_default_content/content/paragraph/
+	sites/default/config/core.base_field_override.node.slider.promote.yml
+	sites/default/config/core.entity_form_display.node.slider.default.yml
+	sites/default/config/core.entity_form_display.paragraph.contacts.default.yml
+	sites/default/config/core.entity_form_display.paragraph.text_button.default.yml
+	sites/default/config/core.entity_view_display.node.slider.default.yml
+	sites/default/config/core.entity_view_display.node.slider.teaser.yml
+	sites/default/config/core.entity_view_display.paragraph.contacts.default.yml
+	sites/default/config/core.entity_view_display.paragraph.contacts.teaser.yml
+	sites/default/config/core.entity_view_display.paragraph.text_button.default.yml
+	sites/default/config/core.entity_view_mode.paragraph.teaser.yml
+	sites/default/config/field.field.node.slider.field_paragraphs.yml
+	sites/default/config/field.field.node.slider.field_slide_photo.yml
+	sites/default/config/field.field.paragraph.contacts.field_contact_address.yml
+	sites/default/config/field.field.paragraph.contacts.field_contact_email.yml
+	sites/default/config/field.field.paragraph.contacts.field_contact_phone.yml
+	sites/default/config/field.field.paragraph.contacts.field_contact_schedule.yml
+	sites/default/config/field.field.paragraph.contacts.field_contact_title.yml
+	sites/default/config/field.field.paragraph.text_button.field_link.yml
+	sites/default/config/field.field.paragraph.text_button.field_text.yml
+	sites/default/config/field.storage.node.field_paragraphs.yml
+	sites/default/config/field.storage.node.field_slide_photo.yml
+	sites/default/config/field.storage.paragraph.field_contact_address.yml
+	sites/default/config/field.storage.paragraph.field_contact_email.yml
+	sites/default/config/field.storage.paragraph.field_contact_phone.yml
+	sites/default/config/field.storage.paragraph.field_contact_schedule.yml
+	sites/default/config/field.storage.paragraph.field_contact_title.yml
+	sites/default/config/field.storage.paragraph.field_link.yml
+	sites/default/config/field.storage.paragraph.field_text.yml
+	sites/default/config/language.content_settings.node.slider.yml
+	sites/default/config/language.content_settings.paragraph.contacts.yml
+	sites/default/config/language.content_settings.paragraph.text_button.yml
+	sites/default/config/node.type.slider.yml
+	sites/default/config/paragraphs.paragraphs_type.contacts.yml
+	sites/default/config/paragraphs.paragraphs_type.text_button.yml
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)

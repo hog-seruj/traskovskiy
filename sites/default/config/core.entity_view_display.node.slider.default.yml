@@ -1,0 +1,65 @@
+uuid: e0d3faf4-5bda-4673-a6d0-ea49a0767897
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.field.node.slider.field_paragraphs
+    - field.field.node.slider.field_slide_photo
+    - node.type.slider
+  module:
+    - ds
+    - entity_reference_revisions
+    - image
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      path: modules/contrib/ds
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_paragraphs
+        - field_slide_photo
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.slider.default
+targetEntityType: node
+bundle: slider
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: ''
+    third_party_settings: {  }
+  field_slide_photo:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  langcode: true
+  links: true
