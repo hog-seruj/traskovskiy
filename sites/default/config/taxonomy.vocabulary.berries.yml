@@ -1,9 +1,9 @@
-uuid: 036d5295-f198-4be7-95ca-f6374ce2fd88
+uuid: 9d0fd2a0-75fb-4d94-ae70-580e15dbc062
 langcode: uk
 status: true
 dependencies: {  }
-name: Фрукти
-vid: frukti
+name: Ягоди
+vid: berries
 description: ''
 hierarchy: 0
 weight: 0

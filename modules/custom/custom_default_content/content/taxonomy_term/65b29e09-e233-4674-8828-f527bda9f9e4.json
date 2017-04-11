@@ -1,12 +1,12 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/taxonomy\/term\/3?_format=hal_json"
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/11?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/frukti"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "uk"
@@ -15,12 +15,12 @@
     },
     "tid": [
         {
-            "value": "3"
+            "value": "11"
         }
     ],
     "uuid": [
         {
-            "value": "c28d0752-8cef-49da-ac5c-7f4c4029f239"
+            "value": "65b29e09-e233-4674-8828-f527bda9f9e4"
         }
     ],
     "langcode": [
@@ -31,23 +31,23 @@
     ],
     "vid": [
         {
-            "target_id": "frukti"
+            "target_id": "berries"
         }
     ],
     "name": [
         {
-            "value": "\u041c\u0430\u043b\u0438\u043d\u0430",
+            "value": "\u041f\u043e\u043b\u0443\u043d\u0438\u0446\u044f",
             "lang": "uk"
         }
     ],
     "weight": [
         {
-            "value": "3"
+            "value": "0"
         }
     ],
     "changed": [
         {
-            "value": "1491837720",
+            "value": "1491906303",
             "lang": "uk"
         }
     ],
@@ -70,7 +70,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -97,7 +97,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "1491837543",
+            "value": "1491906303",
             "lang": "uk"
         }
     ]

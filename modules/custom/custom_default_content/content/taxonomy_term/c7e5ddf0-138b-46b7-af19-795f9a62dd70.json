@@ -1,12 +1,12 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/taxonomy\/term\/6?_format=hal_json"
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/13?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/frukti"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "uk"
@@ -15,12 +15,12 @@
     },
     "tid": [
         {
-            "value": "6"
+            "value": "13"
         }
     ],
     "uuid": [
         {
-            "value": "4b202a84-36fc-44f2-bd8e-c941d32e5d6a"
+            "value": "c7e5ddf0-138b-46b7-af19-795f9a62dd70"
         }
     ],
     "langcode": [
@@ -31,7 +31,7 @@
     ],
     "vid": [
         {
-            "target_id": "frukti"
+            "target_id": "berries"
         }
     ],
     "name": [
@@ -42,12 +42,12 @@
     ],
     "weight": [
         {
-            "value": "2"
+            "value": "0"
         }
     ],
     "changed": [
         {
-            "value": "1491837720",
+            "value": "1491906319",
             "lang": "uk"
         }
     ],
@@ -70,7 +70,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -97,7 +97,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "1491837563",
+            "value": "1491906319",
             "lang": "uk"
         }
     ]

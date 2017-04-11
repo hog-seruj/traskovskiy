@@ -1,0 +1,8 @@
+uuid: 864a52d3-c545-4a4a-b027-70fc124c1142
+langcode: uk
+status: true
+dependencies: {  }
+id: taxonomy-berries-menu
+label: 'taxonomy berries menu'
+description: ''
+locked: false

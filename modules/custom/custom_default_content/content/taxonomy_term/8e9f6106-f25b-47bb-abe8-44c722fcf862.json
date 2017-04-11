@@ -1,12 +1,12 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/taxonomy\/term\/4?_format=hal_json"
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/12?_format=hal_json"
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/frukti"
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "uk"
@@ -15,12 +15,12 @@
     },
     "tid": [
         {
-            "value": "4"
+            "value": "12"
         }
     ],
     "uuid": [
         {
-            "value": "f6d2a5bc-1949-4dd8-92f9-b6bf7ceb9981"
+            "value": "8e9f6106-f25b-47bb-abe8-44c722fcf862"
         }
     ],
     "langcode": [
@@ -31,12 +31,12 @@
     ],
     "vid": [
         {
-            "target_id": "frukti"
+            "target_id": "berries"
         }
     ],
     "name": [
         {
-            "value": "\u041f\u043e\u043b\u0443\u043d\u0438\u0446\u044f",
+            "value": "\u041b\u043e\u0445\u0438\u043d\u0430",
             "lang": "uk"
         }
     ],
@@ -47,7 +47,7 @@
     ],
     "changed": [
         {
-            "value": "1491837720",
+            "value": "1491906314",
             "lang": "uk"
         }
     ],
@@ -70,7 +70,7 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
             {
                 "_links": {
                     "self": {
@@ -97,7 +97,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "1491837552",
+            "value": "1491906314",
             "lang": "uk"
         }
     ]

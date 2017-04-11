@@ -1,0 +1,38 @@
+uuid: 16f844c8-8d57-496e-b967-68e3cc823e3e
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_photo_gallery
+    - taxonomy.vocabulary.berries
+  module:
+    - image
+id: taxonomy_term.berries.field_photo_gallery
+field_name: field_photo_gallery
+entity_type: taxonomy_term
+bundle: berries
+label: 'Галерея фото'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image
