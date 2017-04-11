@@ -1,0 +1,22 @@
+uuid: b79575e7-706e-4c29-b4a8-7d12812e306d
+langcode: uk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.slider.field_paragraphs
+    - field.field.node.slider.field_slide_photo
+    - node.type.slider
+  module:
+    - user
+id: node.slider.teaser
+targetEntityType: node
+bundle: slider
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_paragraphs: true
+  field_slide_photo: true
+  langcode: true

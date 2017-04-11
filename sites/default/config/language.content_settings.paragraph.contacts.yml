@@ -1,0 +1,16 @@
+uuid: cd46c625-c3d0-41dc-992a-248857c58b95
+langcode: uk
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: paragraph.contacts
+target_entity_type_id: paragraph
+target_bundle: contacts
+default_langcode: site_default
+language_alterable: true

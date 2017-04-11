@@ -1,0 +1,21 @@
+uuid: 4b2c1361-af5f-465b-9b6c-ec196b4f7ac1
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_schedule
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - text
+id: paragraph.contacts.field_contact_schedule
+field_name: field_contact_schedule
+entity_type: paragraph
+bundle: contacts
+label: 'Графік роботи'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

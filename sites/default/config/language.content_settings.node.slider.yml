@@ -1,0 +1,16 @@
+uuid: 14304180-36f8-437b-8e61-7e7d7192cfa4
+langcode: uk
+status: true
+dependencies:
+  config:
+    - node.type.slider
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: node.slider
+target_entity_type_id: node
+target_bundle: slider
+default_langcode: site_default
+language_alterable: true

@@ -1,0 +1,36 @@
+uuid: ca5cff1c-7d48-45dc-8eac-2726bb059938
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_button.field_link
+    - field.field.paragraph.text_button.field_text
+    - paragraphs.paragraphs_type.text_button
+  module:
+    - link
+    - text
+id: paragraph.text_button.default
+targetEntityType: paragraph
+bundle: text_button
+mode: default
+content:
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_text:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

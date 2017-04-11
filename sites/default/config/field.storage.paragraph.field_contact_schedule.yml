@@ -1,0 +1,19 @@
+uuid: 8714900d-aef2-4c13-9bd4-12b7de8ee914
+langcode: uk
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_contact_schedule
+field_name: field_contact_schedule
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

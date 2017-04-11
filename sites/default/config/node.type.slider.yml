@@ -1,0 +1,18 @@
+uuid: df8af730-5e34-414b-b54e-c5cd45934e4a
+langcode: uk
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Слайдер
+type: slider
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

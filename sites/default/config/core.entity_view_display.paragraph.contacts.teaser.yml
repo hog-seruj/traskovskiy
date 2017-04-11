@@ -1,0 +1,66 @@
+uuid: 4b774c1f-ed30-47bd-8250-a07d313330ed
+langcode: uk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teaser
+    - field.field.paragraph.contacts.field_contact_address
+    - field.field.paragraph.contacts.field_contact_email
+    - field.field.paragraph.contacts.field_contact_phone
+    - field.field.paragraph.contacts.field_contact_schedule
+    - field.field.paragraph.contacts.field_contact_title
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      path: modules/contrib/ds
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_contact_address
+        - field_contact_phone
+        - field_contact_email
+id: paragraph.contacts.teaser
+targetEntityType: paragraph
+bundle: contacts
+mode: teaser
+content:
+  field_contact_address:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_contact_email:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_contact_phone:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  field_contact_schedule: true
+  field_contact_title: true
+  uid: true

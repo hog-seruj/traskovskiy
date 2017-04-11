@@ -1,0 +1,19 @@
+uuid: 64e3fc90-c03a-4ac6-b095-6ba24048895e
+langcode: uk
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_contact_phone
+field_name: field_contact_phone
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
