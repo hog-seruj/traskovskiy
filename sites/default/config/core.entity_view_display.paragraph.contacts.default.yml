@@ -53,13 +53,13 @@ content:
     type: text_default
   field_contact_phone:
     weight: 2
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
   field_contact_schedule:
     weight: 3
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default

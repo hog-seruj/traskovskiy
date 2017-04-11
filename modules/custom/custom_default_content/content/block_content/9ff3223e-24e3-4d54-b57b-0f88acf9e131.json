@@ -1,0 +1,168 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/block\/7?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/contact"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/contact\/revision_user": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/contact\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/contact\/field_paragraph": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "7"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9ff3223e-24e3-4d54-b57b-0f88acf9e131"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "7"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "contact"
+        }
+    ],
+    "info": [
+        {
+            "value": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438",
+            "lang": "uk"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491912751",
+            "lang": "uk"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1491912362"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/contact\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/contact\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/contact\/field_paragraph": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/contacts"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "40bf673f-a5b2-461c-823e-234746128443"
+                    }
+                ],
+                "target_revision_id": "3"
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491912306",
+            "lang": "uk"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p><iframe allowfullscreen=\"\" frameborder=\"0\" height=\"450\" src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d384163.23243480833!2d24.408012009370164!3d50.76145399832351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4725abc2f340e5e9%3A0xdfa37ab3e5e0c372!2z0JzQsNC90YzQutGW0LIsINCS0L7Qu9C40L3RgdGM0LrQsCDQvtCx0LvQsNGB0YLRjA!5e0!3m2!1suk!2sua!4v1491912261387\" style=\"border:0\" width=\"600\"><\/iframe><\/p>\r\n",
+            "format": "full_html",
+            "summary": "",
+            "lang": "uk"
+        }
+    ]
+}
