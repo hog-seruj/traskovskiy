@@ -194,7 +194,7 @@ display:
       use_more_always: true
       use_more_text: 'Всі новини'
       link_display: custom_url
-      link_url: /news
+      link_url: news
     cache_metadata:
       max-age: -1
       contexts:

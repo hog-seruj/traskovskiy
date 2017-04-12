@@ -3,12 +3,14 @@ langcode: ru
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.news.body
     - field.field.node.news.field_image
+    - field.field.node.news.field_news_commnet
     - node.type.news
   module:
+    - comment
     - ds
-    - image
     - text
     - user
 third_party_settings:
@@ -30,21 +32,15 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_image
         - node_title
         - body
-        - node_post_date
+        - field_news_commnet
     fields:
       node_title:
         plugin_id: node_title
-        weight: 1
+        weight: 0
         label: hidden
         formatter: default
-      node_post_date:
-        plugin_id: node_post_date
-        weight: 3
-        label: hidden
-        formatter: ds_post_date_day_month_year_dot_style
 id: node.news.default
 targetEntityType: node
 bundle: news
@@ -53,17 +49,18 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-  field_image:
-    weight: 0
-    label: hidden
+  field_news_commnet:
+    weight: 2
+    label: above
     settings:
-      image_style: ''
-      image_link: ''
+      pager_id: 0
+      view_mode: default
     third_party_settings: {  }
-    type: image
+    type: comment_default
 hidden:
+  field_image: true
   langcode: true
   links: true

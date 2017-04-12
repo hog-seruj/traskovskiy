@@ -93,7 +93,7 @@
             "lang": "uk"
         },
         {
-            "value": "1492007093",
+            "value": "1492015023",
             "lang": "ru"
         }
     ],
@@ -132,7 +132,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
+                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
                     }
                 ],
                 "lang": "ru"
@@ -147,7 +147,7 @@
     ],
     "content_translation_created": [
         {
-            "value": "1492007093",
+            "value": "1492015023",
             "lang": "ru"
         }
     ]

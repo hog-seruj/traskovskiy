@@ -1,0 +1,10 @@
+uuid: 860a5df4-d406-42e6-b40e-4f8cae9baa1f
+langcode: uk
+status: true
+dependencies:
+  module:
+    - user
+id: user.comment_news_form
+label: 'Comment news form'
+targetEntityType: user
+cache: true

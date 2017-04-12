@@ -16,3 +16,4 @@ permissions:
   - 'search content'
   - 'view paragraph content contacts'
   - 'view paragraph content text_button'
+  - 'post comments'

@@ -6,12 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/content_translation_uid": [
-            {
-                "href": "http:\/\/www\/user\/0?_format=hal_json",
-                "lang": "uk"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
             {
                 "href": "http:\/\/www\/sites\/default\/files\/2017-04\/front-img_0_1.png"
@@ -85,25 +79,27 @@
             "lang": "uk"
         }
     ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491980801",
+            "lang": "uk"
+        }
+    ],
+    "body": [
+        {
+            "value": "Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "uk"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/0?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
-                    }
-                ],
-                "lang": "uk"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
             {
                 "_links": {
@@ -125,25 +121,5 @@
                 "height": "335"
             }
         ]
-    },
-    "content_translation_status": [
-        {
-            "value": "1",
-            "lang": "uk"
-        }
-    ],
-    "content_translation_created": [
-        {
-            "value": "1491980801",
-            "lang": "uk"
-        }
-    ],
-    "body": [
-        {
-            "value": "Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta dapibus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
-            "format": "restricted_html",
-            "summary": "",
-            "lang": "uk"
-        }
-    ]
+    }
 }

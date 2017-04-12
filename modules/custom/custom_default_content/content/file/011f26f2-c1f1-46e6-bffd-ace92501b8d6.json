@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_FVyDHP_1.jpeg"
+            "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_FVyDHP_1_1.jpeg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -29,7 +29,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2017-04\/generateImage_FVyDHP_1.jpeg"
+            "value": "public:\/\/2017-04\/generateImage_FVyDHP_1_1.jpeg"
         }
     ],
     "filemime": [
