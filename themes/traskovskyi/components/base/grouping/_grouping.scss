@@ -26,7 +26,35 @@
 blockquote {
   // Set 1 unit of vertical rhythm on the top and bottom margin.
   // Also indent the quote on both sides.
-  @include margin(1 $indent-amount);
+  // @include margin(1 $indent-amount);
+  @include spacing(padding, 10px 77px 5px 77px);
+  background: color(blockquote);
+  box-shadow: 0px 1px 3px 0px rgba(7, 6, 6, 0.58);
+  color: color(blockquote-text);
+  font-style: italic;
+  margin: 0;
+  position: relative;
+
+  &::before,
+  &::after {
+    @include spacing(height, 19px);
+    @include spacing(width, 26px);
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &::after {
+    @include spacing(bottom, 16px);
+    @include spacing(right, 24px);
+    background: url(../../../images-source/quote-down.png) no-repeat center;
+  }
+
+  &::before {
+    @include spacing(left, 19px);
+    @include spacing(top, 14px);
+    background: url(../../../images-source/quote-top.png) no-repeat center;
+  }
 }
 
 // Lists
@@ -93,14 +121,41 @@ dd {
 }
 
 // Address paddings set differently in IE 6/7.
-menu,
-ol,
-ul {
-  padding: 0 0 0 $indent-amount;
+// menu,
+// ol,
+// ul {
+//   padding: 0 0 0 $indent-amount;
 
-  @include rtl {
-    padding: 0 $indent-amount 0 0;
+//   @include rtl {
+//     padding: 0 $indent-amount 0 0;
+//   }
+// }
+
+ul {
+  list-style: none;
+
+  li {
+    position: relative;
+
+    &::before {
+      @include spacing(height, 6px);
+      @include spacing(left, -18px);
+      @include spacing(top, 8px);
+      @include spacing(width, 7px);
+      background: color(list-style);
+      content: '';
+      display: block;
+      position: absolute;
+    }
   }
+}
+
+ul.links {
+  @include spacing(padding-left, 20px);
+}
+
+ol {
+  padding-left: 0;
 }
 
 // Figures

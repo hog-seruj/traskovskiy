@@ -15,7 +15,7 @@
 $chroma: define-default-color-scheme('branding', 'The site\'s main colors. Can be used to define colors in other color schemes.');
 
 $chroma: add-colors((
-  black:                  #000,
+  black:                  #151515,
   grey-dark:              ('black' lighten 40%), // #666
   'grey':                 ('black' lighten 60%), // #999
   grey-light:             ('black' lighten 80%), // #ccc
@@ -23,8 +23,21 @@ $chroma: add-colors((
   white:                  #fff,
 
   blue:                   #0072b9,
-  red:                    #c00,
+  red:                    #f20a15,
   yellow:                 #fd0,
+
+  green:                  #01ce07,
+  green1:                  #204e32,
+
+  grey2:                  #727272,
+
+  white1:                 #f0f0f0,
+
+  violet:                 #5b4aa2,
+  violet1:                #331887,
+
+  rose:                   #f00653,
+
 ));
 
 // Define color names for functional uses.
@@ -34,16 +47,22 @@ $chroma: add-colors('functional', (
   text:                   'black',
   text-bg:                'white',
 
-  link:                   'blue',
+  link:                   'green1',
   link-visited:           ('blue' darken 20%),
   link-active:            'red',
 
   border:                 'grey-light',
 
+  button-border:          'green',
+  button-hover-text:      'white',
+
   autocomplete:           'text',
   autocomplete-bg:        'text-bg',
   autocomplete-select:    'white',
   autocomplete-select-bg: 'blue',
+
+  blockquote:              'white1',
+  blockquote-text:         'green1',
 
   body-bg:                'text-bg',
 
@@ -53,10 +72,17 @@ $chroma: add-colors('functional', (
   fieldset-summary:       'grey',
   form-error:             'red',
 
+  input-border-search:    'black',
+  input-border:           'white1',
+
+  list-style:             'green1',
+
   mark-highlight:         'red',
   mark-bg:                'yellow',
 
   menu-active:            'text',
+
+  pager-item:           'grey2',
 
   preview-bg:             ('yellow' lighten 43%),
 
@@ -87,6 +113,11 @@ $chroma: add-colors('functional', (
   tab-text-shadow:        'white',
   tab-bg:                 ('grey-light' lighten 6.66%),
   tab-secondary:          'grey-dark',
+
+  table:                  'green',
+  table-text-th:          'white1',
+  table-text-td:          'black',
+  table-border:           'black',
 
   table-drag:             ('yellow' lighten 43%),
   table-select:           ('yellow' lighten 47%),

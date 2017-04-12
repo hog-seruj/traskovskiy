@@ -14,12 +14,41 @@ table {
   // Remove most spacing between table cells.
   border-collapse: collapse;
   border-spacing: 0;
+  text-align: center;
   // Prevent cramped-looking tables
   width: 100%;
-}
 
-td,
-th {
-  // Remove most spacing between table cells.
-  padding: 0;
+  thead {
+    background: color(table);
+
+    th {
+      @include spacing(padding, 19px 40px);
+      border-bottom: 1px solid color(table-border);
+      border-left: 1px solid color(table-border);
+      border-top: 1px solid color(table-border);
+      color: color(table-text-th);
+      font-size: font-size(m);
+      font-style: italic;
+      font-weight: weight(bold);
+    }
+
+    th:last-child {
+      border-right: 1px solid color(table-border);
+    }
+  }
+
+  tbody {
+
+    td {
+      @include spacing(padding, 14px 35px);
+      border-bottom: 1px solid rgba(color(table-border), .1);
+      border-left: 1px solid rgba(color(table-border), .1);
+      color: color(table-text-td);
+      font-size: font-size(ss);
+    }
+
+    td:last-child {
+      border-right: 1px solid rgba(color(table-border), .1);
+    }
+  }
 }

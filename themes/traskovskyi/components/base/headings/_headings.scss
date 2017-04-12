@@ -13,32 +13,36 @@
 h1,
 %h1 {
   // Set the font-size and line-height while keeping a proper vertical rhythm.
-  @include type-layout(xxl, 2);
+  @include type-layout(xxxxxl, 3);
 
   // Set 1 unit of vertical rhythm on the top and bottom margins.
   @include margin-top(1, xxl);
   @include margin-bottom(1, xxl);
+  font-style: italic;
 }
 
 h2,
 %h2 {
-  @include type-layout(xl, 1.5);
+  @include type-layout(xxxxl, 1.5);
   @include margin-top(1, xl);
   @include margin-bottom(1, xl);
+  font-style: italic;
 }
 
 h3,
 %h3 {
-  @include type-layout(l, 1.5);
+  @include type-layout(xxl, 1.5);
   @include margin-top(1, l);
   @include margin-bottom(1, l);
+  font-style: italic;
 }
 
 h4,
 %h4 {
-  @include type-layout(m, 1);
+  @include type-layout(s, 1);
   @include margin-top(1, m);
   @include margin-bottom(1, m);
+  font-weight: weight(normal);
 }
 
 h5,
@@ -46,6 +50,7 @@ h5,
   @include type-layout(s, 1);
   @include margin-top(1, s);
   @include margin-bottom(1, s);
+  font-weight: weight(normal);
 }
 
 h6,
@@ -53,4 +58,5 @@ h6,
   @include type-layout(xs, 1);
   @include margin-top(1, xs);
   @include margin-bottom(1, xs);
+  font-weight: weight(normal);
 }
