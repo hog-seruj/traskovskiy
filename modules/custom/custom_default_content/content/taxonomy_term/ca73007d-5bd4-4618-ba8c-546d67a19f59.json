@@ -6,15 +6,9 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/our_partners"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
-            {
-                "href": "http:\/\/www\/user\/0?_format=hal_json",
-                "lang": "uk"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner2_6.png",
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner2_6_0.png",
                 "lang": "uk"
             }
         ]
@@ -75,30 +69,24 @@
             "lang": "uk"
         }
     ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491652612",
+            "lang": "uk"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/0?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "339a2934-b20d-4027-a5d3-36431851ab9e"
-                    }
-                ],
-                "lang": "uk"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner2_6.png"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner2_6_0.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -117,18 +105,6 @@
             }
         ]
     },
-    "content_translation_status": [
-        {
-            "value": "1",
-            "lang": "uk"
-        }
-    ],
-    "content_translation_created": [
-        {
-            "value": "1491652612",
-            "lang": "uk"
-        }
-    ],
     "field_link": [
         {
             "uri": "internal:\/",

@@ -17,3 +17,5 @@ permissions:
   - 'access site-wide contact form'
   - 'access shortcuts'
   - 'search content'
+  - 'view paragraph content contacts'
+  - 'view paragraph content text_button'

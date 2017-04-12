@@ -28,6 +28,8 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  translation:
+    weight: 10
 hidden:
   created: true
   status: true

@@ -8,13 +8,13 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/uid": [
             {
-                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
                 "lang": "uk"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/revision_uid": [
             {
-                "href": "http:\/\/www\/user\/1?_format=hal_json"
+                "href": "http:\/\/www\/user\/0?_format=hal_json"
             }
         ]
     },
@@ -49,7 +49,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -57,7 +57,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                        "value": "2eabcf18-523c-4416-aaf1-e00cbe06378f"
                     }
                 ],
                 "lang": "uk"
@@ -67,7 +67,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
+                        "value": "2eabcf18-523c-4416-aaf1-e00cbe06378f"
                     }
                 ]
             }

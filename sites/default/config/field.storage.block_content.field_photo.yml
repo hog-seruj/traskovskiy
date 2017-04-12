@@ -1,0 +1,30 @@
+uuid: 8e6cbf64-a5d9-4106-a70b-9113096ce831
+langcode: ru
+status: true
+dependencies:
+  module:
+    - block_content
+    - file
+    - image
+id: block_content.field_photo
+field_name: field_photo
+entity_type: block_content
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

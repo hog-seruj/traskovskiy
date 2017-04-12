@@ -5,7 +5,13 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/frukti"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
     },
     "tid": [
         {
@@ -30,7 +36,8 @@
     ],
     "name": [
         {
-            "value": "\u041b\u043e\u0445\u0438\u043d\u0430"
+            "value": "\u041b\u043e\u0445\u0438\u043d\u0430",
+            "lang": "uk"
         }
     ],
     "weight": [
@@ -40,7 +47,8 @@
     ],
     "changed": [
         {
-            "value": "1491837720"
+            "value": "1491837720",
+            "lang": "uk"
         }
     ],
     "default_langcode": [
@@ -61,6 +69,26 @@
             "lang": "uk"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/frukti\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2eabcf18-523c-4416-aaf1-e00cbe06378f"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",

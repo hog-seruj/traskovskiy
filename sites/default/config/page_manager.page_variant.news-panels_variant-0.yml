@@ -1,0 +1,174 @@
+uuid: a6207326-56ed-450d-ae8e-d24e94942c2a
+langcode: ru
+status: true
+dependencies:
+  config:
+    - page_manager.page.news
+    - system.menu.main
+    - views.view.content_view
+  content:
+    - 'block_content:basic:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+    - 'block_content:block_with_links:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+    - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+    - 'block_content:header_image:ade968c2-84f2-4d16-907c-529562a167e9'
+  module:
+    - block_content
+    - language
+    - panels
+    - search
+    - system
+    - views
+id: news-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    39f34d6e-a703-4e68-9744-bc2bf38e3597:
+      id: system_branding_block
+      label: 'Site branding'
+      provider: system
+      label_display: '0'
+      use_site_logo: true
+      use_site_name: false
+      use_site_slogan: false
+      region: footer
+      weight: -1
+      uuid: 39f34d6e-a703-4e68-9744-bc2bf38e3597
+      context_mapping: {  }
+    c526c976-fda8-404c-a58f-da231c7d238e:
+      id: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+      label: 'Про нас'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: footer
+      weight: 0
+      uuid: c526c976-fda8-404c-a58f-da231c7d238e
+      context_mapping: {  }
+    09e9bdf3-e6d5-474c-9fef-eb71639cc25a:
+      id: 'views_block:content_view-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: footer
+      weight: 1
+      uuid: 09e9bdf3-e6d5-474c-9fef-eb71639cc25a
+      context_mapping: {  }
+    72987a8e-2944-428d-bbc5-2ed7fa4b1049:
+      id: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
+      label: 'Ми в соцмережах'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: footer
+      weight: 2
+      uuid: 72987a8e-2944-428d-bbc5-2ed7fa4b1049
+      context_mapping: {  }
+    5739bf1f-93f5-4a33-96d9-50aeb76ba087:
+      id: system_branding_block
+      label: 'Site branding'
+      provider: system
+      label_display: '0'
+      use_site_logo: true
+      use_site_name: false
+      use_site_slogan: false
+      region: header
+      weight: -10
+      uuid: 5739bf1f-93f5-4a33-96d9-50aeb76ba087
+      context_mapping: {  }
+    d2a4599e-d431-4075-b3b3-936616017b98:
+      id: 'system_menu_block:main'
+      label: 'Основная навигация'
+      provider: system
+      label_display: '0'
+      level: 1
+      depth: 0
+      region: header
+      weight: -9
+      uuid: d2a4599e-d431-4075-b3b3-936616017b98
+      context_mapping: {  }
+    4d256f80-a921-4994-b9cb-4657ae911f67:
+      id: search_form_block
+      label: 'Search form'
+      provider: search
+      label_display: '0'
+      region: header
+      weight: -8
+      uuid: 4d256f80-a921-4994-b9cb-4657ae911f67
+      context_mapping: {  }
+    b7566784-eabd-4d86-b19d-1ed7c274fc5b:
+      id: 'language_block:language_interface'
+      label: 'Language switcher'
+      provider: language
+      label_display: '0'
+      region: header
+      weight: -7
+      uuid: b7566784-eabd-4d86-b19d-1ed7c274fc5b
+      context_mapping: {  }
+    46101a9d-cf80-4fc5-b3c0-8dccf6280d52:
+      id: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+      label: 'Садова техніка'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: left
+      weight: -10
+      uuid: 46101a9d-cf80-4fc5-b3c0-8dccf6280d52
+      context_mapping: {  }
+    13b5e812-5ee3-4935-a840-f4ffbfeba844:
+      id: 'block_content:ade968c2-84f2-4d16-907c-529562a167e9'
+      label: 'Наші новини'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: right
+      weight: -5
+      uuid: 13b5e812-5ee3-4935-a840-f4ffbfeba844
+      context_mapping: {  }
+    cc9c12f5-7e30-4edb-be4c-2f5ec7510508:
+      id: 'views_block:content_view-block_3'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: right
+      weight: -4
+      uuid: cc9c12f5-7e30-4edb-be4c-2f5ec7510508
+      context_mapping: {  }
+  id: panels_variant
+  uuid: e36f1e04-eaf3-4b18-944b-8577004c074e
+  label: null
+  weight: 0
+  layout: ds_2col_stacked_fluid
+  layout_settings:
+    wrappers:
+      header: div
+      left: div
+      right: div
+      footer: div
+    outer_wrapper: div
+    attributes: ''
+    link_attribute: ''
+    link_custom: ''
+    classes:
+      layout_class: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: news-panels_variant-0
+  builder: ipe
+page: news
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

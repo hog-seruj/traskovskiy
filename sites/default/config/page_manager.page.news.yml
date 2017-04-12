@@ -1,0 +1,12 @@
+uuid: 60bafbe1-931d-47b7-b3a8-1e4b0fcf28c1
+langcode: ru
+status: true
+dependencies: {  }
+id: news
+label: News
+description: ''
+use_admin_theme: false
+path: /news
+access_logic: and
+access_conditions: {  }
+parameters: {  }

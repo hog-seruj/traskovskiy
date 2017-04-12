@@ -6,18 +6,9 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/block_with_menu"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/revision_user": [
-            {
-                "href": "http:\/\/www\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/content_translation_uid": [
             {
-                "href": "http:\/\/www\/user\/1?_format=hal_json",
-                "lang": "uk"
-            },
-            {
-                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
                 "lang": "ru"
             }
         ]
@@ -68,7 +59,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491900708",
+            "value": "1491929381",
             "lang": "ru"
         }
     ],
@@ -77,59 +68,6 @@
             "value": "1491899587"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
-                    }
-                ],
-                "lang": "uk"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
-                    }
-                ],
-                "lang": "ru"
-            }
-        ]
-    },
     "revision_translation_affected": [
         {
             "value": "1",
@@ -156,7 +94,7 @@
             "lang": "uk"
         },
         {
-            "value": "uk",
+            "value": "und",
             "lang": "ru"
         }
     ],
@@ -170,6 +108,26 @@
             "lang": "ru"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/block_with_menu\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2eabcf18-523c-4416-aaf1-e00cbe06378f"
+                    }
+                ],
+                "lang": "ru"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",
@@ -186,7 +144,7 @@
             "lang": "uk"
         },
         {
-            "value": "1491900708",
+            "value": "1491929381",
             "lang": "ru"
         }
     ],

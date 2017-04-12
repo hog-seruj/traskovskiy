@@ -31,4 +31,5 @@ content:
     type: image
 hidden:
   description: true
+  field_galerea_foto: true
   langcode: true

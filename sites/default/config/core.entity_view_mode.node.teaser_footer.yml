@@ -1,0 +1,10 @@
+uuid: 5f631e83-c4c5-4389-b57d-c8c0f5992e89
+langcode: ru
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_footer
+label: teaser_footer
+targetEntityType: node
+cache: true

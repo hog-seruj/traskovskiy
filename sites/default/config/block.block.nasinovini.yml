@@ -1,0 +1,25 @@
+uuid: 1d57bbd4-58eb-41e0-9062-3a701a1c4867
+langcode: uk
+status: true
+dependencies:
+  content:
+    - 'block_content:header_image:ade968c2-84f2-4d16-907c-529562a167e9'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: nasinovini
+theme: traskovskyi
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:ade968c2-84f2-4d16-907c-529562a167e9'
+settings:
+  id: 'block_content:ade968c2-84f2-4d16-907c-529562a167e9'
+  label: 'Наші новини'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

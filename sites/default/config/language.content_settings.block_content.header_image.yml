@@ -1,0 +1,16 @@
+uuid: 280cd067-cf5f-401c-acbf-ae2eff8da9e6
+langcode: ru
+status: true
+dependencies:
+  config:
+    - block_content.type.header_image
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: block_content.header_image
+target_entity_type_id: block_content
+target_bundle: header_image
+default_langcode: site_default
+language_alterable: true
