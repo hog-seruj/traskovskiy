@@ -1,0 +1,21 @@
+uuid: 91f430d0-7f01-40bb-891a-641e594bea07
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_desc_cat
+    - taxonomy.vocabulary.berries
+  module:
+    - text
+id: taxonomy_term.berries.field_desc_cat
+field_name: field_desc_cat
+entity_type: taxonomy_term
+bundle: berries
+label: 'Каталог Опис'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

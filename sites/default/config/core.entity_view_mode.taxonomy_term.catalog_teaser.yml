@@ -1,0 +1,10 @@
+uuid: cc8901be-3e33-4cfd-a7ef-c3208bf31df6
+langcode: uk
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.catalog_teaser
+label: catalog-teaser
+targetEntityType: taxonomy_term
+cache: true

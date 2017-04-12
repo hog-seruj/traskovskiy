@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/slider\/field_slide_photo": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_2dcs3A_0.jpg",
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_2dcs3A_0_0.jpg",
                 "lang": "zxx"
             }
         ]
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "2eabcf18-523c-4416-aaf1-e00cbe06378f"
+                        "value": "fc660530-0e63-4cfa-b779-2fc9d3371cfa"
                     }
                 ],
                 "lang": "zxx"
@@ -87,7 +87,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "2eabcf18-523c-4416-aaf1-e00cbe06378f"
+                        "value": "fc660530-0e63-4cfa-b779-2fc9d3371cfa"
                     }
                 ]
             }
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_2dcs3A_0.jpg"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_2dcs3A_0_0.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

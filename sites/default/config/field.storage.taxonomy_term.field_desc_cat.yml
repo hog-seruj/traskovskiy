@@ -1,0 +1,19 @@
+uuid: 768df68e-696e-4181-8a87-dc02d79d9689
+langcode: uk
+status: true
+dependencies:
+  module:
+    - taxonomy
+    - text
+id: taxonomy_term.field_desc_cat
+field_name: field_desc_cat
+entity_type: taxonomy_term
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

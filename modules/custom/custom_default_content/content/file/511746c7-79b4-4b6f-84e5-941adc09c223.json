@@ -1,16 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_7GMAwT.jpg"
+            "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_7GMAwT_1.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
-            {
-                "href": "http:\/\/www\/user\/1?_format=hal_json"
-            }
-        ]
+        }
     },
     "fid": [
         {
@@ -27,25 +22,6 @@
             "value": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "afc60fb2-4281-4be0-bd59-929982ce19c0"
-                    }
-                ]
-            }
-        ]
-    },
     "filename": [
         {
             "value": "generateImage_7GMAwT.jpg"
@@ -53,7 +29,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2017-04\/generateImage_7GMAwT.jpg"
+            "value": "public:\/\/2017-04\/generateImage_7GMAwT_1.jpg"
         }
     ],
     "filemime": [

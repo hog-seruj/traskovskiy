@@ -1,0 +1,19 @@
+uuid: 33d9fd7d-df6d-47e6-8d59-92f9e0a999e5
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_title_cat
+    - taxonomy.vocabulary.berries
+id: taxonomy_term.berries.field_title_cat
+field_name: field_title_cat
+entity_type: taxonomy_term
+bundle: berries
+label: 'Каталог Заголовок'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
