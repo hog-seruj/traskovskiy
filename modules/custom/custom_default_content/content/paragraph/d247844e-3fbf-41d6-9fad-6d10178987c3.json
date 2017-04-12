@@ -4,38 +4,38 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/contacts"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/text_button"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/text_button\/uid": [
             {
-                "href": "http:\/\/www\/user\/0?_format=hal_json",
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
                 "lang": "uk"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/text_button\/revision_uid": [
             {
-                "href": "http:\/\/www\/user\/0?_format=hal_json"
+                "href": "http:\/\/www\/user\/1?_format=hal_json"
             }
         ]
     },
     "id": [
         {
-            "value": "3"
+            "value": "8"
         }
     ],
     "uuid": [
         {
-            "value": "40bf673f-a5b2-461c-823e-234746128443"
+            "value": "d247844e-3fbf-41d6-9fad-6d10178987c3"
         }
     ],
     "revision_id": [
         {
-            "value": "3"
+            "value": "8"
         }
     ],
     "type": [
         {
-            "target_id": "contacts"
+            "target_id": "text_button"
         }
     ],
     "langcode": [
@@ -45,11 +45,11 @@
         }
     ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/uid": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/text_button\/uid": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -57,17 +57,17 @@
                 },
                 "uuid": [
                     {
-                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
+                        "value": "cbc20bd7-5201-4216-ad82-fd02114bb2ca"
                     }
                 ],
                 "lang": "uk"
             }
         ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/contacts\/revision_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/text_button\/revision_uid": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
+                        "value": "cbc20bd7-5201-4216-ad82-fd02114bb2ca"
                     }
                 ]
             }
@@ -89,23 +89,23 @@
     ],
     "created": [
         {
-            "value": "1491912306",
+            "value": "1492015257",
             "lang": "uk"
         }
     ],
     "parent_id": [
         {
-            "value": "7"
+            "value": "4"
         }
     ],
     "parent_type": [
         {
-            "value": "block_content"
+            "value": "node"
         }
     ],
     "parent_field_name": [
         {
-            "value": "field_paragraph"
+            "value": "field_paragraphs"
         }
     ],
     "default_langcode": [
@@ -128,34 +128,24 @@
     ],
     "content_translation_changed": [
         {
-            "value": "1491912751",
+            "value": "1492015333",
             "lang": "uk"
         }
     ],
-    "field_contact_address": [
+    "field_link": [
         {
-            "value": "45522, \u0423\u043a\u0440\u0430\u0457\u043d\u0430 \u0412\u043e\u043b. \u043e\u0431\u043b. \u041b\u043e\u043a\u0430\u0447\u0438\u043d\u0441\u044c\u0438\u0439 \u0440\u0430\u0439\u043e\u043d, \u0441. \u041c\u0430\u043d\u044c\u043a\u0456\u0432, \u0432\u0443\u043b. \u041f\u0435\u0440\u0448\u043e\u0442\u0440\u0430\u0432\u043d\u0435\u0432\u0430 21",
+            "uri": "internal:\/",
+            "title": "ipsum",
+            "options": [
+
+            ],
+            "lang": "uk"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
             "format": "restricted_html",
-            "lang": "uk"
-        }
-    ],
-    "field_contact_phone": [
-        {
-            "value": "033 22 238-34-94\r\n098 22 238-34-94",
-            "format": "restricted_html",
-            "lang": "uk"
-        }
-    ],
-    "field_contact_schedule": [
-        {
-            "value": "\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n\u041f\u043d 9.00\r\n",
-            "format": "restricted_html",
-            "lang": "uk"
-        }
-    ],
-    "field_contact_title": [
-        {
-            "value": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u0438",
             "lang": "uk"
         }
     ]

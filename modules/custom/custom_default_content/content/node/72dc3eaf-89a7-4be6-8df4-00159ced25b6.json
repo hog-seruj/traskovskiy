@@ -74,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
+                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
                     }
                 ],
                 "lang": "uk"
@@ -92,7 +92,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
+                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
                     }
                 ]
             }
@@ -104,15 +104,15 @@
                         "href": ""
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/contacts"
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/text_button"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "b69dbdbc-9dd1-474f-8264-8899b5e274f3"
+                        "value": "c6b783d0-38e9-4bc1-98d5-fd2361126f60"
                     }
                 ],
-                "target_revision_id": "7"
+                "target_revision_id": "9"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/slider\/field_slide_photo": [
@@ -152,7 +152,7 @@
     ],
     "changed": [
         {
-            "value": "1492008405",
+            "value": "1492015361",
             "lang": "uk"
         }
     ],

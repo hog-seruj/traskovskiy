@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_6AlV54_1.png",
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_6AlV54_1_1.png",
                 "lang": "uk"
             }
         ]
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
+                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
                     }
                 ],
                 "lang": "uk"
@@ -87,7 +87,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
+                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
                     }
                 ]
             }
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_6AlV54_1.png"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_6AlV54_1_1.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -180,6 +180,16 @@
             "format": "plain_text",
             "summary": "Aliquip capto rusticus torqueo voco. Aptent distineo ibidem ideo obruo paulatim quia tego typicus ut. Accumsan causa et luctus minim premo roto utinam validus wisi. At dolore eligo iusto persto.\n\nMelior mos paulatim. Abico eros huic melior molior vereor ymo. Accumsan esse et ideo importunus pala probo saluto tincidunt vulputate. Aliquip brevitas cogo defui iusto lucidus natu nunc ullamcorper. Dolore enim gravis in letalis lucidus metuo nulla quia tego. Appellatio bene eu hos oppeto pagus pneum tamen tation.\n\nAbbas fere praesent premo saluto vicis. Abluo ex jugis letalis persto vero wisi. Aptent commodo diam immitto oppeto quae singularis ut vicis. Ad aliquam oppeto pagus refero velit vicis. Cogo os virtus volutpat. Jugis luctus oppeto pertineo tamen. Abico capto diam ludus melior praesent sit ullamcorper.\n\nCogo et feugiat quis valde. Amet antehabeo eros luptatum molior natu plaga. Abico defui gemino imputo lobortis nibh sit tum virtus. Camur nutus occuro qui ulciscor valetudo. Causa iaceo importunus jus neo olim singularis typicus volutpat. Ibidem odio tincidunt. Blandit iusto typicus. Amet conventio et refero tum.\n\nCommoveo laoreet letalis. Eu minim secundum. Mos sagaciter usitas vero. Abdo damnum eum ex magna meus nibh olim refero. Abico aliquam cogo fere loquor wisi. Aptent dolor praemitto quae singularis velit. Dolore duis euismod eum jus sit. Appellatio dolor dolore gemino melior nunc proprius vindico. Abigo duis ea genitus pecus te. Autem brevitas causa commoveo luctus pagus usitas valde ymo.\n\nAmet capto defui dolor gilvus haero nimis praesent tego vicis. At commodo quibus vindico. Cui erat melior minim si utrum virtus. Blandit conventio dolor ille loquor ratis singularis. At diam eligo loquor populus praesent quibus quis vicis. Capto commoveo humo loquor meus proprius ulciscor. Comis commoveo dolus saluto. Abigo eum laoreet meus. Imputo macto mos roto vicis. Ad inhibeo jus qui ratis venio.\n\nDiam esse gilvus hendrerit similis sino validus. Distineo esca molior obruo plaga singularis. Blandit conventio ex molior pecus volutpat. Brevitas fere ludus quae refoveo. At augue capto dignissim roto tamen vulputate. Abbas abico et laoreet macto pala quadrum suscipere. Dolor paratus torqueo verto. Brevitas ex genitus iusto tamen ut uxor. Consectetuer damnum ibidem nisl plaga roto si tamen.\n\nConsequat damnum distineo. Aliquip at eum fere sagaciter sino valde. At autem commodo consequat gravis mos pala persto refero ymo. Abigo adipiscing caecus dolor ille jus paratus persto valde. Enim exerci haero mos pagus sagaciter tamen tation venio. Appellatio comis ex hos macto modo patria suscipit ut utinam. Caecus facilisis nisl nulla os quae.\n\nDolus fere macto olim. Abdo appellatio commoveo dignissim elit facilisi ibidem. Aliquip luptatum nibh similis. Abluo inhibeo interdico letalis luctus metuo secundum vero. Duis hos mos nibh olim quidne vulpes. Abbas genitus jumentum luctus neo secundum veniam zelus.\n\nAbdo esse voco. Causa conventio gemino illum inhibeo praemitto. Iaceo luptatum te tego. Comis gravis importunus. Dignissim imputo letalis olim os pala pertineo quia.\n\nDolor eum exputo facilisi ludus olim ratis secundum vel vindico. Aptent dignissim utrum. Aptent distineo facilisis genitus obruo qui vindico vulputate zelus. Augue cogo duis euismod exerci importunus quadrum. Conventio genitus incassum pecus utrum. Natu nutus occuro paratus tamen. Aptent humo inhibeo quidne ymo. Abluo accumsan duis ea illum nibh persto singularis suscipit.\n\nCommoveo feugiat gravis nibh si vero. Euismod facilisi metuo nimis pecus plaga scisco tation ullamcorper. Caecus diam esse importunus iriure loquor odio quis singularis turpis.\n\n",
             "lang": "uk"
+        }
+    ],
+    "field_news_commnet": [
+        {
+            "status": 2,
+            "cid": "1",
+            "last_comment_timestamp": "1492016737",
+            "last_comment_name": "\u0443\u0446\u043a\u0446\u0443\u043a",
+            "last_comment_uid": "0",
+            "comment_count": "1"
         }
     ]
 }

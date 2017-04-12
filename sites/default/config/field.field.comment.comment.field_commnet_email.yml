@@ -1,0 +1,19 @@
+uuid: 96b7318e-08cd-4863-925c-14cfd19fcebe
+langcode: uk
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.storage.comment.field_commnet_email
+id: comment.comment.field_commnet_email
+field_name: field_commnet_email
+entity_type: comment
+bundle: comment
+label: 'Електрона пошта'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email
