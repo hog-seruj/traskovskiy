@@ -1,0 +1,20 @@
+uuid: 639b9e5a-0320-452d-91b8-a44a57fce54a
+langcode: uk
+status: true
+dependencies:
+  module:
+    - language
+  theme:
+    - traskovskyi
+id: languageswitcher
+theme: traskovskyi
+region: primary_menu
+weight: -7
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

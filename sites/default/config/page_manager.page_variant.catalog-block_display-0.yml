@@ -19,10 +19,10 @@ variant_settings:
       label: ''
       provider: views
       label_display: '0'
-      region: top
-      weight: -9
       views_label: ''
       items_per_page: none
+      region: top
+      weight: -9
       uuid: 6e472d4d-6ada-4257-8fb4-3c06f28dc232
       context_mapping:
         tid: taxonomy_term

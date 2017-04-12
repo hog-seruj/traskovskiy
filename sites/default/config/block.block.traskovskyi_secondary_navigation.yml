@@ -1,6 +1,6 @@
 uuid: ffb818c9-e15d-4c4b-83c1-b1f77f811cab
 langcode: uk
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: HcZoYw2ffUVQl96Ny2muHfr_Si0anAQfs0P_eZoPB6U
 id: traskovskyi_secondary_navigation
 theme: traskovskyi
-region: sidebar_first
-weight: 0
+region: '-1'
+weight: -4
 provider: null
 plugin: 'system_menu_block:main'
 settings:

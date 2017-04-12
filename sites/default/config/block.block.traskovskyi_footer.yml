@@ -13,7 +13,7 @@ _core:
 id: traskovskyi_footer
 theme: traskovskyi
 region: '-1'
-weight: 0
+weight: -11
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

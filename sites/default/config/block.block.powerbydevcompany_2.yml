@@ -1,6 +1,6 @@
-uuid: bf21bd13-7fcd-47c7-8a3c-86abc9f03f3a
+uuid: 017888f2-fd07-42cd-a105-f5d92f22aa36
 langcode: uk
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:basic:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
@@ -8,17 +8,17 @@ dependencies:
     - block_content
   theme:
     - traskovskyi
-id: powerbydevcompany
+id: powerbydevcompany_2
 theme: traskovskyi
-region: '-1'
-weight: -12
+region: bottom
+weight: 0
 provider: null
 plugin: 'block_content:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
 settings:
   id: 'block_content:0ba0b5f1-895c-4736-b8c4-622ba4fa8edc'
   label: 'Power by Dev-company'
   provider: block_content
-  label_display: visible
+  label_display: '0'
   status: true
   info: ''
   view_mode: full
