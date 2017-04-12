@@ -1,4 +1,4 @@
-uuid: ca7a94c8-9b3a-4ae8-964c-7829d1b9de51
+uuid: 0f39b751-d5e8-43c0-b6fc-c8f0954a189f
 langcode: uk
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - taxonomy
-id: taxonomy_term.field_galerea_foto
-field_name: field_galerea_foto
+id: taxonomy_term.field_img_front
+field_name: field_img_front
 entity_type: taxonomy_term
 type: image
 settings:
@@ -23,7 +23,7 @@ settings:
   display_default: false
 module: image
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

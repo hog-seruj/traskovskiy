@@ -1,0 +1,103 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/14?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
+    },
+    "tid": [
+        {
+            "value": "14"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4d290acd-b87f-45ad-b69a-84bf78cfa3c3"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "berries"
+        }
+    ],
+    "name": [
+        {
+            "value": "\u041c\u0430\u043b\u0438\u043d\u0430"
+        }
+    ],
+    "weight": [
+        {
+            "value": "0"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491906324",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "cbc5abb6-bfba-4df5-84a7-7ad5bb96d0fa"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491906324",
+            "lang": "uk"
+        }
+    ]
+}

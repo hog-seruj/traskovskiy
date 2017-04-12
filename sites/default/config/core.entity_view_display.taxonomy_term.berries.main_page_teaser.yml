@@ -1,0 +1,71 @@
+uuid: 0dc18187-53a7-4095-bb94-4c8fc858b28b
+langcode: uk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.main_page_teaser
+    - field.field.taxonomy_term.berries.field_desc_cat
+    - field.field.taxonomy_term.berries.field_desc_front
+    - field.field.taxonomy_term.berries.field_img_cat
+    - field.field.taxonomy_term.berries.field_img_front
+    - field.field.taxonomy_term.berries.field_photo_gallery
+    - field.field.taxonomy_term.berries.field_title_cat
+    - taxonomy.vocabulary.berries
+  module:
+    - ds
+    - image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      path: modules/contrib/ds
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_img_front
+        - taxonomy_term_title
+        - field_desc_front
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 1
+        label: hidden
+        formatter: default
+id: taxonomy_term.berries.main_page_teaser
+targetEntityType: taxonomy_term
+bundle: berries
+mode: main_page_teaser
+content:
+  field_desc_front:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_img_front:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  description: true
+  field_desc_cat: true
+  field_img_cat: true
+  field_photo_gallery: true
+  field_title_cat: true
+  langcode: true

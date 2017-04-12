@@ -1,18 +1,16 @@
-uuid: efc8fe74-ed9c-46b6-ae80-12aba9dbcf3c
+uuid: 768df68e-696e-4181-8a87-dc02d79d9689
 langcode: uk
 status: true
 dependencies:
   module:
     - taxonomy
-id: taxonomy_term.field_description
-field_name: field_description
+    - text
+id: taxonomy_term.field_desc_cat
+field_name: field_desc_cat
 entity_type: taxonomy_term
-type: string
-settings:
-  max_length: 255
-  is_ascii: false
-  case_sensitive: false
-module: core
+type: text_long
+settings: {  }
+module: text
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,12 @@
+uuid: f09fb983-1eaa-41d2-a885-af5c90711b59
+langcode: uk
+status: true
+dependencies: {  }
+id: catalog
+label: Catalog
+description: ''
+use_admin_theme: false
+path: '/taxonomy/term/{tid}'
+access_logic: and
+access_conditions: {  }
+parameters: {  }

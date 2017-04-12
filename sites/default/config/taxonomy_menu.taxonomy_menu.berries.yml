@@ -1,0 +1,14 @@
+uuid: 5f98d30c-e186-4a10-9f61-88f260871908
+langcode: uk
+status: true
+dependencies:
+  config:
+    - system.menu.taxonomy-berries-menu
+    - taxonomy.vocabulary.berries
+id: berries
+label: Berries
+vocabulary: berries
+menu: taxonomy-berries-menu
+expanded: false
+depth: 0
+menu_parent: 'taxonomy-berries-menu:'

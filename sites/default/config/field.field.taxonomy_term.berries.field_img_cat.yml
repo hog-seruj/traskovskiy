@@ -1,27 +1,20 @@
-uuid: 183805f0-70e8-4f2c-aa86-34c12646f5ca
+uuid: 7c30e013-8d27-4dbe-8d95-fd541e75aa7a
 langcode: uk
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_image
-    - taxonomy.vocabulary.frukti
+    - field.storage.taxonomy_term.field_img_cat
+    - taxonomy.vocabulary.berries
   module:
-    - content_translation
     - image
-third_party_settings:
-  content_translation:
-    translation_sync:
-      alt: alt
-      title: title
-      file: '0'
-id: taxonomy_term.frukti.field_image
-field_name: field_image
+id: taxonomy_term.berries.field_img_cat
+field_name: field_img_cat
 entity_type: taxonomy_term
-bundle: frukti
-label: Зображення
+bundle: berries
+label: 'Каталог Зображення'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

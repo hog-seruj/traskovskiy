@@ -1,0 +1,30 @@
+uuid: 9115b7d9-5728-45d2-9ebe-58a6f3c86e53
+langcode: uk
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - taxonomy
+id: taxonomy_term.field_photo_gallery
+field_name: field_photo_gallery
+entity_type: taxonomy_term
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

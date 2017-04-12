@@ -1,11 +1,11 @@
-uuid: 2ceb913d-ccf5-4381-b5e7-c521dfe26fbb
+uuid: ae98aa7d-21e7-404d-bdaf-69f5b1cd42a8
 langcode: uk
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.frukti
-id: taxonomy_term.frukti
+    - taxonomy.vocabulary.berries
+id: taxonomy_term.berries
 target_entity_type_id: taxonomy_term
-target_bundle: frukti
+target_bundle: berries
 default_langcode: site_default
 language_alterable: false

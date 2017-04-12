@@ -1,20 +1,23 @@
-uuid: 61666d93-8adf-4f6c-85d5-c9ae5f8d37b7
+uuid: c2e41b81-9d80-496d-a6cb-9405aec5e19d
 langcode: uk
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.frukti.field_description
-    - field.field.taxonomy_term.frukti.field_galerea_foto
-    - field.field.taxonomy_term.frukti.field_image
+    - field.field.taxonomy_term.berries.field_desc_cat
+    - field.field.taxonomy_term.berries.field_desc_front
+    - field.field.taxonomy_term.berries.field_img_cat
+    - field.field.taxonomy_term.berries.field_img_front
+    - field.field.taxonomy_term.berries.field_photo_gallery
+    - field.field.taxonomy_term.berries.field_title_cat
     - image.style.thumbnail
-    - taxonomy.vocabulary.frukti
+    - taxonomy.vocabulary.berries
   module:
     - image
     - path
     - text
-id: taxonomy_term.frukti.default
+id: taxonomy_term.berries.default
 targetEntityType: taxonomy_term
-bundle: frukti
+bundle: berries
 mode: default
 content:
   description:
@@ -24,27 +27,48 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_description:
-    weight: 31
+  field_desc_cat:
+    weight: 35
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_desc_front:
+    weight: 32
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
-  field_galerea_foto:
+  field_img_cat:
+    weight: 34
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_img_front:
+    weight: 31
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_photo_gallery:
+    weight: 36
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_title_cat:
     weight: 33
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: image_image
-  field_image:
-    weight: 32
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
-    type: image_image
+    type: string_textfield
   langcode:
     type: language_select
     weight: 2

@@ -1,17 +1,17 @@
-uuid: aabbe768-d6c1-4d66-a49e-4fa1a76faf14
+uuid: 4e37ac34-4bca-48aa-a92a-2183521fa338
 langcode: uk
 status: true
 dependencies:
   config:
-    - field.storage.taxonomy_term.field_galerea_foto
-    - taxonomy.vocabulary.frukti
+    - field.storage.taxonomy_term.field_img_front
+    - taxonomy.vocabulary.berries
   module:
     - image
-id: taxonomy_term.frukti.field_galerea_foto
-field_name: field_galerea_foto
+id: taxonomy_term.berries.field_img_front
+field_name: field_img_front
 entity_type: taxonomy_term
-bundle: frukti
-label: 'Галерея фото'
+bundle: berries
+label: 'Головна Зображення '
 description: ''
 required: false
 translatable: false
