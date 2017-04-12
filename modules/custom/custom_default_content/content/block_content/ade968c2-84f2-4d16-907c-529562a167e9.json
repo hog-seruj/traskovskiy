@@ -6,9 +6,15 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_image"
         },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/front-img_0.png"
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/front-img_0_1.png"
             }
         ]
     },
@@ -79,6 +85,47 @@
             "lang": "uk"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5fc424c3-3360-43e8-80ab-8df878057f80"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/front-img_0_1.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "53d52880-f641-4721-892a-d4eec6eca70d"
+                    }
+                ],
+                "alt": "",
+                "title": "",
+                "width": "611",
+                "height": "335"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",
@@ -98,28 +145,5 @@
             "summary": "",
             "lang": "uk"
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/front-img_0.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "53d52880-f641-4721-892a-d4eec6eca70d"
-                    }
-                ],
-                "alt": "",
-                "title": "",
-                "width": "611",
-                "height": "335"
-            }
-        ]
-    }
+    ]
 }

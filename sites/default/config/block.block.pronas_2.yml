@@ -1,0 +1,25 @@
+uuid: 891d4c19-f608-43b0-b82b-1d93a8947c48
+langcode: uk
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: pronas_2
+theme: traskovskyi
+region: footer
+weight: -9
+provider: null
+plugin: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+settings:
+  id: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
+  label: 'Про нас'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

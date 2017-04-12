@@ -1,0 +1,23 @@
+uuid: ffec3bae-9390-4cc9-b0bb-5895080042d3
+langcode: uk
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - traskovskyi
+id: brendingsaita
+theme: traskovskyi
+region: header
+weight: -10
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Брендинг сайта'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

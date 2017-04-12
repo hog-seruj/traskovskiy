@@ -1,6 +1,6 @@
 uuid: 566f88bc-703e-42fe-aa6f-6cdeb320e7bf
 langcode: uk
-status: false
+status: true
 dependencies:
   module:
     - search
@@ -10,8 +10,8 @@ _core:
   default_config_hash: Na1mB-0xqJstEHajXWCs5hu8VXIRgBxLSD6L03v4_i4
 id: traskovskyi_search
 theme: traskovskyi
-region: '-1'
-weight: -1
+region: primary_menu
+weight: -8
 provider: null
 plugin: search_form_block
 settings:
