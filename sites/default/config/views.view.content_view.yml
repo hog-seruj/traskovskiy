@@ -3,7 +3,8 @@ langcode: uk
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
+    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_footer
     - node.type.news
     - node.type.slider
   module:
@@ -61,10 +62,12 @@ display:
         type: 'ds_entity:node'
         options:
           relationship: none
-          view_mode: full
+          view_mode: teaser_footer
           alternating_fieldset:
             alternating: false
             allpages: false
+            item_0: teaser
+            item_1: teaser
           grouping_fieldset:
             group: false
             group_field: node_field_data|created
@@ -163,6 +166,8 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      link_url: /news
+      link_display: '0'
     cache_metadata:
       max-age: -1
       contexts:
@@ -179,6 +184,17 @@ display:
     display_options:
       display_extenders: {  }
       display_description: ''
+      use_more: true
+      defaults:
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+      use_more_always: true
+      use_more_text: 'Всі новини'
+      link_display: custom_url
+      link_url: /news
     cache_metadata:
       max-age: -1
       contexts:
@@ -264,6 +280,72 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_3:
+    display_plugin: block
+    id: block_3
+    display_title: 'Block News on the news page'
+    position: 3
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      style:
+        type: default
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        pager: false
+        use_more: true
+        use_more_always: true
+        use_more_text: true
+        link_display: true
+        link_url: true
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+          grouping_fieldset:
+            group: false
+            group_field: node_field_data|created
+            group_field_function: ''
+          advanced_fieldset:
+            advanced: false
+      pager:
+        type: full
+        options:
+          items_per_page: 4
+          offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: ‹
+            next: ›
+            first: ''
+            last: ''
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Елементів на сторінку'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- Усе -'
+            offset: false
+            offset_label: Зміщення
+          quantity: 9
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

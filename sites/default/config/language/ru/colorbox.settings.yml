@@ -1,0 +1,5 @@
+custom:
+  text_current: '{current} из {total}'
+  text_previous: '« Предыдущий'
+  text_next: 'Следующий »'
+  text_close: Закрыть

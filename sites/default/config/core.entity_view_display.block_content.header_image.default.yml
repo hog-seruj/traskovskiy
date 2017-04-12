@@ -1,0 +1,53 @@
+uuid: a7c8b82f-0166-4f8c-beed-0ea49d4def51
+langcode: ru
+status: true
+dependencies:
+  config:
+    - block_content.type.header_image
+    - field.field.block_content.header_image.body
+    - field.field.block_content.header_image.field_photo
+  module:
+    - ds
+    - image
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: onecol
+      path: modules/contrib/panels/layouts/onecol
+      library: layout_plugin/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        classes: {  }
+        wrappers:
+          middle: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+    regions:
+      middle:
+        - field_photo
+        - body
+id: block_content.header_image.default
+targetEntityType: block_content
+bundle: header_image
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  field_photo:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+hidden:
+  langcode: true

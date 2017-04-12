@@ -1,0 +1,200 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/node\/6?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/slider"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/uid": [
+            {
+                "href": "http:\/\/www\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/revision_uid": [
+            {
+                "href": "http:\/\/www\/user\/0?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/field_paragraphs": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/field_slide_photo": [
+            {
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_FVyDHP_1.jpeg",
+                "lang": "uk"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": "6"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "86d1ef0f-4b86-40bd-8365-646e42d871b0"
+        }
+    ],
+    "vid": [
+        {
+            "value": "6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "slider"
+        }
+    ],
+    "title": [
+        {
+            "value": "Immitto Sed",
+            "lang": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "fc660530-0e63-4cfa-b779-2fc9d3371cfa"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "fc660530-0e63-4cfa-b779-2fc9d3371cfa"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/field_paragraphs": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/contacts"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7eee40d5-f8c3-4e4a-b77f-86f46d1110f4"
+                    }
+                ],
+                "target_revision_id": "6"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/slider\/field_slide_photo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_FVyDHP_1.jpeg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "011f26f2-c1f1-46e6-bffd-ace92501b8d6"
+                    }
+                ],
+                "lang": "uk",
+                "alt": "Abigo ad facilisis genitus gilvus luptatum odio pertineo refoveo ut.",
+                "title": "Abluo ideo ille inhibeo jugis plaga pneum quia rusticus te.",
+                "width": "264",
+                "height": "126"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "created": [
+        {
+            "value": "1491885776",
+            "lang": "uk"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491982435",
+            "lang": "uk"
+        }
+    ],
+    "promote": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "sticky": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1491982435"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ]
+}

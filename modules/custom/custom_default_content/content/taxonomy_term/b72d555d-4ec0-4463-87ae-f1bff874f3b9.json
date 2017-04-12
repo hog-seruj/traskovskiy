@@ -14,7 +14,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner3_6.png",
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner3_6_0_0.png",
                 "lang": "uk"
             }
         ]
@@ -88,7 +88,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "339a2934-b20d-4027-a5d3-36431851ab9e"
+                        "value": "fc660530-0e63-4cfa-b779-2fc9d3371cfa"
                     }
                 ],
                 "lang": "uk"
@@ -98,7 +98,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner3_6.png"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner3_6_0_0.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

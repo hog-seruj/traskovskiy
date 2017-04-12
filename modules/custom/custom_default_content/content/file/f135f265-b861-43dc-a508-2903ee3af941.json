@@ -1,16 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_UTV9X5.png"
+            "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_UTV9X5_0_1.png"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
-            {
-                "href": "http:\/\/www\/user\/1?_format=hal_json"
-            }
-        ]
+        }
     },
     "fid": [
         {
@@ -27,25 +22,6 @@
             "value": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "3d8fb32d-061a-46cd-8b7a-c510f3aeeadd"
-                    }
-                ]
-            }
-        ]
-    },
     "filename": [
         {
             "value": "generateImage_UTV9X5.png"
@@ -53,7 +29,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2017-04\/generateImage_UTV9X5.png"
+            "value": "public:\/\/2017-04\/generateImage_UTV9X5_0_1.png"
         }
     ],
     "filemime": [

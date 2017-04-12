@@ -1,0 +1,8 @@
+uuid: 0a09fa6c-e163-4988-bdaa-c549ca77a641
+langcode: ru
+status: true
+dependencies: {  }
+id: header_image
+label: 'Блок з фото в хедері'
+revision: 0
+description: ''

@@ -19,10 +19,10 @@ variant_settings:
       label: ''
       provider: views
       label_display: '0'
-      views_label: ''
-      items_per_page: none
       region: top
       weight: -9
+      views_label: ''
+      items_per_page: none
       uuid: 6e472d4d-6ada-4257-8fb4-3c06f28dc232
       context_mapping:
         tid: taxonomy_term
@@ -36,6 +36,17 @@ variant_settings:
       region: top
       weight: -10
       uuid: 59b6d716-f8e7-45aa-84e1-31cf19435e6d
+      context_mapping: {  }
+    a6f92967-0e21-4a76-99ad-5335f584e795:
+      id: 'views_block:taxonomy-berries_photo_galery'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: a6f92967-0e21-4a76-99ad-5335f584e795
       context_mapping: {  }
   id: block_display
   uuid: 41c01b21-074c-467e-8902-9c8122bf5a05

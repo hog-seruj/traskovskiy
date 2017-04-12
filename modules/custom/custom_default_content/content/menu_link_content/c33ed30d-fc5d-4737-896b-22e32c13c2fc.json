@@ -1,0 +1,112 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/www\/uk\/admin\/structure\/menu\/item\/2\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": "2"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c33ed30d-fc5d-4737-896b-22e32c13c2fc"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "test",
+            "lang": "uk"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "left-menu"
+        }
+    ],
+    "link": [
+        {
+            "uri": "internal:#",
+            "title": "",
+            "options": [
+
+            ]
+        }
+    ],
+    "external": [
+        {
+            "value": "0"
+        }
+    ],
+    "rediscover": [
+        {
+            "value": "1"
+        }
+    ],
+    "weight": [
+        {
+            "value": "0"
+        }
+    ],
+    "expanded": [
+        {
+            "value": "0"
+        }
+    ],
+    "enabled": [
+        {
+            "value": "1"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1491979918",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491979918",
+            "lang": "uk"
+        }
+    ]
+}
