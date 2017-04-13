@@ -1,0 +1,19 @@
+uuid: a7b37f3d-8ee7-4a1f-a441-a853fde940de
+langcode: uk
+status: true
+dependencies:
+  config:
+    - comment.type.comment
+    - field.storage.comment.field_body_comment
+id: comment.comment.field_body_comment
+field_name: field_body_comment
+entity_type: comment
+bundle: comment
+label: Написати...
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,88 @@
+uuid: c71f531d-1337-4246-bdda-58453de43995
+langcode: uk
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+    - views.view.content_view
+  content:
+    - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+    - 'block_content:header_image:ade968c2-84f2-4d16-907c-529562a167e9'
+  module:
+    - block_content
+    - ctools
+    - panels
+    - views
+id: node_view-panels_variant-0
+label: 'News node'
+variant: panels_variant
+variant_settings:
+  blocks:
+    d23e3d7d-ab81-40a1-a990-74b77dd0d1ec:
+      id: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+      label: 'Садова техніка'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: left
+      weight: -1
+      uuid: d23e3d7d-ab81-40a1-a990-74b77dd0d1ec
+      context_mapping: {  }
+    107b084a-b1b1-4c2f-8ea4-237039cdfa19:
+      id: 'views_block:content_view-block_4'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: left
+      weight: 0
+      uuid: 107b084a-b1b1-4c2f-8ea4-237039cdfa19
+      context_mapping: {  }
+    7220f52b-1e3a-43ee-ab10-53b841ebc771:
+      id: 'block_content:ade968c2-84f2-4d16-907c-529562a167e9'
+      label: 'Наші новини'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: right
+      weight: -1
+      uuid: 7220f52b-1e3a-43ee-ab10-53b841ebc771
+      context_mapping: {  }
+    bc74c6a4-1269-40b1-91fc-2364929d9a9c:
+      id: 'entity_view:node'
+      label: 'Entity view (Вміст)'
+      provider: ctools
+      label_display: '0'
+      view_mode: full
+      region: right
+      weight: 0
+      uuid: bc74c6a4-1269-40b1-91fc-2364929d9a9c
+      context_mapping:
+        entity: node
+  id: panels_variant
+  uuid: 1196f126-db70-4c5b-b286-e3ba52196522
+  label: null
+  weight: 0
+  layout: twocol
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: node_view-panels_variant-0
+  builder: ipe
+page: node_view
+weight: 0
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+static_context: {  }

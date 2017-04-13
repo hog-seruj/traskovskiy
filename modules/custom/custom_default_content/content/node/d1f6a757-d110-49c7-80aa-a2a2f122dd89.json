@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_EBOEeQ_1_1.png",
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_EBOEeQ_1_1_2.png",
                 "lang": "uk"
             }
         ]
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
+                        "value": "d0eb7652-2a2b-4c7f-af0d-60f061081db7"
                     }
                 ],
                 "lang": "uk"
@@ -87,7 +87,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "22cb8fc6-2c29-4e10-bbea-4a32d578d11a"
+                        "value": "d0eb7652-2a2b-4c7f-af0d-60f061081db7"
                     }
                 ]
             }
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_EBOEeQ_1_1.png"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_EBOEeQ_1_1_2.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -172,6 +172,16 @@
         {
             "value": "0",
             "lang": "uk"
+        }
+    ],
+    "field_news_commnet": [
+        {
+            "status": "2",
+            "cid": "0",
+            "last_comment_timestamp": "1491982435",
+            "last_comment_name": null,
+            "last_comment_uid": "0",
+            "comment_count": "0"
         }
     ],
     "body": [

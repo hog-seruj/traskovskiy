@@ -1,0 +1,11 @@
+id: ds_field_count_comment
+label: 'Кількість коментарів'
+ui_limit: ''
+properties:
+  content:
+    value: "<p>[node:comment-count]</p>\r\n"
+    format: full_html
+type: token
+type_label: 'Token field'
+entities:
+  node: node

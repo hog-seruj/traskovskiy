@@ -36,7 +36,13 @@ third_party_settings:
         - node_title
         - body
         - node_post_date
+        - 'dynamic_token_field:node-ds_field_count_comment'
     fields:
+      'dynamic_token_field:node-ds_field_count_comment':
+        plugin_id: 'dynamic_token_field:node-ds_field_count_comment'
+        weight: 4
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 1

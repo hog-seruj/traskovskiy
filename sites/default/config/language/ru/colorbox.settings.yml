@@ -3,3 +3,6 @@ custom:
   text_previous: '« Предыдущий'
   text_next: 'Следующий »'
   text_close: Закрыть
+  slideshow:
+    text_start: 'почати слайд-шоу'
+    text_stop: 'зупинити слайд-шоу'

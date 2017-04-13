@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - comment.type.comment
-    - field.field.comment.comment.comment_body
+    - field.field.comment.comment.field_body_comment
     - field.field.comment.comment.field_commnet_email
   module:
     - ds
-    - text
 third_party_settings:
   ds:
     layout:
@@ -30,7 +29,8 @@ third_party_settings:
       ds_content:
         - comment_author
         - comment_post_date
-        - comment_body
+        - field_body_comment
+        - links
     fields:
       comment_author:
         plugin_id: comment_author
@@ -49,13 +49,16 @@ targetEntityType: comment
 bundle: comment
 mode: default
 content:
-  comment_body:
-    label: hidden
-    type: text_default
+  field_body_comment:
     weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  links:
+    weight: 3
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_commnet_email: true
   langcode: true
-  links: true

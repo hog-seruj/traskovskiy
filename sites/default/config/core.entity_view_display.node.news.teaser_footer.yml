@@ -16,14 +16,15 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: ds_1col
+      id: ds_2col
       path: modules/contrib/ds
-      library: ''
+      library: layout_plugin/ds_2col
       disable_css: false
       entity_classes: all_classes
       settings:
         wrappers:
-          ds_content: div
+          left: div
+          right: div
         outer_wrapper: div
         attributes: ''
         link_attribute: content
@@ -31,12 +32,19 @@ third_party_settings:
         classes:
           layout_class: {  }
     regions:
-      ds_content:
+      left:
         - field_image
+      right:
         - node_title
         - body
         - node_post_date
+        - 'dynamic_token_field:node-ds_field_count_comment'
     fields:
+      'dynamic_token_field:node-ds_field_count_comment':
+        plugin_id: 'dynamic_token_field:node-ds_field_count_comment'
+        weight: 4
+        label: hidden
+        formatter: default
       node_title:
         plugin_id: node_title
         weight: 1
