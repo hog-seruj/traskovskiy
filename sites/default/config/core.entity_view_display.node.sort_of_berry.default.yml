@@ -1,0 +1,56 @@
+uuid: 959f69e0-2dfa-41cd-8438-a64b05d98b7c
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.field.node.sort_of_berry.body
+    - field.field.node.sort_of_berry.field_image
+    - field.field.node.sort_of_berry.field_photo_gallery
+    - field.field.node.sort_of_berry.field_type_of_berry
+    - node.type.sort_of_berry
+  module:
+    - image
+    - text
+    - user
+id: node.sort_of_berry.default
+targetEntityType: node
+bundle: sort_of_berry
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 103
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_photo_gallery:
+    weight: 104
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_type_of_berry:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+  sharethis:
+    weight: 10
+hidden:
+  langcode: true

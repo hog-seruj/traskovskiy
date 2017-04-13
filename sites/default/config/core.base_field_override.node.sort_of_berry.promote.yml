@@ -1,0 +1,22 @@
+uuid: af379b18-0ddc-4f82-b7f0-59c04adf24d2
+langcode: uk
+status: true
+dependencies:
+  config:
+    - node.type.sort_of_berry
+id: node.sort_of_berry.promote
+field_name: promote
+entity_type: node
+bundle: sort_of_berry
+label: 'Винесено на головну сторінку'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Увімкнено
+  off_label: Вимкнено
+field_type: boolean
