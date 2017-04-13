@@ -1,0 +1,11 @@
+traskovskyi_footer:
+  label: Footer layout
+  category: traskovskyi
+  template: components/layouts/traskovskyi-footer/traskovskyi-footer
+  regions:
+    left:
+      label: Left
+    center:
+      label: Center
+    right:
+      label: Right
