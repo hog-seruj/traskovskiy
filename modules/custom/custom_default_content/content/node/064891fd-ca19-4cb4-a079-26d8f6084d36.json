@@ -1,25 +1,25 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/uk\/node\/8?_format=hal_json"
+            "href": "http:\/\/default\/uk\/node\/8?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/news"
         },
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/uid": [
             {
-                "href": "http:\/\/www\/user\/0?_format=hal_json",
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
                 "lang": "uk"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/revision_uid": [
             {
-                "href": "http:\/\/www\/user\/0?_format=hal_json"
+                "href": "http:\/\/default\/user\/0?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_JM1GDk_1_1_2.jpeg",
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_JM1GDk_1_1_2_0.jpeg",
                 "lang": "uk"
             }
         ]
@@ -61,7 +61,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d0eb7652-2a2b-4c7f-af0d-60f061081db7"
+                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
                     }
                 ],
                 "lang": "uk"
@@ -79,7 +79,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/user\/0?_format=hal_json"
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
@@ -87,7 +87,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "d0eb7652-2a2b-4c7f-af0d-60f061081db7"
+                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
                     }
                 ]
             }
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/generateImage_JM1GDk_1_1_2.jpeg"
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_JM1GDk_1_1_2_0.jpeg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -174,22 +174,22 @@
             "lang": "uk"
         }
     ],
-    "field_news_commnet": [
-        {
-            "status": "2",
-            "cid": "2",
-            "last_comment_timestamp": "1492070550",
-            "last_comment_name": "",
-            "last_comment_uid": "1",
-            "comment_count": "2"
-        }
-    ],
     "body": [
         {
             "value": "Conventio macto quadrum. Defui facilisi luptatum minim olim ut vero. Abigo genitus hendrerit ille. Damnum enim facilisi genitus iriure iustum nisl pala quibus refero.\n\nDolor esse valde voco. Autem macto meus nostrud sagaciter sudo uxor. Esca eum interdico macto melior. Aliquip dolus hendrerit jugis lobortis minim quidne sagaciter ullamcorper. Bene haero neo quae.\n\nHendrerit ideo nostrud pertineo quadrum si te vel. Iriure paulatim tincidunt. Abbas aptent consectetuer inhibeo interdico lenis luptatum ulciscor vicis. Metuo sit suscipit. At damnum eu humo mauris praemitto sino. Aliquip commoveo importunus laoreet melior quidem sudo usitas utinam vel.\n\nAbigo bene camur commoveo in loquor luptatum nostrud praemitto ullamcorper. Defui immitto loquor meus nostrud virtus. Haero luctus macto tego tum vel. Causa suscipit uxor. Camur cui ludus os paratus tamen ut valde vulpes.\n\nGenitus melior metuo pala patria scisco suscipere ymo. Ea esca lucidus quidne wisi. Damnum diam erat natu nulla saluto zelus. Commoveo nobis pagus populus sit ut. Abico aliquip conventio exputo fere immitto utrum verto. Jugis laoreet plaga saluto scisco suscipere. Cui damnum euismod mos natu tation ut.\n\nDolus feugiat vel. Dolore molior paratus plaga typicus. Imputo mos populus premo similis suscipit valde. Consequat conventio importunus velit. Ea iaceo interdico meus pagus tego venio.\n\nDuis eros modo occuro persto sed turpis validus. Qui refero roto saepius saluto sit. Conventio luctus os patria plaga. Duis oppeto si. Commodo consequat nutus quia tamen. At bene camur commodo genitus gravis oppeto sagaciter. Letalis praemitto valetudo. Consequat esca illum iusto magna. Huic occuro persto tamen. Imputo incassum iustum metuo neo nobis sino utrum virtus.\n\nFacilisis in mos neque nimis nutus tego. Aliquip causa luptatum neque similis suscipere tincidunt velit. Facilisi huic quia si. Genitus illum lobortis meus roto. Abbas eligo interdico nunc ratis.\n\nNulla quia valde. Duis eum pala roto vindico. Abluo damnum utrum. Cogo dolore elit iriure melior modo typicus velit verto. At conventio euismod exputo feugiat iriure lucidus roto saepius si. Abico facilisi pala. Abluo fere in singularis suscipit usitas veniam vulputate. Commodo ex lenis nimis nulla pagus uxor valetudo. Abigo adipiscing eu exputo genitus quae sudo tego validus vindico.\n\nInhibeo loquor nobis sagaciter ut wisi. Dolore imputo quidem singularis tamen. Appellatio euismod exputo iustum macto mos nunc pecus praesent usitas. Abigo abluo accumsan augue genitus melior proprius quidne turpis. Ea ille melior si. Elit enim eros humo meus ullamcorper. Eligo quia verto. Acsi bene importunus melior persto quidem refoveo voco wisi.\n\nAbluo cogo jugis mos neo nutus scisco similis tincidunt veniam. Acsi ad olim ratis roto. Nutus plaga praesent. Defui lenis macto valde. Commodo eros gravis imputo laoreet meus rusticus tego zelus.\n\nAbbas aliquip fere ille imputo minim quibus utinam. Eu huic jugis natu neo pagus saluto vindico. Erat proprius te vicis. Nulla similis uxor zelus. Eros nisl praemitto quidne torqueo.\n\n",
             "format": "plain_text",
             "summary": "Conventio macto quadrum. Defui facilisi luptatum minim olim ut vero. Abigo genitus hendrerit ille. Damnum enim facilisi genitus iriure iustum nisl pala quibus refero.\n\nDolor esse valde voco. Autem macto meus nostrud sagaciter sudo uxor. Esca eum interdico macto melior. Aliquip dolus hendrerit jugis lobortis minim quidne sagaciter ullamcorper. Bene haero neo quae.\n\nHendrerit ideo nostrud pertineo quadrum si te vel. Iriure paulatim tincidunt. Abbas aptent consectetuer inhibeo interdico lenis luptatum ulciscor vicis. Metuo sit suscipit. At damnum eu humo mauris praemitto sino. Aliquip commoveo importunus laoreet melior quidem sudo usitas utinam vel.\n\nAbigo bene camur commoveo in loquor luptatum nostrud praemitto ullamcorper. Defui immitto loquor meus nostrud virtus. Haero luctus macto tego tum vel. Causa suscipit uxor. Camur cui ludus os paratus tamen ut valde vulpes.\n\nGenitus melior metuo pala patria scisco suscipere ymo. Ea esca lucidus quidne wisi. Damnum diam erat natu nulla saluto zelus. Commoveo nobis pagus populus sit ut. Abico aliquip conventio exputo fere immitto utrum verto. Jugis laoreet plaga saluto scisco suscipere. Cui damnum euismod mos natu tation ut.\n\nDolus feugiat vel. Dolore molior paratus plaga typicus. Imputo mos populus premo similis suscipit valde. Consequat conventio importunus velit. Ea iaceo interdico meus pagus tego venio.\n\nDuis eros modo occuro persto sed turpis validus. Qui refero roto saepius saluto sit. Conventio luctus os patria plaga. Duis oppeto si. Commodo consequat nutus quia tamen. At bene camur commodo genitus gravis oppeto sagaciter. Letalis praemitto valetudo. Consequat esca illum iusto magna. Huic occuro persto tamen. Imputo incassum iustum metuo neo nobis sino utrum virtus.\n\nFacilisis in mos neque nimis nutus tego. Aliquip causa luptatum neque similis suscipere tincidunt velit. Facilisi huic quia si. Genitus illum lobortis meus roto. Abbas eligo interdico nunc ratis.\n\nNulla quia valde. Duis eum pala roto vindico. Abluo damnum utrum. Cogo dolore elit iriure melior modo typicus velit verto. At conventio euismod exputo feugiat iriure lucidus roto saepius si. Abico facilisi pala. Abluo fere in singularis suscipit usitas veniam vulputate. Commodo ex lenis nimis nulla pagus uxor valetudo. Abigo adipiscing eu exputo genitus quae sudo tego validus vindico.\n\nInhibeo loquor nobis sagaciter ut wisi. Dolore imputo quidem singularis tamen. Appellatio euismod exputo iustum macto mos nunc pecus praesent usitas. Abigo abluo accumsan augue genitus melior proprius quidne turpis. Ea ille melior si. Elit enim eros humo meus ullamcorper. Eligo quia verto. Acsi bene importunus melior persto quidem refoveo voco wisi.\n\nAbluo cogo jugis mos neo nutus scisco similis tincidunt veniam. Acsi ad olim ratis roto. Nutus plaga praesent. Defui lenis macto valde. Commodo eros gravis imputo laoreet meus rusticus tego zelus.\n\nAbbas aliquip fere ille imputo minim quibus utinam. Eu huic jugis natu neo pagus saluto vindico. Erat proprius te vicis. Nulla similis uxor zelus. Eros nisl praemitto quidne torqueo.\n\n",
             "lang": "uk"
+        }
+    ],
+    "field_news_commnet": [
+        {
+            "status": "2",
+            "cid": "0",
+            "last_comment_timestamp": "1491982435",
+            "last_comment_name": null,
+            "last_comment_uid": "0",
+            "comment_count": "0"
         }
     ]
 }

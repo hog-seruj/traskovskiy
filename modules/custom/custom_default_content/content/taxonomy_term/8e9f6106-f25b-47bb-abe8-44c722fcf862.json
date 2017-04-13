@@ -1,11 +1,33 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/uk\/taxonomy\/term\/12?_format=hal_json"
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/12?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_1.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_2.jpg"
+            },
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_0.jpg"
+            },
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/image-for-facebook_0.jpg"
+            }
+        ]
     },
     "tid": [
         {
@@ -41,7 +63,7 @@
     ],
     "changed": [
         {
-            "value": "1491906314",
+            "value": "1492084423",
             "lang": "uk"
         }
     ],
@@ -63,6 +85,106 @@
             "lang": "uk"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_1.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "90d2b494-a81f-4bdd-9234-3e0933dd2a36"
+                    }
+                ],
+                "alt": "asd",
+                "title": "",
+                "width": "284",
+                "height": "177"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_2.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "486f23e8-f523-4c76-ad98-595cbe2b04d8"
+                    }
+                ],
+                "alt": "asd",
+                "title": "",
+                "width": "284",
+                "height": "177"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_0.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c7334d86-0eac-4184-aa52-7c353db8c606"
+                    }
+                ],
+                "alt": "asd",
+                "title": "",
+                "width": "284",
+                "height": "177"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/image-for-facebook_0.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9be68e24-0aaa-4f40-a28a-94cd529ea1e3"
+                    }
+                ],
+                "alt": "asd",
+                "title": "",
+                "width": "284",
+                "height": "177"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",
@@ -73,6 +195,22 @@
         {
             "value": "1491906314",
             "lang": "uk"
+        }
+    ],
+    "field_desc_cat": [
+        {
+            "value": "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+            "format": "restricted_html"
+        }
+    ],
+    "field_desc_front": [
+        {
+            "value": "Donec sollicitudin molestie malesuada. Proin eget tortor risus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget co"
+        }
+    ],
+    "field_title_cat": [
+        {
+            "value": "Donec sollicitudin molestie malesuada"
         }
     ]
 }

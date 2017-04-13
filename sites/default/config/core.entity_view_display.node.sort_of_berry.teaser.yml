@@ -40,6 +40,10 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
 id: node.sort_of_berry.teaser
 targetEntityType: node
 bundle: sort_of_berry
