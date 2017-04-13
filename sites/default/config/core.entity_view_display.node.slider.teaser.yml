@@ -16,6 +16,8 @@ mode: teaser
 content:
   links:
     weight: 100
+  sharethis:
+    weight: 10
 hidden:
   field_paragraphs: true
   field_slide_photo: true

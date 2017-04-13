@@ -1,0 +1,233 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/uk\/node\/18?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/sort_of_berry"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/field_image": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_c9cJqa.png",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/field_photo_gallery": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_z85VgG.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/field_type_of_berry": [
+            {
+                "href": "http:\/\/default\/uk\/taxonomy\/term\/14?_format=hal_json"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": "18"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6e1d5696-73b5-4c2f-9ea4-124fd405e344"
+        }
+    ],
+    "vid": [
+        {
+            "value": "18"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "sort_of_berry"
+        }
+    ],
+    "title": [
+        {
+            "value": "Dolus Hos Inhibeo Torqueo",
+            "lang": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16b78263-b410-4539-8bbf-a8096aec468d"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16b78263-b410-4539-8bbf-a8096aec468d"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_c9cJqa.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ddb41557-bb64-4317-a116-05906862c155"
+                    }
+                ],
+                "lang": "uk",
+                "alt": "Causa interdico mauris plaga si.",
+                "title": "Aliquam capto eu in magna nisl vulputate.",
+                "width": "415",
+                "height": "316"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/field_photo_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_z85VgG.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7cd461ae-6276-4df5-bc94-189701b8db44"
+                    }
+                ],
+                "alt": "Ille lucidus nisl tego zelus.",
+                "title": "Consequat eros esca esse ille incassum saepius ullamcorper.",
+                "width": "220",
+                "height": "299"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/sort_of_berry\/field_type_of_berry": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/uk\/taxonomy\/term\/14?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4d290acd-b87f-45ad-b69a-84bf78cfa3c3"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "created": [
+        {
+            "value": "1492083187",
+            "lang": "uk"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1492083188",
+            "lang": "uk"
+        }
+    ],
+    "promote": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "sticky": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "1492083188"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "body": [
+        {
+            "value": "Autem eu gemino quia si tamen vindico. Abbas abigo acsi distineo. Cui ea praesent refero roto ut validus. Bene gemino illum inhibeo modo paratus roto ullamcorper vero verto. Caecus cui inhibeo neque.\n\nImmitto os quia singularis. Fere jus metuo nimis nobis valetudo vicis. Euismod paulatim premo tincidunt. Aliquam conventio esse gravis vicis. Proprius quibus sino valetudo wisi.\n\nElit eum hendrerit minim neque typicus venio. Augue blandit diam gemino modo nostrud quis scisco ullamcorper. Blandit damnum defui ibidem in quibus refero refoveo. Cui euismod haero quae tego ut valde zelus. Camur consectetuer eu exerci molior pagus plaga secundum validus. Abico camur comis conventio iustum vel vindico.\n\nCui dolor gravis ideo meus pala. Autem dolore duis euismod oppeto persto torqueo validus vereor. Gilvus olim pertineo uxor. Abbas abdo aliquip capto dignissim exerci iusto refero saepius saluto. Nimis secundum typicus. Dolor fere jus. Abico cogo fere refoveo saepius. Aliquam conventio eligo lenis minim qui ullamcorper velit.\n\nDefui esse ex feugiat immitto macto odio ut voco. Ea inhibeo melior neo occuro praemitto quadrum quae quidne vindico. Ea humo ideo neque quidem velit. Adipiscing aptent damnum incassum meus oppeto quidne tation. Acsi aptent euismod ideo ille imputo interdico laoreet lobortis persto. Erat fere occuro odio pneum quidem ut.\n\nAcsi capto gilvus importunus neque obruo. Incassum lenis ludus paulatim. Autem defui facilisis paulatim tamen validus virtus. Aptent at iaceo luctus ludus nutus sagaciter. Abigo appellatio fere humo ludus odio utrum verto.\n\nAbigo aliquip eu ideo iusto. Dolor ea jugis molior persto quibus sudo usitas utrum. Huic modo quae. Esca huic inhibeo odio premo singularis. Ex iaceo interdico sit venio.\n\nOdio ullamcorper valetudo. Autem commodo magna nobis uxor. Ad adipiscing aptent diam et gilvus gravis plaga. Cui ideo inhibeo lobortis meus mos obruo. Esca letalis occuro tincidunt. Accumsan augue causa nibh nobis suscipere utrum velit vulputate. Humo loquor obruo populus refoveo sagaciter sino suscipit torqueo verto. Dolor pagus paratus. Caecus elit erat iusto quis ratis saluto.\n\nJus meus nibh valde valetudo. Abbas amet capto dolor duis ludus nisl pagus paulatim praemitto. Amet eum facilisi sed suscipit ulciscor. Autem esse vel. Accumsan acsi iaceo meus occuro olim patria singularis tum.\n\nAliquam aliquip exerci importunus luctus pala pertineo praemitto ratis valde. Commoveo dignissim esca pala. Dolore euismod eum nulla quis validus. Dolus nulla odio oppeto sino. Dolore exputo luctus meus os utinam valde. Aliquam genitus neque oppeto tincidunt vel. Jumentum nulla patria utrum. Abigo causa commodo ea nimis nunc oppeto rusticus vulpes wisi. Imputo mauris neque nulla.\n\nAbigo accumsan blandit iaceo occuro quibus torqueo valetudo. Mauris oppeto quadrum quidem. Consequat luctus valetudo verto. Diam molior pertineo tum uxor venio. Jumentum neque pagus praemitto tamen utrum vulputate ymo. Comis eligo esse gravis importunus luctus refoveo vel. Jumentum macto vereor. Acsi eum humo verto.\n\nAt consequat immitto persto premo ut. Commoveo jus quis sed tamen ut. Eros sed verto. Antehabeo exputo gravis humo natu sino tation vulpes. Abico cogo eligo secundum. Abbas amet iusto molior quidne secundum tum usitas. Blandit conventio duis huic praemitto tation. Consequat diam dolus. Aliquam gravis ille magna. Abluo conventio dolus eu iaceo immitto quae ulciscor voco zelus.\n\n",
+            "format": "plain_text",
+            "summary": "Autem eu gemino quia si tamen vindico. Abbas abigo acsi distineo. Cui ea praesent refero roto ut validus. Bene gemino illum inhibeo modo paratus roto ullamcorper vero verto. Caecus cui inhibeo neque.\n\nImmitto os quia singularis. Fere jus metuo nimis nobis valetudo vicis. Euismod paulatim premo tincidunt. Aliquam conventio esse gravis vicis. Proprius quibus sino valetudo wisi.\n\nElit eum hendrerit minim neque typicus venio. Augue blandit diam gemino modo nostrud quis scisco ullamcorper. Blandit damnum defui ibidem in quibus refero refoveo. Cui euismod haero quae tego ut valde zelus. Camur consectetuer eu exerci molior pagus plaga secundum validus. Abico camur comis conventio iustum vel vindico.\n\nCui dolor gravis ideo meus pala. Autem dolore duis euismod oppeto persto torqueo validus vereor. Gilvus olim pertineo uxor. Abbas abdo aliquip capto dignissim exerci iusto refero saepius saluto. Nimis secundum typicus. Dolor fere jus. Abico cogo fere refoveo saepius. Aliquam conventio eligo lenis minim qui ullamcorper velit.\n\nDefui esse ex feugiat immitto macto odio ut voco. Ea inhibeo melior neo occuro praemitto quadrum quae quidne vindico. Ea humo ideo neque quidem velit. Adipiscing aptent damnum incassum meus oppeto quidne tation. Acsi aptent euismod ideo ille imputo interdico laoreet lobortis persto. Erat fere occuro odio pneum quidem ut.\n\nAcsi capto gilvus importunus neque obruo. Incassum lenis ludus paulatim. Autem defui facilisis paulatim tamen validus virtus. Aptent at iaceo luctus ludus nutus sagaciter. Abigo appellatio fere humo ludus odio utrum verto.\n\nAbigo aliquip eu ideo iusto. Dolor ea jugis molior persto quibus sudo usitas utrum. Huic modo quae. Esca huic inhibeo odio premo singularis. Ex iaceo interdico sit venio.\n\nOdio ullamcorper valetudo. Autem commodo magna nobis uxor. Ad adipiscing aptent diam et gilvus gravis plaga. Cui ideo inhibeo lobortis meus mos obruo. Esca letalis occuro tincidunt. Accumsan augue causa nibh nobis suscipere utrum velit vulputate. Humo loquor obruo populus refoveo sagaciter sino suscipit torqueo verto. Dolor pagus paratus. Caecus elit erat iusto quis ratis saluto.\n\nJus meus nibh valde valetudo. Abbas amet capto dolor duis ludus nisl pagus paulatim praemitto. Amet eum facilisi sed suscipit ulciscor. Autem esse vel. Accumsan acsi iaceo meus occuro olim patria singularis tum.\n\nAliquam aliquip exerci importunus luctus pala pertineo praemitto ratis valde. Commoveo dignissim esca pala. Dolore euismod eum nulla quis validus. Dolus nulla odio oppeto sino. Dolore exputo luctus meus os utinam valde. Aliquam genitus neque oppeto tincidunt vel. Jumentum nulla patria utrum. Abigo causa commodo ea nimis nunc oppeto rusticus vulpes wisi. Imputo mauris neque nulla.\n\nAbigo accumsan blandit iaceo occuro quibus torqueo valetudo. Mauris oppeto quadrum quidem. Consequat luctus valetudo verto. Diam molior pertineo tum uxor venio. Jumentum neque pagus praemitto tamen utrum vulputate ymo. Comis eligo esse gravis importunus luctus refoveo vel. Jumentum macto vereor. Acsi eum humo verto.\n\nAt consequat immitto persto premo ut. Commoveo jus quis sed tamen ut. Eros sed verto. Antehabeo exputo gravis humo natu sino tation vulpes. Abico cogo eligo secundum. Abbas amet iusto molior quidne secundum tum usitas. Blandit conventio duis huic praemitto tation. Consequat diam dolus. Aliquam gravis ille magna. Abluo conventio dolus eu iaceo immitto quae ulciscor voco zelus.\n\n",
+            "lang": "uk"
+        }
+    ]
+}

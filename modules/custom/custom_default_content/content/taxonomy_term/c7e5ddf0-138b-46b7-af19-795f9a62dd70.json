@@ -1,11 +1,17 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/uk\/taxonomy\/term\/13?_format=hal_json"
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/13?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
     },
     "tid": [
         {
@@ -63,6 +69,26 @@
             "lang": "uk"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",

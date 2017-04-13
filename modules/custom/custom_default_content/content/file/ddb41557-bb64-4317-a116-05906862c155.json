@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_c9cJqa.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": "27"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ddb41557-bb64-4317-a116-05906862c155"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "16b78263-b410-4539-8bbf-a8096aec468d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "generateImage_c9cJqa.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2017-04\/generateImage_c9cJqa.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": "1732"
+        }
+    ],
+    "status": [
+        {
+            "value": "1"
+        }
+    ],
+    "created": [
+        {
+            "value": "1492083188"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1492083188"
+        }
+    ],
+    "data": [
+        {
+            "value": "iVBORw0KGgoAAAANSUhEUgAAAZ8AAAE8BAMAAADtRKHnAAAAD1BMVEXerTtwB+w5x5O+UIX1DiitLbyaAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAGW0lEQVR4nO3WbW5TOxSFYZAyACJ1BKEDQKIDMJD5j4mEVqIVx\/ZeH87xwTu\/uJQreLReb+XTp9Gf0\/Xd5zz682Us5m4of371+fXvu\/\/Gj6OCbv\/2v\/\/x+e\/f+TTSNAx0eq\/5CHo1HQt0egutBjrf4zsO6F\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"
+        }
+    ]
+}
