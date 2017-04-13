@@ -349,3 +349,28 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  block_4:
+    display_plugin: block
+    id: block_4
+    display_title: 'Block Popular News'
+    position: 4
+    display_options:
+      display_extenders: {  }
+      display_description: ''
+      pager:
+        type: some
+        options:
+          items_per_page: 3
+          offset: 0
+      defaults:
+        pager: false
+        title: false
+      title: 'Популярні новини'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
