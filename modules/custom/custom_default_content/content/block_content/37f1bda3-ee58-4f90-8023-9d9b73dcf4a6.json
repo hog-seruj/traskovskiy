@@ -1,0 +1,145 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/uk\/block\/9?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "9"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "37f1bda3-ee58-4f90-8023-9d9b73dcf4a6"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "9"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "basic"
+        }
+    ],
+    "info": [
+        {
+            "value": "\u041d\u0430\u0439\u043a\u0440\u0430\u0449\u0430 \u043f\u043e\u043b\u0443\u043d\u0438\u0446\u044f \u0432 \u0430\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442\u0456",
+            "lang": "uk"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1492081360",
+            "lang": "uk"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1492081360"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8dc7a9ea-99df-4aa8-953b-eb193fa5a5e8"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/basic\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "8dc7a9ea-99df-4aa8-953b-eb193fa5a5e8"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1492081360",
+            "lang": "uk"
+        }
+    ],
+    "body": [
+        {
+            "value": "Proin eget tortor risus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Proin eget tortor risus.",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "uk"
+        }
+    ]
+}

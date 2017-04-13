@@ -1,0 +1,25 @@
+uuid: 7e4e7569-4f66-4bc2-8fbf-4df4778aaf51
+langcode: uk
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:37f1bda3-ee58-4f90-8023-9d9b73dcf4a6'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: naikrasapolunicavasortimenti
+theme: traskovskyi
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:37f1bda3-ee58-4f90-8023-9d9b73dcf4a6'
+settings:
+  id: 'block_content:37f1bda3-ee58-4f90-8023-9d9b73dcf4a6'
+  label: 'Найкраща полуниця в асортименті'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

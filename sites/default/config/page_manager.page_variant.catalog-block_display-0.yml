@@ -5,8 +5,12 @@ dependencies:
   config:
     - page_manager.page.catalog
     - system.menu.taxonomy-berries-menu
+    - views.view.content_view
     - views.view.taxonomy
+  content:
+    - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
   module:
+    - block_content
     - system
     - views
 id: catalog-block_display-0
@@ -14,18 +18,6 @@ label: 'Block page'
 variant: block_display
 variant_settings:
   blocks:
-    6e472d4d-6ada-4257-8fb4-3c06f28dc232:
-      id: 'views_block:taxonomy-block_3'
-      label: ''
-      provider: views
-      label_display: '0'
-      views_label: ''
-      items_per_page: none
-      region: top
-      weight: -9
-      uuid: 6e472d4d-6ada-4257-8fb4-3c06f28dc232
-      context_mapping:
-        tid: taxonomy_term
     59b6d716-f8e7-45aa-84e1-31cf19435e6d:
       id: 'system_menu_block:taxonomy-berries-menu'
       label: 'taxonomy berries menu'
@@ -34,7 +26,7 @@ variant_settings:
       level: 1
       depth: 0
       region: top
-      weight: -10
+      weight: -9
       uuid: 59b6d716-f8e7-45aa-84e1-31cf19435e6d
       context_mapping: {  }
     a6f92967-0e21-4a76-99ad-5335f584e795:
@@ -44,10 +36,47 @@ variant_settings:
       label_display: '0'
       views_label: ''
       items_per_page: none
+      region: bottom
+      weight: -9
+      uuid: a6f92967-0e21-4a76-99ad-5335f584e795
+      context_mapping:
+        tid: taxonomy_term
+    6d9e2063-45b3-411b-a109-59aeccde53fc:
+      id: 'views_block:taxonomy-berries_catalog'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
       region: top
       weight: -8
-      uuid: a6f92967-0e21-4a76-99ad-5335f584e795
+      uuid: 6d9e2063-45b3-411b-a109-59aeccde53fc
+      context_mapping:
+        tid: taxonomy_term
+    191fe8f8-8006-4f6e-b6d5-3dd0b3565e12:
+      id: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+      label: 'Садова техніка'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: -10
+      uuid: 191fe8f8-8006-4f6e-b6d5-3dd0b3565e12
       context_mapping: {  }
+    9a2b4fe9-1685-41fa-a348-67573f42e2ea:
+      id: 'views_block:content_view-block_berry_sort'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: bottom
+      weight: -10
+      uuid: 9a2b4fe9-1685-41fa-a348-67573f42e2ea
+      context_mapping:
+        field_type_of_berry_target_id: taxonomy_term
   id: block_display
   uuid: 41c01b21-074c-467e-8902-9c8122bf5a05
   label: null
