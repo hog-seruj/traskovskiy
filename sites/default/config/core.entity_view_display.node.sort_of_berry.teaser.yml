@@ -1,0 +1,27 @@
+uuid: 64e5c05b-19c4-402f-9427-bbab6b59d36c
+langcode: uk
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sort_of_berry.body
+    - node.type.sort_of_berry
+  module:
+    - text
+    - user
+id: node.sort_of_berry.teaser
+targetEntityType: node
+bundle: sort_of_berry
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  langcode: true

@@ -1,0 +1,38 @@
+uuid: e495b1ba-2416-4060-a227-c8c1f9c1c574
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_photo_gallery
+    - node.type.sort_of_berry
+  module:
+    - image
+id: node.sort_of_berry.field_photo_gallery
+field_name: field_photo_gallery
+entity_type: node
+bundle: sort_of_berry
+label: 'Галерея фото'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

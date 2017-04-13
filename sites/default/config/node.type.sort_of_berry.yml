@@ -1,0 +1,17 @@
+uuid: ea562c48-9212-4f90-99c7-0bc91c5a7d04
+langcode: uk
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Сорт
+type: sort_of_berry
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

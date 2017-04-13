@@ -56,6 +56,7 @@ module:
   rest: 0
   search: 0
   serialization: 0
+  sharethis: 0
   shortcut: 0
   styleguide: 0
   system: 0
