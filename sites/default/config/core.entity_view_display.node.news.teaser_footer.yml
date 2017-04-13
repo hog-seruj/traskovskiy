@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.news.body
     - field.field.node.news.field_image
     - field.field.node.news.field_news_commnet
+    - image.style.70x65
     - node.type.news
   module:
     - ds
@@ -50,6 +51,10 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
+        settings:
+          wrapper: p
+          class: ''
+          link: false
       node_post_date:
         plugin_id: node_post_date
         weight: 3
@@ -71,7 +76,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: 70x65
       image_link: ''
     third_party_settings: {  }
     type: image

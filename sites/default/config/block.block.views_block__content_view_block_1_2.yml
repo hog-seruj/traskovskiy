@@ -5,9 +5,13 @@ dependencies:
   config:
     - views.view.content_view
   module:
+    - block_class
     - views
   theme:
     - traskovskyi
+third_party_settings:
+  block_class:
+    classes: last-news
 id: views_block__content_view_block_1_2
 theme: traskovskyi
 region: footer
