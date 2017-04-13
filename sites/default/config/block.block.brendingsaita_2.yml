@@ -3,9 +3,13 @@ langcode: uk
 status: true
 dependencies:
   module:
+    - block_class
     - system
   theme:
     - traskovskyi
+third_party_settings:
+  block_class:
+    classes: logo-footer
 id: brendingsaita_2
 theme: traskovskyi
 region: footer

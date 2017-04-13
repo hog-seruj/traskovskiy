@@ -213,7 +213,7 @@ hr {
 p,
 pre {
   // Set 1 unit of vertical rhythm on the top and bottom margin.
-  @include margin(1 0);
+  @include margin(.5 0);
 }
 
 // Preformatted text

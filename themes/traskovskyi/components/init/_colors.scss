@@ -30,6 +30,7 @@ $chroma: add-colors((
   green1:                  #204e32,
 
   grey2:                  #727272,
+  grey3:                  #b4b4b4,
 
   white1:                 #f0f0f0,
 
@@ -46,6 +47,7 @@ $chroma: add-colors('functional', (
   // Colors used in the main content area.
   text:                   'black',
   text-bg:                'white',
+  text-white:             'white',
 
   link:                   'green1',
   link-visited:           ('blue' darken 20%),
@@ -64,13 +66,19 @@ $chroma: add-colors('functional', (
   blockquote:              'white1',
   blockquote-text:         'green1',
 
+  title-bg:               'white1',
+
   body-bg:                'text-bg',
+
+  bottom-page-bg:         'green',
 
   button:                 'text',
   button-disabled:        'grey',
 
   fieldset-summary:       'grey',
   form-error:             'red',
+
+  footer-border:          'grey3',
 
   input-border-search:    'black',
   input-border:           'white1',

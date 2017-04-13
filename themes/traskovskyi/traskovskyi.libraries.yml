@@ -16,6 +16,7 @@ base:
   dependencies:
     - traskovskyi/clearfix
     - traskovskyi/visually-hidden
+    - traskovskyi/page-elements
 
 layouts:
   css:
@@ -124,6 +125,11 @@ pager:
   css:
     component:
       components/asset-builds/css/pager.css: {}
+
+page-elements:
+  css:
+    component:
+      components/asset-builds/css/page-elements.css: {}
 
 print-none:
   css:

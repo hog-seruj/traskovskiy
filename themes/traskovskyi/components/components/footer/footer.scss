@@ -8,8 +8,11 @@
 
 .footer,
 %footer {
-  @include type-layout(s, 1);
-  @include margin-top(2, s);
-  @include padding(1 0, s);
-  border-top: 1px solid color(border);
+
+  .logo-footer {
+    @include spacing(margin-right, 15px);
+    @include spacing(width, 161px);
+    float: left;
+  }
 }
+

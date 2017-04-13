@@ -1,0 +1,14 @@
+uuid: 4c41a9ad-520b-428d-800b-0303a6cea51e
+langcode: uk
+status: true
+dependencies: {  }
+name: 70x65
+label: 70x65
+effects:
+  98497346-23c0-4340-b018-0811dafd36c9:
+    uuid: 98497346-23c0-4340-b018-0811dafd36c9
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 70
+      height: 65

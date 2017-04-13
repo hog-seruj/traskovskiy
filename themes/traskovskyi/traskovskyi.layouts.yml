@@ -9,3 +9,13 @@ traskovskyi_footer:
       label: Center
     right:
       label: Right
+
+last_news:
+  label: Last News
+  category: traskovskyi
+  template: components/layouts/traskovskyi-footer/last-news
+  regions:
+    left:
+      label: Left
+    right:
+      label: Right

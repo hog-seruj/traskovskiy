@@ -5,9 +5,13 @@ dependencies:
   content:
     - 'block_content:basic:f68b3888-7a88-404e-8fa6-52857ca95cd2'
   module:
+    - block_class
     - block_content
   theme:
     - traskovskyi
+third_party_settings:
+  block_class:
+    classes: our-partners
 id: nasipartneri_2
 theme: traskovskyi
 region: footer

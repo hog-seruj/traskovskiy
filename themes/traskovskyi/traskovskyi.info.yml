@@ -80,6 +80,7 @@ libraries:
   - traskovskyi/nav-menu
   - traskovskyi/navbar
   - traskovskyi/pager
+  - traskovskyi/page-elements
 
 
 # This section is used by the contrib module, Component Libraries. It allows you

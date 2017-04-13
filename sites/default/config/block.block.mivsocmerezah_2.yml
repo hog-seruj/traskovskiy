@@ -5,9 +5,13 @@ dependencies:
   content:
     - 'block_content:block_with_links:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
   module:
+    - block_class
     - block_content
   theme:
     - traskovskyi
+third_party_settings:
+  block_class:
+    classes: social
 id: mivsocmerezah_2
 theme: traskovskyi
 region: footer

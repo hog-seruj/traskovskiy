@@ -32,31 +32,31 @@ h2,
 h3,
 %h3 {
   @include type-layout(xxl, 1.5);
-  @include margin-top(1, l);
-  @include margin-bottom(1, l);
+  @include margin-top(.5, l);
+  @include margin-bottom(.5, l);
   font-style: italic;
 }
 
 h4,
 %h4 {
   @include type-layout(s, 1);
-  @include margin-top(1, m);
-  @include margin-bottom(1, m);
+  @include margin-top(.2, m);
+  @include margin-bottom(.2, m);
   font-weight: weight(normal);
 }
 
 h5,
 %h5 {
   @include type-layout(s, 1);
-  @include margin-top(1, s);
-  @include margin-bottom(1, s);
+  @include margin-top(.2, s);
+  @include margin-bottom(.2, s);
   font-weight: weight(normal);
 }
 
 h6,
 %h6 {
   @include type-layout(xs, 1);
-  @include margin-top(1, xs);
-  @include margin-bottom(1, xs);
+  @include margin-top(.2, xs);
+  @include margin-bottom(.2, xs);
   font-weight: weight(normal);
 }
