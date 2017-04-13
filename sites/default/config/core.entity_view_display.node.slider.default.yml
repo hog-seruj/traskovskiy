@@ -60,6 +60,8 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  sharethis:
+    weight: 10
 hidden:
   langcode: true
   links: true

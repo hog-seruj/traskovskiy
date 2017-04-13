@@ -9,8 +9,8 @@ node_types:
   page: null
   slider: null
 option_extras:
-  'Google Plus One:plusone': 'Google Plus One:plusone'
-  'Facebook Like:fblike': 'Facebook Like:fblike'
+  'Google Plus One:plusone': '0'
+  'Facebook Like:fblike': '0'
 option_neworzero: 0
 option_onhover: 1
 option_shorten: 1

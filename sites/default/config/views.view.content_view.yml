@@ -3,7 +3,9 @@ langcode: uk
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_footer
     - field.storage.node.field_photo_gallery
     - image.style.thumbnail
     - node.type.news
@@ -66,10 +68,11 @@ display:
         type: 'ds_entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: full
           alternating_fieldset:
             alternating: false
             allpages: false
+            item_0: teaser
           grouping_fieldset:
             group: false
             group_field: node_field_data|created
@@ -193,10 +196,37 @@ display:
         use_more_text: false
         link_display: false
         link_url: false
+        pager: false
+        style: false
+        row: false
       use_more_always: true
       use_more_text: 'Всі новини'
       link_display: custom_url
       link_url: news
+      pager:
+        type: some
+        options:
+          items_per_page: 2
+          offset: 0
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_footer
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+          grouping_fieldset:
+            group: false
+            group_field: node_field_data|created
+            group_field_function: ''
+          advanced_fieldset:
+            advanced: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -367,7 +397,29 @@ display:
       defaults:
         pager: false
         title: false
+        style: false
+        row: false
       title: 'Популярні новини'
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_footer
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+            item_0: teaser
+            item_1: teaser
+            item_2: teaser
+          grouping_fieldset:
+            group: false
+            group_field: node_field_data|created
+            group_field_function: ''
+          advanced_fieldset:
+            advanced: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -441,13 +493,16 @@ display:
         pager: false
         title: false
         arguments: false
+        style: false
+        row: false
       filter_groups:
         operator: AND
         groups:
           1: AND
       pager:
-        type: none
+        type: some
         options:
+          items_per_page: 10
           offset: 0
       block_description: 'Berry page Sorts'
       display_description: ''
@@ -486,17 +541,34 @@ display:
             format: default_summary
           specify_validation: true
           validate:
-            type: taxonomy_term_name
+            type: 'entity:taxonomy_term'
             fail: 'not found'
           validate_options:
             bundles:
               berries: berries
             operation: view
+            multiple: 0
             access: false
-            transform: false
           break_phrase: false
           not: false
           plugin_id: numeric
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'ds_entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+          alternating_fieldset:
+            alternating: false
+            allpages: false
+          grouping_fieldset:
+            group: false
+            group_field: node_field_data|created
+            group_field_function: ''
+          advanced_fieldset:
+            advanced: false
     cache_metadata:
       max-age: -1
       contexts:

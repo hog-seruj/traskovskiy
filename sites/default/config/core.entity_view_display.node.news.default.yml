@@ -60,6 +60,8 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: comment_default
+  sharethis:
+    weight: 10
 hidden:
   field_image: true
   langcode: true

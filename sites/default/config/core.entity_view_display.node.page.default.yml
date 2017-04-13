@@ -23,5 +23,7 @@ content:
     third_party_settings: {  }
   links:
     weight: 101
+  sharethis:
+    weight: 10
 hidden:
   langcode: true

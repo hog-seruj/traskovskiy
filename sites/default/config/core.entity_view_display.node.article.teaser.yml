@@ -45,6 +45,8 @@ content:
     label: above
   links:
     weight: 100
+  sharethis:
+    weight: 10
 hidden:
   comment: true
   field_image: true
