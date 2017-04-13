@@ -1,0 +1,22 @@
+uuid: e589d1c1-a86a-4a80-beba-2d0a75eca5f9
+langcode: uk
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.sort_of_berry
+  module:
+    - text
+id: node.sort_of_berry.body
+field_name: body
+entity_type: node
+bundle: sort_of_berry
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

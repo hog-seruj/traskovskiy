@@ -1,0 +1,30 @@
+uuid: a8aa1d92-3dca-4e42-acc4-08deff2691d2
+langcode: uk
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - node
+id: node.field_photo_gallery
+field_name: field_photo_gallery
+entity_type: node
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
