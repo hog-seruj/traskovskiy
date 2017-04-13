@@ -66,6 +66,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_photo_gallery: true
   field_type_of_berry: true
   langcode: true
   links: true

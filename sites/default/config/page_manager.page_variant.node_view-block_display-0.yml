@@ -1,0 +1,61 @@
+uuid: c5ee6354-89a7-477a-ac1f-9fc52613602f
+langcode: uk
+status: true
+dependencies:
+  config:
+    - page_manager.page.node_view
+    - system.menu.taxonomy-berries-menu
+    - views.view.content_view
+  module:
+    - system
+    - views
+id: node_view-block_display-0
+label: Sort
+variant: block_display
+variant_settings:
+  blocks:
+    5f59f5ca-d8cf-4387-9fe9-ae7af9ae1c65:
+      id: 'system_menu_block:taxonomy-berries-menu'
+      label: 'taxonomy berries menu'
+      provider: system
+      label_display: '0'
+      level: 1
+      depth: 0
+      region: top
+      weight: -10
+      uuid: 5f59f5ca-d8cf-4387-9fe9-ae7af9ae1c65
+      context_mapping: {  }
+    0c70628d-e4a5-433c-bb5c-34f59d233e28:
+      id: 'views_block:content_view-block_sort'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: -9
+      uuid: 0c70628d-e4a5-433c-bb5c-34f59d233e28
+      context_mapping:
+        nid: node
+    4fad2c68-e8af-49ae-8acd-1b7b27b0ca37:
+      id: 'views_block:content_view-block_sort_gallery'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: bottom
+      weight: -8
+      uuid: 4fad2c68-e8af-49ae-8acd-1b7b27b0ca37
+      context_mapping:
+        nid: node
+  id: block_display
+  uuid: 0a560500-6a8b-4d37-a881-c0399921776c
+  label: null
+  weight: 0
+  page_title: ''
+page: node_view
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

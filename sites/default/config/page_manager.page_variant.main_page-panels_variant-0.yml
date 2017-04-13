@@ -5,7 +5,9 @@ dependencies:
   config:
     - page_manager.page.main_page
     - views.view.content_view
+    - views.view.taxonomy
   content:
+    - 'block_content:basic:37f1bda3-ee58-4f90-8023-9d9b73dcf4a6'
     - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
     - 'block_content:contact:9ff3223e-24e3-4d54-b57b-0f88acf9e131'
   module:
@@ -26,7 +28,7 @@ variant_settings:
       info: ''
       view_mode: full
       region: middle
-      weight: 6
+      weight: -1
       uuid: 952fe86a-23d5-44ef-a122-29c8f0de2ca8
       context_mapping: {  }
     fa99deca-9422-485f-9761-c983877acf54:
@@ -37,7 +39,7 @@ variant_settings:
       views_label: ''
       items_per_page: none
       region: middle
-      weight: 5
+      weight: -2
       uuid: fa99deca-9422-485f-9761-c983877acf54
       context_mapping: {  }
     a8affbe9-709d-41c0-933b-c03e541a31f1:
@@ -49,8 +51,31 @@ variant_settings:
       info: ''
       view_mode: full
       region: middle
-      weight: 7
+      weight: 2
       uuid: a8affbe9-709d-41c0-933b-c03e541a31f1
+      context_mapping: {  }
+    f2755f58-8899-43e5-9401-7f185b3a859a:
+      id: 'views_block:taxonomy-berries_front_page'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: middle
+      weight: 1
+      uuid: f2755f58-8899-43e5-9401-7f185b3a859a
+      context_mapping: {  }
+    783370ad-ee7a-4c88-9991-02587d2d9eaa:
+      id: 'block_content:37f1bda3-ee58-4f90-8023-9d9b73dcf4a6'
+      label: 'Найкраща полуниця в асортименті'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: middle
+      weight: 0
+      uuid: 783370ad-ee7a-4c88-9991-02587d2d9eaa
       context_mapping: {  }
   id: panels_variant
   uuid: 6b89399d-dcb2-4b0c-87f3-f69434172e41
