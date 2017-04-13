@@ -1,14 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/uk\/taxonomy\/term\/2?_format=hal_json"
+            "href": "http:\/\/default\/uk\/taxonomy\/term\/2?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/our_partners"
         },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner3_6_0_0_1_2.png",
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/banner3_6_0_0_1_2_0.png",
                 "lang": "uk"
             }
         ]
@@ -69,24 +75,30 @@
             "lang": "uk"
         }
     ],
-    "content_translation_status": [
-        {
-            "value": "1",
-            "lang": "uk"
-        }
-    ],
-    "content_translation_created": [
-        {
-            "value": "1491652635",
-            "lang": "uk"
-        }
-    ],
     "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/banner3_6_0_0_1_2.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/banner3_6_0_0_1_2_0.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -104,5 +116,17 @@
                 "height": "91"
             }
         ]
-    }
+    },
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1491652635",
+            "lang": "uk"
+        }
+    ]
 }

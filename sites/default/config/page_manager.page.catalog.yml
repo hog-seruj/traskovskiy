@@ -6,7 +6,7 @@ id: catalog
 label: Catalog
 description: ''
 use_admin_theme: false
-path: '/taxonomy/term/{tid}'
+path: /taxonomy/term/%
 access_logic: and
 access_conditions: {  }
 parameters: {  }

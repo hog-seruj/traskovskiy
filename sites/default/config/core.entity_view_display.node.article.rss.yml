@@ -20,6 +20,8 @@ mode: rss
 content:
   links:
     weight: 100
+  sharethis:
+    weight: 10
 hidden:
   body: true
   comment: true

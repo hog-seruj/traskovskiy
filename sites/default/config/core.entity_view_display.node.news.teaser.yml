@@ -73,6 +73,8 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+  sharethis:
+    weight: 10
 hidden:
   field_news_commnet: true
   langcode: true
