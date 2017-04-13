@@ -8,56 +8,11 @@
 
 .footer,
 %footer {
-  // @include margin-top(2, s);
-  // @include padding(1 0, s);
-  // @include type-layout(s, 1);
-  // border-top: 1px solid color(border);
+
   .logo-footer {
+    @include spacing(margin-right, 15px);
+    @include spacing(width, 161px);
     float: left;
-    width: 25%;
-  }
-
-  .about-us,
-  .last-news,
-  .social {
-    float: left;
-    position: relative;
-    width: 25%;
-
-    &::before {
-      @include spacing(height, 8px);
-      @include spacing(left, 25px);
-      @include spacing(top, 73px);
-      @include spacing(width, 75px);
-      background: color(footer-border);
-      content: '';
-      display: block;
-      position: absolute;
-    }
-  }
-
-  .social {
-
-    .field--name-field-link > .field__item {
-      display: inline-block;
-    }
   }
 }
 
-.dev-company {
-  @include spacing(padding-bottom, 5px);
-  @include spacing(padding-top, 10px);
-  background: color(bottom-page-bg);
-  clear: both;
-
-  .text-formatted {
-    @include spacing(max-width, 1165px);
-    margin: 0 auto;
-    text-align: right;
-  }
-
-  p {
-    color: color(text-white);
-    margin: 0;
-  }
-}

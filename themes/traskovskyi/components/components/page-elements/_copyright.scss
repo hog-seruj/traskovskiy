@@ -1,0 +1,16 @@
+.dev-company {
+  @include spacing(padding-bottom, 5px);
+  @include spacing(padding-top, 10px);
+  background: color(bottom-page-bg);
+  clear: both;
+  text-align: right;
+
+  .text-formatted {
+    @include spacing(max-width, 1065px);
+    margin: 0 auto;
+  }
+
+  p {
+    color: color(text-white);
+  }
+}
