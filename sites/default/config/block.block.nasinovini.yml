@@ -11,7 +11,7 @@ dependencies:
 id: nasinovini
 theme: traskovskyi
 region: '-1'
-weight: -9
+weight: -6
 provider: null
 plugin: 'block_content:ade968c2-84f2-4d16-907c-529562a167e9'
 settings:

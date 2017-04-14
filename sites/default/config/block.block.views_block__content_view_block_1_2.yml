@@ -14,8 +14,8 @@ third_party_settings:
     classes: last-news
 id: views_block__content_view_block_1_2
 theme: traskovskyi
-region: footer
-weight: -8
+region: footer_center_right
+weight: -13
 provider: null
 plugin: 'views_block:content_view-block_1'
 settings:

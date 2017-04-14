@@ -17,21 +17,12 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: ds_2col
-      path: modules/contrib/ds
-      library: layout_plugin/ds_2col
+      id: last_news
+      path: themes/traskovskyi
+      library: ''
       disable_css: false
       entity_classes: all_classes
-      settings:
-        wrappers:
-          left: div
-          right: div
-        outer_wrapper: div
-        attributes: ''
-        link_attribute: content
-        link_custom: ''
-        classes:
-          layout_class: {  }
+      settings: {  }
     regions:
       left:
         - field_image
@@ -70,7 +61,7 @@ content:
     type: text_trimmed
     weight: 2
     settings:
-      trim_length: 300
+      trim_length: 125
     third_party_settings: {  }
   field_image:
     weight: 0
@@ -80,9 +71,8 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
-  sharethis:
-    weight: 10
 hidden:
   field_news_commnet: true
   langcode: true
   links: true
+  sharethis: true

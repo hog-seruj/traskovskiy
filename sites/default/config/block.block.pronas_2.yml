@@ -14,8 +14,8 @@ third_party_settings:
     classes: about-us
 id: pronas_2
 theme: traskovskyi
-region: footer
-weight: -9
+region: footer_center_left
+weight: -13
 provider: null
 plugin: 'block_content:5f3f8e5e-65fb-4cbf-a35d-0e4f904c2dc1'
 settings:

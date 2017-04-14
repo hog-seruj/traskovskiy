@@ -1,26 +1,32 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/www\/uk\/taxonomy\/term\/1?_format=hal_json"
+            "href": "http:\/\/www\/uk\/taxonomy\/term\/15?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/our_partners"
         },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
+            {
+                "href": "http:\/\/www\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
             {
-                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/garnier%20%281%29.png",
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/nefco.png",
                 "lang": "uk"
             }
         ]
     },
     "tid": [
         {
-            "value": "1"
+            "value": "15"
         }
     ],
     "uuid": [
         {
-            "value": "ca73007d-5bd4-4618-ba8c-546d67a19f59"
+            "value": "daf722b0-fcb8-49dc-9d60-8bb701de11e1"
         }
     ],
     "langcode": [
@@ -36,7 +42,7 @@
     ],
     "name": [
         {
-            "value": "\u043f\u0430\u0440\u0442\u043d\u0435\u0440 1",
+            "value": "\u043f\u0430\u0440\u0442\u043d\u0435\u0440 3",
             "lang": "uk"
         }
     ],
@@ -47,7 +53,7 @@
     ],
     "changed": [
         {
-            "value": "1492154490",
+            "value": "1492154706",
             "lang": "uk"
         }
     ],
@@ -69,6 +75,48 @@
             "lang": "uk"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7517a36b-0395-4b84-b912-036762538dda"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/nefco.png"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7d420f02-60ac-4ea0-a012-9c24431e1d83"
+                    }
+                ],
+                "lang": "uk",
+                "alt": "",
+                "title": "",
+                "width": "168",
+                "height": "68"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",
@@ -77,34 +125,10 @@
     ],
     "content_translation_created": [
         {
-            "value": "1491652612",
+            "value": "1492154682",
             "lang": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/our_partners\/field_image": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/garnier%20%281%29.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "5a9da858-a5e6-4465-bb39-0af9abd1aebd"
-                    }
-                ],
-                "lang": "uk",
-                "alt": "",
-                "title": "",
-                "width": "324",
-                "height": "143"
-            }
-        ]
-    },
     "field_link": [
         {
             "uri": "internal:\/",
