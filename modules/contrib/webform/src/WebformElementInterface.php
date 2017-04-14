@@ -52,7 +52,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function getDefaultProperty($property_name);
 
   /**
-   * Determine if an element supports a specified property.
+   * Determine if the element supports a specified property.
    *
    * @param string $property_name
    *   An element's property name.
@@ -129,7 +129,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function hasWrapper(array $element);
 
   /**
-   * Checks if element is a container that can contain elements.
+   * Checks if the element is a container that can contain elements.
    *
    * @param array $element
    *   An element.
@@ -140,7 +140,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isContainer(array $element);
 
   /**
-   * Checks if element is a root element.
+   * Checks if the element is a root element.
    *
    * @return bool
    *   TRUE if the element is a root element.
@@ -148,7 +148,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isRoot();
 
   /**
-   * Checks if element value could contain multiple lines.
+   * Checks if the element value could contain multiple lines.
    *
    * @param array $element
    *   An element.
@@ -159,7 +159,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isMultiline(array $element);
 
   /**
-   * Checks if element is a composite element.
+   * Checks if the element is a composite element.
    *
    * @return bool
    *   TRUE if the element is a composite element.
@@ -167,7 +167,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isComposite();
 
   /**
-   * Checks if element is hidden.
+   * Checks if the element is hidden.
    *
    * @return bool
    *   TRUE if the element is hidden.
@@ -175,7 +175,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isHidden();
 
   /**
-   * Checks if element is enabled.
+   * Checks if the element is enabled.
    *
    * @return bool
    *   TRUE if the element is enabled.
@@ -183,7 +183,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isEnabled();
 
   /**
-   * Checks if element is disabled.
+   * Checks if the element is disabled.
    *
    * @return bool
    *   TRUE if the element is disabled.
@@ -191,7 +191,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function isDisabled();
 
   /**
-   * Checks if element supports multiple values.
+   * Checks if the element supports multiple values.
    *
    * @return bool
    *   TRUE if the element supports multiple values.
@@ -199,13 +199,21 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
   public function supportsMultipleValues();
 
   /**
-   * Checks if element value has multiple values.
+   * Checks if the element uses the 'webform_multiple' element.
+   *
+   * @return bool
+   *   TRUE if the element supports multiple values.
+   */
+  public function hasMultipleWrapper();
+
+  /**
+   * Checks if the element value has multiple values.
    *
    * @param array $element
    *   An element.
    *
    * @return bool
-   *   TRUE if element value has multiple values.
+   *   TRUE if the element value has multiple values.
    */
   public function hasMultipleValues(array $element);
 
@@ -255,6 +263,16 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
    *   A webform submission.
    */
   public function prepare(array &$element, WebformSubmissionInterface $webform_submission);
+
+  /**
+   * Finalize an element to be rendered within a webform.
+   *
+   * @param array $element
+   *   An element.
+   * @param \Drupal\webform\WebformSubmissionInterface $webform_submission
+   *   A webform submission.
+   */
+  public function finalize(array &$element, WebformSubmissionInterface $webform_submission);
 
   /**
    * Check element access (rules).
@@ -341,7 +359,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
    * @return array
    *   A render array representing an element as HTML.
    */
-  public function buildHtml(array &$element, $value, array $options = []);
+  public function buildHtml(array $element, $value, array $options = []);
 
   /**
    * Build an element as text element.
@@ -356,7 +374,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
    * @return array
    *   A render array representing an element as text.
    */
-  public function buildText(array &$element, $value, array $options = []);
+  public function buildText(array $element, $value, array $options = []);
 
   /**
    * Format an element's value as HTML.
@@ -371,7 +389,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
    * @return array|string
    *   The element's value formatted as an HTML string or a render array.
    */
-  public function formatHtml(array &$element, $value, array $options = []);
+  public function formatHtml(array $element, $value, array $options = []);
 
   /**
    * Format an element's value as plain text.
@@ -386,7 +404,7 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
    * @return array|string
    *   The element's value formatted as plain text or a render array.
    */
-  public function formatText(array &$element, $value, array $options = []);
+  public function formatText(array $element, $value, array $options = []);
 
   /**
    * Get an element's available single value formats.
@@ -551,6 +569,8 @@ interface WebformElementInterface extends PluginInspectionInterface, PluginFormI
    *
    * @param array $element
    *   An element.
+   * @param string $value
+   *   Value to be exported.
    * @param array $export_options
    *   An associative array of export options.
    *

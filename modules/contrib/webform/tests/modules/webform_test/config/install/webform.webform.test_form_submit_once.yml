@@ -1,9 +1,11 @@
 langcode: en
-status: true
+status: open
 dependencies:
   enforced:
     module:
       - webform_test
+open: null
+close: null
 uid: null
 template: false
 id: test_form_submit_once
@@ -13,13 +15,13 @@ elements: |
   message:
     '#markup': 'The below submit buttons can only be clicked once.'
   wizard_1:
-    '#type': wizard_page
+    '#type': webform_wizard_page
     '#title': 'Wizard page #1'
   wizard_2:
-    '#type': wizard_page
+    '#type': webform_wizard_page
     '#title': 'Wizard page #2'
   wizard_3:
-    '#type': wizard_page
+    '#type': webform_wizard_page
     '#title': 'Wizard page #3'
 css: ''
 javascript: ''
@@ -31,17 +33,21 @@ settings:
   form_submit_once: true
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: true
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -58,13 +64,14 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: true
+  draft: authenticated
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: page
+  confirmation_title: ''
   confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
@@ -75,6 +82,8 @@ settings:
   limit_total_message: ''
   limit_user: null
   limit_user_message: ''
+  purge: none
+  purge_days: null
   entity_limit_total: null
   entity_limit_user: null
   results_disabled: false

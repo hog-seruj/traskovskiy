@@ -40,7 +40,6 @@ display:
             group_items:
               1:
                 title: Опубликовано
-                value: '1'
               2:
                 title: 'Снято с публикации'
         type:

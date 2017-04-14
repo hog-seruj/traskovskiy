@@ -29,8 +29,13 @@ The primary use case for this module is to:
 > Evaluate this project online using [simplytest.me](https://simplytest.me/project/drupal/8.2.x?add[]=webform).
 
 
-### Blog Posts & Articles
+### Presentations, Blog Posts, & Articles
 
+- [Webform and Drupal 8 @ DrupalCamp London 2016](https://www.slideshare.net/philipnorton42/webform-and-drupal-8) \[Slides\]
+- [Webform 8.x-5.x @ NJ DrupalCamp](https://www.drupalcampnj.org/program/sessions/building-webforms-drupal-8) \[Video\]
+- [https://dev.acquia.com/blog/drupal-8-module-of-the-week--webform-formerly-known-as-yaml-form/07/03/2017/17741](https://dev.acquia.com/blog/drupal-8-module-of-the-week--webform-formerly-known-as-yaml-form/07/03/2017/17741)
+- [Drupal 8 Module Webform picks up speed](https://internetdevels.com/blog/drupal-8-module-webform)
+- [How to Make a Complex Webform in Drupal 8](https://www.ostraining.com/blog/drupal/how-to-make-a-complex-webform-in-drupal-8/)
 - [Getting NYU onto Webform](https://www.fourkitchens.com/blog/article/getting-nyu-yaml-form)
 - [Webforms for Drupal 8](https://www.gaiaresources.com.au/yaml-forms-drupal-8/)
 - [Creating Webform Handlers in Drupal 8](http://fivemilemedia.co.uk/blog/creating-yaml-form-handlers-drupal-8)
@@ -108,4 +113,3 @@ notes and assume that _things will be changing_.
   which contain fields that you define! These webforms use the standard Drupal 
   fields.  
   [Is this module still needed?](https://www.drupal.org/node/2809179)
-

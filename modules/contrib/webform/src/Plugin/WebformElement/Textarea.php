@@ -39,9 +39,13 @@ class Textarea extends TextBase {
       'required' => FALSE,
       'required_error' => '',
       'unique' => FALSE,
+      'unique_error' => '',
       'counter_type' => '',
       'counter_maximum' => '',
       'counter_message' => '',
+      // Attributes.
+      'wrapper_attributes' => [],
+      'attributes' => [],
       // Submission display.
       'format' => $this->getItemDefaultFormat(),
     ] + $this->getDefaultBaseProperties();
@@ -57,7 +61,7 @@ class Textarea extends TextBase {
   /**
    * {@inheritdoc}
    */
-  public function formatHtmlItem(array &$element, $value, array $options = []) {
+  public function formatHtmlItem(array $element, $value, array $options = []) {
     return [
       '#markup' => nl2br(new HtmlEscapedText($value)),
     ];

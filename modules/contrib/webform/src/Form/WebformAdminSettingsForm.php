@@ -128,83 +128,115 @@ class WebformAdminSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('settings.default_page_base_path'),
     ];
 
-    // Webform.
-    $form['webform'] = [
+    // Form.
+    $form['form'] = [
       '#type' => 'details',
-      '#title' => $this->t('Webform default settings'),
+      '#title' => $this->t('Form default settings'),
       '#tree' => TRUE,
     ];
-    $form['webform']['default_form_closed_message'] = [
+    $form['form']['default_form_open_message'] = [
+      '#type' => 'webform_html_editor',
+      '#title' => $this->t('Default open message'),
+      '#required' => TRUE,
+      '#default_value' => $config->get('settings.default_form_open_message'),
+    ];
+    $form['form']['default_form_close_message'] = [
       '#type' => 'webform_html_editor',
       '#title' => $this->t('Default closed message'),
       '#required' => TRUE,
-      '#default_value' => $config->get('settings.default_form_closed_message'),
+      '#default_value' => $config->get('settings.default_form_close_message'),
     ];
-    $form['webform']['default_form_exception_message'] = [
+    $form['form']['default_form_exception_message'] = [
       '#type' => 'webform_html_editor',
-      '#title' => $this->t('Default closed exception message'),
+      '#title' => $this->t('Default exception message'),
       '#required' => TRUE,
       '#default_value' => $config->get('settings.default_form_exception_message'),
     ];
-    $form['webform']['default_form_confidential_message'] = [
+    $form['form']['default_form_confidential_message'] = [
       '#type' => 'webform_html_editor',
       '#title' => $this->t('Default confidential message'),
       '#required' => TRUE,
       '#default_value' => $config->get('settings.default_form_confidential_message'),
     ];
-    $form['webform']['default_form_submit_label'] = [
+    $form['form']['default_form_submit_label'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Default submit button label'),
       '#required' => TRUE,
       '#size' => 20,
       '#default_value' => $settings['default_form_submit_label'],
     ];
-    $form['webform']['default_form_submit_once'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Prevent duplicate submissions'),
-      '#description' => $this->t('If checked, the submit button will be disabled immediately after is is clicked.'),
-      '#default_value' => $settings['default_form_submit_once'],
-    ];
-    $form['webform']['default_form_disable_back'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Disable back button for all webforms'),
-      '#description' => $this->t('If checked, users will not be allowed to navigate back to the webform using the browsers back button.'),
-      '#return_value' => TRUE,
-      '#default_value' => $config->get('settings.default_form_disable_back'),
-    ];
-    $form['webform']['default_form_unsaved'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Warn users about unsaved changes'),
-      '#description' => $this->t('If checked, users will be displayed a warning message when they navigate away from a webform with unsaved changes.'),
-      '#return_value' => TRUE,
-      '#default_value' => $config->get('settings.default_form_unsaved'),
-    ];
-    $form['webform']['default_form_novalidate'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Disable client-side validation for all webforms'),
-      '#description' => $this->t('If checked, the <a href=":href">novalidate</a> attribute, which disables client-side validation, will be added to all webforms.', [':href' => 'http://www.w3schools.com/tags/att_form_novalidate.asp']),
-      '#return_value' => TRUE,
-      '#default_value' => $config->get('settings.default_form_novalidate'),
-    ];
-    $form['webform']['default_form_details_toggle'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Display collapse/expand all details link'),
-      '#description' => $this->t('If checked, an expand/collapse all (details) link will be added to all webforms with two or more details elements.'),
-      '#return_value' => TRUE,
-      '#default_value' => $config->get('settings.default_form_details_toggle'),
-    ];
-    $form['webform']['form_classes'] = [
+    $form['form']['form_classes'] = [
       '#type' => 'webform_codemirror',
-      '#title' => $this->t('Webform CSS classes'),
-      '#description' => $this->t('A list of classes that will be provided in the "Webform CSS classes" dropdown. Enter one or more classes on each line. These styles should be available in your theme\'s CSS file.'),
+      '#title' => $this->t('Form CSS classes '),
+      '#description' => $this->t('A list of classes that will be provided in the "Form CSS classes " dropdown. Enter one or more classes on each line. These styles should be available in your theme\'s CSS file.'),
       '#default_value' => $config->get('settings.form_classes'),
     ];
-    $form['webform']['button_classes'] = [
+    $form['form']['button_classes'] = [
       '#type' => 'webform_codemirror',
       '#title' => $this->t('Button CSS classes'),
       '#description' => $this->t('A list of classes that will be provided in "Button CSS classes" dropdown. Enter one or more classes on each line. These styles should be available in your theme\'s CSS file.'),
       '#default_value' => $config->get('settings.button_classes'),
     ];
+
+    // Form Behaviors.
+    $form['form_behaviors'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Form default behaviors'),
+      '#tree' => TRUE,
+    ];
+    $behavior_elements = [
+      'default_form_submit_once' => [
+        'title' => $this->t('Prevent duplicate submissions'),
+        'description' => $this->t('If checked, the submit button will be disabled immediately after it is clicked.'),
+      ],
+      'default_form_disable_back' => [
+        'title' => $this->t('Disable back button for all webforms'),
+        'description' => $this->t('If checked, users will not be allowed to navigate back to the webform using the browsers back button.'),
+      ],
+      'default_form_unsaved' => [
+        'title' => $this->t('Warn users about unsaved changes'),
+        'description' => $this->t('If checked, users will be displayed a warning message when they navigate away from a webform with unsaved changes.'),
+      ],
+      'default_form_novalidate' => [
+        'title' => $this->t('Disable client-side validation for all webforms'),
+        'description' => $this->t('If checked, the <a href=":href">novalidate</a> attribute, which disables client-side validation, will be added to all webforms.', [':href' => 'http://www.w3schools.com/tags/att_form_novalidate.asp']),
+      ],
+      'default_form_details_toggle' => [
+        'title' => $this->t('Display collapse/expand all details link'),
+        'description' => $this->t('If checked, an expand/collapse all (details) link will be added to all webforms with two or more details elements.'),
+      ],
+    ];
+    foreach ($behavior_elements as $behavior_key => $behavior_element) {
+      $form['form_behaviors'][$behavior_key] = [
+        '#type' => 'checkbox',
+        '#title' => $behavior_element['title'],
+        '#description' => $behavior_element['description'],
+        '#return_value' => TRUE,
+        '#default_value' => $settings[$behavior_key],
+      ];
+    }
+
+    // Submission Behaviors.
+    $form['submission_behaviors'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Submission default behaviors'),
+      '#tree' => TRUE,
+    ];
+    $behavior_elements = [
+      'default_submission_log' => [
+        'title' => $this->t('Log all submission events for all webforms.'),
+        'description' => $this->t('If checked, all submission events will be logged to dedicated submission log available to all webforms and submissions.'),
+      ],
+    ];
+    foreach ($behavior_elements as $behavior_key => $behavior_element) {
+      $form['submission_behaviors'][$behavior_key] = [
+        '#type' => 'checkbox',
+        '#title' => $behavior_element['title'],
+        '#description' => $behavior_element['description'],
+        '#return_value' => TRUE,
+        '#default_value' => $settings[$behavior_key],
+      ];
+    }
 
     // Wizard.
     $form['wizard'] = [
@@ -412,6 +444,51 @@ class WebformAdminSettingsForm extends ConfigFormBase {
       '#description' => $this->t('Determines the default placement of the description for all webform elements.'),
       '#default_value' => $config->get('elements.default_description_display'),
     ];
+    $form['elements']['default_icheck'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Enhance checkboxes/radio buttons using iCheck'),
+      '#description' => $this->t('Replaces checkboxes/radio buttons with jQuery <a href=":href">iCheck</a> boxes.', [':href' => 'http://icheck.fronteed.com/']),
+      '#options' => [
+        '' => '',
+        (string) $this->t('Minimal') => [
+          'minimal' => $this->t('Minimal: Black'),
+          'minimal-grey' => $this->t('Minimal: Grey'),
+          'minimal-yellow' => $this->t('Minimal: Yellow'),
+          'minimal-orange' => $this->t('Minimal: Orange'),
+          'minimal-red' => $this->t('Minimal: Red'),
+          'minimal-pink' => $this->t('Minimal: Pink'),
+          'minimal-purple' => $this->t('Minimal: Purple'),
+          'minimal-blue' => $this->t('Minimal: Blue'),
+          'minimal-green' => $this->t('Minimal: Green'),
+          'minimal-aero' => $this->t('Minimal: Aero'),
+        ],
+        (string) $this->t('Square') => [
+          'square' => $this->t('Square: Black'),
+          'square-grey' => $this->t('Square: Grey'),
+          'square-yellow' => $this->t('Square: Yellow'),
+          'square-orange' => $this->t('Square: Orange'),
+          'square-red' => $this->t('Square: Red'),
+          'square-pink' => $this->t('Square: Pink'),
+          'square-purple' => $this->t('Square: Purple'),
+          'square-blue' => $this->t('Square: Blue'),
+          'square-green' => $this->t('Square: Green'),
+          'square-aero' => $this->t('Square: Aero'),
+        ],
+        (string) $this->t('Flat') => [
+          'flat' => $this->t('Flat: Black'),
+          'flat-grey' => $this->t('Flat: Grey'),
+          'flat-yellow' => $this->t('Flat: Yellow'),
+          'flat-orange' => $this->t('Flat: Orange'),
+          'flat-red' => $this->t('Flat: Red'),
+          'flat-pink' => $this->t('Flat: Pink'),
+          'flat-purple' => $this->t('Flat: Purple'),
+          'flat-blue' => $this->t('Flat: Blue'),
+          'flat-green' => $this->t('Flat: Green'),
+          'flat-aero' => $this->t('Flat: Aero'),
+        ],
+      ],
+      '#default_value' => $config->get('elements.default_icheck'),
+    ];
     $form['elements']['default_google_maps_api_key'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Google Maps API key'),
@@ -456,7 +533,7 @@ class WebformAdminSettingsForm extends ConfigFormBase {
       '#type' => 'checkbox',
       '#title' => $this->t('Allow files to be uploaded to public file system.'),
       '#description' => $this->t('Public files upload destination is dangerous for webforms that are available to anonymous and/or untrusted users.') . ' ' .
-      $this->t('For more information see:') . ' <a href="https://www.drupal.org/psa-2016-003">DRUPAL-PSA-2016-003</a>',
+      $this->t('For more information see: <a href="@href">DRUPAL-PSA-2016-003</a>', ['@href' => 'https://www.drupal.org/psa-2016-003']),
       '#return_value' => TRUE,
       '#default_value' => $config->get('file.file_public'),
     ];
@@ -500,6 +577,7 @@ class WebformAdminSettingsForm extends ConfigFormBase {
       $form['format'][$element_id] = [
         '#type' => 'details',
         '#title' => new FormattableMarkup('@label (@id)', ['@label' => $element_plugin_label, '@id' => $element_plugin->getTypeName()]),
+        '#description' => $element_plugin->getPluginDescription(),
       ];
       // Element item format.
       $item_formats = $element_plugin->getItemFormats();
@@ -543,17 +621,38 @@ class WebformAdminSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Email default settings'),
       '#tree' => TRUE,
     ];
+    $form['mail']['roles'] = [
+      '#type' => 'webform_roles',
+      '#title' => $this->t('Recipent roles'),
+      '#description' => $this->t("Select roles that can be assigned to receive a webform's email. <em>Please note: Selected roles will be available to all webforms.</em>"),
+      '#include_anonymous' => FALSE,
+      '#default_value' => $config->get('mail.roles'),
+    ];
     $form['mail']['default_from_mail'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Default email from address'),
+      '#title' => $this->t('Default from email'),
+      '#description' => $this->t('The default sender address for emailed webform results; often the e-mail address of the maintainer of your forms.'),
       '#required' => TRUE,
       '#default_value' => $config->get('mail.default_from_mail'),
     ];
     $form['mail']['default_from_name'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Default email from name'),
+      '#title' => $this->t('Default from name'),
+      '#description' => $this->t('The default sender name which is used along with the default from address.'),
       '#required' => TRUE,
       '#default_value' => $config->get('mail.default_from_name'),
+    ];
+    $form['mail']['default_reply_to'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Default reply-to email'),
+      '#description' => $this->t("Enter the email address that a recipient will see when they are replying to an email. Leave blank to automatically use the 'From email' address. Setting the 'Reply-to' to the 'From email' prevent emails from being flagged as spam."),
+      '#default_value' => $config->get('mail.default_reply_to'),
+    ];
+    $form['mail']['default_return_path'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Default return path (email)'),
+      '#description' => $this->t("Enter an email address to which bounce messages are delivered. Leave blank to automatically use the 'From email' address."),
+      '#default_value' => $config->get('mail.default_return_path'),
     ];
     $form['mail']['default_subject'] = [
       '#type' => 'textfield',
@@ -684,6 +783,36 @@ class WebformAdminSettingsForm extends ConfigFormBase {
       '#return_value' => TRUE,
       '#default_value' => $config->get('ui.dialog_disabled'),
     ];
+    $form['ui']['offcanvas_disabled'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Disable off-canvas system tray'),
+      '#description' => $this->t('If checked, off-canvas system tray will be disabled.'),
+      '#return_value' => TRUE,
+      '#default_value' => $config->get('ui.offcanvas_disabled'),
+      '#access' => $this->moduleHandler->moduleExists('outside_in') && (floatval(\Drupal::VERSION) >= 8.3),
+      '#states' => [
+        'visible' => [
+          ':input[name="ui[dialog_disabled]"]' => [
+            'checked' => FALSE,
+          ],
+        ],
+      ],
+    ];
+    if (!$this->moduleHandler->moduleExists('outside_in') && (floatval(\Drupal::VERSION) >= 8.3)) {
+      $form['ui']['offcanvas_message'] = [
+        '#type' => 'webform_message',
+        '#message_type' => 'info',
+        '#message_message' => $this->t('Enable the experimental <a href=":href">System tray module</a> to improve the Webform module\'s user experience.', [':href' => 'https://www.drupal.org/blog/drupal-82-now-with-more-outside-in']),
+        '#states' => [
+          'visible' => [
+            ':input[name="ui[dialog_disabled]"]' => [
+              'checked' => FALSE,
+            ],
+          ],
+        ],
+        '#weight' => -100,
+      ];
+    }
     $form['ui']['html_editor_disabled'] = [
       '#type' => 'checkbox',
       '#title' => $this->t('Disable HTML editor'),
@@ -728,7 +857,9 @@ class WebformAdminSettingsForm extends ConfigFormBase {
     /* Settings */
 
     $settings = $form_state->getValue('page')
-      + $form_state->getValue('webform')
+      + $form_state->getValue('form')
+      + $form_state->getValue('form_behaviors')
+      + $form_state->getValue('submission_behaviors')
       + $form_state->getValue('wizard')
       + $form_state->getValue('preview')
       + $form_state->getValue('draft')

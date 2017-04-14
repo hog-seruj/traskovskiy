@@ -1,0 +1,25 @@
+uuid: 61003c83-3b4b-45f3-84c0-10d900fa1cea
+langcode: uk
+status: false
+dependencies:
+  content:
+    - 'block_content:header_image:b65ac5f2-4437-4397-b6ed-a2b667eddbaa'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: zamovlaitetut
+theme: traskovskyi
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:b65ac5f2-4437-4397-b6ed-a2b667eddbaa'
+settings:
+  id: 'block_content:b65ac5f2-4437-4397-b6ed-a2b667eddbaa'
+  label: 'Замовляйте тут'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

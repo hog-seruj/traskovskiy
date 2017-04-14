@@ -1,9 +1,11 @@
 langcode: en
-status: false
+status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+open: null
+close: null
 uid: null
 template: true
 id: template_contact
@@ -19,11 +21,11 @@ elements: |
     '#type': email
     '#required': true
   subject:
-    '#title': 'Subject'
+    '#title': Subject
     '#type': textfield
     '#required': true
   message:
-    '#title': 'Message'
+    '#title': Message
     '#type': textarea
     '#required': true
 css: ''
@@ -36,17 +38,21 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -63,13 +69,14 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: url_message
+  confirmation_title: ''
   confirmation_message: 'Your message has been sent.'
   confirmation_url: '<front>'
   confirmation_attributes: {  }
@@ -122,10 +129,16 @@ handlers:
     status: true
     weight: 1
     settings:
+      states:
+        - completed
       to_mail: '[webform_submission:values:email:raw]'
+      to_options: {  }
       cc_mail: ''
+      cc_options: {  }
       bcc_mail: ''
+      bcc_options: {  }
       from_mail: default
+      from_options: {  }
       from_name: default
       subject: '[webform_submission:values:subject:value]'
       body: '[webform_submission:values:message:value]'
@@ -133,6 +146,8 @@ handlers:
       html: true
       attachments: false
       debug: false
+      reply_to: ''
+      return_path: ''
   email_notification:
     id: email
     label: 'Email notification'
@@ -140,10 +155,16 @@ handlers:
     status: true
     weight: 1
     settings:
+      states:
+        - completed
       to_mail: default
+      to_options: {  }
       cc_mail: ''
+      cc_options: {  }
       bcc_mail: ''
+      bcc_options: {  }
       from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
       from_name: '[webform_submission:values:name:value]'
       subject: '[webform_submission:values:subject:value]'
       body: '[webform_submission:values:message:value]'
@@ -151,3 +172,5 @@ handlers:
       html: true
       attachments: false
       debug: false
+      reply_to: ''
+      return_path: ''

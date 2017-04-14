@@ -1,0 +1,11 @@
+title: Контакт
+settings:
+  form_submit_label: 'Отправить сообщение'
+  confirmation_message: 'Ваше сообщение отправлено.'
+handlers:
+  email_confirmation:
+    label: 'Подтверждение почтой'
+    settings:
+      from_name: 'по умолчанию'
+  email_notification:
+    label: 'Уведомления по email'

@@ -67,7 +67,7 @@ class WebformResultsCustomForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('entity.manager')->getStorage('webform_submission'),
+      $container->get('entity_type.manager')->getStorage('webform_submission'),
       $container->get('webform.request')
     );
   }
@@ -152,7 +152,7 @@ class WebformResultsCustomForm extends FormBase {
         '1000' => '1000',
         '0' => $this->t('All'),
       ],
-      '#default_value' => ($limit != NULL) ? $limit : 50,
+      '#default_value' => ($limit !== NULL) ? $limit : 50,
     ];
 
     // Default configuration.
@@ -293,7 +293,7 @@ class WebformResultsCustomForm extends FormBase {
     drupal_set_message($this->t('The customized table has been saved.'));
 
     // Set redirect.
-    $route_name = $this->requestHandler->getRouteName($this->webform, $this->sourceEntity, 'webform.results_table');
+    $route_name = $this->requestHandler->getRouteName($this->webform, $this->sourceEntity, 'webform.results_submissions');
     $route_parameters = $this->requestHandler->getRouteParameters($this->webform, $this->sourceEntity);
     $form_state->setRedirect($route_name, $route_parameters);
   }

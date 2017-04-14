@@ -5,7 +5,13 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
-        }
+        },
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/0?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
     },
     "id": [
         {
@@ -60,7 +66,7 @@
     ],
     "weight": [
         {
-            "value": "0"
+            "value": "-49"
         }
     ],
     "expanded": [
@@ -75,7 +81,7 @@
     ],
     "changed": [
         {
-            "value": "1491982712",
+            "value": "1492169161",
             "lang": "uk"
         }
     ],
@@ -97,6 +103,26 @@
             "lang": "uk"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/0?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4174b687-b26f-42d3-9f53-8fe8a910d795"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
     "content_translation_status": [
         {
             "value": "1",

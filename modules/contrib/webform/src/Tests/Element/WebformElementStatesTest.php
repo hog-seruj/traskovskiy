@@ -5,6 +5,7 @@ namespace Drupal\webform\Tests\Element;
 use Drupal\Core\Form\OptGroup;
 use Drupal\webform\Tests\WebformTestBase;
 use Drupal\webform\Entity\Webform;
+use Drupal\webform\WebformInterface;
 
 /**
  * Tests for webform element #states.
@@ -18,36 +19,48 @@ class WebformElementStatesTest extends WebformTestBase {
    *
    * @var array
    */
-  protected static $modules = ['filter', 'file', 'language', 'node', 'webform'];
+  protected static $modules = ['filter', 'file', 'language', 'taxonomy', 'node', 'webform'];
 
   /**
    * Webforms to load.
    *
    * @var array
    */
-  protected static $testWebforms = ['example_elements', 'test_element_states'];
+  protected static $testWebforms = ['example_elements', 'example_elements_composite', 'test_element_states'];
 
   /**
-   * Tests element #states selectors.
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp();
+
+    // Create 'tags' vocabulary.
+    $this->createTags();
+  }
+
+  /**
+   * Tests element #states selectors for basic and composite elements.
    */
   public function testSelectors() {
-    /** @var \Drupal\webform\WebformInterface $webform */
-    $webform = Webform::load('example_elements');
-    $webform->setStatus(TRUE)->save();
+    foreach (['example_elements', 'example_elements_composite'] as $weform_id) {
+      /** @var \Drupal\webform\WebformInterface $webform */
+      $webform = Webform::load($weform_id);
+      $webform->setStatus(WebformInterface::STATUS_OPEN)->save();
 
-    $this->drupalGet('webform/example_elements');
+      $this->drupalGet('webform/' . $weform_id);
 
-    $selectors = OptGroup::flattenOptions($webform->getElementsSelectorOptions());
-    // Ignore text format and captcha selectors which are not available during
-    // this test.
-    unset(
-      $selectors[':input[name="text_format[format]"]'],
-      $selectors[':input[name="captcha"]']
-    );
-    foreach ($selectors as $selector => $name) {
-      // Remove :input since it is a jQuery specific selector.
-      $selector = str_replace(':input', '', $selector);
-      $this->assertCssSelect($selector);
+      $selectors = OptGroup::flattenOptions($webform->getElementsSelectorOptions());
+      // Ignore text format and captcha selectors which are not available during
+      // this test.
+      unset(
+        $selectors[':input[name="text_format[format]"]'],
+        $selectors[':input[name="captcha"]']
+      );
+      foreach ($selectors as $selector => $name) {
+        // Remove :input since it is a jQuery specific selector.
+        $selector = str_replace(':input', '', $selector);
+        $this->assertCssSelect($selector);
+      }
     }
   }
 
@@ -67,10 +80,10 @@ class WebformElementStatesTest extends WebformTestBase {
     selector_01:
       checked: true
   required:
-    - 'selector_01''':
-        checked: true
-    - selector_02:
-        checked: true
+    'selector_01''':
+      checked: true
+    selector_02:
+      checked: true
   disabled:
     - selector_01:
         checked: true

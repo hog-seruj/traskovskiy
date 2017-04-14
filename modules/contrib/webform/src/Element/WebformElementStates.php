@@ -8,7 +8,7 @@ use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Render\Element\FormElement;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\Utility\WebformArrayHelper;
-use Drupal\webform\Utility\WebformYamlTidy;
+use Drupal\webform\Utility\WebformYaml;
 
 /**
  * Provides a webform element to edit an element's #states.
@@ -86,6 +86,7 @@ class WebformElementStates extends FormElement {
         'expanded' => t('Expanded'),
         'collapsed' => t('Collapsed'),
         'value' => t('Value is'),
+        '!value' => t('Value is not'),
       ],
     ];
 
@@ -105,7 +106,7 @@ class WebformElementStates extends FormElement {
       $element['states'] = [
         '#type' => 'webform_codemirror',
         '#mode' => 'yaml',
-        '#default_value' => WebformYamlTidy::tidy(Yaml::encode($element['#default_value'])),
+        '#default_value' => WebformYaml::tidy(Yaml::encode($element['#default_value'])),
         '#description' => t('Learn more about Drupal\'s <a href=":href">Form API #states</a>.', [':href' => 'https://www.lullabot.com/articles/form-api-states']),
       ];
       return $element;
@@ -296,7 +297,10 @@ class WebformElementStates extends FormElement {
       '#default_value' => $condition['value'],
       '#states' => [
         'visible' => [
-          $trigger_selector => ['value' => 'value'],
+          [$trigger_selector => ['value' => 'value']],
+          'or',
+          [$trigger_selector => ['value' => '!value']],
+
         ],
       ],
     ];
@@ -493,6 +497,8 @@ class WebformElementStates extends FormElement {
    *
    * @param array $element
    *   An element.
+   * @param string $name
+   *   The name.
    *
    * @return string
    *   A unique key used to store the number of options for an element.
@@ -583,14 +589,21 @@ class WebformElementStates extends FormElement {
             $trigger = $condition['trigger'];
             $value = $condition['value'] ?: TRUE;
             if ($selector && $trigger) {
-              if ($index !== 0 && $operator == 'or') {
-                $states[$state][] = $operator;
+              if ($operator == 'or') {
+                if ($index !== 0) {
+                  $states[$state][] = $operator;
+                }
+                $states[$state][] = [
+                  $selector => [
+                    $trigger => $value,
+                  ],
+                ];
               }
-              $states[$state][] = [
-                $selector => [
+              else {
+                $states[$state][$selector] = [
                   $trigger => $value,
-                ],
-              ];
+                ];
+              }
             }
           }
         }

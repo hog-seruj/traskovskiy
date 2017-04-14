@@ -3,14 +3,10 @@
 namespace Drupal\webform\Plugin\WebformElement;
 
 use Drupal\Core\Form\FormStateInterface;
-// ISSUE: Below import statement is throwing "Error: Cannot use Drupal\Core\Url
-// as Url because the name is already in use in" when executing any drush
-// webform command that loads this file.
-// use Drupal\Core\Url.
+use Drupal\Core\Url as UrlGenerator;
 use Drupal\Core\StreamWrapper\StreamWrapperInterface;
 use Drupal\Core\Link;
 use Drupal\file\Entity\File;
-use Drupal\file\Element\ManagedFile as ManagedFileElement;
 use Drupal\file\FileInterface;
 use Drupal\webform\Entity\WebformSubmission;
 use Drupal\webform\WebformElementBase;
@@ -33,6 +29,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     $file_extensions = $this->getFileExtensions();
     return parent::getDefaultProperties() + [
       'multiple' => FALSE,
+      'multiple__header_label' => '',
       'max_filesize' => $max_filesize,
       'file_extensions' => $file_extensions,
       'uri_scheme' => 'private',
@@ -44,6 +41,13 @@ abstract class WebformManagedFileBase extends WebformElementBase {
    */
   public function supportsMultipleValues() {
     return TRUE;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function hasMultipleWrapper() {
+    return FALSE;
   }
 
   /**
@@ -86,7 +90,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
       if (!isset($scheme_options[$uri_scheme]) && $this->currentUser->hasPermission('administer webform')) {
         drupal_set_message($this->t('The \'File\' element is unavailable because a <a href="https://www.drupal.org/documentation/modules/file">private files directory</a> has not been configured and public file uploads have not been enabled. For more information see: <a href="https://www.drupal.org/psa-2016-003">DRUPAL-PSA-2016-003</a>'), 'warning');
         $context = [
-          'link' => Link::fromTextAndUrl($this->t('Edit'), \Drupal\Core\Url::fromRoute('<current>'))->toString(),
+          'link' => Link::fromTextAndUrl($this->t('Edit'), UrlGenerator::fromRoute('<current>'))->toString(),
         ];
         $this->logger->notice("The 'File' element is unavailable because no stream wrappers are available", $context);
       }
@@ -106,6 +110,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     }
     $element['#webform_managed_file_processed'] = TRUE;
 
+    // Must come after #element_validate hook is defined.
     parent::prepare($element, $webform_submission);
 
     // Check if the URI scheme exists and can be used the upload location.
@@ -124,7 +129,10 @@ abstract class WebformManagedFileBase extends WebformElementBase {
 
     // Use custom validation callback so that File entities can be converted
     // into file ids (akk fids).
-    $element['#element_validate'][] = [get_class($this), 'validateManagedFile'];
+    // NOTE: Using array_splice() to make sure that self::validateManagedFile
+    // is executed before all other validation hooks are executed but after
+    // \Drupal\file\Element\ManagedFile::validateManagedFile.
+    array_splice($element['#element_validate'], 1, 0, [[get_class($this), 'validateManagedFile']]);
 
     // Add file upload help to the element.
     $element['help'] = [
@@ -174,7 +182,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  protected function formatHtmlItem(array &$element, $value, array $options = []) {
+  protected function formatHtmlItem(array $element, $value, array $options = []) {
     $file = $this->getFile($element, $value, $options);
     $format = $this->getItemFormat($element);
     switch ($format) {
@@ -208,7 +216,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  protected function formatTextItem(array &$element, $value, array $options = []) {
+  protected function formatTextItem(array $element, $value, array $options = []) {
     $file = $this->getFile($element, $value, $options);
     $format = $this->getItemFormat($element);
     switch ($format) {
@@ -292,7 +300,8 @@ abstract class WebformManagedFileBase extends WebformElementBase {
   public function getElementSelectorOptions(array $element) {
     $title = $this->getAdminLabel($element);
     $name = $element['#webform_key'];
-    return [":input[name=\"files[{$name}]\"]" => $title . '  [' . $this->getPluginLabel() . ']'];
+    $input = ($this->hasMultipleValues($element)) ? ":input[name=\"files[{$name}][]\"]" : ":input[name=\"files[{$name}]\"]";
+    return [$input => $title . '  [' . $this->getPluginLabel() . ']'];
   }
 
   /**
@@ -386,7 +395,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
 
     // Look for an existing temp files that have not been uploaded.
     $fids = \Drupal::entityQuery('file')
-      ->condition('status', 0)
+      ->condition('status', FALSE)
       ->condition('uid', \Drupal::currentUser()->id())
       ->condition('uri', $upload_location . '/' . $element['#webform_key'] . '.%', 'LIKE')
       ->execute();
@@ -513,12 +522,6 @@ abstract class WebformManagedFileBase extends WebformElementBase {
    * Form API callback. Consolidate the array of fids for this field into a single fids.
    */
   public static function validateManagedFile(array &$element, FormStateInterface $form_state, &$complete_form) {
-    // Call the default managed_element validation handler, which checks
-    // the file entity and #required.
-    // @see \Drupal\file\Element\ManagedFile::getInfo
-    // @see \Drupal\webform\Plugin\WebformElement\ManagedFile::prepare
-    ManagedFileElement::validateManagedFile($element, $form_state, $complete_form);
-
     if (!empty($element['#files'])) {
       $fids = array_keys($element['#files']);
       if (empty($element['#multiple'])) {
@@ -531,6 +534,19 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     else {
       $form_state->setValueForElement($element, NULL);
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function validateMultiple(array &$element, FormStateInterface $form_state) {
+    // Don't validate #multiple when a file is being removed.
+    $trigger_element = $form_state->getTriggeringElement();
+    if (end($trigger_element['#parents']) == 'remove_button') {
+      return;
+    }
+
+    parent::validateMultiple($element, $form_state);
   }
 
   /**
@@ -592,8 +608,8 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     $form['file']['multiple'] = [
       '#title' => $this->t('Multiple'),
       '#type' => 'checkbox',
-      '#return_value' => TRUE,
       '#description' => $this->t('Check this option if the user should be allowed to upload multiple files.'),
+      '#return_value' => TRUE,
     ];
     return $form;
   }

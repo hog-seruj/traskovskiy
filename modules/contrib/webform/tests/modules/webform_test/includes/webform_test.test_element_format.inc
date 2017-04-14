@@ -14,7 +14,7 @@ use Drupal\webform\WebformInterface;
  * @return array
  *   An array containing test elements formats.
  */
-function webform_test_test_element_format(WebformInterface $webform, $multiple = FALSE) {
+function webform_test_test_element_format(WebformInterface $webform, $composite = FALSE, $multiple = FALSE) {
   // Elements to be ignored.
   $skipped_elements = [
     'hidden',
@@ -59,6 +59,10 @@ function webform_test_test_element_format(WebformInterface $webform, $multiple =
       continue;
     }
 
+    if ($webform_element->isComposite() !== $composite) {
+      continue;
+    }
+
     if ($multiple) {
       if (!$webform_element->hasMultipleValues($element) && !$webform_element->hasProperty('multiple') && !$webform_element->hasProperty('tags')) {
         continue;
@@ -69,6 +73,7 @@ function webform_test_test_element_format(WebformInterface $webform, $multiple =
       foreach ($multiple_properties as $multiple_property) {
         if ($webform_element->hasProperty($multiple_property)) {
           $element["#$multiple_property"] = TRUE;
+          break;
         }
       }
       $item_formats = [''];
@@ -129,6 +134,9 @@ function webform_test_test_element_format(WebformInterface $webform, $multiple =
     unset($data['other_elements']);
     $data['other_elements'] = $other_elements;
   }
+
+  // Remove empty basic and advanced details.
+  $data = array_filter($data);
 
   return $data;
 }

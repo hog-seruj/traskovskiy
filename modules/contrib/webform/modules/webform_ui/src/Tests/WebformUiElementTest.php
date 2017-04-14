@@ -44,12 +44,27 @@ class WebformUiElementTest extends WebformTestBase {
 
     $this->drupalLogin($this->adminWebformUser);
 
+    $webform_contact = Webform::load('contact');
+
+    /**************************************************************************/
+    // Multiple
+    /**************************************************************************/
+
+    // Check multiple enabled before submission.
+    $this->drupalGet('admin/structure/webform/manage/contact/element/name/edit');
+    $this->assertRaw('<select data-drupal-selector="edit-properties-multiple-container-cardinality" id="edit-properties-multiple-container-cardinality" name="properties[multiple][container][cardinality]" class="form-select">');
+    $this->assertNoRaw('<em>There is data for this element in the database. This setting can no longer be changed.</em>');
+
+    // Check multiple disabled after submission.
+    $this->postSubmissionTest($webform_contact);
+    $this->drupalGet('admin/structure/webform/manage/contact/element/name/edit');
+    $this->assertNoRaw('<select data-drupal-selector="edit-properties-multiple-container-cardinality" id="edit-properties-multiple-container-cardinality" name="properties[multiple][container][cardinality]" class="form-select">');
+    $this->assertRaw('<select data-drupal-selector="edit-properties-multiple-container-cardinality" disabled="disabled" id="edit-properties-multiple-container-cardinality" name="properties[multiple][container][cardinality]" class="form-select">');
+    $this->assertRaw('<em>There is data for this element in the database. This setting can no longer be changed.</em>');
+
     /**************************************************************************/
     // Reordering
     /**************************************************************************/
-
-    // Check reordered elements.
-    $webform_contact = Webform::load('contact');
 
     // Check original contact element order.
     $this->assertEqual(['name', 'email', 'subject', 'message'], array_keys($webform_contact->getElementsDecodedAndFlattened()));
@@ -57,10 +72,10 @@ class WebformUiElementTest extends WebformTestBase {
     // Check updated (reverse) contact element order.
     /** @var \Drupal\webform\WebformInterface $webform_contact */
     $edit = [
-      'elements_reordered[message][weight]' => 0,
-      'elements_reordered[subject][weight]' => 1,
-      'elements_reordered[email][weight]' => 2,
-      'elements_reordered[name][weight]' => 3,
+      'webform_ui_elements[message][weight]' => 0,
+      'webform_ui_elements[subject][weight]' => 1,
+      'webform_ui_elements[email][weight]' => 2,
+      'webform_ui_elements[name][weight]' => 3,
     ];
     $this->drupalPostForm('admin/structure/webform/manage/contact', $edit, t('Save elements'));
 
@@ -75,36 +90,59 @@ class WebformUiElementTest extends WebformTestBase {
 
     // Check name is required.
     $this->drupalGet('admin/structure/webform/manage/contact');
-    $this->assertFieldChecked('edit-elements-reordered-name-required');
+    $this->assertFieldChecked('edit-webform-ui-elements-name-required');
 
     // Check name is not required.
     $edit = [
-      'elements_reordered[name][required]' => FALSE,
+      'webform_ui_elements[name][required]' => FALSE,
     ];
     $this->drupalPostForm('admin/structure/webform/manage/contact', $edit, t('Save elements'));
-    $this->assertNoFieldChecked('edit-elements-reordered-name-required');
+    $this->assertNoFieldChecked('edit-webform-ui-elements-name-required');
 
     /**************************************************************************/
     // CRUD
     /**************************************************************************/
 
-    // Check create element.
+    // Create element.
     $this->drupalPostForm('admin/structure/webform/manage/contact/element/add/textfield', ['key' => 'test', 'properties[title]' => 'Test'], t('Save'));
+
+    // Check elements URL contains ?element-update query string parameter.
+    $this->assertUrl('admin/structure/webform/manage/contact', ['query' => ['element-update' => 'test']]);
+
+    // Check elements element-update class exists.
+    $this->assertRaw('color-success js-webform-ui-element-update');
+
+    // Check that save elements removes ?element-update query string parameter.
+    $this->drupalPostForm(NULL, [], t('Save elements'));
+
+    // Check that save elements removes ?element-update query string parameter.
+    $this->assertUrl('admin/structure/webform/manage/contact');
+
+    // Check that save elements removes element-update class.
+    $this->assertNoRaw('color-success js-webform-ui-element-update');
 
     // Check read element.
     $this->drupalGet('webform/contact');
     $this->assertRaw('<label for="edit-test">Test</label>');
     $this->assertRaw('<input data-drupal-selector="edit-test" type="text" id="edit-test" name="test" value="" size="60" maxlength="255" class="form-text" />');
 
-    // Check update element.
+    // Update element.
     $this->drupalPostForm('admin/structure/webform/manage/contact/element/test/edit', ['properties[title]' => 'Test 123', 'properties[default_value]' => 'This is a default value'], t('Save'));
+
+    // Check elements URL contains ?element-update query string parameter.
+    $this->assertUrl('admin/structure/webform/manage/contact', ['query' => ['element-update' => 'test']]);
+
+    // Check elements element-update class exists.
+    $this->assertRaw('color-success js-webform-ui-element-update');
+
+    // Check element updated.
     $this->drupalGet('webform/contact');
     $this->assertRaw('<label for="edit-test">Test 123</label>');
     $this->assertRaw('<input data-drupal-selector="edit-test" type="text" id="edit-test" name="test" value="This is a default value" size="60" maxlength="255" class="form-text" />');
 
     // Check that 'test' element is being added to the webform_submission_data table.
     $this->drupalPostForm('webform/contact/test', [], t('Send message'));
-    $this->assertEqual(1, db_query("SELECT COUNT(sid) FROM {webform_submission_data} WHERE webform_id='contact' AND name='test'")->fetchField());
+    $this->assertEqual(1, \Drupal::database()->query("SELECT COUNT(sid) FROM {webform_submission_data} WHERE webform_id='contact' AND name='test'")->fetchField());
 
     // Check delete element.
     $this->drupalPostForm('admin/structure/webform/manage/contact/element/test/delete', [], t('Delete'));
@@ -113,7 +151,7 @@ class WebformUiElementTest extends WebformTestBase {
     $this->assertNoRaw('<input data-drupal-selector="edit-test" type="text" id="edit-test" name="test" value="This is a default value" size="60" maxlength="255" class="form-text" />');
 
     // Check that 'test' element values were deleted from the webform_submission_data table.
-    $this->assertEqual(0, db_query("SELECT COUNT(sid) FROM {webform_submission_data} WHERE webform_id='contact' AND name='test'")->fetchField());
+    $this->assertEqual(0, \Drupal::database()->query("SELECT COUNT(sid) FROM {webform_submission_data} WHERE webform_id='contact' AND name='test'")->fetchField());
 
     /**************************************************************************/
     // Change type

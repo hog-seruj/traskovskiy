@@ -38,6 +38,7 @@ class WebformLikert extends WebformElementBase {
       'description_display' => '',
       // Form validation.
       'required' => FALSE,
+      'required_error' => '',
       // Submission display.
       'format' => $this->getItemDefaultFormat(),
       // Likert settings.
@@ -47,6 +48,10 @@ class WebformLikert extends WebformElementBase {
       'na_answer' => FALSE,
       'na_answer_value' => '',
       'na_answer_text' => $this->t('N/A'),
+      // Attributes.
+      'wrapper_attributes' => [],
+      // iCheck settings.
+      'icheck' => '',
     ] + $this->getDefaultBaseProperties();
   }
 
@@ -75,7 +80,7 @@ class WebformLikert extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  public function formatHtmlItem(array &$element, $value, array $answers = []) {
+  public function formatHtmlItem(array $element, $value, array $options = []) {
     $format = $this->getItemFormat($element);
     switch ($format) {
       case 'raw':
@@ -156,7 +161,7 @@ class WebformLikert extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  public function formatTextItem(array &$element, $value, array $answers = []) {
+  public function formatTextItem(array $element, $value, array $options = []) {
     // Return empty value.
     if ($value === '' || $value === NULL || (is_array($value) && empty($value))) {
       return '';
@@ -170,7 +175,7 @@ class WebformLikert extends WebformElementBase {
           $answer_value = (isset($value[$question_key])) ? $value[$question_key] : NULL;
           $list[] = "$question_key: $answer_value";
         }
-        return implode("\n", $list);
+        return implode(PHP_EOL, $list);
 
       default:
       case 'value':
@@ -182,7 +187,7 @@ class WebformLikert extends WebformElementBase {
           $answer_text = WebformOptionsHelper::getOptionText($answer_value, $element['#answers']);
           $list[] = "$question_label: $answer_text";
         }
-        return implode("\n", $list);
+        return implode(PHP_EOL, $list);
 
     }
   }

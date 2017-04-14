@@ -1,9 +1,11 @@
 langcode: en
-status: false
+status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+open: null
+close: null
 uid: null
 template: true
 id: template_subscribe
@@ -32,17 +34,21 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -59,13 +65,14 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: page
+  confirmation_title: ''
   confirmation_message: 'Thank you for subscribing.'
   confirmation_url: ''
   confirmation_attributes: {  }
@@ -118,10 +125,16 @@ handlers:
     status: true
     weight: 1
     settings:
+      states:
+        - completed
       to_mail: default
+      to_options: {  }
       cc_mail: ''
+      cc_options: {  }
       bcc_mail: ''
+      bcc_options: {  }
       from_mail: '[webform_submission:values:email:raw]'
+      from_options: {  }
       from_name: '[webform_submission:values:first_name] [webform_submission:values:last_name]'
       subject: default
       body: default
@@ -129,3 +142,5 @@ handlers:
       html: true
       attachments: false
       debug: false
+      reply_to: ''
+      return_path: ''

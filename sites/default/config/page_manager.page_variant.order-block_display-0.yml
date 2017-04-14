@@ -1,0 +1,75 @@
+uuid: d97fa8ef-124a-4a7a-9766-46e71074f9b4
+langcode: uk
+status: true
+dependencies:
+  config:
+    - page_manager.page.order
+  content:
+    - 'block_content:basic:0bab0e52-239c-4caa-8a97-4f81d64e1954'
+    - 'block_content:block_with_menu:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+    - 'block_content:header_image:b65ac5f2-4437-4397-b6ed-a2b667eddbaa'
+  module:
+    - block_content
+    - webform
+id: order-block_display-0
+label: 'Block page'
+variant: block_display
+variant_settings:
+  blocks:
+    b6aca767-86d2-4769-b2ab-0ff9b5da060a:
+      id: webform_block
+      label: Webform
+      provider: webform
+      label_display: '0'
+      webform_id: order_here
+      default_data: ''
+      region: bottom
+      weight: -9
+      uuid: b6aca767-86d2-4769-b2ab-0ff9b5da060a
+      context_mapping: {  }
+    1a0213a7-7ea1-4e43-9688-396b21b36a1b:
+      id: 'block_content:b65ac5f2-4437-4397-b6ed-a2b667eddbaa'
+      label: 'Замовляйте тут'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: bottom
+      weight: -10
+      uuid: 1a0213a7-7ea1-4e43-9688-396b21b36a1b
+      context_mapping: {  }
+    749da2f7-afb7-4ad5-943d-6b53676efb7b:
+      id: 'block_content:0bab0e52-239c-4caa-8a97-4f81d64e1954'
+      label: Доставка
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: -9
+      uuid: 749da2f7-afb7-4ad5-943d-6b53676efb7b
+      context_mapping: {  }
+    8bdfb0b0-1d8a-426a-877f-8dd60e2db783:
+      id: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
+      label: 'Садова техніка'
+      provider: block_content
+      label_display: visible
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: -10
+      uuid: 8bdfb0b0-1d8a-426a-877f-8dd60e2db783
+      context_mapping: {  }
+  id: block_display
+  uuid: 6877fccb-10df-452e-9aa8-3885207d4831
+  label: null
+  weight: 0
+  page_title: ''
+page: order
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
