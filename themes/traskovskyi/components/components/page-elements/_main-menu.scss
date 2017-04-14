@@ -1,0 +1,90 @@
+.menu-wrapper {
+  @include spacing(padding, 5px 0);
+  background: url(../../../images-source/menu-bg.png) no-repeat center;
+  background-size: cover;
+}
+
+.main-menu {
+  @include spacing(max-width, 1170px);
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+
+  li::before {
+      display: none;
+  }
+
+  .menu--main {
+    @include spacing(margin-left, -15px);
+    @include spacing(margin-right, 8px);
+    @include spacing(width, 930px);
+    float: left;
+
+    ul.menu {
+      display: flex;
+    }
+
+    li {
+      display: inline-block;
+      flex: 1 1 100%;
+      padding-top: 0;
+    }
+
+    li a {
+      color: color(text-white);
+      font-size: font-size(l);
+    }
+
+    li a.is-active {
+      background: color(menu-active);
+      font-style: italic;
+      padding: 20px 14px;
+      text-decoration: none;
+      text-shadow: 1px 2px 26.73px color(menu-shadow);
+    }
+  }
+
+  .block-search {
+    @include spacing(margin-right, 9px);
+    @include spacing(width, 190px);
+    float: left;
+
+    h2,
+    input[type="submit"] {
+      display: none;
+    }
+  }
+
+  .block-language {
+    @include spacing(width, 48px);
+    float: right;
+
+    ul.links {
+      padding-left: 0;
+    }
+
+    li {
+      @include spacing(margin-right, 6px);
+      display: inline-block;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    li a {
+      @include spacing(height, 19px);
+      @include spacing(width, 21px);
+      display: block;
+      font-size: 0;
+    }
+
+    .uk a {
+      background: url(../../../images-source/ua.png) no-repeat center;
+    }
+
+    .ru a {
+      background: url(../../../images-source/ru.png) no-repeat center;
+    }
+  }
+}

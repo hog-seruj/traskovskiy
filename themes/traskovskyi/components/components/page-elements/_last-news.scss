@@ -1,0 +1,102 @@
+.last-news {
+  @include spacing(margin-right, 58px);
+  float: left;
+  position: relative;
+  width: 25%;
+
+  &::before {
+    @include spacing(height, 6px);
+    @include spacing(left, 25px);
+    @include spacing(top, 73px);
+    @include spacing(width, 57px);
+    background: color(footer-border);
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  h2 {
+    font-size: font-size(lx);
+    font-style: normal;
+  }
+}
+
+.last-news {
+
+  .views-row {
+    @include spacing(margin-top, 40px);
+
+    &:last-of-type {
+      @include spacing(margin-top, 15px);
+    }
+  }
+
+  .left {
+    float: left;
+    width: 30%;
+  }
+
+  .right {
+    float: right;
+    width: 70%;
+
+    .field {
+      @include spacing(padding-left, 5px);
+      @include spacing(padding-right, 30px);
+    }
+  }
+
+  .field--name-node-title {
+    background: color(title-bg);
+  }
+
+  .field--name-node-title p {
+    @include spacing(line-height, 15px);
+    font-weight: weight(semi-bold);
+    font-size: font-size(x);
+    margin: 0;
+  }
+
+  .field--name-node-post-date,
+  .field--name-dynamic-token-fieldnode-ds-field-count-comment p,
+  .text-formatted p {
+    @include spacing(line-height, 10px);
+    font-size: font-size(vs);
+  }
+
+  .text-formatted p {
+    @include spacing(margin-top, 5px);
+    margin-bottom: 0;
+  }
+
+  .field--name-dynamic-token-fieldnode-ds-field-count-comment p {
+    margin: 0;
+    position: relative;
+
+    &::before {
+      @include spacing(height, 10px);
+      @include spacing(right, -30px);
+      @include spacing(width, 24px);
+      background: url(../../../images-source/heco.png) no-repeat center;
+      bottom: 0;
+      content: '';
+      display: block;
+      position: absolute;
+    }
+  }
+
+  .field--name-dynamic-token-fieldnode-ds-field-count-comment,
+  .field--name-node-post-date {
+    display: inline-block;
+  }
+
+  .more-link {
+    @include spacing(margin-bottom, 18px);
+    @include spacing(margin-top, 5px);
+
+    a {
+      color: color(text);
+      font-size: font-size(xs);
+    }
+  }
+}

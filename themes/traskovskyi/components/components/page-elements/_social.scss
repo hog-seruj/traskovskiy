@@ -1,0 +1,54 @@
+.social {
+  float: left;
+  position: relative;
+  width: 25%;
+
+  &::before {
+    @include spacing(height, 6px);
+    @include spacing(left, 25px);
+    @include spacing(top, 73px);
+    @include spacing(width, 57px);
+    background: color(footer-border);
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  h2 {
+    font-size: font-size(lx);
+    font-style: normal;
+  }
+
+  .text-formatted p {
+    @include spacing(line-height, 18px);
+  }
+
+  .field--type-link > .field__item {
+    @include spacing(margin-right, 15px);
+    display: inline-block;
+
+    a {
+      @include spacing(height, 41px);
+      @include spacing(width, 41px);
+      display: block;
+      font-size: 0;
+    }
+
+    &:first-child a {
+      background: url(../../../images-source/google.png) no-repeat center;
+    }
+
+    &:nth-child(2) a {
+      background: url(../../../images-source/dribbble.png) no-repeat center;
+    }
+
+    &:nth-child(3) {
+      background: url(../../../images-source/twitter.png) no-repeat center;
+    }
+
+    &:last-child a {
+      background: url(../../../images-source/facebook.png) no-repeat center;
+    }
+  }
+}
+

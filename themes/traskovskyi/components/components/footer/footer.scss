@@ -9,11 +9,5 @@
 .footer,
 %footer {
 
-  .logo-footer {
-    @include spacing(margin-right, 15px);
-    @include spacing(padding-top, 33px);
-    @include spacing(width, 160px);
-    float: left;
-  }
 }
 
