@@ -5,6 +5,7 @@ namespace Drupal\webform\Plugin\WebformElement;
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Form\OptGroup;
+use Drupal\webform\Utility\WebformArrayHelper;
 use Drupal\webform\Utility\WebformOptionsHelper;
 use Drupal\webform\WebformElementBase;
 use Drupal\webform\WebformSubmissionInterface;
@@ -29,7 +30,7 @@ abstract class OptionsBase extends WebformElementBase {
 
     // Issue #2836374: Wrapper attributes are not supported by composite
     // elements, this includes radios, checkboxes, and buttons.
-    if (preg_match('/(radios|checkboxes|buttons)/', $this->getPluginId())) {
+    if (preg_match('/(radios|checkboxes|buttons|tableselect|tableselect_sort)$/', $this->getPluginId())) {
       unset($default_properties['wrapper_attributes']);
     }
 
@@ -98,7 +99,7 @@ abstract class OptionsBase extends WebformElementBase {
 
     // Randomize options.
     if (isset($element['#options']) && !empty($element['#options_randomize'])) {
-      shuffle($element['#options']);
+      $element['#options'] = WebformArrayHelper::shuffle($element['#options']);
     }
 
     $is_wrapper_fieldset = in_array($element['#type'], ['checkboxes', 'radios']);
@@ -124,19 +125,20 @@ abstract class OptionsBase extends WebformElementBase {
         }
       }
     }
+
+    // If the element is #required and the #default_value is an empty string
+    // we need to unset the #default_value to prevent the below error.
+    // 'An illegal choice has been detected.'
+    if (!empty($element['#required']) && isset($element['#default_value']) && $element['#default_value'] === '') {
+      unset($element['#default_value']);
+    }
   }
 
   /**
    * {@inheritdoc}
    */
-  public function isMultiline(array $element) {
-    $format = $this->getItemsFormat($element);
-    if (in_array($format, ['ol', 'ul'])) {
-      return TRUE;
-    }
-    else {
-      return parent::isMultiline($element);
-    }
+  public function hasMultipleWrapper() {
+    return FALSE;
   }
 
   /**
@@ -157,7 +159,7 @@ abstract class OptionsBase extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  protected function formatTextItem(array &$element, $value, array $options = []) {
+  protected function formatTextItem(array $element, $value, array $options = []) {
     $format = $this->getItemFormat($element);
     if ($format == 'value' && isset($element['#options'])) {
       $flattened_options = OptGroup::flattenOptions($element['#options']);
@@ -301,11 +303,12 @@ abstract class OptionsBase extends WebformElementBase {
   protected function getElementSelectorInputsOptions(array $element) {
     $plugin_id = $this->getPluginId();
     if (preg_match('/webform_(select|radios|checkboxes|buttons)_other$/', $plugin_id, $match)) {
+      list($type) = explode(' ', $this->getPluginLabel());
       $title = $this->getAdminLabel($element);
-      list($element_type) = explode(' ', $this->getPluginLabel());
+      $name = $match[1];
 
       $inputs = [];
-      $inputs[$match[1]] = $title . ' [' . $element_type . ']';
+      $inputs[$name] = $title . ' [' . $type . ']';
       $inputs['other'] = $title . ' [' . $this->t('Text field') . ']';
       return $inputs;
     }
@@ -316,12 +319,39 @@ abstract class OptionsBase extends WebformElementBase {
 
   /**
    * {@inheritdoc}
+   *
+   * @see \Drupal\webform\Entity\Webform::getElementsSelectorOptions
+   */
+  public function getElementSelectorOptions(array $element) {
+    if ($this->hasMultipleValues($element) && $this->hasMultipleWrapper()) {
+      return [];
+    }
+
+    $plugin_id = $this->getPluginId();
+    $title = $this->getAdminLabel($element) . ' [' . $this->getPluginLabel() . ']';
+    $name = $element['#webform_key'];
+
+    if ($inputs = $this->getElementSelectorInputsOptions($element)) {
+      $selectors = [];
+      foreach ($inputs as $input_name => $input_title) {
+        $multiple = ($this->hasMultipleValues($element) && $input_name === 'select') ? '[]' : '';
+        $selectors[":input[name=\"{$name}[{$input_name}]$multiple\"]"] = $input_title;
+      }
+      return [$title => $selectors];
+    }
+    else {
+      $multiple = ($this->hasMultipleValues($element) && strpos($plugin_id, 'select') !== FALSE) ? '[]' : '';
+      return [":input[name=\"$name$multiple\"]" => $title];
+    }
+  }
+
+  /**
+   * {@inheritdoc}
    */
   public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
 
     $form['element']['default_value']['#description'] = $this->t('The default value of the field identified by its key.');
-    $form['element']['default_value']['#description'] .= ' ' . $this->t('For multiple options, use commas to separate multiple defaults.');
 
     // Issue #2836374: Wrapper attributes are not supported by composite
     // elements, this includes radios, checkboxes, and buttons.
@@ -362,12 +392,6 @@ abstract class OptionsBase extends WebformElementBase {
       '#type' => 'textfield',
       '#title' => $this->t('Empty option value'),
       '#description' => $this->t('The value for the initial option denoting no selection in a select element, which is used to determine whether the user submitted a value or not.'),
-    ];
-    $form['options']['multiple'] = [
-      '#title' => $this->t('Multiple'),
-      '#type' => 'checkbox',
-      '#return_value' => TRUE,
-      '#description' => $this->t('Check this option if the user should be allowed to choose multiple values.'),
     ];
     $form['options']['options_randomize'] = [
       '#type' => 'checkbox',

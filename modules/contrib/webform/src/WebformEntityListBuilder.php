@@ -18,16 +18,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class WebformEntityListBuilder extends ConfigEntityListBuilder {
 
   /**
-   * Webform state open.
-   */
-  const STATE_OPEN = 'open';
-
-  /**
-   * Webform state closed.
-   */
-  const STATE_CLOSED = 'closed';
-
-  /**
    * Search keys.
    *
    * @var string
@@ -75,7 +65,7 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
     // actions and add the needed dialog attributes.
     // @see https://www.drupal.org/node/2585169
     if ($this->moduleHandler()->moduleExists('webform_ui')) {
-      $add_form_attributes = WebformDialogHelper::getModalDialogAttributes(640, ['button', 'button-action', 'button--primary', 'button--small']);
+      $add_form_attributes = WebformDialogHelper::getModalDialogAttributes(700, ['button', 'button-action', 'button--primary', 'button--small']);
     }
     else {
       $add_form_attributes = ['class' => ['button', 'button-action', 'button--primary', 'button--small']];
@@ -95,29 +85,29 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
     // Add the filter by key(word) and/or state.
     $state_options = [
       '' => $this->t('All [@total]', ['@total' => $this->getTotal(NULL, NULL)]),
-      WebformEntityListBuilder::STATE_OPEN => $this->t('Open [@total]', ['@total' => $this->getTotal(NULL, self::STATE_OPEN)]),
-      WebformEntityListBuilder::STATE_CLOSED => $this->t('Closed [@total]', ['@total' => $this->getTotal(NULL, self::STATE_CLOSED)]),
+      WebformInterface::STATUS_OPEN => $this->t('Open [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_OPEN)]),
+      WebformInterface::STATUS_CLOSED => $this->t('Closed [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_CLOSED)]),
+      WebformInterface::STATUS_SCHEDULED => $this->t('Scheduled [@total]', ['@total' => $this->getTotal(NULL, WebformInterface::STATUS_SCHEDULED)]),
     ];
     $build['filter_form'] = \Drupal::formBuilder()->getForm('\Drupal\webform\Form\WebformEntityFilterForm', $this->keys, $this->state, $state_options);
 
     // Display info.
-    if ($this->isAdmin()) {
-      if ($total = $this->getTotal($this->keys, $this->state)) {
-        $t_args = [
-          '@total' => $total,
-          '@results' => $this->formatPlural($total, $this->t('webform'), $this->t('webforms')),
-        ];
-        $build['info'] = [
-          '#markup' => $this->t('@total @results', $t_args),
-          '#prefix' => '<div>',
-          '#suffix' => '</div>',
-        ];
-      }
+    if ($total = $this->getTotal($this->keys, $this->state)) {
+      $t_args = [
+        '@total' => $total,
+        '@results' => $this->formatPlural($total, $this->t('webform'), $this->t('webforms')),
+      ];
+      $build['info'] = [
+        '#markup' => $this->t('@total @results', $t_args),
+        '#prefix' => '<div>',
+        '#suffix' => '</div>',
+      ];
     }
+
     $build += parent::render();
 
     // Must preload libraries required by (modal) dialogs.
-    $build['#attached']['library'][] = 'webform/webform.admin.dialog';
+    WebformDialogHelper::attachLibraries($build);
 
     return $build;
   }
@@ -171,7 +161,19 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
       $row['title']['data']['template'] = ['#markup' => ' <b>(' . $this->t('Template') . ')</b>'];
     }
     $row['description']['data']['description']['#markup'] = $entity->get('description');
-    $row['status'] = $entity->isOpen() ? $this->t('Open') : $this->t('Closed');
+    switch ($entity->get('status')) {
+      case WebformInterface::STATUS_OPEN:
+        $row['status'] = $this->t('Open');
+        break;
+
+      case WebformInterface::STATUS_CLOSED:
+        $row['status'] = $this->t('Closed');
+        break;
+
+      case WebformInterface::STATUS_SCHEDULED:
+        $row['status'] = $this->t('Scheduled (@state)', ['@state' => $entity->isOpen() ? $this->t('Open') : $this->t('Closed')]);
+        break;
+    }
     $row['owner'] = ($owner = $entity->getOwner()) ? $owner->toLink() : '';
     $row['results_total'] = $this->submissionStorage->getTotal($entity) . (!empty($settings['results_disabled']) ? ' ' . $this->t('(Disabled)') : '');
     $row['results_operations']['data'] = [
@@ -193,10 +195,6 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
         $operations['submissions'] = [
           'title' => $this->t('Submissions'),
           'url' => Url::fromRoute('entity.webform.results_submissions', $route_parameters),
-        ];
-        $operations['table'] = [
-          'title' => $this->t('Table'),
-          'url' => Url::fromRoute('entity.webform.results_table', $route_parameters),
         ];
         $operations['export'] = [
           'title' => $this->t('Download'),
@@ -231,9 +229,13 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
           'title' => $this->t('Duplicate'),
           'weight' => 23,
           'url' => Url::fromRoute('entity.webform.duplicate_form', $route_parameters),
-          'attributes' => WebformDialogHelper::getModalDialogAttributes(640),
+          'attributes' => WebformDialogHelper::getModalDialogAttributes(700),
         ];
       }
+      if (isset($operations['delete'])) {
+        $operations['delete']['attributes'] = WebformDialogHelper::getModalDialogAttributes(700);
+      }
+
     }
     return $operations;
   }
@@ -289,8 +291,8 @@ class WebformEntityListBuilder extends ConfigEntityListBuilder {
     }
 
     // Filter by (form) state.
-    if ($state == self::STATE_OPEN || $state == self::STATE_CLOSED) {
-      $query->condition('status', ($state == self::STATE_OPEN) ? TRUE : FALSE);
+    if ($state) {
+      $query->condition('status', $state);
     }
 
     // Filter out templates if the webform_template.module is enabled.

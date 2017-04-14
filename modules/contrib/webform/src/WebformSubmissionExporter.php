@@ -426,7 +426,7 @@ class WebformSubmissionExporter implements WebformSubmissionExporterInterface {
     $form['export']['columns']['excluded_columns'] = [
       '#type' => 'webform_excluded_columns',
       '#description' => $this->t('The selected columns will be included in the export.'),
-      '#webform' => $webform,
+      '#webform_id' => $webform->id(),
       '#default_value' => $export_options['excluded_columns'],
     ];
 
@@ -440,6 +440,7 @@ class WebformSubmissionExporter implements WebformSubmissionExporterInterface {
       '#type' => 'checkbox',
       '#title' => $this->t('Download export file'),
       '#description' => $this->t('If checked, the export file will be automatically download to your local machine. If unchecked, the export file will be displayed as plain text within your browser.'),
+      '#return_value' => TRUE,
       '#default_value' => $export_options['download'],
       '#access' => !$this->requiresBatch(),
       '#states' => $states_archive,
@@ -448,6 +449,7 @@ class WebformSubmissionExporter implements WebformSubmissionExporterInterface {
       '#type' => 'checkbox',
       '#title' => $this->t('Download uploaded files'),
       '#description' => $this->t('If checked, the exported file and any submission file uploads will be download in a gzipped tar file.'),
+      '#return_value' => TRUE,
       '#access' => $webform->hasManagedFile(),
       '#states' => [
         'invisible' => [
@@ -547,6 +549,7 @@ class WebformSubmissionExporter implements WebformSubmissionExporterInterface {
       '#type' => 'checkbox',
       '#title' => $this->t('Starred/flagged submissions'),
       '#description' => $this->t('If checked, only starred/flagged submissions will be downloaded. If unchecked, all submissions will downloaded.'),
+      '#return_value' => TRUE,
       '#default_value' => $export_options['sticky'],
     ];
 
@@ -561,7 +564,7 @@ class WebformSubmissionExporter implements WebformSubmissionExporterInterface {
         'completed' => $this->t('Completed submissions only'),
         'draft' => $this->t('Drafts only'),
       ],
-      '#access' => $webform->getSetting('draft'),
+      '#access' => ($webform->getSetting('draft') != WebformInterface::DRAFT_ENABLED_NONE),
     ];
   }
 

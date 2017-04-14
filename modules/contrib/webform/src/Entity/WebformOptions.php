@@ -2,6 +2,7 @@
 
 namespace Drupal\webform\Entity;
 
+use Drupal\Core\Config\Entity\ConfigEntityInterface;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
 use Drupal\Core\Entity\EntityStorageInterface;
@@ -15,6 +16,7 @@ use Drupal\webform\WebformOptionsInterface;
  *   id = "webform_options",
  *   label = @Translation("Webform options"),
  *   handlers = {
+ *     "storage" = "\Drupal\webform\WebformOptionsStorage",
  *     "access" = "Drupal\webform\WebformOptionsAccessControlHandler",
  *     "list_builder" = "Drupal\webform\WebformOptionsListBuilder",
  *     "form" = {
@@ -37,6 +39,7 @@ use Drupal\webform\WebformOptionsInterface;
  *     "id",
  *     "uuid",
  *     "label",
+ *     "category",
  *     "options",
  *   }
  * )
@@ -63,6 +66,13 @@ class WebformOptions extends ConfigEntityBase implements WebformOptionsInterface
    * @var string
    */
   protected $label;
+
+  /**
+   * The webform options category.
+   *
+   * @var string
+   */
+  protected $category;
 
   /**
    * The webform options options.
@@ -96,6 +106,14 @@ class WebformOptions extends ConfigEntityBase implements WebformOptionsInterface
       $this->optionsDecoded = $options;
     }
     return $this->optionsDecoded;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setOptions(array $options) {
+    $this->options = Yaml::encode($options);
+    $this->optionsDecoded = NULL;
   }
 
   /**
@@ -137,8 +155,19 @@ class WebformOptions extends ConfigEntityBase implements WebformOptionsInterface
   /**
    * {@inheritdoc}
    */
+  public static function sort(ConfigEntityInterface $a, ConfigEntityInterface $b) {
+    $a_label = $a->get('category') . $a->label();
+    $b_label = $b->get('category') . $b->label();
+    return strnatcasecmp($a_label, $b_label);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public static function getElementOptions(array $element, $property_name = '#options') {
     // If element already has #options return them.
+    // NOTE: Only WebformOptions can be altered. If you need to alter an
+    // element's options, @see hook_webform_element_alter().
     if (is_array($element[$property_name])) {
       return $element[$property_name];
     }
@@ -153,14 +182,16 @@ class WebformOptions extends ConfigEntityBase implements WebformOptionsInterface
     $id = $element[$property_name];
     if ($webform_options = WebformOptions::load($id)) {
       $options = $webform_options->getOptions();
-      if ($options) {
-        return $options;
-      }
+    }
+    else {
+      $options = [];
     }
 
-    // Get options using alter hook.
-    $options = [];
+    // Alter options using hook_webform_options_alter()
+    // and/or hook_webform_options_WEBFORM_OPTIONS_ID_alter() hook.
+    // @see webform.api.php
     \Drupal::moduleHandler()->alter('webform_options_' . $id, $options, $element);
+    \Drupal::moduleHandler()->alter('webform_options', $options, $element, $id);
 
     // Log empty options.
     if (empty($options)) {

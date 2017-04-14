@@ -1,6 +1,7 @@
 settings:
   default_page_base_path: form
-  default_form_closed_message: 'Sorry...This form is closed to new submissions.'
+  default_form_open_message: 'This form has not yet been opened to submissions.'
+  default_form_close_message: 'Sorry...This form is closed to new submissions.'
   default_form_exception_message: 'Unable to display this webform. Please contact the site administrator.'
   default_form_submit_label: Submit
   default_form_submit_once: false
@@ -28,6 +29,7 @@ settings:
   default_draft_loaded_message: 'A partially-completed form was found. Please complete the remaining portions.'
   default_confirmation_message: 'New submission added to [webform:title].'
   default_confirmation_back_label: 'Back to form'
+  default_submission_log: false
   confirmation_classes: |
     messages messages--error
     messages messages--warning
@@ -42,7 +44,7 @@ assets:
 export:
   exporter: delimited
   delimiter: ','
-  multiple_delimiter: ';'
+  multiple_delimiter: ;
   excel: false
   file_name: 'submission-[webform_submission:serial]'
   header_format: label
@@ -76,6 +78,7 @@ elements:
     messages messages--warning
     messages messages--status
   default_description_display: ''
+  default_icheck: ''
   default_google_maps_api_key: ''
   excluded_types: {  }
 file:
@@ -90,6 +93,8 @@ format: {  }
 mail:
   default_from_mail: '[site:mail]'
   default_from_name: '[site:name]'
+  default_reply_to: ''
+  default_return_path: ''
   default_subject: 'Webform submission from: [webform_submission:source-entity]'
   default_body_text: |
     Submitted on [webform_submission:created]
@@ -102,6 +107,7 @@ mail:
     <p>Submitted by: [webform_submission:user]</p>
     <p>Submitted values are:</p>
     [webform_submission:values]
+  roles: {  }
 test:
   types: |
     checkbox:
@@ -200,6 +206,7 @@ ui:
   video_display: dialog
   details_save: true
   dialog_disabled: false
+  offcanvas_disabled: false
   html_editor_disabled: false
 library:
   cdn: false

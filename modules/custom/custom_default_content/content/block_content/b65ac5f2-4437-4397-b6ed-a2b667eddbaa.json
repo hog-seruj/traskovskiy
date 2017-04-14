@@ -1,0 +1,171 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/uk\/block\/10?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/header_image"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_5.jpg"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "10"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b65ac5f2-4437-4397-b6ed-a2b667eddbaa"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": "10"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "header_image"
+        }
+    ],
+    "info": [
+        {
+            "value": "\u0417\u0430\u043c\u043e\u0432\u043b\u044f\u0439\u0442\u0435 \u0442\u0443\u0442",
+            "lang": "uk"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1492167427",
+            "lang": "uk"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "1492167427"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "230091d0-fc6a-4202-87ab-34f6c496525a"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "230091d0-fc6a-4202-87ab-34f6c496525a"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/header_image\/field_photo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_5.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6808c86c-7ce1-4896-96a2-09c286c18fbc"
+                    }
+                ],
+                "alt": "alt",
+                "title": "title",
+                "width": "259",
+                "height": "194"
+            }
+        ]
+    },
+    "revision_translation_affected": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1492167413",
+            "lang": "uk"
+        }
+    ],
+    "body": [
+        {
+            "value": "Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "format": "restricted_html",
+            "summary": "",
+            "lang": "uk"
+        }
+    ]
+}

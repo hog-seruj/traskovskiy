@@ -27,8 +27,12 @@ class WebformTableSelectSort extends OptionsBase {
    */
   public function getDefaultProperties() {
     return parent::getDefaultProperties() + [
+      'multiple' => TRUE,
+      'multiple_error' => '',
       // Table settings.
       'js_select' => TRUE,
+      // iCheck settings.
+      'icheck' => '',
     ];
   }
 

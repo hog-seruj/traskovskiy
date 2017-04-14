@@ -3,7 +3,7 @@
 namespace Drupal\webform\Tests;
 
 use Drupal\Component\Serialization\Yaml;
-use Drupal\webform\Utility\WebformYamlTidy;
+use Drupal\webform\Utility\WebformYaml;
 
 /**
  * Tests for webform entity.
@@ -49,7 +49,7 @@ class WebformAdminSettingsTest extends WebformTestBase {
     // Get 'webform.settings'.
     $original_data = \Drupal::configFactory()->getEditable('webform.settings')->getRawData();
 
-    // Update 'settings.default_form_closed_message'.
+    // Update 'settings.default_form_close_message'.
     $this->drupalPostForm('admin/structure/webform/settings', [], t('Save configuration'));
     \Drupal::configFactory()->reset('webform.settings');
     $updated_data = \Drupal::configFactory()->getEditable('webform.settings')->getRawData();
@@ -58,8 +58,8 @@ class WebformAdminSettingsTest extends WebformTestBase {
     $this->assertEqual($updated_data, $original_data, 'Updated admin settings via the UI did not lose or change any data');
 
     // DEBUG:
-    $this->verbose('<pre>' . WebformYamlTidy::tidy(Yaml::encode($original_data)) . '</pre>');
-    $this->verbose('<pre>' . WebformYamlTidy::tidy(Yaml::encode($updated_data)) . '</pre>');
+    $this->verbose('<pre>' . WebformYaml::tidy(Yaml::encode($original_data)) . '</pre>');
+    $this->verbose('<pre>' . WebformYaml::tidy(Yaml::encode($updated_data)) . '</pre>');
 
     /* Elements */
 
@@ -79,14 +79,14 @@ class WebformAdminSettingsTest extends WebformTestBase {
 
     // Check that dialogs are enabled.
     $this->drupalGet('admin/structure/webform');
-    $this->assertRaw('<a href="' . $base_path . 'admin/structure/webform/add" class="button button-action button--primary button--small use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:640}">Add webform</a>');
+    $this->assertRaw('<a href="' . $base_path . 'admin/structure/webform/add" class="button button-action button--primary button--small use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:700}">Add webform</a>');
 
     // Disable dialogs.
     $this->drupalPostForm('admin/structure/webform/settings', ['ui[dialog_disabled]' => TRUE], t('Save configuration'));
 
     // Check that dialogs are disabled. (ie use-ajax is not included)
     $this->drupalGet('admin/structure/webform');
-    $this->assertNoRaw('<a href="' . $base_path . 'admin/structure/webform/add" class="button button-action button--primary button--small use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:640}">Add webform</a>');
+    $this->assertNoRaw('<a href="' . $base_path . 'admin/structure/webform/add" class="button button-action button--primary button--small use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:700}">Add webform</a>');
     $this->assertRaw('<a href="' . $base_path . 'admin/structure/webform/add" class="button button-action button--primary button--small">Add webform</a>');
 
     /* UI disable html editor */

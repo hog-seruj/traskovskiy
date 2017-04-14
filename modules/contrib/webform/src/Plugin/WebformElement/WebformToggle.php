@@ -27,13 +27,14 @@ class WebformToggle extends Checkbox {
       'off_text' => '',
     ];
     $properties['title_display'] = 'after';
+    unset($properties['icheck']);
     return $properties;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function formatTextItem(array &$element, $value, array $options = []) {
+  public function formatTextItem(array $element, $value, array $options = []) {
     $format = $this->getItemFormat($element);
 
     switch ($format) {

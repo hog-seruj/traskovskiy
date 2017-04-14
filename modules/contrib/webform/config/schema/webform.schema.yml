@@ -17,9 +17,12 @@ webform.settings:
         default_form_submit_once:
           type: boolean
           label: 'Prevent duplicate submissions'
-        default_form_closed_message:
+        default_form_open_message:
           type: text
-          label: 'Default webform closed message'
+          label: 'Default webform open message'
+        default_form_close_message:
+          type: text
+          label: 'Default webform close message'
         default_form_exception_message:
           type: text
           label: 'Default webform exception message'
@@ -80,9 +83,12 @@ webform.settings:
         default_limit_user_message:
           type: text
           label: 'Default limit user message'
+        default_submission_log:
+          type: boolean
+          label: 'Default submission logging'
         form_classes:
           type: string
-          label: 'Webform CSS classes'
+          label: 'Form CSS classes '
         button_classes:
           type: string
           label: 'Button CSS classes'
@@ -115,6 +121,9 @@ webform.settings:
         classes:
           type: string
           label: 'Element CSS classes'
+        default_icheck:
+          type: string
+          label: 'Default iCheck style'
         default_description_display:
           type: string
           label: 'Default title display'
@@ -158,10 +167,16 @@ webform.settings:
       mapping:
         default_from_mail:
           type: email
-          label: 'Default email from address'
+          label: 'Default from email'
         default_from_name:
           type: label
-          label: 'Default email from name'
+          label: 'Default from name'
+        default_reply_to:
+          type: label
+          label: 'Default reply to email'
+        default_return_path:
+          type: label
+          label: 'Default return path email'
         default_subject:
           type: label
           label: 'Default email subject'
@@ -171,6 +186,12 @@ webform.settings:
         default_body_html:
           type: text
           label: 'Default email body (HTML)'
+        roles:
+          type: sequence
+          label: 'Roles'
+          sequence:
+            type: string
+            label: 'Role'
     export:
       type: mapping
       label: 'Export default settings'
@@ -260,6 +281,9 @@ webform.settings:
         dialog_disabled:
           type: boolean
           label: 'Disable dialogs'
+        offcanvas_disabled:
+          type: boolean
+          label: 'Disable system tray'
         html_editor_disabled:
           type: boolean
           label: 'Disable HTML editor'
@@ -284,8 +308,14 @@ webform.webform.*:
   label: 'Webforms'
   mapping:
     status:
-      type: boolean
+      type: string
       label: 'Status'
+    open:
+      type: string
+      label: 'Open date/time'
+    close:
+      type: string
+      label: 'Close date/time'
     uid:
       type: integer
       label: 'Author'
@@ -331,34 +361,43 @@ webform.webform.*:
           label: 'Prevent duplicate submissions'
         form_submit_attributes:
           type: ignore
-          label: 'Webform submit attributes'
-        form_closed_message:
+          label: 'Form submit attributes'
+        form_open_message:
           type: text
-          label: 'Webform closed message'
+          label: 'Form open message'
+        form_close_message:
+          type: text
+          label: 'Form closed message'
         form_exception_message:
           type: text
-          label: 'Webform exception message'
+          label: 'Form exception message'
         form_previous_submissions:
           type: boolean
-          label: 'Webform previous submissions notification'
+          label: 'Form previous submissions notification'
         form_confidential:
           type: boolean
-          label: 'Webform confidential'
+          label: 'Form confidential'
         form_confidential_message:
           type: text
-          label: 'Webform confidential message'
+          label: 'Form confidential message'
+        form_convert_anonymous:
+          type: boolean
+          label: 'Convert anonymous drafts and submissions to authenticated.'
         form_prepopulate:
           type: boolean
-          label: 'Webform prepopulate elements'
+          label: 'Form prepopulate elements'
         form_prepopulate_source_entity:
           type: boolean
-          label: 'Webform prepopulate source entity'
+          label: 'Form prepopulate source entity'
         form_unsaved:
           type: boolean
           label: 'Warn users about unsaved changes'
         form_disable_back:
           type: boolean
           label: 'Disable back button'
+        form_disable_autocomplete:
+          type: boolean
+          label: 'Disable autocompletion'
         form_novalidate:
           type: boolean
           label: 'Disable client-side validation'
@@ -368,6 +407,9 @@ webform.webform.*:
         form_details_toggle:
           type: boolean
           label: 'Display collapse/expand all details link'
+        submission_log:
+          type: boolean
+          label: 'Submission logging'
         wizard_progress_bar:
           type: boolean
           label: 'Show wizard progress bar'
@@ -420,7 +462,7 @@ webform.webform.*:
           type: text
           label: 'Preview message'
         draft:
-          type: boolean
+          type: string
           label: 'Allow your users to save and finish the webform later.'
         draft_auto_save:
           type: boolean
@@ -443,6 +485,9 @@ webform.webform.*:
         confirmation_url:
           type: string
           label: 'Confirmation URL'
+        confirmation_title:
+          type: text
+          label: 'Confirmation title'
         confirmation_message:
           type: text
           label: 'Confirmation message'
@@ -651,25 +696,54 @@ webform.handler.*:
   type: mapping
   label: 'Handler settings'
 
+webform.handler.log:
+  type: mapping
+  label: 'Log'
+  mapping: {  }
+
 webform.handler.email:
   type: mapping
   label: 'Email'
   mapping:
+    states:
+      type: sequence
+      label: 'States'
+      sequence:
+        type: string
+        label: 'State'
     to_mail:
       label: 'Email to address'
       type: email
+    to_options:
+      label: 'Email to address options'
+      type: ignore
     bcc_mail:
-      label: 'Email Bcc address'
+      label: 'Email BCC address'
       type: email
+    bcc_options:
+      label: 'Email BCC address options'
+      type: ignore
     cc_mail:
-      label: 'Email Cc address'
+      label: 'Email CC address'
       type: email
+    cc_options:
+      label: 'Email CC address options'
+      type: ignore
     from_mail:
       label: 'Email from address'
       type: email
+    from_options:
+      label: 'Email from address options'
+      type: ignore
     from_name:
       label: 'Email from name'
       type: label
+    reply_to:
+      type: label
+      label: 'Reply to email'
+    return_path:
+      type: label
+      label: 'Return path email'
     subject:
       label: 'Email subject'
       type: label
@@ -752,6 +826,9 @@ webform.webform_options.*:
     label:
       type: label
       label: 'Label'
+    category:
+      type: label
+      label: 'Category'
     options:
       type: text
       label: 'Options (YAML)'
@@ -795,8 +872,14 @@ field.field_settings.webform:
       type: string
       label: 'Default webform submission data'
     status:
-      type: boolean
-      label: 'Status of the webform'
+      type: string
+      label: 'Webform status'
+    open:
+      type: string
+      label: 'Webform open date/time'
+    close:
+      type: string
+      label: 'Webform close date/time'
 
 field.widget.settings.webform_entity_reference_autocomplete:
   type: mapping
@@ -835,3 +918,11 @@ action.configuration.webform_submission_make_sticky_action:
 action.configuration.webform_submission_make_unsticky_action:
   type: action_configuration_default
   label: 'Unstar/Unflag selected submission configuration'
+
+condition.plugin.webform:
+  type: condition.plugin
+  mapping:
+    webforms:
+      type: sequence
+      sequence:
+        type: string

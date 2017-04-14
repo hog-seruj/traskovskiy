@@ -10,7 +10,8 @@ use Drupal\webform\Controller\WebformResultsExportController;
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\Form\WebformResultsClearForm;
 use Drupal\webform\Form\WebformSubmissionsPurgeForm;
-use Drupal\webform\Utility\WebformYamlTidy;
+use Drupal\webform\Utility\WebformYaml;
+use Psr\Log\LogLevel;
 
 /**
  * Implements hook_drush_command().
@@ -159,6 +160,18 @@ function webform_drush_command() {
     'aliases' => ['wfr'],
   ];
 
+  /* Docs */
+
+  $items['webform-docs'] = [
+    'description' => 'Generates HTML documentation.',
+    'core' => ['8+'],
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_ROOT,
+    'examples' => [
+      'webform-repair' => 'Generates HTML documentation used by the Webform module\'s documentation pages.',
+    ],
+    'aliases' => ['wfd'],
+  ];
+
   return $items;
 }
 
@@ -187,8 +200,8 @@ function webform_drush_help($section) {
 
     case 'drush:webform-tidy':
       return dt('This command tidies exported YAML configuration files.') . "\n\n" .
-        dt('Changes include...') . "\n" .
-        dt('- Preserving newlines using pipe (|).') . "\n" .
+        dt('Changes include...') . PHP_EOL .
+        dt('- Preserving newlines using pipe (|).') . PHP_EOL .
         dt('- Removing returns after array dashes (-).');
 
     case 'drush:webform-generate':
@@ -375,16 +388,26 @@ function drush_webform_tidy($module = 'webform') {
 
     // Add module dependency to exporter webform and webform options config entities.
     if ($dependencies && preg_match('/^(webform\.webform\.|webform\.webform_options\.)/', $file->filename)) {
-      $data = Yaml::decode($tidied_yaml);
-      if (empty($data['dependencies']['enforced']['module']) || !in_array($module, $data['dependencies']['enforced']['module'])) {
-        drush_print(dt('Adding module dependency to @file...', ['@file' => $file->filename]));
-        $data['dependencies']['enforced']['module'][] = $module;
-        $tidied_yaml = Yaml::encode($data);
+      try {
+        $data = Yaml::decode($tidied_yaml);
+        if (empty($data['dependencies']['enforced']['module']) || !in_array($module, $data['dependencies']['enforced']['module'])) {
+          drush_print(dt('Adding module dependency to @file...', ['@file' => $file->filename]));
+          $data['dependencies']['enforced']['module'][] = $module;
+          $tidied_yaml = Yaml::encode($data);
+        }
+      }
+      catch (\Exception $exception) {
+        $message = 'Error parsing: ' . $file->filename . PHP_EOL . $exception->getMessage();
+        if (strlen($message) > 255) {
+          $message = substr($message, 0, 255) . '...';
+        }
+        drush_log($message, LogLevel::ERROR);
+        drush_print($message);
       }
     }
 
     // Tidy and add new line to the end of the tidied file.
-    $tidied_yaml = WebformYamlTidy::tidy($tidied_yaml) . "\n";
+    $tidied_yaml = WebformYaml::tidy($tidied_yaml) . PHP_EOL;
     if ($tidied_yaml != $original_yaml) {
       drush_print(dt('Tidying @file...', ['@file' => $file->filename]));
       file_put_contents($file->uri, $tidied_yaml);
@@ -508,7 +531,104 @@ function drush_webform_repair() {
   _webform_update_admin_settings();
 
   drush_print('Repairing webform settings...');
-  _webform_update_form_settings();
+  _webform_update_webform_settings();
+}
+
+/******************************************************************************/
+// Docs.
+/******************************************************************************/
+
+/**
+ * Implements drush_hook_COMMAND_validate().
+ */
+function drush_webform_docs_validate() {
+  if (!\Drupal::moduleHandler()->moduleExists('readme')) {
+    return drush_set_error(dt('The README module is required to generate HTML documentation.'));
+  }
+  if (!class_exists('\tidy')) {
+    return drush_set_error(dt('The HTML tidy PHP addon is required to generate HTML documentation.'));
+  }
+}
+
+/**
+ * Implements drush_hook_COMMAND().
+ */
+function drush_webform_docs() {
+  $html_directory_path = drupal_get_path('module', 'webform') . '/html';
+
+  // Create the /html directory.
+  if (!file_exists($html_directory_path)) {
+    \Drupal::service('file_system')->mkdir($html_directory_path);
+  }
+
+  // Generate docs from MarkDown using the README module's ReadmeManager.
+  /** @var \Drupal\readme\ReadmeManagerInterface $readme_manager */
+  $readme_manager = \Drupal::service('readme.manager');
+  $markdown = [
+    'features' => 'docs/FEATURES.md',
+  ];
+  foreach ($markdown as $markdown_name => $markdown_path) {
+    $markdown_html = $readme_manager->getHtml('webform', $markdown_path);
+    $markdown_html = preg_replace('#^\s*<h2>[^<]+</h2>\s*#', '', $markdown_html);
+    $markdown_html = _drush_webform_docs_tidy($markdown_html);
+    file_put_contents("$html_directory_path/webform-$markdown_name.html", $markdown_html);
+  }
+
+  // Generate docs from WebformHelpManager.
+  /** @var \Drupal\webform\WebformHelpManagerInterface $help_manager */
+  $help_manager = \Drupal::service('webform.help_manager');
+  $help = [
+    'videos' => $help_manager->buildVideos(TRUE),
+    'elements' => $help_manager->buildElements(TRUE),
+    'addons' => $help_manager->buildAddOns(TRUE),
+    'libraries' => $help_manager->buildLibraries(TRUE),
+  ];
+  foreach ($help as $help_name => $help_section) {
+    unset(
+      $help_section['title'],
+      $help_section['content']['#prefix'],
+      $help_section['content']['#suffix']
+    );
+    $help_html = \Drupal::service('renderer')->renderPlain($help_section);
+    $help_html = _drush_webform_docs_tidy($help_html);
+    file_put_contents("$html_directory_path/webform-$help_name.html", $help_html);
+  }
+}
+
+/**
+ * Tidy an HTML string.
+ *
+ * @param string $html
+ *   HTML string to be tidied.
+ *
+ * @return string
+ *   A tidied HTML string.
+ */
+function _drush_webform_docs_tidy($html) {
+  // Configuration.
+  // - http://us3.php.net/manual/en/book.tidy.php
+  // - http://tidy.sourceforge.net/docs/quickref.html#wrap
+  $config = ['show-body-only' => TRUE, 'wrap' => '0'];
+
+  $tidy = new \tidy();
+  $tidy->parseString($html, $config, 'utf8');
+  $tidy->cleanRepair();
+  $html = tidy_get_output($tidy);
+
+  // Remove <code> tag nested within <pre> tag.
+  $html = preg_replace('#<pre><code>\s*#', "<code>\n", $html);
+  $html = preg_replace('#\s*</code></pre>#', "\n</code>", $html);
+
+  // Remove space after <br> tags.
+  $html = preg_replace('/(<br[^>]*>)\s+/', '\1', $html);
+
+  // Convert <pre> to <code>.
+  $html = preg_replace('#<hr>\s*<pre>([^<]+)</pre>\s+<hr>\s*<br>#s', '<p><code>\1</code></p>' . PHP_EOL, $html);
+
+  // Append footer to HTML document.
+  $html .= '<hr />' . PHP_EOL . '<p><em>This documentation was generated by the Webform module and <b>MUST</b> be updated using the `drush webform-docs` command.</em></p>';
+
+  return $html;
 }
 
 /******************************************************************************/

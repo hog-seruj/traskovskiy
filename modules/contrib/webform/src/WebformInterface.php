@@ -13,6 +13,50 @@ use Drupal\user\EntityOwnerInterface;
 interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollectionInterface, EntityOwnerInterface {
 
   /**
+   * Denote drafts are not allowed.
+   *
+   * @var string
+   */
+  const DRAFT_ENABLED_NONE = 'none';
+
+  /**
+   * Denote drafts are allowed for authenticated users only.
+   *
+   * @var string
+   */
+  const DRAFT_ENABLED_AUTHENTICATED = 'authenticated';
+
+  /**
+   * Denote drafts are allowed for authenticated and anonymous users.
+   *
+   * @var string
+   */
+  const DRAFT_ENABLED_ALL = 'all';
+
+  /**
+   * Webform status open.
+   */
+  const STATUS_OPEN = 'open';
+
+  /**
+   * Webform status closed.
+   */
+  const STATUS_CLOSED = 'closed';
+
+  /**
+   * Webform status scheduled.
+   */
+  const STATUS_SCHEDULED = 'scheduled';
+
+  /**
+   * Returns the webform's (original) langcode.
+   *
+   * @return string
+   *   The webform's (original) langcode.
+   */
+  public function getLangcode();
+
+  /**
    * Determine if the webform has page or is attached to other entities.
    *
    * @return bool
@@ -37,6 +81,19 @@ interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollec
   public function hasFlexboxLayout();
 
   /**
+   * Sets the status of the configuration entity.
+   *
+   * @param string|bool|null $status
+   *   The status of the configuration entity.
+   *   - TRUE => WebformInterface::STATUS_OPEN.
+   *   - FALSE => WebformInterface::STATUS_CLOSED.
+   *   - NULL => WebformInterface::STATUS_SCHEDULED.
+   *
+   * @return $this
+   */
+  public function setStatus($status);
+
+  /**
    * Returns the webform opened status indicator.
    *
    * @return bool
@@ -51,6 +108,22 @@ interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollec
    *   TRUE if the webform is closed to new submissions.
    */
   public function isClosed();
+
+  /**
+   * Returns the webform scheduled status indicator.
+   *
+   * @return bool
+   *   TRUE if the webform is scheduled to open/close to new submissions.
+   */
+  public function isScheduled();
+
+  /**
+   * Determines if the webform is currently closed but scheduled to open.
+   *
+   * @return bool
+   *   TRUE if the webform is currently closed but scheduled to open.
+   */
+  public function isOpening();
 
   /**
    * Returns the webform template indicator.
@@ -75,6 +148,14 @@ interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollec
    *   TRUE if the webform has submissions.
    */
   public function hasSubmissions();
+
+  /**
+   * Determine if submissions are being logged.
+   *
+   * @return bool
+   *   TRUE if submissions are being logged.
+   */
+  public function hasSubmissionLog();
 
   /**
    * Determine if the current webform is translated.
@@ -309,28 +390,37 @@ interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollec
   /**
    * Get webform raw elements decoded and flattened into an associative array.
    *
+   * @param string $operation
+   *   (optional) The operation that is to be performed on the element.
+   *
    * @return array
    *   Webform raw elements decoded and flattened into an associative array
    *   keyed by element name. Returns FALSE is elements YAML is invalid.
    */
-  public function getElementsDecodedAndFlattened();
+  public function getElementsDecodedAndFlattened($operation = NULL);
 
   /**
    * Get webform elements initialized and flattened into an associative array.
+   *
+   * @param string $operation
+   *   (optional) The operation that is to be performed on the element.
    *
    * @return array
    *   Webform elements flattened into an associative array keyed by element name.
    *   Returns FALSE is elements YAML is invalid.
    */
-  public function getElementsInitializedAndFlattened();
+  public function getElementsInitializedAndFlattened($operation = NULL);
 
   /**
    * Get webform flattened list of elements.
    *
+   * @param string $operation
+   *   (optional) The operation that is to be performed on the element.
+   *
    * @return array
    *   Webform elements flattened into an associative array keyed by element name.
    */
-  public function getElementsInitializedFlattenedAndHasValue();
+  public function getElementsInitializedFlattenedAndHasValue($operation = NULL);
 
   /**
    * Get webform elements selectors as options.
@@ -375,10 +465,14 @@ interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollec
   /**
    * Get webform wizard pages.
    *
+   * @param bool $disable_pages
+   *   If set to TRUE all wizard page will be ignored only the (optional)
+   *   preview page will be return.
+   *
    * @return array
-   *   An associative array of webform pages.
+   *   An associative array of webform wizard pages.
    */
-  public function getPages();
+  public function getPages($disable_pages = FALSE);
 
   /**
    * Get webform wizard page.
@@ -433,23 +527,33 @@ interface WebformInterface extends ConfigEntityInterface, EntityWithPluginCollec
   /**
    * Saves a webform handler for this webform.
    *
-   * @param array $configuration
-   *   An array of webform handler configuration.
+   * @param \Drupal\webform\WebformHandlerInterface $handler
+   *   The webform handler object.
    *
    * @return string
    *   The webform handler ID.
    */
-  public function addWebformHandler(array $configuration);
+  public function addWebformHandler(WebformHandlerInterface $handler);
 
   /**
-   * Deletes a webform handler from this style.
+   * Update a webform handler for this webform.
    *
-   * @param \Drupal\webform\WebformHandlerInterface $effect
+   * @param \Drupal\webform\WebformHandlerInterface $handler
    *   The webform handler object.
    *
    * @return $this
    */
-  public function deleteWebformHandler(WebformHandlerInterface $effect);
+  public function updateWebformHandler(WebformHandlerInterface $handler);
+
+  /**
+   * Deletes a webform handler from this webform.
+   *
+   * @param \Drupal\webform\WebformHandlerInterface $handler
+   *   The webform handler object.
+   *
+   * @return $this
+   */
+  public function deleteWebformHandler(WebformHandlerInterface $handler);
 
   /**
    * Invoke a handlers method.

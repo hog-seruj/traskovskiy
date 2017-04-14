@@ -2,6 +2,7 @@
 
 namespace Drupal\webform;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\Core\Url;
@@ -14,6 +15,13 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
   use StringTranslationTrait;
 
   /**
+   * The configuration object factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
    * Libraries that provides additional functionality to the Webform module.
    *
    * @var array
@@ -22,8 +30,12 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
 
   /**
    * Constructs a WebformLibrariesManager object.
+   *
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The configuration object factory.
    */
-  public function __construct() {
+  public function __construct(ConfigFactoryInterface $config_factory) {
+    $this->configFactory = $config_factory;
     $this->libraries = $this->initLibraries();
   }
 
@@ -31,7 +43,7 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
    * {@inheritdoc}
    */
   public function requirements() {
-    $cdn = \Drupal::config('webform.settings')->get('library.cdn', FALSE);
+    $cdn = $this->configFactory->get('webform.settings')->get('library.cdn', FALSE);
 
     $status = [];
     $libraries = $this->getLibraries();
@@ -62,7 +74,7 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
       }
       else {
         $value = $this->t('@version (CDN).', $t_args);
-        $description = $this->t('Please download the <a href=":library_href">@title</a> library from <a href=":download_href">:download_href</a> and copy it to <b>@path</b> or use <a href=":install_href">Drush</a> to install this library. (<a href=":settings_href">Disable CDN warning)', $t_args);
+        $description = $this->t('Please download the <a href=":library_href">@title</a> library from <a href=":download_href">:download_href</a> and copy it to <b>@path</b> or use <a href=":install_href">Drush</a> to install this library. (<a href=":settings_href">Disable CDN warning</a>)', $t_args);
         $severity = REQUIREMENT_WARNING;
       }
 
@@ -109,19 +121,26 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
   protected function initLibraries() {
     $libraries = [];
 
-    $libraries['codemirror'] = [
-      'title' => $this->t('Code Mirror'),
-      'description' => $this->t('Code Mirror is a versatile text editor implemented in JavaScript for the browser.'),
-      'notes' => $this->t('Code Mirror is used to provide a text editor for YAML, HTML, CSS, and JavaScript configuration settings and messages.'),
-      'url' => Url::fromUri('http://codemirror.net/'),
-      'version' => '5.21.0',
-    ];
     $libraries['ckeditor'] = [
       'title' => $this->t('CKEditor'),
       'description' => $this->t('The standard version of the CKEditor.'),
       'notes' => $this->t('Allows the Webform module to implement a basic and simpler CKEditor.'),
       'url' => Url::fromUri('http://ckeditor.com/'),
-      'version' => '4.5.11',
+      'version' => '4.6.2',
+    ];
+    $libraries['ckeditor_autogrow'] = [
+      'title' => $this->t('CKEditor Autogrow'),
+      'description' => $this->t('Allows CKEditor to expand and shrink depending on the amount and size of content.'),
+      'notes' => $this->t('Autogrown make it possible to reduce the size of empty HTML editor while still supporting HTML markup.'),
+      'url' => Url::fromUri('http://ckeditor.com/addon/autogrow'),
+      'version' => '4.6.2',
+    ];
+    $libraries['codemirror'] = [
+      'title' => $this->t('Code Mirror'),
+      'description' => $this->t('Code Mirror is a versatile text editor implemented in JavaScript for the browser.'),
+      'notes' => $this->t('Code Mirror is used to provide a text editor for YAML, HTML, CSS, and JavaScript configuration settings and messages.'),
+      'url' => Url::fromUri('http://codemirror.net/'),
+      'version' => '5.24.0',
     ];
     $libraries['geocomplete'] = [
       'title' => $this->t('jQuery Geocoding and Places Autocomplete Plugin'),
@@ -130,19 +149,61 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
       'url' => Url::fromUri('http://ubilabs.github.io/geocomplete/'),
       'version' => '1.7.0',
     ];
-    $libraries['inputmask'] = [
+    $libraries['jquery.icheck'] = [
+      'title' => $this->t('iCheck'),
+      'description' => $this->t('Highly customizable checkboxes and radio buttons for jQuery and Zepto.'),
+      'notes' => $this->t('iCheck is used to optionally enhance checkboxes and radio buttons.'),
+      'url' => Url::fromUri('http://icheck.fronteed.com/'),
+      'version' => '1.0.2 ',
+    ];
+    $libraries['jquery.inputmask'] = [
       'title' => $this->t('jQuery Input Mask'),
       'description' => $this->t('Input masks ensures a predefined format is entered. This can be useful for dates, numerics, phone numbers, etc...'),
       'notes' => $this->t('Input masks are used to ensure predefined and custom formats for text fields.'),
       'url' => Url::fromUri('http://robinherbots.github.io/jquery.inputmask/'),
       'version' => '3.3.3',
     ];
-    $libraries['rateit'] = [
+    $libraries['jquery.intl-tel-input'] = [
+      'title' => $this->t('International Telephone Input'),
+      'description' => $this->t('A jQuery plugin for entering and validating international telephone numbers. It adds a flag dropdown to any input, detects the user\'s country, displays a relevant placeholder and provides formatting/validation methods.'),
+      'notes' => $this->t('International Telephone Input is used by the Telephone element.'),
+      'url' => Url::fromUri('https://github.com/jackocnr/intl-tel-input'),
+      'version' => 'v11.0.0',
+    ];
+    $libraries['jquery.image-picker'] = [
+      'title' => $this->t('Image Picker'),
+      'description' => $this->t('A simple jQuery plugin that transforms a select element into a more user friendly graphical interface.'),
+      'notes' => $this->t('Image Picker is used by the Image select element.'),
+      'url' => Url::fromUri('https://rvera.github.io/image-picker/'),
+      'version' => '0.3.0',
+    ];
+    $libraries['jquery.rateit'] = [
       'title' => $this->t('RateIt'),
       'description' => $this->t("Rating plugin for jQuery. Fast, progressive enhancement, touch support, customizable (just swap out the images, or change some CSS), unobtrusive JavaScript (using HTML5 data-* attributes), RTL support. The Rating plugin supports as many stars as you'd like, and also any step size."),
       'notes' => $this->t('RateIt is used to provide a customizable rating webform element.'),
       'version' => '1.1.1',
       'url' => Url::fromUri('https://github.com/gjunge/rateit.js'),
+    ];
+    $libraries['jquery.timepicker'] = [
+      'title' => $this->t('jQuery Timepicker'),
+      'description' => $this->t('A lightweight, customizable javascript timepicker plugin for jQuery, inspired by Google Calendar.'),
+      'notes' => $this->t('Timepicker is used to provide a polyfill for HTML 5 time elements.'),
+      'version' => '1.11.10',
+      'url' => Url::fromUri('https://github.com/jonthornton/jquery-timepicker'),
+    ];
+    $libraries['jquery.toggles'] = [
+      'title' => $this->t('jQuery Toggles'),
+      'description' => $this->t('Toggles is a lightweight jQuery plugin that creates easy-to-style toggle buttons.'),
+      'notes' => $this->t('Toggles is used to provide a toggle element.'),
+      'version' => 'v4.0.0',
+      'url' => Url::fromUri('https://github.com/simontabor/jquery-toggles/'),
+    ];
+    $libraries['jquery.word-and-character-counter'] = [
+      'title' => $this->t('jQuery Word and character counter plug-in!'),
+      'description' => $this->t('The jQuery word and character counter plug-in allows you to count characters or words'),
+      'notes' => $this->t('Word or character counting, with server-side validation, is available for text fields and text areas.'),
+      'version' => '1.6.0',
+      'url' => Url::fromUri('https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin'),
     ];
     $libraries['select2'] = [
       'title' => $this->t('Select2'),
@@ -158,27 +219,6 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
       'url' => Url::fromUri('https://github.com/szimek/signature_pad'),
       'version' => '1.5.3',
     ];
-    $libraries['timepicker'] = [
-      'title' => $this->t('jQuery Timepicker'),
-      'description' => $this->t('A lightweight, customizable javascript timepicker plugin for jQuery, inspired by Google Calendar.'),
-      'notes' => $this->t('Timepicker is used to provide a polyfill for HTML 5 time elements.'),
-      'version' => '1.11.8',
-      'url' => Url::fromUri('https://github.com/jonthornton/jquery-timepicker'),
-    ];
-    $libraries['toggles'] = [
-      'title' => $this->t('jQuery Toggles'),
-      'description' => $this->t('Toggles is a lightweight jQuery plugin that creates easy-to-style toggle buttons.'),
-      'notes' => $this->t('Toggles is used to provide a toggle element.'),
-      'version' => 'v4.0.0',
-      'url' => Url::fromUri('https://github.com/simontabor/jquery-toggles/'),
-    ];
-    $libraries['word-and-character-counter'] = [
-      'title' => $this->t('jQuery Word and character counter plug-in!'),
-      'description' => $this->t('The jQuery word and character counter plug-in allows you to count characters or words'),
-      'notes' => $this->t('Word or character counting, with server-side validation, is available for text fields and text areas.'),
-      'version' => '1.6.0',
-      'url' => Url::fromUri('https://github.com/qwertypants/jQuery-Word-and-Character-Counter-Plugin'),
-    ];
 
     // Append library info from 'webform.libraries.make.yml'.
     $info = Yaml::decode(file_get_contents(drupal_get_path('module', 'webform') . '/webform.libraries.make.yml'));
@@ -188,6 +228,10 @@ class WebformLibrariesManager implements WebformLibrariesManagerInterface {
         $libraries[$library_name]['name'] = $library_name;
         $libraries[$library_name] += $library_info;
       }
+      else {
+        throw new \Exception('Missing ' . $library_name . ' library definition.');
+      }
+
     }
     return $libraries;
   }

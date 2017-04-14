@@ -7,7 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\Entity\Webform;
-use Drupal\webform\Utility\WebformYamlTidy;
+use Drupal\webform\Utility\WebformYaml;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\webform\Utility\WebformElementHelper;
 
@@ -119,7 +119,7 @@ function _webform_form_config_translate_add_form_alter_yaml_element(array &$elem
   $element['source']['value'] = [
     '#type' => 'webform_codemirror',
     '#mode' => 'yaml',
-    '#value' => WebformYamlTidy::tidy($source_value ?: trim(strip_tags($element['source']['#markup']))),
+    '#value' => WebformYaml::tidy($source_value ?: trim(strip_tags($element['source']['#markup']))),
     '#disabled' => TRUE,
     '#attributes' => ['readonly' => TRUE],
   ];
@@ -129,7 +129,7 @@ function _webform_form_config_translate_add_form_alter_yaml_element(array &$elem
   $element['translation']['#type'] = 'webform_codemirror';
   $element['translation']['#mode'] = 'yaml';
   if ($translation_value) {
-    $element['translation']['#default_value'] = $translation_value;
+    $element['translation']['#default_value'] = WebformYaml::tidy($translation_value);
   }
   $element['translation']['#default_value'] = trim($element['translation']['#default_value']);
   $element['#attached']['library'][] = 'webform/webform.admin.translation';

@@ -1,0 +1,12 @@
+uuid: 667077d7-657d-4371-843f-9c33798ec07c
+langcode: uk
+status: true
+dependencies: {  }
+id: order
+label: Order
+description: ''
+use_admin_theme: false
+path: /order
+access_logic: and
+access_conditions: {  }
+parameters: {  }

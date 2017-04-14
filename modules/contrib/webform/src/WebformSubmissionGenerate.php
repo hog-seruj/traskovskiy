@@ -2,6 +2,7 @@
 
 namespace Drupal\webform;
 
+use Drupal\Core\Form\OptGroup;
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Config\ConfigFactoryInterface;
 
@@ -102,9 +103,9 @@ class WebformSubmissionGenerate implements WebformSubmissionGenerateInterface {
       return NULL;
     }
 
-    // Exit if test values are null.
+    // Exit if test values are null or an empty array.
     $values = $this->getTestValues($webform, $name, $element, $options);
-    if ($values === NULL) {
+    if ($values === NULL || (is_array($values) && empty($values))) {
       return NULL;
     }
     // Make sure value is an array.
@@ -119,7 +120,8 @@ class WebformSubmissionGenerate implements WebformSubmissionGenerateInterface {
       if ($options['random']) {
         shuffle($values);
       }
-      return array_slice($values, 0, 3);
+      $limit = (isset($element['#multiple']) && $element['#multiple'] > 1 && $element['#multiple'] < 3) ? $element['#multiple'] : 3;
+      return array_slice($values, 0, $limit);
     }
     else {
       return ($options['random']) ? $values[array_rand($values)] : reset($values);
@@ -166,7 +168,7 @@ class WebformSubmissionGenerate implements WebformSubmissionGenerateInterface {
 
     // Get test values from options.
     if (isset($element['#options'])) {
-      return array_keys($element['#options']);
+      return array_keys(OptGroup::flattenOptions($element['#options']));
     }
 
     // Get test values using #type.

@@ -1,0 +1,25 @@
+uuid: 0f49a860-0ee0-4b95-9f8e-316f25c7bef7
+langcode: uk
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:0bab0e52-239c-4caa-8a97-4f81d64e1954'
+  module:
+    - block_content
+  theme:
+    - traskovskyi
+id: dostavka
+theme: traskovskyi
+region: '-1'
+weight: 0
+provider: null
+plugin: 'block_content:0bab0e52-239c-4caa-8a97-4f81d64e1954'
+settings:
+  id: 'block_content:0bab0e52-239c-4caa-8a97-4f81d64e1954'
+  label: Доставка
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

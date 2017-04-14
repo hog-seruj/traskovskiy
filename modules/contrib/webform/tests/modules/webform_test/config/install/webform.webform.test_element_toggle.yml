@@ -1,11 +1,11 @@
 langcode: en
-status: true
+status: open
 dependencies:
   enforced:
     module:
       - webform_test
-  module:
-    - webform_test
+open: null
+close: null
 uid: null
 template: false
 id: test_element_toggle
@@ -17,31 +17,31 @@ elements: |
     '#title': 'Toggle Elements'
     '#open': true
     toggle_basic:
-      '#type': toggle
+      '#type': webform_toggle
       '#title': 'Basic toggle'
     toggle_advanced:
-      '#type': toggle
+      '#type': webform_toggle
       '#title': 'Advanced toggle'
       '#title_display': before
       '#toggle_theme': iphone
       '#toggle_size': large
-      '#on_text': Yes
-      '#off_text': No
+      '#on_text': 'Yes'
+      '#off_text': 'No'
     toggles_basic:
-      '#type': toggles
+      '#type': webform_toggles
       '#title': 'Basic toggles'
       '#options':
         one: One
         two: Two
         three: Three
     toggles_advanced:
-      '#type': toggles
+      '#type': webform_toggles
       '#title': 'Advanced toggles'
       '#title_display': before
       '#toggle_theme': iphone
       '#toggle_size': large
-      '#on_text': Yes
-      '#off_text': No
+      '#on_text': 'Yes'
+      '#off_text': 'No'
       '#options':
         one: One
         two: Two
@@ -56,17 +56,21 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -83,13 +87,14 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: message
+  confirmation_title: ''
   confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
@@ -100,6 +105,8 @@ settings:
   limit_total_message: ''
   limit_user: null
   limit_user_message: ''
+  purge: none
+  purge_days: null
   entity_limit_total: null
   entity_limit_user: null
   results_disabled: false

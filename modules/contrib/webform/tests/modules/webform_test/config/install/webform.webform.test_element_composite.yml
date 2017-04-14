@@ -1,11 +1,11 @@
 langcode: en
-status: true
+status: open
 dependencies:
   enforced:
     module:
       - webform_test
-  module:
-    - webform_test
+open: null
+close: null
 uid: null
 template: false
 id: test_element_composite
@@ -17,19 +17,19 @@ elements: |
     '#title': 'Composite Flexbox'
     '#open': true
     address:
-      '#type': address
-      '#title': 'Address'
+      '#type': webform_address
+      '#title': Address
       '#flexbox': true
     contact:
-      '#type': contact
-      '#title': 'Contact'
+      '#type': webform_contact
+      '#title': Contact
       '#flexbox': true
     name:
-      '#type': name
-      '#title': 'Name'
+      '#type': webform_name
+      '#title': Name
       '#flexbox': true
     creditcard:
-      '#type': creditcard
+      '#type': webform_creditcard
       '#title': 'Credit card'
       '#flexbox': true
   composite_elements:
@@ -37,33 +37,33 @@ elements: |
     '#title': 'Composite Elements'
     '#open': true
     contact_basic:
-      '#type': contact
+      '#type': webform_contact
       '#title': 'Contact basic'
       '#required': true
       '#name__required': true
       '#default_value':
-        name: John Smith
+        name: 'John Smith'
         company: Acme
         address: '100 Main Street'
         address_2: 'PO BOX 999'
         city: 'Hill Valley'
         state_province: 'New Jersey'
         country: 'United States'
-        postal_code: '11111-1111'
+        postal_code: 11111-1111
         email: example@example.com
         phone: 123-456-7890
     contact_advanced:
-      '#type': contact
+      '#type': webform_contact
       '#title': 'Contact advanced'
       '#default_value':
-        name: John Smith
+        name: 'John Smith'
         company: Acme
         address: '100 Main Street'
         address_2: 'PO BOX 999'
         city: 'Hill Valley'
         state_province: 'New Jersey'
         country: 'United States'
-        postal_code: '11111-1111'
+        postal_code: 11111-1111
         email: example@example.com
         phone: 123-456-7890
       '#name__required': true
@@ -73,15 +73,21 @@ elements: |
       '#country__required': true
       '#country__access': false
     creditcard_basic:
-      '#type': creditcard
+      '#type': webform_creditcard
       '#title': 'Credit Card'
       '#default_value':
-        name: John Smith
+        name: 'John Smith'
         number: 4111111111111111
         type: VI
         civ: 111
         expiration_month: 1
         expiration_year: 2025
+    link_basic:
+      '#type': webform_link
+      '#title': 'Link'
+      '#default_value':
+        title: Example
+        url: http://example.com
 css: ''
 javascript: ''
 settings:
@@ -92,17 +98,21 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -119,13 +129,14 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: message
+  confirmation_title: ''
   confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
@@ -136,6 +147,8 @@ settings:
   limit_total_message: ''
   limit_user: null
   limit_user_message: ''
+  purge: none
+  purge_days: null
   entity_limit_total: null
   entity_limit_user: null
   results_disabled: false

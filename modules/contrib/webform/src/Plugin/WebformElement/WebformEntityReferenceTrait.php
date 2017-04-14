@@ -50,7 +50,7 @@ trait WebformEntityReferenceTrait {
   /**
    * {@inheritdoc}
    */
-  public function formatHtmlItem(array &$element, $value, array $options = []) {
+  public function formatHtmlItem(array $element, $value, array $options = []) {
     $entity = $this->getTargetEntity($element, $value, $options);
     $format = $this->getItemFormat($element);
     switch ($format) {
@@ -59,6 +59,7 @@ trait WebformEntityReferenceTrait {
       case 'id':
       case 'label':
       case 'text':
+      case 'breadcrumb':
         return $this->formatTextItem($element, $value, $options);
 
       case 'link':
@@ -76,19 +77,33 @@ trait WebformEntityReferenceTrait {
   /**
    * {@inheritdoc}
    */
-  public function formatTextItem(array &$element, $value, array $options = []) {
+  public function formatTextItem(array $element, $value, array $options = []) {
     $entity = $this->getTargetEntity($element, $value, $options);
     $format = $this->getItemFormat($element);
     switch ($format) {
       case 'id':
         return $entity->id();
 
+      case 'breadcrumb':
+        if ($entity->getEntityTypeId() == 'taxonomy_term') {
+          /** @var \Drupal\taxonomy\TermStorageInterface $taxonomy_storage */
+          $taxonomy_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+          $parents = $taxonomy_storage->loadAllParents($entity->id());
+          $breadcrumb = [];
+          foreach ($parents as $parent) {
+            $breadcrumb[] = $parent->label();
+          }
+          $element += ['#delimiter' => ' › '];
+          return implode($element['#delimiter'], array_reverse($breadcrumb));
+        }
+        return $entity->label();
+
       case 'label':
         return $entity->label();
 
       case 'raw':
         $entity_id = $entity->id();
-        $entity_type = $element['#target_type'];
+        $entity_type = $entity->getEntityTypeId();
         return "$entity_type:$entity_id";
 
       case 'text':
@@ -101,9 +116,10 @@ trait WebformEntityReferenceTrait {
    * {@inheritdoc}
    */
   public function getTestValues(array $element, WebformInterface $webform, array $options = []) {
-    WebformEntityTrait::setOptions($element);
+    $this->setOptions($element);
+    $target_type = $this->getTargetType($element);
     // Exclude 'anonymous' user.
-    if ($element['#target_type'] == 'user') {
+    if ($target_type == 'user') {
       unset($element['#options'][0]);
     }
     return array_keys($element['#options']);
@@ -132,7 +148,7 @@ trait WebformEntityReferenceTrait {
    * {@inheritdoc}
    */
   public function getItemFormats() {
-    return parent::getItemFormats() + [
+    $formats = parent::getItemFormats() + [
       'link' => $this->t('Link'),
       'id' => $this->t('Entity ID'),
       'label' => $this->t('Label'),
@@ -140,6 +156,10 @@ trait WebformEntityReferenceTrait {
       'teaser' => $this->t('Teaser'),
       'default' => $this->t('Default'),
     ];
+    if ($this->hasProperty('breadcrumb')) {
+      $formats['breadcrumb'] = $this->t('Breadcrumb');
+    }
+    return $formats;
   }
 
   /**
@@ -203,7 +223,7 @@ trait WebformEntityReferenceTrait {
    */
   public function buildExportRecord(array $element, $value, array $options) {
     if (!$this->hasMultipleValues($element) && $options['entity_reference_format'] == 'link') {
-      $entity_type = $element['#target_type'];
+      $entity_type = $this->getTargetType($element);
       $entity_storage = $this->entityTypeManager->getStorage($entity_type);
       $entity_id = $value;
 
@@ -229,6 +249,29 @@ trait WebformEntityReferenceTrait {
   }
 
   /**
+   * Get element options.
+   *
+   * @param array $element
+   *   An element.
+   */
+  protected function setOptions(array &$element) {
+    WebformEntityTrait::setOptions($element);
+  }
+
+  /**
+   * Get referenced entity type..
+   *
+   * @param array $element
+   *   An element.
+   *
+   * @return string
+   *   A entity type.
+   */
+  protected function getTargetType(array $element) {
+    return $element['#target_type'];
+  }
+
+  /**
    * Get referenced entity.
    *
    * @param array $element
@@ -249,9 +292,10 @@ trait WebformEntityReferenceTrait {
       return $value;
     }
 
+    $target_type = $this->getTargetType($element);
     $langcode = (!empty($options['langcode'])) ? $options['langcode'] : \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $entity = $this->entityTypeManager->getStorage($element['#target_type'])->load($value);
-    if ($entity && $entity->hasTranslation($langcode)) {
+    $entity = $this->entityTypeManager->getStorage($target_type)->load($value);
+    if ($entity && method_exists($entity, 'hasTranslation') && $entity->hasTranslation($langcode)) {
       $entity = $entity->getTranslation($langcode);
     }
     return $entity;
@@ -275,8 +319,9 @@ trait WebformEntityReferenceTrait {
       return [];
     }
 
+    $target_type = $this->getTargetType($element);
     $langcode = (!empty($options['langcode'])) ? $options['langcode'] : \Drupal::languageManager()->getCurrentLanguage()->getId();
-    $entities = $this->entityTypeManager->getStorage($element['#target_type'])->loadMultiple($value);
+    $entities = $this->entityTypeManager->getStorage($target_type)->loadMultiple($value);
     foreach ($entities as $entity_id => $entity) {
       if ($entity->hasTranslation($langcode)) {
         $entities[$entity_id] = $entity->getTranslation($langcode);
@@ -291,12 +336,22 @@ trait WebformEntityReferenceTrait {
   public function form(array $form, FormStateInterface $form_state) {
     $form = parent::form($form, $form_state);
 
+    // Get element properties.
     $element_properties = $form_state->get('element_properties');
 
+    // Alter element properties.
     if ($properties = $form_state->getValue('properties')) {
-      $target_type = $properties['target_type'];
-      $selection_handler = $properties['selection_handler'];
-      $selection_settings = $properties['selection_settings'];
+      $target_type = (isset($properties['target_type'])) ? $properties['target_type'] : 'node';
+      $selection_handler = (isset($properties['selection_handler'])) ? $properties['selection_handler'] : 'default:' . $target_type;
+      // If the default selection handler has changed  when need to update its
+      // value.
+      if (strpos($selection_handler, 'default:') === 0 && $selection_handler != "default:$target_type") {
+        $selection_handler = "default:$target_type";
+        $selection_settings = [];
+      }
+      else {
+        $selection_settings = (isset($properties['selection_settings'])) ? $properties['selection_settings'] : [];
+      }
     }
     else {
       // Set default #target_type and #selection_handler.
@@ -311,6 +366,10 @@ trait WebformEntityReferenceTrait {
       $selection_settings = $element_properties['selection_settings'];
     }
 
+    // Reset element properties.
+    $element_properties['target_type'] = $target_type;
+    $element_properties['selection_handler'] = $selection_handler;
+    $element_properties['selection_settings'] = $selection_settings;
     $form_state->set('element_properties', $element_properties);
 
     /** @var \Drupal\Core\Entity\EntityReferenceSelection\SelectionPluginManagerInterface $entity_reference_selection_manager */
@@ -349,14 +408,6 @@ trait WebformEntityReferenceTrait {
       '#prefix' => '<div id="webform-entity-reference-selection-wrapper">',
       '#suffix' => '</div>',
       '#weight' => -40,
-    ];
-
-    // Tags (only applies to 'entity_autocomplete' element).
-    $form['entity_reference']['tags'] = [
-      '#type' => 'checkbox',
-      '#title' => $this->t('Tags'),
-      '#description' => $this->t('Check this option if the user should be allowed to enter multiple entity references.'),
-      '#return_value' => TRUE,
     ];
 
     // Target type.
@@ -419,6 +470,19 @@ trait WebformEntityReferenceTrait {
           [':input[name="properties[tags]"]' => ['checked' => TRUE]],
         ],
       ];
+    }
+
+    // Tags (only applies to 'entity_autocomplete' element).
+    $form['element']['tags'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Tags'),
+      '#description' => $this->t('Check this option if the user should be allowed to enter multiple entity references using tags.'),
+      '#return_value' => TRUE,
+    ];
+    if ($this->hasProperty('tags') && $this->hasProperty('multiple')) {
+      $form['element']['tags']['#states']['visible'][] = [':input[name="properties[multiple]"]' => ['checked' => FALSE]];
+      $form['element']['multiple']['#states']['visible'][] = [':input[name="properties[tags]"]' => ['checked' => FALSE]];
+      $form['element']['multiple__header_label']['#states']['visible'][] = [':input[name="properties[tags]"]' => ['checked' => FALSE]];
     }
 
     return $form;

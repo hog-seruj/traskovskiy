@@ -2,6 +2,7 @@
 
 namespace Drupal\webform;
 
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Psr\Log\LoggerInterface;
@@ -60,13 +61,21 @@ abstract class WebformHandlerBase extends PluginBase implements WebformHandlerIn
   protected $logger;
 
   /**
+   * Webform submission storage.
+   *
+   * @var \Drupal\webform\WebformSubmissionStorageInterface
+   */
+  protected $submissionStorage;
+  
+  /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, LoggerInterface $logger) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LoggerInterface $logger, EntityTypeManagerInterface $entity_type_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
 
     $this->setConfiguration($configuration);
     $this->logger = $logger;
+    $this->submissionStorage = $entity_type_manager->getStorage('webform_submission');
   }
 
   /**
@@ -77,29 +86,21 @@ abstract class WebformHandlerBase extends PluginBase implements WebformHandlerIn
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('logger.factory')->get('webform')
+      $container->get('logger.factory')->get('webform'),
+      $container->get('entity_type.manager')
     );
   }
 
   /**
-   * Initialize webform handler.
-   *
-   * @param \Drupal\webform\WebformInterface $webform
-   *   A webform object.
-   *
-   * @return $this
-   *   This webform handler.
+   * {@inheritdoc}
    */
-  public function init(WebformInterface $webform) {
+  public function setWebform(WebformInterface $webform) {
     $this->webform = $webform;
     return $this;
   }
 
   /**
-   * Get the webform that this handler is attached to.
-   *
-   * @return \Drupal\webform\WebformInterface
-   *   A webform.
+   * {@inheritdoc}
    */
   public function getWebform() {
     return $this->webform;
@@ -281,6 +282,24 @@ abstract class WebformHandlerBase extends PluginBase implements WebformHandlerIn
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {}
 
   /**
+   * Apply submitted form state settings to configuration.
+   *
+   * This method can used to update configuration when the configuration form
+   * is being rebuilt during an #ajax callback.
+   *
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The current state of the form.
+   */
+  protected function applyFormStateSettingsToConfiguration(FormStateInterface $form_state) {
+    $settings = $form_state->getValue('settings') ?: [];
+    foreach ($settings as $setting_key => $setting_value) {
+      if (isset($this->configuration[$setting_key])) {
+        $this->configuration[$setting_key] = $setting_value;
+      }
+    }
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function alterElements(array &$elements, WebformInterface $webform) {}
@@ -339,5 +358,43 @@ abstract class WebformHandlerBase extends PluginBase implements WebformHandlerIn
    * {@inheritdoc}
    */
   public function postSave(WebformSubmissionInterface $webform_submission, $update = TRUE) {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function createHandler() {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function updateHandler() {}
+
+  /**
+   * {@inheritdoc}
+   */
+  public function deleteHandler() {}
+
+  /**
+   * Log a webform handler's submission operation.
+   *
+   * @param \Drupal\webform\WebformSubmissionInterface $webform_submission
+   *   A webform submission.
+   * @param string $operation
+   *   The operation to be logged.
+   * @param string $message
+   *   The message to be logged.
+   * @param array $data
+   *   The data to be saved with log record.
+   */
+  protected function log(WebformSubmissionInterface $webform_submission, $operation, $message = '', array $data = []) {
+    if ($webform_submission->getWebform()->hasSubmissionLog()) {
+      $this->submissionStorage->log($webform_submission, [
+        'handler_id' => $this->getHandlerId(),
+        'operation' => $operation,
+        'message' => $message,
+        'data' => $data,
+      ]);
+    }
+  }
 
 }

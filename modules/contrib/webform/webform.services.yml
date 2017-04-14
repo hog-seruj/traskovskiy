@@ -4,7 +4,7 @@ services:
 
   plugin.manager.webform.element:
     class: Drupal\webform\WebformElementManager
-    parent: default_plugin_manager
+    arguments: ['@container.namespaces', '@cache.discovery', '@module_handler', '@plugin.manager.element_info']
 
   plugin.manager.webform.handler:
     class: Drupal\webform\WebformHandlerManager
@@ -35,14 +35,15 @@ services:
 
   webform.help_manager:
     class: Drupal\webform\WebformHelpManager
-    arguments: ['@current_user', '@module_handler', '@state', '@path.matcher', '@webform.addons_manager', '@webform.libraries_manager', '@plugin.manager.webform.element']
+    arguments: ['@current_user', '@config.factory', '@module_handler', '@state', '@path.matcher', '@webform.addons_manager', '@webform.libraries_manager', '@plugin.manager.webform.element']
 
   webform.libraries_manager:
     class: Drupal\webform\WebformLibrariesManager
+    arguments: ['@config.factory']
 
   webform.message_manager:
     class: Drupal\webform\WebformMessageManager
-    arguments: ['@current_user', '@config.factory', '@entity_type.manager', '@logger.channel.webform', '@webform.request', '@webform.token_manager']
+    arguments: ['@current_user', '@config.factory', '@entity_type.manager', '@logger.channel.webform', '@renderer', '@webform.request', '@webform.token_manager']
 
   webform.translation_manager:
     class: Drupal\webform\WebformTranslationManager
@@ -50,7 +51,7 @@ services:
 
   webform.request:
     class: Drupal\webform\WebformRequest
-    arguments: ['@request_stack', '@current_route_match', '@entity_type.manager', '@entity_type.repository']
+    arguments: ['@router.route_provider', '@request_stack', '@current_route_match', '@entity_type.manager', '@entity_type.repository']
 
   webform_submission.generate:
     class: Drupal\webform\WebformSubmissionGenerate
@@ -68,12 +69,7 @@ services:
     class: Drupal\webform\WebformTokenManager
     arguments: ['@module_handler', '@token']
 
-  # Subscribers.
-
-  webform.route_subscriber:
-    class: Drupal\webform\Routing\WebformRouteSubscriber
-    tags:
-      - { name: event_subscriber }
+  # Breadcrumb builder.
 
   webform.breadcrumb:
     class: Drupal\webform\BreadCrumb\WebformBreadcrumbBuilder
@@ -81,3 +77,23 @@ services:
     tags:
       - { name: breadcrumb_builder, priority: 1002 }
 
+  # Route subscriber.
+
+  webform.route_subscriber:
+    class: Drupal\webform\Routing\WebformRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  # Route context.
+
+  webform.webform_route_context:
+    class: Drupal\webform\ContextProvider\WebformRouteContext
+    arguments: ['@current_route_match']
+    tags:
+      - { name: 'context_provider' }
+
+  webform.webform_submission_route_context:
+    class: Drupal\webform\ContextProvider\WebformSubmissionRouteContext
+    arguments: ['@current_route_match']
+    tags:
+      - { name: 'context_provider' }

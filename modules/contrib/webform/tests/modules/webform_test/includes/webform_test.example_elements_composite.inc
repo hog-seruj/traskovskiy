@@ -22,15 +22,13 @@ function webform_test_example_elements_composite() {
   $data = [];
   foreach ($definitions as $definition) {
     $element_type = $definition['id'];
+    if (empty($definition['composite'])) {
+      continue;
+    }
 
     $webform_element = $elements[$element_type];
     $element = _webform_test_get_example_element($element_type);
     if (!$element) {
-      continue;
-    }
-
-    $category_name = (string) $webform_element->getPluginDefinition()['category'] ?: 'Other elements';
-    if ($category_name != 'Composite elements') {
       continue;
     }
 
@@ -40,7 +38,18 @@ function webform_test_example_elements_composite() {
       '#open' => TRUE,
     ];
 
+    // Single value composite.
     $data[$element_type . '_example'][$element_type] = $element;
+
+    // Multiple value composite.
+    if ($webform_element->supportsMultipleValues()) {
+      $element['#title'] = $element['#title'] . ' multiple';
+      $element['#multiple'] = TRUE;
+      if ((!in_array($element_type, ['webform_contact']) && $webform_element->hasProperty('multiple__header'))) {
+        $element['#multiple__header'] = TRUE;
+      }
+      $data[$element_type . '_example'][$element_type . '_multiple'] = $element;
+    }
   }
   return $data;
 }

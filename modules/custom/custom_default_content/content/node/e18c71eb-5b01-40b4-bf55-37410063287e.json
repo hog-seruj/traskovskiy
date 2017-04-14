@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/news\/field_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_8NuKpa_0_1_2_0.jpeg",
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_8NuKpa_0_1_2_0_1.jpeg",
                 "lang": "uk"
             }
         ]
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
+                        "value": "4174b687-b26f-42d3-9f53-8fe8a910d795"
                     }
                 ],
                 "lang": "uk"
@@ -87,7 +87,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
+                        "value": "4174b687-b26f-42d3-9f53-8fe8a910d795"
                     }
                 ]
             }
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_8NuKpa_0_1_2_0.jpeg"
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_8NuKpa_0_1_2_0_1.jpeg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

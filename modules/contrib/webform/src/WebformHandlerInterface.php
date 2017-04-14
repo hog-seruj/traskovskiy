@@ -160,6 +160,25 @@ interface WebformHandlerInterface extends PluginInspectionInterface, Configurabl
   public function isDisabled();
 
   /**
+   * Initialize webform handler.
+   *
+   * @param \Drupal\webform\WebformInterface $webform
+   *   A webform object.
+   *
+   * @return $this
+   *   This webform handler.
+   */
+  public function setWebform(WebformInterface $webform);
+
+  /**
+   * Get the webform that this handler is attached to.
+   *
+   * @return \Drupal\webform\WebformInterface
+   *   A webform.
+   */
+  public function getWebform();
+
+  /**
    * Alter webform submission webform elements.
    *
    * @param array $elements
@@ -278,5 +297,20 @@ interface WebformHandlerInterface extends PluginInspectionInterface, Configurabl
    *   A webform submission.
    */
   public function postDelete(WebformSubmissionInterface $webform_submission);
+
+  /**
+   * Acts on handler after it has been created and added to webform.
+   */
+  public function createHandler();
+
+  /**
+   * Acts on handler after it has been updated.
+   */
+  public function updateHandler();
+
+  /**
+   * Acts on handler after it has been removed.
+   */
+  public function deleteHandler();
 
 }

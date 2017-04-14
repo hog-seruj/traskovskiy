@@ -1,0 +1,8 @@
+settings:
+  default_form_submit_label: Отправить
+  default_wizard_prev_button_label: '< Предыдущая страница'
+  default_wizard_next_button_label: 'Следующая страница >'
+  default_wizard_start_label: Начало
+  default_wizard_complete_label: Завершен
+  default_preview_next_button_label: Предпросмотр
+  default_draft_button_label: 'Сохранить черновик'

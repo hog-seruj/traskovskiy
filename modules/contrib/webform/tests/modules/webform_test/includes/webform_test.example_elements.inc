@@ -39,6 +39,10 @@ function webform_test_example_elements() {
       continue;
     }
 
+    if (!empty($definition['composite'])) {
+      continue;
+    }
+
     $webform_element = $elements[$element_type];
     $element = _webform_test_get_example_element($element_type);
     if (!$element) {
@@ -46,9 +50,6 @@ function webform_test_example_elements() {
     }
 
     $category_name = (string) $webform_element->getPluginDefinition()['category'] ?: 'Other elements';
-    if ($category_name == 'Composite elements') {
-      continue;
-    }
     $category_id = preg_replace('/[^a-zA-Z0-9]+/', '_', Unicode::strtolower($category_name));
     if (empty($data[$category_id])) {
       $data[$category_id] = [
@@ -58,6 +59,23 @@ function webform_test_example_elements() {
       ];
     }
     $data[$category_id][$element_type] = $element;
+
+    // Multiple value composite.
+    if ($webform_element->supportsMultipleValues() && !$webform_element->hasMultipleValues($element)) {
+      unset($element['#description']);
+      $properties = ['tags', 'multiple'];
+      foreach ($properties as $property) {
+        if ($webform_element->hasProperty($property)) {
+          $multiple_element = $element;
+          $multiple_element['#title'] = $element['#title'] . ' ' . $property;
+          $multiple_element["#$property"] = TRUE;
+          if ($property == 'multiple' && $webform_element->hasProperty('select2')) {
+            $multiple_element['#select2'] = TRUE;
+          }
+          $data[$category_id][$element_type . '_' . $property] = $multiple_element;
+        }
+      }
+    }
   }
 
   // Move other elements last.
