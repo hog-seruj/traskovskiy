@@ -1,0 +1,6 @@
+.logo-footer {
+  @include spacing(padding-top, 35px);
+  @include spacing(margin-right, 15px);
+  @include spacing(width, 160px);
+  float: left;
+}

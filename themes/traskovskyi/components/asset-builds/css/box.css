@@ -1,0 +1,20 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
+.box {
+  margin-bottom: 1.5rem;
+  border: 5px solid #e1e1e1;
+  padding: 1em;
+}
+
+.box__title {
+  margin: 0;
+}
+
+.box:focus, .box:hover, .box.is-focus, .box--is-focus {
+  border-color: #151515;
+}
+
+.box--highlight {
+  border-color: #204e32;
+}
+
+/*# sourceMappingURL=box.css.map */

@@ -1,0 +1,108 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
+.tabs {
+  margin: 1.125rem 0 0;
+  line-height: 1.875rem;
+  border-bottom: 1px solid #e1e1e1 \0/ie;
+  background-image: -webkit-linear-gradient(bottom, #e1e1e1 1px, transparent 1px);
+  background-image: linear-gradient(to top, #e1e1e1 1px, transparent 1px);
+  padding: 0 2px;
+  list-style: none;
+  white-space: nowrap;
+}
+
+@media print {
+  .tabs {
+    display: none;
+  }
+}
+
+.tabs__tab {
+  float: left;
+  margin: 0 3px;
+  border: 1px solid #e1e1e1;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-color: transparent;
+  border-bottom: 0 \0/ie;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+[dir="rtl"] .tabs__tab {
+  float: right;
+}
+
+.tabs__tab.is-active {
+  border-bottom-color: #fff;
+}
+
+.tabs__tab-link {
+  padding: 0 1.5rem;
+  display: block;
+  text-decoration: none;
+  -webkit-transition: color .3s, background .3s, border .3s;
+  transition: color .3s, background .3s, border .3s;
+  text-shadow: #fff 0 1px 0;
+  color: #151515;
+  background: #f2f2f2;
+  letter-spacing: 1px;
+}
+
+.tabs__tab-link:focus, .tabs__tab-link:hover {
+  background: white;
+}
+
+.tabs__tab-link:active, .tabs__tab-link.is-active, .tabs__tab-link--is-active {
+  background: #fff;
+  text-shadow: none;
+}
+
+.tabs--secondary {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  background-image: none;
+}
+
+.tabs + .tabs--secondary,
+.tabs + h2 + .tabs--secondary {
+  margin-top: 0;
+  background-image: -webkit-linear-gradient(bottom, #e1e1e1 1px, transparent 1px);
+  background-image: linear-gradient(to top, #e1e1e1 1px, transparent 1px);
+}
+
+.tabs--secondary .tabs__tab {
+  margin: 0.5625rem 0.1875rem;
+  border: 0;
+  background: transparent;
+}
+
+[dir="rtl"] .tabs--secondary .tabs__tab {
+  float: right;
+}
+
+.tabs--secondary .tabs__tab.is-active {
+  border-bottom-color: transparent;
+}
+
+.tabs--secondary .tabs__tab-link {
+  border: 1px solid #e1e1e1;
+  border-radius: 24px;
+  color: #7b7b7b;
+  background: white;
+  letter-spacing: normal;
+}
+
+.tabs--secondary .tabs__tab-link:focus, .tabs--secondary .tabs__tab-link:hover {
+  color: #484848;
+  background: #f2f2f2;
+  border-color: #aeaeae;
+}
+
+.tabs--secondary .tabs__tab-link:active, .tabs--secondary .tabs__tab-link.is-active, .tabs--secondary .tabs__tab-link--is-active {
+  color: white;
+  text-shadow: #484848 0 1px 0;
+  background: #7b7b7b;
+  border-color: #151515;
+}
+
+/*# sourceMappingURL=tabs.css.map */

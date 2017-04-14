@@ -1,0 +1,47 @@
+.footer-wrapper {
+  @include spacing(max-width, 1170px);
+  margin: 0 auto;
+}
+
+.first-footer {
+  background: rgba(color(partners), .5);
+  @include spacing(padding-bottom, 25px);
+}
+
+.our-partners {
+
+  h2 {
+    position: relative;
+
+    &::before {
+      @include spacing(height, 12px);
+      @include spacing(left, 25px);
+      @include spacing(top, 55px);
+      @include spacing(width, 118px);
+      background: color(green);
+      content: '';
+      display: block;
+      position: absolute;
+    }
+  }
+
+  p {
+    @include spacing(margin-top, 25px);
+    font-size: font-size(m);
+  }
+}
+
+.partners {
+
+  .view-content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .views-row {
+    display: inline-block;
+    text-align: center;
+    width: 25%;
+  }
+}

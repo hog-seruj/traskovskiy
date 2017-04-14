@@ -1,0 +1,73 @@
+/*! typey | GPLv2 License | https://github.com/jptaranto/typey */
+.pager {
+  clear: both;
+  padding: 0;
+  text-align: center;
+}
+
+@media print {
+  .pager {
+    display: none;
+  }
+}
+
+.pager__item,
+.pager__current-item,
+.pager-current,
+.pager-item,
+.pager-first,
+.pager-previous,
+.pager-next,
+.pager-last,
+.pager-ellipsis {
+  display: inline;
+  padding: 0 .5em;
+  list-style-type: none;
+  background-image: none;
+}
+
+.pager__current-item,
+.pager-current {
+  font-weight: bold;
+}
+
+.pager__item {
+  padding: 0;
+}
+
+.pager__item a {
+  text-decoration: none;
+  color: #727272;
+}
+
+.pager__item--last, .pager__item--first {
+  display: none;
+}
+
+.pager__item--next, .pager__item--previous {
+  padding: 0 8px;
+}
+
+.pager__item--next a,
+.pager__item--previous a {
+  height: 1.0625rem;
+  width: 0.5625rem;
+  vertical-align: text-top;
+  font-size: 0;
+  display: inline-block;
+}
+
+.pager__item--next a {
+  background: url(../../../images-source/next.png) no-repeat center;
+}
+
+.pager__item--previous a {
+  background: url(../../../images-source/back.png) no-repeat center;
+}
+
+.pager__item.is-active a {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=pager.css.map */

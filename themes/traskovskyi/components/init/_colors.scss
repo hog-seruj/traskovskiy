@@ -27,10 +27,12 @@ $chroma: add-colors((
   yellow:                 #fd0,
 
   green:                  #01ce07,
-  green1:                  #204e32,
+  green1:                 #204e32,
+  green2:                 #a0ff25,
 
   grey2:                  #727272,
   grey3:                  #b4b4b4,
+  grey4:                  #e3e3e3,
 
   white1:                 #f0f0f0,
 
@@ -38,6 +40,8 @@ $chroma: add-colors((
   violet1:                #331887,
 
   rose:                   #f00653,
+
+  black1:                 #0a130c,
 
 ));
 
@@ -70,6 +74,8 @@ $chroma: add-colors('functional', (
 
   body-bg:                'text-bg',
 
+  bg-white:               'white',
+
   bottom-page-bg:         'green',
 
   button:                 'text',
@@ -88,7 +94,9 @@ $chroma: add-colors('functional', (
   mark-highlight:         'red',
   mark-bg:                'yellow',
 
-  menu-active:            'text',
+  menu-active:            'green2',
+
+  partners:               'grey4',
 
   pager-item:           'grey2',
 
@@ -129,6 +137,8 @@ $chroma: add-colors('functional', (
 
   table-drag:             ('yellow' lighten 43%),
   table-select:           ('yellow' lighten 47%),
+
+  menu-shadow:            'black1',
 
   watermark:              'grey-extra-light',
 ));

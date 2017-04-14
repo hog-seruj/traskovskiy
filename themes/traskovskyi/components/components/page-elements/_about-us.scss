@@ -1,0 +1,26 @@
+.about-us {
+  @include spacing(margin-right, 59px);
+  float: left;
+  position: relative;
+  width: 25%;
+
+  &::before {
+    @include spacing(height, 6px);
+    @include spacing(left, 25px);
+    @include spacing(top, 73px);
+    @include spacing(width, 57px);
+    background: color(footer-border);
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  h2 {
+    font-size: font-size(lx);
+    font-style: normal;
+  }
+
+  .text-formatted p {
+    @include spacing(line-height, 18px);
+  }
+}
