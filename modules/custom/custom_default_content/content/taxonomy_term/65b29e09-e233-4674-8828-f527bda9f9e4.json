@@ -1,30 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/strawberries?_format=hal_json"
+            "href": "http:\/\/www\/uk\/taxonomy\/term\/11?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_0.jpg"
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download%20%281%29_2.jpg"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica.jpg"
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download_4.jpg"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_1.jpg"
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download_3.jpg"
             },
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_2.jpg"
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download%20%281%29_1.jpg"
             },
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_3.jpg"
+                "href": "http:\/\/www\/sites\/default\/files\/2017-04\/no-photo.png"
             }
         ]
     },
@@ -69,7 +69,7 @@
     ],
     "changed": [
         {
-            "value": "1492168464",
+            "value": "1492084888",
             "lang": "uk"
         }
     ],
@@ -111,7 +111,7 @@
     ],
     "field_desc_front": [
         {
-            "value": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. "
+            "value": "asdas dasdas sadassads"
         }
     ],
     "_embedded": {
@@ -119,7 +119,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_0.jpg"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download%20%281%29_2.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -127,10 +127,10 @@
                 },
                 "uuid": [
                     {
-                        "value": "38224892-7d01-4a97-8a38-6297ee413bcd"
+                        "value": "31377853-bfe1-4dec-9b4b-e1e23cf9e32d"
                     }
                 ],
-                "alt": "alt",
+                "alt": "asd",
                 "title": "",
                 "width": "259",
                 "height": "194"
@@ -140,7 +140,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica.jpg"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download_4.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -148,20 +148,20 @@
                 },
                 "uuid": [
                     {
-                        "value": "586bf502-c7b0-4d46-ac80-8191b7c49210"
+                        "value": "1620c257-0975-4dcc-845a-fb7636e5b259"
                     }
                 ],
-                "alt": "alt",
+                "alt": "asdasd",
                 "title": "",
-                "width": "259",
-                "height": "194"
+                "width": "284",
+                "height": "177"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_1.jpg"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download_3.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -169,18 +169,18 @@
                 },
                 "uuid": [
                     {
-                        "value": "84a807d8-557f-4aca-9e29-1d55e270af15"
+                        "value": "c20d10cd-32cd-4c52-a158-3b5c7abbbf34"
                     }
                 ],
-                "alt": "alt",
+                "alt": "sda",
                 "title": "",
-                "width": "259",
-                "height": "194"
+                "width": "284",
+                "height": "177"
             },
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_2.jpg"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/download%20%281%29_1.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -188,18 +188,18 @@
                 },
                 "uuid": [
                     {
-                        "value": "5c9dc5cb-afd4-4131-8962-6b4b83de9c19"
+                        "value": "c5721d3c-05ce-44dc-ac6e-331ff967e8a2"
                     }
                 ],
-                "alt": "alt",
+                "alt": "asd",
                 "title": "",
-                "width": "259",
-                "height": "194"
+                "width": "284",
+                "height": "177"
             },
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_3.jpg"
+                        "href": "http:\/\/www\/sites\/default\/files\/2017-04\/no-photo.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -207,19 +207,19 @@
                 },
                 "uuid": [
                     {
-                        "value": "658a8e50-6b60-493f-ad57-06b5d125ba4f"
+                        "value": "670da60e-b212-4fcd-aa9f-97f8216a893c"
                     }
                 ],
-                "alt": "alt",
+                "alt": "asd",
                 "title": "",
-                "width": "259",
-                "height": "194"
+                "width": "284",
+                "height": "177"
             }
         ]
     },
     "field_title_cat": [
         {
-            "value": "\u041f\u043e\u043b\u0443\u043d\u0438\u0446\u044f"
+            "value": "SADASD"
         }
     ]
 }

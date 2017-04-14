@@ -14,8 +14,8 @@ third_party_settings:
     classes: social
 id: mivsocmerezah_2
 theme: traskovskyi
-region: footer
-weight: -7
+region: footer_right
+weight: -13
 provider: null
 plugin: 'block_content:66a8f3ae-f8d9-4bb4-8b7b-f611223df822'
 settings:

@@ -1,32 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/currant?_format=hal_json"
+            "href": "http:\/\/www\/uk\/taxonomy\/term\/13?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_0.jpg"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina.jpg"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_1.jpg"
-            },
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_2.jpg"
-            },
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_3.jpg"
-            }
-        ]
+        }
     },
     "tid": [
         {
@@ -62,7 +41,7 @@
     ],
     "changed": [
         {
-            "value": "1492168356",
+            "value": "1491906319",
             "lang": "uk"
         }
     ],
@@ -94,119 +73,6 @@
         {
             "value": "1491906319",
             "lang": "uk"
-        }
-    ],
-    "field_desc_front": [
-        {
-            "value": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
-        }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_0.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13ed8c36-13a7-4637-90a2-959836bdf6fc"
-                    }
-                ],
-                "alt": "alt",
-                "title": "",
-                "width": "275",
-                "height": "183"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "bc9c049e-ea82-4f2c-b4e8-c2bf393f50b1"
-                    }
-                ],
-                "alt": "alt",
-                "title": "",
-                "width": "275",
-                "height": "183"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_1.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "f5b62614-a379-4c67-9432-470a43143dc6"
-                    }
-                ],
-                "alt": "alt",
-                "title": "",
-                "width": "275",
-                "height": "183"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_2.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "ef074d95-5a7f-4f94-ac8c-401d5d9640c8"
-                    }
-                ],
-                "alt": "alt",
-                "title": "",
-                "width": "275",
-                "height": "183"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/smorodina_3.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "95cc66f7-70d7-46cf-8a06-0841727f5a94"
-                    }
-                ],
-                "alt": "alt",
-                "title": "",
-                "width": "275",
-                "height": "183"
-            }
-        ]
-    },
-    "field_title_cat": [
-        {
-            "value": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
         }
     ]
 }

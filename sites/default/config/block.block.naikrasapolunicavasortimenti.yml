@@ -11,7 +11,7 @@ dependencies:
 id: naikrasapolunicavasortimenti
 theme: traskovskyi
 region: '-1'
-weight: 0
+weight: -7
 provider: null
 plugin: 'block_content:37f1bda3-ee58-4f90-8023-9d9b73dcf4a6'
 settings:

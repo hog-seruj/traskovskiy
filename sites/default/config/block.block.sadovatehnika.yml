@@ -11,7 +11,7 @@ dependencies:
 id: sadovatehnika
 theme: traskovskyi
 region: '-1'
-weight: -8
+weight: -5
 provider: null
 plugin: 'block_content:fb6833cb-ed36-4963-ba67-fdcbb1ce5f64'
 settings:

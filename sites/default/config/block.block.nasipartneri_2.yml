@@ -14,8 +14,8 @@ third_party_settings:
     classes: our-partners
 id: nasipartneri_2
 theme: traskovskyi
-region: footer
-weight: -12
+region: top_footer
+weight: -13
 provider: null
 plugin: 'block_content:f68b3888-7a88-404e-8fa6-52857ca95cd2'
 settings:

@@ -11,7 +11,7 @@ _core:
 id: traskovskyi_help
 theme: traskovskyi
 region: '-1'
-weight: -5
+weight: -11
 provider: null
 plugin: help_block
 settings:

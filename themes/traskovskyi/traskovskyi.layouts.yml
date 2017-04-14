@@ -5,8 +5,10 @@ traskovskyi_footer:
   regions:
     left:
       label: Left
-    center:
-      label: Center
+    center_left:
+      label: Center Left
+    center_right:
+      label: Center Right
     right:
       label: Right
 

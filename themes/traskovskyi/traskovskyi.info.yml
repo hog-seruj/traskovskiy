@@ -117,7 +117,11 @@ regions:
   content: Content
   sidebar_first: First sidebar
   sidebar_second : Second sidebar
-  footer: Footer
+  top_footer: Top Footer
+  footer_left: Second Footer
+  footer_center_left: Center Footer
+  footer_center_right: Center Footer
+  footer_right: Bottom Footer
   bottom: Page bottom
   # The page_top and page_bottom regions are hidden, which means they will not
   # show up on the block layout page. But they are required in order for the
