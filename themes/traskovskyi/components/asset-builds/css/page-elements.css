@@ -234,7 +234,7 @@
   background: url(../../../images-source/dribbble.png) no-repeat center;
 }
 
-.social .field--type-link > .field__item:nth-child(3) {
+.social .field--type-link > .field__item:nth-child(3) a {
   background: url(../../../images-source/twitter.png) no-repeat center;
 }
 
