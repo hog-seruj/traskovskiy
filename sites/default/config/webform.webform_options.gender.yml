@@ -1,0 +1,13 @@
+uuid: 94acba6f-abbb-4783-b8a3-6406c8db0698
+langcode: uk
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: c5x62CEac0adja_twp51SAMoQxSMhUqub19onhvmuHM
+id: gender
+label: Стать
+category: Demographic
+options: "Male: Male\nFemale: Female\nTransgender: Transgender\n"

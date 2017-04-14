@@ -1,0 +1,7 @@
+settings:
+  form_submit_label: Применить
+handlers:
+  email_notification:
+    settings:
+      subject: 'по умолчанию'
+      body: 'по умолчанию'

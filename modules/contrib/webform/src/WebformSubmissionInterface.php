@@ -4,6 +4,7 @@ namespace Drupal\webform;
 
 use Drupal\user\EntityOwnerInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\user\UserInterface;
 
 /**
  * Provides an interface defining a webform submission entity.
@@ -29,6 +30,16 @@ interface WebformSubmissionInterface extends ContentEntityInterface, EntityOwner
    * Return status for submission that has been updated.
    */
   const STATE_UPDATED = 'updated';
+
+  /**
+   * Return status for submission that has been deleted.
+   */
+  const STATE_DELETED = 'deleted';
+
+  /**
+   * Return status for submission that has been converted from anonymous to authenticated.
+   */
+  const STATE_CONVERTED = 'converted';
 
   /**
    * Gets the serial number.
@@ -181,6 +192,15 @@ interface WebformSubmissionInterface extends ContentEntityInterface, EntityOwner
   public function isDraft();
 
   /**
+   * Is the current submission being converted from anonymous to authenticated.
+   *
+   * @return bool
+   *   TRUE if the current submission being converted from anonymous to
+   *   authenticated.
+   */
+  public function isConverting();
+
+  /**
    * Is the current submission completed.
    *
    * @return bool
@@ -208,7 +228,7 @@ interface WebformSubmissionInterface extends ContentEntityInterface, EntityOwner
    * Track the state of a submission.
    *
    * @return int
-   *    Either STATE_NEW, STATE_DRAFT, STATE_COMPLETED, or STATE_UPDATED,
+   *   Either STATE_NEW, STATE_DRAFT, STATE_COMPLETED, or STATE_UPDATED,
    *   depending on the last save operation performed.
    */
   public function getState();
@@ -312,15 +332,25 @@ interface WebformSubmissionInterface extends ContentEntityInterface, EntityOwner
   public function invokeWebformElements($method);
 
   /**
+   * Convert anonymous submission to authenicated.
+   *
+   * @param \Drupal\user\UserInterface $account
+   *   An authenticated user account.
+   */
+  public function convert(UserInterface $account);
+
+  /**
    * Gets an array of all property values.
    *
    * @param bool $custom
    *   If TRUE, return customized array that contains simplified properties
    *   and webform submission data.
+   * @param bool $check_access
+   *   If TRUE, view access is checked for element data.
    *
    * @return mixed[]
    *   An array of property values, keyed by property name.
    */
-  public function toArray($custom = FALSE);
+  public function toArray($custom = FALSE, $check_access = FALSE);
 
 }

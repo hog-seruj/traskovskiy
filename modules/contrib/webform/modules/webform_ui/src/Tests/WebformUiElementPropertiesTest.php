@@ -17,14 +17,14 @@ class WebformUiElementPropertiesTest extends WebformTestBase {
    *
    * @var array
    */
-  public static $modules = ['filter', 'webform', 'webform_ui'];
+  public static $modules = ['filter', 'taxonomy', 'webform', 'webform_ui'];
 
   /**
    * Webforms to load.
    *
    * @var array
    */
-  protected static $testWebforms = ['example_layout_basic', 'example_elements', 'example_elements_composite', 'test_element', 'test_element_access', 'test_form_states_triggers'];
+  protected static $testWebforms = ['example_layout_basic', 'example_elements', 'example_elements_states', 'example_elements_composite', 'test_element', 'test_element_access', 'test_form_states_triggers'];
 
   /**
    * {@inheritdoc}

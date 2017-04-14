@@ -50,6 +50,14 @@ interface WebformRequestInterface {
   public function getWebformSubmissionEntities();
 
   /**
+   * Determine if the current request is an Ajax request.
+   *
+   * @return bool
+   *   TRUE if the current request is an Ajax request.
+   */
+  public function isAjax();
+
+  /**
    * Get the route name for a form/submission and source entity.
    *
    * @param \Drupal\Core\Entity\EntityInterface $webform_entity
@@ -93,6 +101,17 @@ interface WebformRequestInterface {
   public function getBaseRouteName(EntityInterface $webform_entity, EntityInterface $source_entity = NULL);
 
   /**
+   * Check if a source entity has dedicate webform routes.
+   *
+   * @param \Drupal\Core\Entity\EntityInterface|null $source_entity
+   *   A webform submission's source entity.
+   *
+   * @return bool
+   *   TRUE if a source entity has dedicate webform routes.
+   */
+  public function hasSourceEntityWebformRoutes(EntityInterface $source_entity = NULL);
+
+  /**
    * Check if a source entity is attached to a webform.
    *
    * @param \Drupal\Core\Entity\EntityInterface $webform_entity
@@ -104,16 +123,5 @@ interface WebformRequestInterface {
    *   TRUE if a webform is attached to a webform submission source entity.
    */
   public function isValidSourceEntity(EntityInterface $webform_entity, EntityInterface $source_entity = NULL);
-
-  /**
-   * Get the source entity's webform field name.
-   *
-   * @param EntityInterface $source_entity
-   *   A webform submission's source entity.
-   *
-   * @return string
-   *   The name of the webform field, or an empty string.
-   */
-  public function getSourceEntityWebformFieldName(EntityInterface $source_entity);
 
 }

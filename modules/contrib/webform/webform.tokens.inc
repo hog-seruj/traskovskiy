@@ -14,6 +14,8 @@ use Drupal\webform\Utility\WebformDateHelper;
  * Implements hook_token_info().
  */
 function webform_token_info() {
+  $roles = \Drupal::config('webform.settings')->get('mail.roles');
+
   $types = [];
   $types['webform-authenticated-user'] = [
     'name' => t('Webform authenticated user'),
@@ -25,6 +27,13 @@ function webform_token_info() {
     'description' => t('Tokens related to webform submission.'),
     'needs-data' => 'webform_submission',
   ];
+  if ($roles) {
+    $types['webform_role'] = [
+      'name' => t('Webform roles'),
+      'description' => t("Tokens related to user roles that can receive email. <em>This token is only available to a  Webform email handler's 'To', 'CC', and 'BCC' email recipents.</em>"),
+      'needs-data' => 'webform_role',
+    ];
+  }
   $types['webform'] = [
     'name' => t('Webforms'),
     'description' => t('Tokens related to webforms.'),
@@ -147,11 +156,25 @@ function webform_token_info() {
     'type' => 'user',
   ];
 
+  $webform_role = [];
+  if ($roles = \Drupal::config('webform.settings')->get('mail.roles')) {
+    $role_names = array_map('\Drupal\Component\Utility\Html::escape', user_role_names(TRUE));
+    if (!in_array('authenticated', $roles)) {
+      $role_names = array_intersect_key($role_names, array_combine($roles, $roles));
+    }
+    foreach ($role_names as $role_name => $role_label) {
+      $webform_role[$role_name] = [
+        'name' => $role_label,
+        'description' => t('The email addresses of all users assigned to the %title role.', ['%title' => $role_label]),
+      ];
+    }
+  }
   return [
     'types' => $types,
     'tokens' => [
-      'webform_submission' => $webform_submission,
       'webform' => $webform,
+      'webform_submission' => $webform_submission,
+      'webform_role' => $webform_role,
     ],
   ];
 }
@@ -180,10 +203,42 @@ function webform_tokens($type, $tokens, array $data, array $options, BubbleableM
       $replacements += $token_service->generate('user', $tokens, ['user' => $account], $options, $bubbleable_metadata);
     }
     else {
-      foreach ($replacements as $name => $token) {
-        $replacements[$name] = '';
+      // For anonymous user we are going to always return empty string.
+      foreach ($tokens as $name => $original) {
+        $replacements[$original] = '';
       }
     }
+  }
+  elseif ($type == 'webform_role' && !empty($data['webform_role'])) {
+    $roles = $data['webform_role'];
+    $any_role = in_array('authenticated', $roles) ? TRUE : FALSE;
+    foreach ($tokens as $role_name => $original) {
+      if ($any_role || in_array($role_name, $roles)) {
+        if ($role_name == 'authenticated') {
+          // Get all active authenticated users.
+          $query = \Drupal::database()->select('users_field_data', 'u');
+          $query->fields('u', ['mail']);
+          $query->condition('u.status', 1);
+          $query->condition('u.mail', '', '<>');
+          $query->orderBy('mail');
+          $replacements[$original] = implode(',', $query->execute()->fetchCol());
+
+        }
+        else {
+          // Get all authenticated users assigned to a specified role.
+          $query = \Drupal::database()->select('user__roles', 'ur');
+          $query->distinct();
+          $query->join('users_field_data', 'u', 'u.uid = ur.entity_id');
+          $query->fields('u', ['mail']);
+          $query->condition('ur.roles_target_id', $role_name);
+          $query->condition('u.status', 1);
+          $query->condition('u.mail', '', '<>');
+          $query->orderBy('mail');
+          $replacements[$original] = implode(',', $query->execute()->fetchCol());
+        }
+      }
+    }
+
   }
   elseif ($type == 'webform_submission' && !empty($data['webform_submission'])) {
 
@@ -259,8 +314,8 @@ function webform_tokens($type, $tokens, array $data, array $options, BubbleableM
             $submission_options,
             $submission_format
           );
-          // Note, tokens can't include CSS and JS libraries since they will
-          // can be included in an email.
+          // Note, tokens can't include CSS and JS libraries since they can be
+          // included in an email.
           $replacements[$original] = \Drupal::service('renderer')->renderPlain($build);
           break;
 

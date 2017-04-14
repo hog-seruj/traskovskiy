@@ -1,16 +1,18 @@
 langcode: en
-status: true
+status: open
 dependencies:
   enforced:
     module:
       - webform_test_options
+open: null
+close: null
 uid: null
 template: false
 id: test_options
 title: 'Test: Options'
 description: 'Test webform options.'
 elements: |
-  general:
+  general_options:
     '#type': details
     '#title': 'General options'
     '#open': true
@@ -30,7 +32,7 @@ elements: |
       '#type': select
       '#title': 'Yes/No (yes_no)'
       '#options': yes_no
-  bio:
+  bio_options:
     '#type': details
     '#title': 'Biographical options'
     '#open': true
@@ -62,6 +64,10 @@ elements: |
       '#type': select
       '#title': 'Marital status (marital_status)'
       '#options': marital_status
+    phone_types:
+      '#type': select
+      '#title': 'Phone type (phone_types)'
+      '#options': phone_types
     relationship:
       '#type': select
       '#title': 'Relationship (relationship)'
@@ -70,7 +76,7 @@ elements: |
       '#type': select
       '#title': 'Titles (titles)'
       '#options': titles
-  location:
+  location_options:
     '#type': details
     '#title': 'Location options'
     '#open': true
@@ -98,7 +104,7 @@ elements: |
       '#type': select
       '#title': 'State/Province names (state_province_names)'
       '#options': state_province_names
-  date:
+  date_options:
     '#type': details
     '#title': 'Date options'
     '#open': true
@@ -110,12 +116,12 @@ elements: |
       '#type': select
       '#title': 'Months (months)'
       '#options': months
-  likert:
+  likert_options:
     '#type': details
     '#title': 'Likert options'
     '#open': true
     likert_agreement:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Agreement (likert_agreement)'
       '#questions':
         q1: 'Please answer question 1?'
@@ -123,7 +129,7 @@ elements: |
         q3: 'Finally, here is question 3?'
       '#answers': likert_agreement
     likert_comparison:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Comparison (likert_comparison)'
       '#questions':
         q1: 'Please answer question 1?'
@@ -131,7 +137,7 @@ elements: |
         q3: 'Finally, here is question 3?'
       '#answers': likert_comparison
     likert_importance:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Importance (likert_importance)'
       '#questions':
         q1: 'Please answer question 1?'
@@ -139,7 +145,7 @@ elements: |
         q3: 'Finally, here is question 3?'
       '#answers': likert_importance
     likert_quality:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Quality (likert_quality)'
       '#questions':
         q1: 'Please answer question 1?'
@@ -147,7 +153,7 @@ elements: |
         q3: 'Finally, here is question 3?'
       '#answers': likert_quality
     likert_satisfaction:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Satisfaction (likert_satisfaction)'
       '#questions':
         q1: 'Please answer question 1?'
@@ -155,7 +161,7 @@ elements: |
         q3: 'Finally, here is question 3?'
       '#answers': likert_satisfaction
     likert_ten_scale:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Ten Scale (likert_ten_scale)'
       '#questions':
         q1: 'Please answer question 1?'
@@ -163,14 +169,14 @@ elements: |
         q3: 'Finally, here is question 3?'
       '#answers': likert_ten_scale
     likert_would_you:
-      '#type': likert
+      '#type': webform_likert
       '#title': 'Likert: Would You (likert_would_you)'
       '#questions':
         q1: 'Please answer question 1?'
         q2: 'How about now answering question 2?'
         q3: 'Finally, here is question 3?'
       '#answers': likert_would_you
-  test:
+  test_options:
     '#type': details
     '#title': 'Test options'
     '#open': true
@@ -178,6 +184,10 @@ elements: |
       '#type': select
       '#title': 'Test (test)'
       '#options': test
+    custom:
+      '#type': select
+      '#title': 'Custom (custom)'
+      '#options': custom
   range_options:
     '#title': 'Range Options'
     '#type': details
@@ -220,17 +230,21 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
   form_novalidate: false
   form_unsaved: false
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -247,13 +261,14 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
   confirmation_type: page
+  confirmation_title: ''
   confirmation_message: ''
   confirmation_url: ''
   confirmation_attributes: {  }
@@ -264,6 +279,8 @@ settings:
   limit_total_message: ''
   limit_user: null
   limit_user_message: ''
+  purge: none
+  purge_days: null
   entity_limit_total: null
   entity_limit_user: null
   results_disabled: false

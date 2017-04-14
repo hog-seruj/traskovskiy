@@ -113,6 +113,14 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'category' => 'element',
     ];
 
+    // Element: Webform Score.
+    $projects['webform_score'] = [
+      'title' => $this->t('Webform Score'),
+      'description' => $this->t('Lets you score an individual user\'s answers, then store and display the scores.'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_score'),
+      'category' => 'element',
+    ];
+
     // Spam: CAPTCHA.
     $projects['captcha'] = [
       'title' => $this->t('CAPTCHA'),
@@ -154,8 +162,16 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'category' => 'integration',
     ];
 
+    // Integration: Webform iContact.
+    $projects['webform_icontact'] = [
+      'title' => $this->t('Webform iContact'),
+      'description' => $this->t('Send Webform submissions to iContact list.'),
+      'url' => Url::fromUri('https://www.drupal.org/sandbox/ibakayoko/2853326'),
+      'category' => 'integration',
+    ];
+
     // Integrations: Webfomr MailChimp.
-    $projects['mailchimp'] = [
+    $projects['webform_mailchimp'] = [
       'title' => $this->t('Webform MailChimp'),
       'description' => $this->t('Posts form submissions to MailChimp list.'),
       'url' => Url::fromUri('https://www.drupal.org/project/webform_mailchimp'),
@@ -170,11 +186,11 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'category' => 'integration',
     ];
 
-    // Handler: YAML Form Queue.
-    $projects['yamlform_queue'] = [
-      'title' => $this->t('YAML Form Queue'),
+    // Handler: Web Form Queue.
+    $projects['webform_queue'] = [
+      'title' => $this->t('Webform Queue'),
       'description' => $this->t('Posts form submissions into a Drupal queue.'),
-      'url' => Url::fromUri('https://www.drupal.org/project/yamlform_queue'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_queue'),
       'category' => 'handler',
     ];
 
@@ -198,7 +214,16 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
     $projects['wf_encrypt'] = [
       'title' => $this->t('Webform Encrypt'),
       'description' => $this->t('Provides encryption for webform elements.'),
-      'url' => Url::fromUri('https://www.drupal.org/project/wf_encrypt'),
+      'url' => Url::fromUri('https://www.drupal.org/project/webform_encrypt'),
+      'category' => 'utility',
+    ];
+
+    // Utility: IMCE.
+    $projects['imce'] = [
+      'title' => $this->t('IMCE'),
+      'description' => $this->t('IMCE is an image/file uploader and browser that supports personal directories and quota.'),
+      'url' => Url::fromUri('https://www.drupal.org/project/imce'),
+      'recommended' => TRUE,
       'category' => 'utility',
     ];
 
@@ -207,7 +232,16 @@ class WebformAddonsManager implements WebformAddonsManagerInterface {
       'title' => $this->t('Token'),
       'description' => $this->t('Provides a user interface for the Token API and some missing core tokens.'),
       'url' => Url::fromUri('https://www.drupal.org/project/token'),
+      'recommended' => TRUE,
       'category' => 'utility',
+    ];
+
+    // Migrate: Webform Migrate.
+    $projects['webform_migrate'] = [
+      'title' => $this->t('Webform Migrate'),
+      'description' => $this->t('Provides migration routines from d6, d7 webform to d8 webform.'),
+      'url' => Url::fromUri('https://github.com/heshanlk/webform_migrate'),
+      'category' => 'migrate',
     ];
 
     // Migrate: YAML Form Migrate.

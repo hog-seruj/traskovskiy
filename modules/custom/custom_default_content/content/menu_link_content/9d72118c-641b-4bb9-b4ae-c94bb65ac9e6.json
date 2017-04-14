@@ -1,0 +1,138 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/uk\/admin\/structure\/menu\/item\/4\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "uk"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": "4"
+        }
+    ],
+    "uuid": [
+        {
+            "value": "9d72118c-641b-4bb9-b4ae-c94bb65ac9e6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "uk",
+            "lang": "uk"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "\u0417\u0430\u043c\u043e\u0432\u043b\u0435\u043d\u043d\u044f \u0456 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0430",
+            "lang": "uk"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "main"
+        }
+    ],
+    "link": [
+        {
+            "uri": "internal:\/order",
+            "title": "",
+            "options": [
+
+            ]
+        }
+    ],
+    "external": [
+        {
+            "value": "0"
+        }
+    ],
+    "rediscover": [
+        {
+            "value": "1"
+        }
+    ],
+    "weight": [
+        {
+            "value": "-48"
+        }
+    ],
+    "expanded": [
+        {
+            "value": "0"
+        }
+    ],
+    "enabled": [
+        {
+            "value": "1"
+        }
+    ],
+    "changed": [
+        {
+            "value": "1492169161",
+            "lang": "uk"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_source": [
+        {
+            "value": "und",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_outdated": [
+        {
+            "value": "0",
+            "lang": "uk"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/menu_link_content\/menu_link_content\/content_translation_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "230091d0-fc6a-4202-87ab-34f6c496525a"
+                    }
+                ],
+                "lang": "uk"
+            }
+        ]
+    },
+    "content_translation_status": [
+        {
+            "value": "1",
+            "lang": "uk"
+        }
+    ],
+    "content_translation_created": [
+        {
+            "value": "1492167619",
+            "lang": "uk"
+        }
+    ]
+}

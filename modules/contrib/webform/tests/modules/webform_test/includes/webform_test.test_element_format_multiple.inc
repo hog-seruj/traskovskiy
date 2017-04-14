@@ -16,5 +16,5 @@ module_load_include('inc', 'webform_test', 'includes/webform_test.test_element_f
  *   An array containing test elements formats.
  */
 function webform_test_test_element_format_multiple(WebformInterface $webform) {
-  return webform_test_test_element_format($webform, TRUE);
+  return webform_test_test_element_format($webform, FALSE, TRUE);
 }

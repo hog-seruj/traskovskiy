@@ -1,15 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/taxonomy\/term\/14?_format=hal_json"
+            "href": "http:\/\/default\/uk\/raspberry?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
             {
-                "href": "http:\/\/default\/user\/0?_format=hal_json",
-                "lang": "uk"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_0.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_1.jpg"
+            },
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_2.jpg"
+            },
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_3.jpg"
             }
         ]
     },
@@ -47,7 +62,7 @@
     ],
     "changed": [
         {
-            "value": "1491906324",
+            "value": "1492168665",
             "lang": "uk"
         }
     ],
@@ -69,26 +84,6 @@
             "lang": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
-                    }
-                ],
-                "lang": "uk"
-            }
-        ]
-    },
     "content_translation_status": [
         {
             "value": "1",
@@ -99,6 +94,125 @@
         {
             "value": "1491906324",
             "lang": "uk"
+        }
+    ],
+    "field_desc_cat": [
+        {
+            "value": "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta.",
+            "format": "restricted_html"
+        }
+    ],
+    "field_desc_front": [
+        {
+            "value": "Proin eget tortor risus. Donec sollicitudin molestie malesuada. Proin eget tortor risus."
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_0.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e768ef44-bc3f-4398-ba6d-ddbb5ecd790e"
+                    }
+                ],
+                "alt": "malina",
+                "title": "",
+                "width": "800",
+                "height": "400"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2b134c3e-881a-4b7b-9595-d4cb9a929fc5"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "800",
+                "height": "400"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_1.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "06751826-19b6-4f52-a26c-ce93737717ad"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "800",
+                "height": "400"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_2.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6aeb8127-c0d0-4e30-8e69-1dcbfaac2649"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "800",
+                "height": "400"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/malina_3.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a9fe333a-5125-4b46-84eb-8daf4fd8673c"
+                    }
+                ],
+                "alt": "Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna",
+                "title": "",
+                "width": "800",
+                "height": "400"
+            }
+        ]
+    },
+    "field_title_cat": [
+        {
+            "value": "\u041c\u0430\u043b\u0438\u043d\u0430"
         }
     ]
 }

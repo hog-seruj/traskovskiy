@@ -1,36 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/stravbery?_format=hal_json"
+            "href": "http:\/\/default\/uk\/strawberries?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/0?_format=hal_json",
-                "lang": "uk"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_2.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_0.jpg"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_4.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica.jpg"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_3.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_1.jpg"
             },
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_1.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_2.jpg"
             },
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/no-photo.png"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_3.jpg"
             }
         ]
     },
@@ -75,7 +69,7 @@
     ],
     "changed": [
         {
-            "value": "1492084888",
+            "value": "1492168464",
             "lang": "uk"
         }
     ],
@@ -97,127 +91,6 @@
             "lang": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
-                    }
-                ],
-                "lang": "uk"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_2.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "31377853-bfe1-4dec-9b4b-e1e23cf9e32d"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "259",
-                "height": "194"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_4.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "1620c257-0975-4dcc-845a-fb7636e5b259"
-                    }
-                ],
-                "alt": "asdasd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_3.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c20d10cd-32cd-4c52-a158-3b5c7abbbf34"
-                    }
-                ],
-                "alt": "sda",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_1.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c5721d3c-05ce-44dc-ac6e-331ff967e8a2"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/no-photo.png"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "670da60e-b212-4fcd-aa9f-97f8216a893c"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            }
-        ]
-    },
     "content_translation_status": [
         {
             "value": "1",
@@ -238,12 +111,115 @@
     ],
     "field_desc_front": [
         {
-            "value": "asdas dasdas sadassads"
+            "value": "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. "
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_0.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "38224892-7d01-4a97-8a38-6297ee413bcd"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "259",
+                "height": "194"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "586bf502-c7b0-4d46-ac80-8191b7c49210"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "259",
+                "height": "194"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_1.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "84a807d8-557f-4aca-9e29-1d55e270af15"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "259",
+                "height": "194"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_2.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5c9dc5cb-afd4-4131-8962-6b4b83de9c19"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "259",
+                "height": "194"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/polunica_3.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "658a8e50-6b60-493f-ad57-06b5d125ba4f"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "259",
+                "height": "194"
+            }
+        ]
+    },
     "field_title_cat": [
         {
-            "value": "SADASD"
+            "value": "\u041f\u043e\u043b\u0443\u043d\u0438\u0446\u044f"
         }
     ]
 }

@@ -21,6 +21,7 @@ abstract class TextBase extends WebformElementBase {
       'minlength' => '',
       'maxlength' => '',
       'placeholder' => '',
+      'autocomplete' => 'on',
       'pattern' => '',
     ];
   }
@@ -58,7 +59,7 @@ abstract class TextBase extends WebformElementBase {
         $element['#attributes']['data-inputmask-mask'] = $input_mask;
       }
 
-      $element['#attributes']['class'][] = 'js-webform-element-mask';
+      $element['#attributes']['class'][] = 'js-webform-input-mask';
       $element['#attached']['library'][] = 'webform/webform.element.inputmask';
     }
   }
@@ -70,7 +71,7 @@ abstract class TextBase extends WebformElementBase {
     $form = parent::form($form, $form_state);
 
     // Input mask.
-    $form['webform']['input_mask'] = [
+    $form['form']['input_mask'] = [
       '#type' => 'webform_select_other',
       '#title' => $this->t('Input masks'),
       '#description' => $this->t('An <a href=":href">inputmask</a> helps the user with the element by ensuring a predefined format.', [':href' => 'https://github.com/RobinHerbots/jquery.inputmask']),

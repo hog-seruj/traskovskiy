@@ -4,6 +4,7 @@ namespace Drupal\webform\Plugin\WebformHandler;
 
 use Drupal\Core\Serialization\Yaml;
 use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformHandlerBase;
 use Drupal\webform\WebformSubmissionInterface;
@@ -52,8 +53,8 @@ class RemotePostWebformHandler extends WebformHandlerBase {
   /**
    * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, LoggerInterface $logger, ModuleHandlerInterface $module_handler, ClientInterface $http_client, WebformTokenManagerInterface $token_manager) {
-    parent::__construct($configuration, $plugin_id, $plugin_definition, $logger);
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LoggerInterface $logger, EntityTypeManagerInterface $entity_type_manager, ModuleHandlerInterface $module_handler, ClientInterface $http_client, WebformTokenManagerInterface $token_manager) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $logger, $entity_type_manager);
     $this->moduleHandler = $module_handler;
     $this->httpClient = $http_client;
     $this->tokenManager = $token_manager;
@@ -68,6 +69,7 @@ class RemotePostWebformHandler extends WebformHandlerBase {
       $plugin_id,
       $plugin_definition,
       $container->get('logger.factory')->get('webform.remote_post'),
+      $container->get('entity_type.manager'),
       $container->get('module_handler'),
       $container->get('http_client'),
       $container->get('webform.token_manager')
@@ -136,7 +138,7 @@ class RemotePostWebformHandler extends WebformHandlerBase {
 
     $form['delete_url'] = [
       '#type' => 'url',
-      '#title' => $this->t('Save URL'),
+      '#title' => $this->t('Delete URL'),
       '#description' => $this->t('The full URL to POST to call when a webform submission is deleted. E.g. http://www.mycrm.com/form_delete_handler.php'),
       '#default_value' => $this->configuration['delete_url'],
       '#access' => !$results_disabled,
@@ -162,7 +164,7 @@ class RemotePostWebformHandler extends WebformHandlerBase {
       '#type' => 'webform_excluded_columns',
       '#title' => $this->t('Posted data'),
       '#title_display' => 'invisible',
-      '#webform' => $webform,
+      '#webform_id' => $webform->id(),
       '#required' => TRUE,
       '#parents' => ['settings', 'excluded_data'],
       '#default_value' => $this->configuration['excluded_data'],

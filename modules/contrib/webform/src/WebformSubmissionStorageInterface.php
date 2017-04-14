@@ -2,9 +2,11 @@
 
 namespace Drupal\webform;
 
+use Drupal\Core\Database\Query\AlterableInterface;
 use Drupal\Core\Entity\ContentEntityStorageInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\user\UserInterface;
 
 /**
  * Defines an interface for webform submission classes.
@@ -59,6 +61,22 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
   public function getFieldDefinitions();
 
   /**
+   * Check field definition access.
+   *
+   * Access checks include...
+   * - Only allowing user who can update any access to the 'token' field.
+   *
+   * @param \Drupal\webform\WebformInterface $webform
+   *   The webform to check field definition access.
+   * @param array $definitions
+   *   Field definitions.
+   *
+   * @return array
+   *   Field definitions with access checked.
+   */
+  public function checkFieldDefinitionAccess(WebformInterface $webform, array $definitions);
+
+  /**
    * Returns a webform's max serial number.
    *
    * @param \Drupal\webform\WebformInterface $webform
@@ -85,21 +103,6 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   The number of webform submissions deleted.
    */
   public function deleteAll(WebformInterface $webform = NULL, EntityInterface $source_entity = NULL, $limit = NULL, $max_sid = NULL);
-
-  /**
-   * Get webform submission draft.
-   *
-   * @param \Drupal\webform\WebformInterface|null $webform
-   *   A webform.
-   * @param \Drupal\Core\Entity\EntityInterface|null $source_entity
-   *   A webform submission source entity.
-   * @param \Drupal\Core\Session\AccountInterface|null $account
-   *   A user account.
-   *
-   * @return \Drupal\webform\WebformSubmissionInterface
-   *   A webform submission.
-   */
-  public function loadDraft(WebformInterface $webform, EntityInterface $source_entity = NULL, AccountInterface $account = NULL);
 
   /**
    * Get the total number of submissions.
@@ -132,6 +135,43 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   Total number of submissions.
    */
   public function getMaxSubmissionId(WebformInterface $webform = NULL, EntityInterface $source_entity = NULL, AccountInterface $account = NULL);
+
+  /**
+   * Determine if a webform element has submission values.
+   *
+   * @param \Drupal\webform\WebformInterface $webform
+   *   A webform.
+   * @param string $element_key
+   *   An element key.
+   *
+   * @return bool
+   *   TRUE if a webform element has submission values.
+   */
+  public function hasSubmissionValue(WebformInterface $webform, $element_key);
+
+  /****************************************************************************/
+  // Query methods.
+  /****************************************************************************/
+
+  /**
+   * Add condition to submission query.
+   *
+   * @param \Drupal\Core\Database\Query\AlterableInterface $query
+   *   The query instance.
+   * @param \Drupal\webform\WebformInterface $webform
+   *   A webform.
+   * @param \Drupal\Core\Entity\EntityInterface|null $source_entity
+   *   (optional) A webform submission source entity.
+   * @param \Drupal\Core\Session\AccountInterface $account
+   *   The current user account.
+   * @param array $options
+   *   Additional options and query conditions.
+   */
+  public function addQueryConditions(AlterableInterface $query, WebformInterface $webform = NULL, EntityInterface $source_entity = NULL, AccountInterface $account = NULL, array $options = []);
+
+  /****************************************************************************/
+  // Paging methods.
+  /****************************************************************************/
 
   /**
    * Get a webform's first submission.
@@ -204,13 +244,9 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    */
   public function getSourceEntityTypes(WebformInterface $webform);
 
-  /**
-   * Purge webform submissions.
-   *
-   * @param int $count
-   *   Amount of webform submissions to purge.
-   */
-  public function purge($count);
+  /****************************************************************************/
+  // WebformSubmissionEntityList methods.
+  /****************************************************************************/
 
   /**
    * Get customized submission columns used to display custom table.
@@ -221,6 +257,8 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   A webform submission source entity.
    * @param \Drupal\Core\Session\AccountInterface|null $account
    *   A user account.
+   * @param bool $include_elements
+   *   Flag that include all form element in the list of columns.
    *
    * @return array|mixed
    *   An associative array of columns keyed by name.
@@ -236,6 +274,8 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   A webform submission source entity.
    * @param \Drupal\Core\Session\AccountInterface|null $account
    *   A user account.
+   * @param bool $include_elements
+   *   Flag that include all form element in the list of columns.
    *
    * @return array|mixed
    *   An associative array of columns keyed by name.
@@ -251,6 +291,8 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   A webform submission source entity.
    * @param \Drupal\Core\Session\AccountInterface|null $account
    *   A user account.
+   * @param bool $include_elements
+   *   Flag that include all form element in the list of columns.
    *
    * @return array|mixed
    *   An associative array of columns keyed by name.
@@ -273,6 +315,10 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   Custom setting.
    */
   public function getCustomSetting($name, $default, WebformInterface $webform = NULL, EntityInterface $source_entity = NULL);
+
+  /****************************************************************************/
+  // Invoke methods.
+  /****************************************************************************/
 
   /**
    * Invoke a webform submission's webform's handlers method.
@@ -301,5 +347,58 @@ interface WebformSubmissionStorageInterface extends ContentEntityStorageInterfac
    *   (optional) An additional variable that is passed by reference.
    */
   public function invokeWebformElements($method, WebformSubmissionInterface $webform_submission, &$context1 = NULL, &$context2 = NULL);
+
+  /****************************************************************************/
+  // Purge methods.
+  /****************************************************************************/
+
+  /**
+   * Purge webform submissions.
+   *
+   * @param int $count
+   *   Amount of webform submissions to purge.
+   */
+  public function purge($count);
+
+  /****************************************************************************/
+  // Log methods.
+  /****************************************************************************/
+
+  /**
+   * Write an event to the webform submission log.
+   *
+   * @param \Drupal\webform\WebformSubmissionInterface $webform_submission
+   *   A webform submission.
+   * @param array $values
+   *   The value to be logged includes 'handler_id', 'operation', 'message', and 'data'.
+   */
+  public function log(WebformSubmissionInterface $webform_submission, array $values = []);
+
+  /****************************************************************************/
+  // Draft methods.
+  /****************************************************************************/
+
+  /**
+   * Get webform submission draft.
+   *
+   * @param \Drupal\webform\WebformInterface|null $webform
+   *   A webform.
+   * @param \Drupal\Core\Entity\EntityInterface|null $source_entity
+   *   A webform submission source entity.
+   * @param \Drupal\Core\Session\AccountInterface|null $account
+   *   A user account.
+   *
+   * @return \Drupal\webform\WebformSubmissionInterface
+   *   A webform submission.
+   */
+  public function loadDraft(WebformInterface $webform, EntityInterface $source_entity = NULL, AccountInterface $account = NULL);
+
+  /**
+   * React to an event when a user logs in.
+   *
+   * @param \Drupal\user\UserInterface $account
+   *   Account that has just logged in
+   */
+  public function userLogin(UserInterface $account);
 
 }

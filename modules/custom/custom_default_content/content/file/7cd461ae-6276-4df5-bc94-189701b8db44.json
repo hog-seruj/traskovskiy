@@ -1,16 +1,11 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_z85VgG.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/2017-04\/generateImage_z85VgG_1.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ]
+        }
     },
     "fid": [
         {
@@ -27,25 +22,6 @@
             "value": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "16b78263-b410-4539-8bbf-a8096aec468d"
-                    }
-                ]
-            }
-        ]
-    },
     "filename": [
         {
             "value": "generateImage_z85VgG.jpg"
@@ -53,7 +29,7 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2017-04\/generateImage_z85VgG.jpg"
+            "value": "public:\/\/2017-04\/generateImage_z85VgG_1.jpg"
         }
     ],
     "filemime": [

@@ -20,14 +20,17 @@ use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
 use Drupal\webform\Entity\Webform;
 use Drupal\webform\Entity\WebformSubmission;
+use Drupal\webform\Element\WebformMessage;
+use Drupal\webform\Plugin\Field\FieldType\WebformEntityReferenceItem;
 use Drupal\webform\Plugin\WebformElement\ManagedFile;
 use Drupal\webform\Utility\WebformArrayHelper;
+use Drupal\webform\Utility\WebformThemeHelper;
 use Drupal\webform\WebformInterface;
 use Drupal\webform\WebformSubmissionForm;
 
-module_load_include('inc', 'webform', 'includes/webform.libraries');
-module_load_include('inc', 'webform', 'includes/webform.options');
-module_load_include('inc', 'webform', 'includes/webform.translation');
+require_once __DIR__ . '/includes/webform.libraries.inc';
+require_once __DIR__ . '/includes/webform.options.inc';
+require_once __DIR__ . '/includes/webform.translation.inc';
 
 /**
  * Implements hook_help().
@@ -98,6 +101,14 @@ function webform_modules_uninstalled($modules) {
 }
 
 /**
+ * Implements hook_user_login().
+ */
+function webform_user_login($account) {
+  // Notify the storage of this log in.
+  \Drupal::entityTypeManager()->getStorage('webform_submission')->userLogin($account);
+}
+
+/**
  * Implements hook_cron().
  */
 function webform_cron() {
@@ -161,6 +172,29 @@ function webform_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     return;
   }
 
+  // Display editing original language warning.
+  if (\Drupal::moduleHandler()->moduleExists('config_translation') && preg_match('/^entity.webform.(?:edit|settings|assets|access|handlers|third_party_settings)_form$/', \Drupal::routeMatch()->getRouteName())) {
+    /** @var \Drupal\webform\WebformInterface $webform */
+    $webform = \Drupal::routeMatch()->getParameter('webform');
+    /** @var \Drupal\Core\Language\LanguageManagerInterface $language_manager */
+    $language_manager = \Drupal::service('language_manager');
+
+    // If current webform is translated, load the base (default) webform and apply
+    // the translation to the elements.
+    if ($webform->getLangcode() != $language_manager->getCurrentLanguage()->getId()) {
+      $original_language = $language_manager->getLanguage($webform->getLangcode());
+      $form['langcode_message'] = [
+        '#type' => 'webform_message',
+        '#message_type' => 'warning',
+        '#message_message' => t('You are editing the original %language language for this webform.', ['%language' => $original_language->getName()]),
+        '#message_close' => TRUE,
+        '#message_storage' => WebformMessage::STORAGE_LOCAL,
+        '#message_id' => $webform->id() . '.original_language',
+        '#weight' => -100,
+      ];
+    }
+  }
+
   // Don't include details toggle all for submission forms.
   $is_submission_form = ($form_state->getFormObject() instanceof WebformSubmissionForm);
   if (!$is_submission_form) {
@@ -222,7 +256,7 @@ function webform_system_breadcrumb_alter(Breadcrumb &$breadcrumb, RouteMatchInte
 function webform_entity_delete(EntityInterface $entity) {
   // Delete saved export settings for a webform or source entity with the
   // webform field.
-  if (($entity instanceof WebformInterface)  || (method_exists($entity, 'hasField') && $entity->hasField('webform'))) {
+  if (($entity instanceof WebformInterface) || WebformEntityReferenceItem::getEntityWebformFieldName($entity)) {
     $name = 'webform.export.' . $entity->getEntityTypeId() . '.' . $entity->id();
     \Drupal::state()->delete($name);
   }
@@ -246,10 +280,32 @@ function webform_mail($key, &$message, $params) {
   // value is used instead of site's email address.
   // See: \Drupal\Core\Mail\MailManager::mail.
   if (!empty($params['from_mail'])) {
-    $message['from'] = $params['from_mail'];
-    $message['headers']['From'] = $params['from_mail'];
-    $message['headers']['Reply-to'] = $params['from_mail'];
-    $message['headers']['Return-Path'] = $params['from_mail'];
+    $message['from'] = $message['headers']['From'] = (!empty($params['from_name'])) ? $params['from_name'] . ' <' . $params['from_mail'] . '>' : $params['from_mail'];
+  }
+
+  // Set header 'Reply-to'.
+  if (!empty($params['reply_to'])) {
+    $message['reply-to'] = $message['headers']['Reply-to'] = $params['reply_to'];
+  }
+  elseif ($default_reply_to = \Drupal::config('webform.settings')->get('mail.default_reply_to')) {
+    $message['reply-to'] = $message['headers']['Reply-to'] = $default_reply_to;
+  }
+  elseif (!empty($params['from_mail'])) {
+    // @todo Determine if the 'reply-to' must only be see to 'from mail' if
+    // 'from mail' has the same domain as the 'site mail'.
+    $message['reply-to'] = $message['headers']['Reply-to'] = $message['from'];
+  }
+
+  // Set header 'Return-Path'.
+  if (!empty($params['return_path'])) {
+    $message['headers']['Sender'] = $message['headers']['Return-Path'] = $params['return_path'];
+  }
+  elseif ($default_return_path = \Drupal::config('webform.settings')->get('mail.default_return_path')) {
+    $message['headers']['Sender'] = $message['headers']['Return-Path'] = $default_return_path;
+
+  }
+  elseif (!empty($params['from_mail'])) {
+    $message['headers']['Sender'] = $message['headers']['Return-Path'] = $params['from_mail'];
   }
 
   if (!empty($params['cc_mail'])) {
@@ -285,11 +341,11 @@ function webform_page_attachments(&$page) {
 
   // Attach global libraries only to webform specific pages.
   if (preg_match('/^(webform\.|^entity\.([^.]+\.)?webform)/', $route_name) || preg_match('#(/node/add/webform|/admin/help/webform)#', $url)) {
-    // Attach theme specific library to webform routers so that we can tweak
-    // the bartik.theme and seven.theme.
-    $theme = \Drupal::theme()->getActiveTheme()->getName();
-    if (file_exists(drupal_get_path('module', 'webform') . "/css/webform.theme.$theme.css")) {
-      $page['#attached']['library'][] = "webform/webform.theme.$theme";
+    $active_theme_names = WebformThemeHelper::getActiveThemeNames();
+    foreach ($active_theme_names as $active_theme_name) {
+      if (file_exists(drupal_get_path('module', 'webform') . "/css/webform.theme.$active_theme_name.css")) {
+        $page['#attached']['library'][] = "webform/webform.theme.$active_theme_name";
+      }
     }
 
     // Attach details element save open/close library.
@@ -300,10 +356,10 @@ function webform_page_attachments(&$page) {
     }
   }
 
-  // Attach codemirror library to block admin to ensure that the library
-  // is loaded by the webform block is placed using AJAX.
-  if (\Drupal::routeMatch()->getRouteName() == 'block.admin_display') {
-    $page['#attached']['library'][] = 'webform/webform.codemirror.yaml';
+  // Attach codemirror and select2 library to block admin to ensure that the
+  // library is loaded by the webform block is placed using AJAX.
+  if (strpos($route_name, 'block.admin_display') === 0) {
+    $page['#attached']['library'][] = 'webform/webform.block';
   }
 }
 
@@ -481,6 +537,9 @@ function webform_theme() {
     'webform_composite_name' => [
       'render element' => 'element',
     ],
+    'webform_composite_telephone' => [
+      'render element' => 'element',
+    ],
 
     'webform_codemirror' => [
       'variables' => ['code' => NULL, 'type' => 'text'],
@@ -579,6 +638,8 @@ function webform_preprocess_checkboxes(&$variables) {
  */
 function webform_preprocess_radios(&$variables) {
   webform_preprocess_checkboxes($variables);
+  // @see js/webform.element.radios.js
+  $variables['attributes']['class'][] = 'js-webform-radios';
 }
 
 /**

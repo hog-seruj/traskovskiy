@@ -2,6 +2,7 @@
 
 namespace Drupal\webform\Plugin\WebformElement;
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\webform\WebformSubmissionInterface;
 
 /**
@@ -22,8 +23,12 @@ class Checkboxes extends OptionsBase {
    */
   public function getDefaultProperties() {
     return parent::getDefaultProperties() + [
+      'multiple' => TRUE,
+      'multiple_error' => '',
       // Options settings.
       'options_display' => 'one_column',
+      // iCheck settings.
+      'icheck' => '',
     ];
   }
 
@@ -45,8 +50,8 @@ class Checkboxes extends OptionsBase {
    * {@inheritdoc}
    */
   public function prepare(array &$element, WebformSubmissionInterface $webform_submission) {
-    parent::prepare($element, $webform_submission);
     $element['#element_validate'][] = [get_class($this), 'validateMultipleOptions'];
+    parent::prepare($element, $webform_submission);
   }
 
   /**
@@ -58,6 +63,18 @@ class Checkboxes extends OptionsBase {
       $text .= ' [' . $this->t('Checkbox') . ']';
     }
     return $selectors;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function form(array $form, FormStateInterface $form_state) {
+    $form = parent::form($form, $form_state);
+
+    // Checkboxes must require > 2 options.
+    $form['element']['multiple']['#min'] = 2;
+
+    return $form;
   }
 
 }

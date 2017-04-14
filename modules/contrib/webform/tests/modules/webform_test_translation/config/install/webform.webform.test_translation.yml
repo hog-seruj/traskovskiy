@@ -1,5 +1,7 @@
 langcode: en
-status: true
+status: open
+open: null
+close: null
 dependencies:
   enforced:
     module:
@@ -18,7 +20,7 @@ elements: |
     '#title': 'Select (options)'
     '#options': test_translation
   select_custom:
-    '#type': select_other
+    '#type': webform_select_other
     '#title': 'Select (custom)'
     '#options':
       4: Four
@@ -27,8 +29,8 @@ elements: |
     '#other__option_label': 'Custom number...'
   details:
     '#type': details
-    '#title': 'Details'
-    'markup':
+    '#title': Details
+    markup:
       '#markup': 'This is some HTML markup.'
 css: ''
 javascript: ''
@@ -38,7 +40,8 @@ settings:
   page_confirm_path: ''
   form_submit_label: 'Send message'
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_confidential: false
   form_confidential_message: ''
   form_prepopulate: false
@@ -60,7 +63,7 @@ settings:
   preview_next_button_label: ''
   preview_prev_button_label: ''
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_saved_message: ''

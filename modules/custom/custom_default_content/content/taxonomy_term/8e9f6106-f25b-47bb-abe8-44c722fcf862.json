@@ -1,31 +1,30 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/uk\/taxonomy\/term\/12?_format=hal_json"
+            "href": "http:\/\/default\/uk\/blueberries?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/berries"
         },
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
-            {
-                "href": "http:\/\/default\/user\/0?_format=hal_json",
-                "lang": "uk"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_1.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_3.jpg"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina.jpg"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_2.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_0.jpg"
             },
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_0.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_1.jpg"
             },
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/image-for-facebook_0.jpg"
+                "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_2.jpg"
             }
         ]
     },
@@ -63,7 +62,7 @@
     ],
     "changed": [
         {
-            "value": "1492084423",
+            "value": "1492168645",
             "lang": "uk"
         }
     ],
@@ -85,106 +84,6 @@
             "lang": "uk"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/content_translation_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/0?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "0f054b92-0ad2-4d43-8e6c-eeb8e38f3bb5"
-                    }
-                ],
-                "lang": "uk"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_1.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "90d2b494-a81f-4bdd-9234-3e0933dd2a36"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download_2.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "486f23e8-f523-4c76-ad98-595cbe2b04d8"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/download%20%281%29_0.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c7334d86-0eac-4184-aa52-7c353db8c606"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/image-for-facebook_0.jpg"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "9be68e24-0aaa-4f40-a28a-94cd529ea1e3"
-                    }
-                ],
-                "alt": "asd",
-                "title": "",
-                "width": "284",
-                "height": "177"
-            }
-        ]
-    },
     "content_translation_status": [
         {
             "value": "1",
@@ -208,9 +107,112 @@
             "value": "Donec sollicitudin molestie malesuada. Proin eget tortor risus. Nulla porttitor accumsan tincidunt. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget co"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_cat": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_3.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "90df028b-d676-4029-adad-adf838b4990e"
+                    }
+                ],
+                "alt": "alter",
+                "title": "",
+                "width": "580",
+                "height": "410"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_img_front": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6af0a9a1-12a9-43b1-adb6-fbcd1ac9b8ae"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "580",
+                "height": "410"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/berries\/field_photo_gallery": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_0.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "028e6278-ea51-4b4f-bb6b-2d505ddbbc93"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "580",
+                "height": "410"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_1.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b82b635b-0c30-4b83-9988-58cccbb8c64d"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "580",
+                "height": "410"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/2017-04\/lohina_2.jpg"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "1ded1f7f-a709-4db3-a283-01e6af4988ee"
+                    }
+                ],
+                "alt": "alt",
+                "title": "",
+                "width": "580",
+                "height": "410"
+            }
+        ]
+    },
     "field_title_cat": [
         {
-            "value": "Donec sollicitudin molestie malesuada"
+            "value": "\u041b\u043e\u0445\u0438\u043d\u0430"
         }
     ]
 }

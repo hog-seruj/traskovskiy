@@ -15,25 +15,22 @@ use Drupal\webform\WebformElementBase;
  *   category = @Translation("Advanced elements"),
  * )
  */
-class Email extends WebformElementBase {
+class Email extends TextBase {
 
   /**
    * {@inheritdoc}
    */
   public function getDefaultProperties() {
     return parent::getDefaultProperties() + [
-      // Form validation.
-      'size' => '',
-      'minlength' => '',
-      'maxlength' => '',
-      'placeholder' => '',
+      'multiple' => FALSE,
+      'multiple__header_label' => '',
     ];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function formatHtmlItem(array &$element, $value, array $options = []) {
+  public function formatHtmlItem(array $element, $value, array $options = []) {
     if (empty($value)) {
       return '';
     }

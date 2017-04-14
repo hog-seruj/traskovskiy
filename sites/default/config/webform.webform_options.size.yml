@@ -1,0 +1,13 @@
+uuid: db9f82da-738b-4e91-9d9e-fc8efe61e2ad
+langcode: uk
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: Xov05v5Uq4t3ek0hXVcvr83sYGxDkMP3qG01pzendv8
+id: size
+label: Size
+category: Загальне
+options: "Extra Small: Extra Small\nSmall: Small\nMedium: Medium\nLarge: Large\nExtra Large: Extra Large\n"

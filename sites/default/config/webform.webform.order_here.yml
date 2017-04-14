@@ -1,0 +1,136 @@
+uuid: d3feb341-4470-4a1d-bcc1-fbf8a684d9a7
+langcode: uk
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 1
+template: false
+id: order_here
+title: 'Замовляйте тут'
+description: 'Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.&nbsp;'
+elements: "name_surname:\n  '#type': textfield\n  '#title': 'Імя і прізвище'\n  '#title_display': invisible\n  '#placeholder': 'Імя і прізвище'\n  '#required': true\nphone:\n  '#type': tel\n  '#title': Телефон\n  '#title_display': invisible\n  '#placeholder': Телефон\n  '#required': true\nemail_address:\n  '#type': webform_email_multiple\n  '#title': 'Email address'\n  '#title_display': invisible\n  '#description_display': invisible\n  '#placeholder': Email\nnp_state:\n  '#type': textfield\n  '#title': 'Відділення НП'\n  '#title_display': invisible\n  '#placeholder': 'Відділення нової пошти'\nwrite:\n  '#type': textarea\n  '#title': Написати\n  '#title_display': invisible\n  '#placeholder': Написати\n  '#required': true\n"
+css: ''
+javascript: ''
+settings:
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_label: ''
+  form_submit_once: false
+  form_submit_attributes: {  }
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_unsaved: false
+  form_disable_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  submission_log: false
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_next_button_label: ''
+  wizard_next_button_attributes: {  }
+  wizard_prev_button_label: ''
+  wizard_prev_button_attributes: {  }
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_next_button_label: ''
+  preview_next_button_attributes: {  }
+  preview_prev_button_label: ''
+  preview_prev_button_attributes: {  }
+  preview_message: ''
+  draft: none
+  draft_auto_save: false
+  draft_button_label: ''
+  draft_button_attributes: {  }
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: 'Ваше замовлення відправлене.Ми звяжемося з вами для уточнення деталей.'
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  purge: none
+  purge_days: null
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers:
+  email:
+    id: email
+    label: 'Електронна пошта'
+    handler_id: email
+    status: true
+    weight: 0
+    settings:
+      states:
+        completed: completed
+        draft: '0'
+        converted: '0'
+        updated: '0'
+        deleted: '0'
+      to_mail: default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: default
+      from_options: {  }
+      from_name: default
+      subject: default
+      body: default
+      excluded_elements: {  }
+      html: true
+      attachments: false
+      debug: false
+      reply_to: ''
+      return_path: ''

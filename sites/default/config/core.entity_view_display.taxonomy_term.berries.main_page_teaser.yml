@@ -42,6 +42,10 @@ third_party_settings:
         weight: 1
         label: hidden
         formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: ''
 id: taxonomy_term.berries.main_page_teaser
 targetEntityType: taxonomy_term
 bundle: berries
@@ -59,7 +63,7 @@ content:
     label: hidden
     settings:
       image_style: ''
-      image_link: ''
+      image_link: content
     third_party_settings: {  }
     type: image
 hidden:

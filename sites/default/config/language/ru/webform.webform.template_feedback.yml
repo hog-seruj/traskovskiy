@@ -1,0 +1,10 @@
+handlers:
+  email_confirmation:
+    label: 'Подтверждение почтой'
+    settings:
+      from_name: 'по умолчанию'
+      subject: 'по умолчанию'
+  email_notification:
+    label: 'Уведомления по email'
+    settings:
+      subject: 'по умолчанию'
